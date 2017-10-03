@@ -19,16 +19,20 @@ public class FileHandler {
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             f = fileChooser.getSelectedFile();
         }
+        return load(f);
+    }
+
+    public String load(File file) throws IOException {//trying to upload new load function
         FileInputStream fin = null;
 
         int ch;
         StringBuffer sb = new StringBuffer();
         try {
-            fin = new FileInputStream(f);
+            fin = new FileInputStream(file);
             while ((ch = fin.read()) != -1) {
                 sb.append((char) ch);
             }
-          //  System.out.println("File content: " + sb);
+            //  System.out.println("File content: " + sb);
             return sb.toString();
         } catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -37,5 +41,6 @@ public class FileHandler {
         }
         return "error";
     }
+
 }
 
