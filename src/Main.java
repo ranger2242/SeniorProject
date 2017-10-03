@@ -13,6 +13,8 @@ public class Main {
     static List<String> scanned = new ArrayList<>();
     static List<String> assignments = new ArrayList<>();
     static List<String> methods = new ArrayList<>();
+    static List<Variable> variables = new ArrayList<>();
+    static List<Function> functions = new ArrayList<>();
 
     static String div = "-----------------------------------------------";
     static Scanner sc = new Scanner(System.in);
@@ -54,20 +56,57 @@ public class Main {
         }
         scanned = removeWhiteSpace(scanned);
         assignments = findAllAssignments(scanned);
-        methods= findAllMethods(scanned);
+        methods = findAllMethods(scanned);
+
+
+        stripVariable();
+        stripMethods();
 
 
 
+
+
+
+        printStuff();
+    }
+
+
+    private static void printStuff() {
         scanned.forEach(System.out::println);
         System.out.println(div);
         System.out.println("Variables\n");
-        assignments.forEach(System.out::println);
+        //assignments.forEach(System.out::println);
+        variables.forEach(x->System.out.println(x.toString()));
         System.out.println(div);
         System.out.println("Methods\n");
-        methods.forEach(System.out::println);
+        functions.forEach(x->System.out.println(x.toString()));
+        //methods.forEach(System.out::println);
         System.out.println(scanned.size() + "");
     }
 
+    private static void stripVariable() {
+        for(String s : assignments){
+            String[] arr = s.split(" ");
+            for(int i = 0; i < arr.length; i++){
+                if ( arr[i].equals("=") ){
+                    variables.add(new Variable(arr[i - 1], arr[i - 2]));
+                }
+            }
+        }
+    }
+
+    private static void stripMethods() {
+        for( String method : methods){
+            String[] word = method.split(" ");
+            for(int i = 0; i < word.length; i++){
+                if (word[i].endsWith("(")){
+                    String name = word[i].substring(0, word[i].length() - 1);
+                    String type = word[i -1];
+                    functions.add(new Function(name, type, null));
+                }
+            }
+        }
+    }
 
     public static List<String> findAllAssignments(List<String> strings) {
         List<String> temp = strings.stream().filter(x -> x.contains("=")).collect(Collectors.toCollection(ArrayList::new));
