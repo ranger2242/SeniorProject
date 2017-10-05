@@ -28,9 +28,7 @@ public class ClassExtractor {
                         List<String> classString = code.subList(index, j);
                         classString.add("}");
 
-                        //List<Function> funcs = getMethods(classString);
-
-                        Class aNewClass = new Class(name, getVariables(classString), null);
+                        Class aNewClass = new Class(name, getVariables(classString), getMethods(classString));
                         classes.add(aNewClass);
 
                         index = j; //Avoid searching the rest of the class in main loop
@@ -67,16 +65,20 @@ public class ClassExtractor {
 
         List<Function> functions = new ArrayList<>();
 
-//        for( String method : code){
-//            String[] word = method.split(" ");
-//            for(int i = 0; i < word.length; i++){
-//                if (word[i].endsWith("(") && !word[i].equals("if(")){
-//                    String name = word[i].substring(0, word[i].length() - 1);
-//                    String type = word[i -1];
-//                    functions.add(new Function(name, type, null));
-//                }
-//            }
-//        }
+        for( String method : code){
+            String[] word = method.split(" ");
+            for(int i = 0; i < word.length; i++){
+                if (word[i].endsWith("(")){
+                    if (i > 0){
+                        if ( !word[i - 1].equals("new") && !word[i].contains(".") ){
+                            String name = word[i].substring(0, word[i].length() - 1);
+                            String type = word[i -1];
+                            functions.add(new Function(name, type, null));
+                        }
+                    }
+                }
+            }
+        }
         return functions;
     }
 

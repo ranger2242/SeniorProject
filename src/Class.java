@@ -20,14 +20,14 @@ public class Class {
         if(variables != null){
             str +=  "Variables\n";
             for( Variable var : variables){
-                str += var.type + " " +var.name + "\n";
+                str += "-" + var.type + " " +var.name + "\n";
             }
         }
 
         if (functions != null){
             str +=  "Functions\n";
             for( Function func : functions){
-                str += func.type + " " +func.name + "\n";
+                str += "-" + func.type + " " +func.name + "\n";
             }
         }
 

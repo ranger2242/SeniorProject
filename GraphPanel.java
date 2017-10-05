@@ -3,6 +3,9 @@ import java.util.ArrayList;
 
 
 public class RandomClassForTesting{
+    GraphPanel var = new  GraphPanel();
+
+    int one = var.one();
 
 }
 
@@ -18,6 +21,10 @@ public class GraphPanel extends JPanel implements Serializable {
     public GraphPanel() {                                       //jugfhj
         if (a == b) {
         }
+    }
+
+    public static int one(){
+        return 1;
     }
 
     public void setTextSize(int i) {
