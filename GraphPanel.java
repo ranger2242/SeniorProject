@@ -1,6 +1,11 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
+public class RandomClassForTesting{
+
+}
+
 public class GraphPanel extends JPanel implements Serializable {
     ArrayList<Line> lines = new ArrayList<>();
     ArrayList<Text> texts = new ArrayList<>();//tdhf
