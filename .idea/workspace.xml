@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60713e4b-af4c-4424-82e2-ba85adcfe5d8" name="Default" comment="added prelim scanning for variables and methods">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/Class.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/Class.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/ClassExtractor.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/ClassExtractor.class" />
+    <list default="true" id="60713e4b-af4c-4424-82e2-ba85adcfe5d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraphPanel.java" afterPath="$PROJECT_DIR$/GraphPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Class.java" afterPath="$PROJECT_DIR$/src/Class.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClassExtractor.java" afterPath="$PROJECT_DIR$/src/ClassExtractor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +58,8 @@
       <file leaf-file-name="ClassExtractor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClassExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="650">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getVariables#0;class#ClassExtractor#0" expanded="false" />
@@ -605,6 +600,14 @@
       <workItem from="1506918696624" duration="8424000" />
       <workItem from="1506995798528" duration="167000" />
     </task>
+    <task id="LOCAL-00001" summary="added prelim scanning for variables and methods">
+      <created>1507239058320</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1507239058320</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1160,8 +1163,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClassExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="650">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getVariables#0;class#ClassExtractor#0" expanded="false" />
