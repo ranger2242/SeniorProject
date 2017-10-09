@@ -9,14 +9,14 @@ import java.util.stream.Collectors;
 /**
  * Created by Chris Cavazos on 10/1/2017.
  */
-public class Main {
+class Main {
     static List<String> scanned = new ArrayList<>();
     static List<String> assignments = new ArrayList<>();
     static List<String> methods = new ArrayList<>();
     static List<Variable> variables = new ArrayList<>();
-    static List<Function> functions = new ArrayList<>();
+    static List<Method> functions = new ArrayList<>();
 
-    static String div = "-----------------------------------------------";
+    public final static String div = "-----------------------------------------------";
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -58,54 +58,33 @@ public class Main {
 
 
         //Extract classes from code
-        ClassExtractor extractor = new ClassExtractor();
-        List<Class> classes = extractor.extractClasses(scanned);
+
+        ArrayList<ArrayList<String>> classes= ClassSepterator.seperate((ArrayList<String>) scanned);
+
+        for(ArrayList<String> code: classes){
+            ClassBuilder extractor = new ClassBuilder((ArrayList<String>) code);
+            ExtractedClass e= extractor.generate();
+        }
 
 
-        classes.forEach(x-> System.out.println("-----------------\n" + x.toString()));
-        System.out.println(div);
-
-
-        //printStuff();
+        printStuff();
     }
 
 
     private static void printStuff() {
-        scanned.forEach(System.out::println);
-        System.out.println(div);
+        //scanned.forEach(System.out::println);
+        /*System.out.println(div);
         System.out.println("Variables\n");
         //assignments.forEach(System.out::println);
         variables.forEach(x->System.out.println(x.toString()));
         System.out.println(div);
         System.out.println("Methods\n");
-        functions.forEach(x->System.out.println(x.toString()));
+        methods.forEach(x->System.out.println(x.toString()));
         //methods.forEach(System.out::println);
-        System.out.println(scanned.size() + "");
+        System.out.println(scanned.size() + "");*/
     }
-//
-//    private static void stripVariable() {
-//        for(String s : assignments){
-//            String[] arr = s.split(" ");
-//            for(int i = 0; i < arr.length; i++){
-//                if ( arr[i].equals("=") ){
-//                    variables.add(new Variable(arr[i - 1], arr[i - 2]));
-//                }
-//            }
-//        }
-//    }
-//
-//    private static void stripMethods() {
-//        for( String method : methods){
-//            String[] word = method.split(" ");
-//            for(int i = 0; i < word.length; i++){
-//                if (word[i].endsWith("(")){
-//                    String name = word[i].substring(0, word[i].length() - 1);
-//                    String type = word[i -1];
-//                    functions.add(new Function(name, type, null));
-//                }
-//            }
-//        }
-//    }
+
+
 
     public static List<String> findAllAssignments(List<String> strings) {
         List<String> temp = strings.stream().filter(x -> x.contains("=")).collect(Collectors.toCollection(ArrayList::new));

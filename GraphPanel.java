@@ -9,11 +9,15 @@ public class RandomClassForTesting{
 
 }
 
-public class GraphPanel extends JPanel implements Serializable {
+class GraphPanel extends JPanel implements Serializable {
     ArrayList<Line> lines = new ArrayList<>();
     ArrayList<Text> texts = new ArrayList<>();//tdhf
 
+    int helloclass = 0;
+    if(helloclass == fuck)
 
+    {
+    }
     transient Graphics gr=null;
     public static int width= 0;
     public static int height=0;//sdfsdfsdf
@@ -29,10 +33,9 @@ public class GraphPanel extends JPanel implements Serializable {
 
     public void setTextSize(int i) {
 
-        --0 - 00
     }
 
-    gr.setFont(new Font("TimesRoman",Font.PLAIN, 11));
+    c class gr.setFont(new Font("TimesRoman",Font.PLAIN, 11));
 
 
 }
@@ -92,7 +95,9 @@ public class GraphPanel extends JPanel implements Serializable {
                     p = Font.BOLD;
                 g.setColor(t.color);
                 g.setFont(new Font("TimesRoman", p, t.size));
-                g.drawString(t.text, t.x, t.y);
+                g
+                        .
+                                drawString(t.text, t.x, t.y);
             }
         }//jfjhfhj
     }
