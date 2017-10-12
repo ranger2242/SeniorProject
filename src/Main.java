@@ -59,11 +59,14 @@ class Main {
 
         //Extract classes from code
 
-        ArrayList<ArrayList<String>> classes= ClassSepterator.seperate((ArrayList<String>) scanned);
+        ArrayList<ArrayList<String>> classes = ClassSepterator.seperate((ArrayList<String>) scanned);
+
+        ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
 
         for(ArrayList<String> code: classes){
             ClassBuilder extractor = new ClassBuilder((ArrayList<String>) code);
-            ExtractedClass e= extractor.generate();
+            ExtractedClass e = extractor.generate();
+            extractedClasses.add(e);
         }
 
 

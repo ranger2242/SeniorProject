@@ -4,25 +4,44 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ClassBuilder {
-    ExtractedClass e=null;
+
+    ExtractedClass e = null;
+
     public ClassBuilder(ArrayList<String> code) {
         ArrayList<Variable> variables = stripVariable(code);
         ArrayList<Method> methods = stripMethods(code);
-        String name= findClass(code);
+        String name = findClass(code);
         e = new ExtractedClass(name,variables,methods,code);
 
+        ArrayList<ArrayList<String>> meths = MethodSeparator.separate(code);
 
-        System.out.println(name);
-        System.out.println(Main.div);
-        variables.forEach(System.out::println);
-        System.out.println(Main.div);
-        methods.forEach(System.out::println);
-        System.out.println("\n");
+
+        System.out.println(name + ":");
+        if(meths.size() == 0){
+            System.out.println("This Class has no methods");
+        }
+
+        for (ArrayList<String> meth: meths) {
+            for(String line : meth ){
+                System.out.println(line);
+            }
+            System.out.println("---------------");
+        }
+        System.out.println("======================");
+
+//        System.out.println(name);
+//        System.out.println(Main.div);
+//        variables.forEach(System.out::println);
+//        System.out.println(Main.div);
+//        methods.forEach(System.out::println);
+//        System.out.println("\n");
 
     }
+
     public ExtractedClass generate(){
         return e;
     }
+
     private String findClass(ArrayList<String> s) {
         ArrayList<String> fuck = s.stream().filter(x -> x.contains("class") && !x.contains(";")&& !x.contains("\"")).collect(Collectors.toCollection(ArrayList::new));
         ArrayList<String> classnames= new ArrayList<>();

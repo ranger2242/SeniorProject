@@ -14,10 +14,7 @@ class GraphPanel extends JPanel implements Serializable {
     ArrayList<Text> texts = new ArrayList<>();//tdhf
 
     int helloclass = 0;
-    if(helloclass == fuck)
 
-    {
-    }
     transient Graphics gr=null;
     public static int width= 0;
     public static int height=0;//sdfsdfsdf
@@ -35,10 +32,11 @@ class GraphPanel extends JPanel implements Serializable {
 
     }
 
-    c class gr.setFont(new Font("TimesRoman",Font.PLAIN, 11));
+
+    //c class gr.setFont(new Font("TimesRoman",Font.PLAIN, 11));
 
 
-}
+
     //
     //
     //
