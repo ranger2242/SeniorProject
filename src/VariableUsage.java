@@ -1,9 +1,9 @@
 /**
  * Created by Chris Cavazos on 10/8/2017.
  */
-public class VariableUsage {
+class VariableUsage {
 
-    Variable variable;
+    private Variable variable;
 
     public Variable getVariable() {
         return variable;

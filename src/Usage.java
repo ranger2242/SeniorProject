@@ -1,8 +1,8 @@
 /**
  * Created by Chris Cavazos on 10/8/2017.
  */
-public class Usage {
-    int count;
+class Usage {
+    private int count;
 
 
     public int getCount() {

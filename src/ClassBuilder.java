@@ -1,68 +1,47 @@
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.NodeList;
+import com.github.javaparser.ast.body.TypeDeclaration;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class ClassBuilder {
+class ClassBuilder {
 
-    ExtractedClass e = null;
 
     public ClassBuilder(ArrayList<String> code) {
-        ArrayList<Variable> variables = stripVariable(code);
-        ArrayList<Method> methods = stripMethods(code);
-        String name = findClass(code);
-        e = new ExtractedClass(name,variables,methods,code);
-
-        ArrayList<ArrayList<String>> meths = MethodSeparator.separate(code);
+        CompilationUnit cu = JavaParser.parse(listToLine(code));
+        NodeList<TypeDeclaration<?>> classes = cu.getTypes();
 
 
-        System.out.println(name + ":");
-        if(meths.size() == 0){
-            System.out.println("This Class has no methods");
-        }
-
-        for (ArrayList<String> meth: meths) {
-            for(String line : meth ){
-                System.out.println(line);
-            }
+        for (TypeDeclaration<?> cl : classes) {
+            Main.out(cl.getName().asString());
+            Main.out("Methods:");
+            ArrayList<Method> methodList = MethodBuilder.parseClass(cl);
+            methodList.forEach(Method::print);
             System.out.println("---------------");
+
         }
-        System.out.println("======================");
-
-//        System.out.println(name);
-//        System.out.println(Main.div);
-//        variables.forEach(System.out::println);
-//        System.out.println(Main.div);
-//        methods.forEach(System.out::println);
-//        System.out.println("\n");
-
     }
 
-    public ExtractedClass generate(){
-        return e;
-    }
 
-    private String findClass(ArrayList<String> s) {
-        ArrayList<String> fuck = s.stream().filter(x -> x.contains("class") && !x.contains(";")&& !x.contains("\"")).collect(Collectors.toCollection(ArrayList::new));
-        ArrayList<String> classnames= new ArrayList<>();
-        for (String string : fuck) {
-            String[] arr = string.split(" ");
-            int i = Arrays.asList(arr).indexOf("class");
-            if(i+1 >= arr.length){
-               classnames.add(s.get(s.indexOf(string)+1).split(" ")[0]);
-            }else if(i!=-1 && arr[i].length()==5)
-            classnames.add(arr[i + 1]);
-        }
-        return classnames.get(0);
-    }
-
-    private static ArrayList<Variable> stripVariable(ArrayList<String> assignments) {
+    public static ArrayList<Variable> findVariables(ArrayList<String> assignments) {
         ArrayList<Variable> variables = new ArrayList<>();
         for (String s : assignments) {
-            String[] arr = s.split(" ");
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i].equals("=") && i > 1) {
-                    variables.add(new Variable(arr[i - 1], arr[i - 2]));
+            String[] lines = s.split("\r\n");
+            for(String s1:lines) {
+
+                List<String> arr =new ArrayList<>(Arrays.asList(s1.split(" ")));
+                while(arr.contains(""))
+                    arr.remove("");
+                for (int i = 0; i < arr.size(); i++) {
+                    if (arr.get(i).equals("=") && i > 1) {
+                        variables.add(new Variable( arr.get(i - 2),arr.get(i - 1)));
+                    }
+                }
+                if (arr.size() == 2) {
+                    variables.add(new Variable(arr.get(0), arr.get(1)));
                 }
             }
         }
@@ -70,20 +49,24 @@ public class ClassBuilder {
 
     }
 
-    private static ArrayList<Method> stripMethods(ArrayList<String> methods) {
-        List<String> temp = methods.stream().filter(x -> !x.contains("=") && !x.contains(";")).collect(Collectors.toCollection(ArrayList::new));
+    private static String listToLine(ArrayList<String> code) {
+        StringBuilder in = new StringBuilder();
 
-        ArrayList<Method> functions = new ArrayList<>();
-        for (String method : temp) {
-            String[] word = method.split(" ");
-            for (int i = 0; i < word.length; i++) {
-                if (word[i].endsWith("(") && i > 1) {
-                    String name = word[i].substring(0, word[i].length() - 1);
-                    String type = word[i - 1];
-                    functions.add(new Method(name, type, new ArrayList<>()));
-                }
-            }
+        for (String line : code) {
+            in.append(line).append("\n");
         }
-        return functions;
+
+        in = new StringBuilder(in.toString().replaceAll("@1@", "<="));
+        in = new StringBuilder(in.toString().replaceAll("@2@", ">="));
+        in = new StringBuilder(in.toString().replaceAll("@3@", "!="));
+        in = new StringBuilder(in.toString().replaceAll("@4@", "=="));
+        return in.toString();
     }
+
+    public static ArrayList<String> lineToList(String code) {
+        ArrayList<String> list = new ArrayList<>();
+        list.addAll(Arrays.asList(code.split("\r\n")));
+        return list;
+    }
+
 }

@@ -1,19 +1,20 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Method {
 
     String name;
     String type;
-    List<Usage> usages = new ArrayList<>();
-    List<Variable> instanceVars = new ArrayList<>();
+    private final ArrayList<Variable> params = new ArrayList<>();
+    private final ArrayList<Variable> instanceVars = new ArrayList<>();
 
 
 
-    public Method(String name, String type, List<Variable> params) {
+    public Method(String name, String type, Variable[] params, Variable[] instanceVars) {
         this.name = name;
         this.type = type;
-        instanceVars.addAll(params);
+        this.params.addAll(Arrays.asList(params));
+        this.instanceVars.addAll(Arrays.asList(instanceVars));
     }
 
     public String getName() {
@@ -32,24 +33,13 @@ public class Method {
         this.type = type;
     }
 
-    public List<Usage> getUsages() {
-        return usages;
-    }
 
-    public void setUsages(List<Usage> usages) {
-        this.usages = usages;
-    }
-
-    public List<Variable> getInstanceVars() {
-        return instanceVars;
-    }
-
-    public void setInstanceVars(List<Variable> instanceVars) {
-        this.instanceVars = instanceVars;
-    }
-
-    public String toString(){
-        return type + " " + name + " ";
+    public void print(){
+        Main.out(type + " " + name + " ");
+        Main.out("\tParameters:");
+        params.forEach(x-> Main.out("\t\t" + x.toString()));
+        Main.out("\tInstance:");
+        instanceVars.forEach(x-> Main.out("\t\t" + x.toString()));
     }
 
 

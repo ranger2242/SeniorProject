@@ -19,16 +19,14 @@ public class Variable {
         this.type = type;
     }
 
-    public Variable(String name, String type) {
+    public Variable(String type, String name) {
         this.name = name;
         this.type = type;
     }
 
-    public String toString(){
-        return type+" "+ name;
+    public String toString() {
+        return type + " " + name;
     }
-
-
 
 
 }

@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class ExtractedClass {
+class ExtractedClass {
 
-    String name;
-    ArrayList<Variable> variables = new ArrayList<>();
-    ArrayList<Method> methods = new ArrayList<>();
-    ArrayList<String> code = new ArrayList<>();
+    private String name;
+    private ArrayList<Variable> variables = new ArrayList<>();
+    private ArrayList<Method> methods = new ArrayList<>();
+    private ArrayList<String> code = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -40,23 +40,23 @@ public class ExtractedClass {
 
     public String toString(){
 
-        String str = name + "\n";
+        StringBuilder str = new StringBuilder(name + "\n");
 
         if(variables != null){
-            str +=  "Variables\n";
+            str.append("Variables\n");
             for( Variable var : variables){
-                str += "-" + var.type + " " +var.name + "\n";
+                str.append("-").append(var.type).append(" ").append(var.name).append("\n");
             }
         }
 
         if (methods != null){
-            str +=  "Functions\n";
+            str.append("Functions\n");
             for( Method func : methods){
-                str += "-" + func.type + " " +func.name + "\n";
+                str.append("-").append(func.type).append(" ").append(func.name).append("\n");
             }
         }
 
-        return str;
+        return str.toString();
     }
 
 

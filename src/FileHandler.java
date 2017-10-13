@@ -7,10 +7,10 @@ import java.io.IOException;
 /**
  * Created by USER on 11/18/2016.
  */
-public class FileHandler {
+class FileHandler {
 
 
-    public String load() throws IOException {//trying to upload new load function
+    public String load(){//trying to upload new load function
         JFrame parentFrame = new JFrame();
 
         JFileChooser fileChooser = new JFileChooser();
@@ -22,11 +22,11 @@ public class FileHandler {
         return load(f);
     }
 
-    public String load(File file) throws IOException {//trying to upload new load function
-        FileInputStream fin = null;
+    public String load(File file) {//trying to upload new load function
+        FileInputStream fin;
 
         int ch;
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         try {
             fin = new FileInputStream(file);
             while ((ch = fin.read()) != -1) {

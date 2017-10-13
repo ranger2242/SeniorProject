@@ -1,9 +1,9 @@
 /**
  * Created by Chris Cavazos on 10/8/2017.
  */
-public class MethodUsage extends Usage{
+class MethodUsage extends Usage{
 
-    Method method;
+    private Method method;
 
     public MethodUsage(Method method) {
         this.method = method;
