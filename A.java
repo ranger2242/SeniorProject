@@ -10,6 +10,18 @@ public class A{
 }
 
 public class B{
+
+    private class inner {
+        int innerVar1;
+        int innerVar2 = 5;
+
+        private String innerFunction(String qw){
+            return qw;
+        }
+
+    }
+
+
     A a = new A();
     public B(){
         a.fuck;

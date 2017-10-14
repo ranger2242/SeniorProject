@@ -35,30 +35,29 @@ class ExtractedClass {
         this.name = name;
         this.variables = variables;
         this.methods = methods;
-        this.code= code;
+        this.code = code;
     }
 
-    public String toString(){
+    public String toString() {
 
         StringBuilder str = new StringBuilder(name + "\n");
 
-        if(variables != null){
+        if (variables != null) {
             str.append("Variables\n");
-            for( Variable var : variables){
+            for (Variable var : variables) {
                 str.append("-").append(var.type).append(" ").append(var.name).append("\n");
             }
         }
 
-        if (methods != null){
+        if (methods != null) {
             str.append("Functions\n");
-            for( Method func : methods){
+            for (Method func : methods) {
                 str.append("-").append(func.type).append(" ").append(func.name).append("\n");
             }
         }
 
         return str.toString();
     }
-
 
     public ArrayList<Variable> getVariables() {
         return variables;

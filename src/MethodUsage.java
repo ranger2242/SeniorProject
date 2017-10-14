@@ -1,7 +1,7 @@
 /**
  * Created by Chris Cavazos on 10/8/2017.
  */
-class MethodUsage extends Usage{
+class MethodUsage extends Usage {
 
     private Method method;
 
@@ -10,7 +10,6 @@ class MethodUsage extends Usage{
     }
 
     public Method getMethod() {
-
         return method;
     }
 
