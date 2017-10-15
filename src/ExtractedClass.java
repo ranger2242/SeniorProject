@@ -6,6 +6,19 @@ class ExtractedClass {
     private ArrayList<Variable> variables = new ArrayList<>();
     private ArrayList<Method> methods = new ArrayList<>();
     private ArrayList<String> code = new ArrayList<>();
+    private ArrayList<ExtractedClass> classes = new ArrayList<>();
+
+    public void setVariables(ArrayList<Variable> variables) {
+        this.variables = variables;
+    }
+
+    public ArrayList<ExtractedClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(ArrayList<ExtractedClass> classes) {
+        this.classes = classes;
+    }
 
     public String getName() {
         return name;

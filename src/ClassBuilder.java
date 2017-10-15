@@ -16,20 +16,11 @@ class ClassBuilder {
         CompilationUnit cu = JavaParser.parse(listToLine(code));
         NodeList<TypeDeclaration<?>> classes = cu.getTypes();
 
-
         for (TypeDeclaration<?> cl : classes) {
 
             Main.out(cl.getName().asString());
 
-            //BEGIN find nested classes
-            ClassOrInterfaceDeclaration classAsDeclaration = (ClassOrInterfaceDeclaration) cl;
-            List<ClassOrInterfaceDeclaration> nestedClasses = classAsDeclaration.getChildNodesByType(ClassOrInterfaceDeclaration.class);
-
-            for (ClassOrInterfaceDeclaration nestedClass : nestedClasses) {
-                System.out.println("Class: " + nestedClass.getNameAsString() + " -> Nested: " + nestedClass.isNestedType());
-            }
-            //END find nested classes
-
+            findNests((ClassOrInterfaceDeclaration) cl);
 
             Main.out("Methods:");
             ArrayList<Method> methodList = MethodBuilder.parseClass(cl);
@@ -61,6 +52,17 @@ class ClassBuilder {
         return variables;
 
     }
+
+    public static void findNests( ClassOrInterfaceDeclaration classAsDeclaration ){
+        List<ClassOrInterfaceDeclaration> nestedClasses = classAsDeclaration.getChildNodesByType(ClassOrInterfaceDeclaration.class);
+
+        for (ClassOrInterfaceDeclaration nestedClass : nestedClasses) {
+            System.out.println("Class: " + nestedClass.getNameAsString() + " -> Nested: " + nestedClass.isNestedType());
+
+
+        }
+    }
+
 
     private static String listToLine(ArrayList<String> code) {
         StringBuilder in = new StringBuilder();
