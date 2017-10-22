@@ -3,6 +3,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /**
  * Created by USER on 11/18/2016.
@@ -41,6 +44,28 @@ class FileHandler {
         }
         return "error";
     }
+    public ExtractedPackage load(String path){
+       return load(path, new ExtractedPackage("root"));
+    }
+
+    public ExtractedPackage load(String path, ExtractedPackage e){
+        File folder = new File(path);
+        File[] listOfFiles = folder.listFiles();
+        for (int i = 0; i < listOfFiles.length; i++) {
+            if (listOfFiles[i].isFile() &&listOfFiles[i].getName().endsWith(".java") ) {
+                System.out.println("File " + listOfFiles[i].getName());
+            } else if (listOfFiles[i].isDirectory()) {
+                e.addPackage(load(path+"\\"+listOfFiles[i].getName(), new ExtractedPackage(listOfFiles[i].getName())));
+                System.out.println("Directory " + listOfFiles[i].getName());
+            }
+        }
+        ArrayList<String> paths = new ArrayList<>();
+        ArrayList<File> f= Arrays.asList(listOfFiles).stream().filter(x-> x.getAbsolutePath().endsWith(".java")).collect(Collectors.toCollection(ArrayList::new));
+        f.forEach(x->paths.add(x.getAbsolutePath()));
+        e.setClasses(paths);
+        return e;
+    }
+
 
 }
 

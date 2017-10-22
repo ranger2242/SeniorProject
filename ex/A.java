@@ -1,15 +1,20 @@
+import static java.utils.Random.ass;
 public class A{
     int fuck = 0;
+    boolean rossiswrong = false;
     int wooo(String ass){
         boolean inside;
         Object r = new Object();
+        for(int i=0;i<3;i++){
+            int green;
+        }
     }
     int peeeeee(int a,int b, int w, Object ruuu){
 
     }
 }
 
-public class B{
+public class B extends A{
 
     private class inner {
         int innerVar1;
@@ -17,6 +22,9 @@ public class B{
 
         private String innerFunction(String qw){
             return qw;
+        }
+        private class extra{
+            boolean red;
         }
 
     }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Main</OriginalElement>
+  <nodes>
+    <node x="515.0" y="133.0">ExtractedClass</node>
+    <node x="590.0" y="713.0">Variable</node>
+    <node x="316.5617615467239" y="36.76047261009666">Output</node>
+    <node x="0.0" y="527.0">ExtractedPackage</node>
+    <node x="1267.0" y="173.0">MethodUsage</node>
+    <node x="670.6229860365199" y="-70.516648764769">Method</node>
+    <node x="695.0" y="510.0">ClassBuilder</node>
+    <node x="379.0" y="445.0">Main</node>
+    <node x="920.0" y="670.0">MethodBuilder</node>
+    <node x="118.24919441460793" y="282.9731471535983">FileHandler</node>
+    <node x="607.0" y="1063.0">VariableUsage</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ExtractedClass" target="Main">
+      <point x="-11.902612193849869" y="0.0" />
+      <point x="-11.902612193849848" y="0.0" />
+    </edge>
+    <edge source="MethodBuilder" target="Method">
+      <point x="-4.983037007708617" y="-0.41151206520115124" />
+      <point x="-4.983037007708617" y="-0.41151206520116546" />
+    </edge>
+    <edge source="Main" target="Output">
+      <point x="10.906384366612656" y="0.0" />
+      <point x="10.906384366612663" y="0.0" />
+    </edge>
+    <edge source="ClassBuilder" target="Variable">
+      <point x="-5.2358478549387115" y="0.0" />
+      <point x="-5.235847854938722" y="0.0" />
+    </edge>
+    <edge source="ClassBuilder" target="Main">
+      <point x="0.0" y="-10.293145290736192" />
+      <point x="0.0" y="-10.293145290736192" />
+    </edge>
+    <edge source="VariableUsage" target="Variable">
+      <point x="5.009756106837927" y="0.0" />
+      <point x="5.009756106837941" y="0.0" />
+    </edge>
+    <edge source="Variable" target="Main">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Output" target="ExtractedClass">
+      <point x="4.849536290241041" y="1.217373307426783" />
+      <point x="4.849536290241041" y="1.2173733074267545" />
+    </edge>
+    <edge source="MethodBuilder" target="Variable">
+      <point x="1.3163197828915258" y="4.823619204411614" />
+      <point x="1.3163197828914974" y="4.823619204411614" />
+    </edge>
+    <edge source="Main" target="FileHandler">
+      <point x="7.836771156802399" y="0.0" />
+      <point x="7.836771156802456" y="0.0" />
+    </edge>
+    <edge source="ClassBuilder" target="MethodBuilder">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ClassBuilder" target="Method">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ExtractedClass" target="Method">
+      <point x="0.0" y="5.1252607457699355" />
+      <point x="0.0" y="5.125260745769921" />
+    </edge>
+    <edge source="Main" target="ExtractedPackage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="MethodUsage" target="Method">
+      <point x="-12.005746057607553" y="0.0" />
+      <point x="0.0" y="-5.4996381641136765" />
+    </edge>
+    <edge source="Method" target="Main">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="FileHandler" target="ExtractedPackage">
+      <point x="-5.411268199358005" y="0.0" />
+      <point x="-5.411268199358119" y="0.0" />
+    </edge>
+    <edge source="Main" target="ClassBuilder">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Output" target="Method">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Output" target="Main">
+      <point x="-10.906384366612656" y="0.0" />
+      <point x="-10.906384366612656" y="0.0" />
+    </edge>
+    <edge source="Method" target="Variable">
+      <point x="4.00352112217314" y="2.9952994214791744" />
+      <point x="4.003521122173147" y="2.99529942147916" />
+    </edge>
+    <edge source="ClassBuilder" target="ExtractedClass">
+      <point x="-11.024167568864712" y="0.0" />
+      <point x="-11.024167568864712" y="0.0" />
+    </edge>
+    <edge source="ExtractedClass" target="Variable">
+      <point x="4.960138643205958" y="-0.6300989130088794" />
+      <point x="4.960138643205955" y="-0.6300989130089079" />
+    </edge>
+    <edge source="Main" target="ExtractedClass">
+      <point x="11.902612193849876" y="0.0" />
+      <point x="11.902612193849876" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8432971014492754" x="430.6659505907626" y="502.0" />
+  <SelectedNodes>
+    <node>Method</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
