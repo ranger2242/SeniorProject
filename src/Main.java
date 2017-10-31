@@ -15,87 +15,48 @@ class Main {
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        String output;
+        Parser parser = new Parser(fileHandler.load("ex\\ex3"));
+        parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses()) ;
 
-        parsePackage(fileHandler.load("ex\\ex2"));
-
-        Output p = new Output(new ArrayList<>(parsedClasses));
         printAllClasses();
+
+        System.out.println();
     }
 
-    public static void parsePackage(ExtractedPackage e){
-        FileHandler fileHandler = new FileHandler();
-        String output;
-
-        for ( String s : e.getClasses() ){
-            output = fileHandler.load(new File(s));
-            output = output.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
-            ArrayList<String> scanned = formatCode(output);
-            ClassBuilder cb = new ClassBuilder(scanned, 1);
+    private static void printAllClasses(){
+        for (ExtractedClass extractedClass :  parsedClasses){
+            printSingleClass(extractedClass, 0);
         }
-        e.getPackages().forEach(x->parsePackage(x));
-        String a = "";
+
     }
 
-    private static ArrayList<String> formatCode(String output) {
-        ArrayList<String> scanned = new ArrayList<>(Arrays.asList(output.split("\r\n")));
-        for (int i = 0; i < scanned.size(); i++) {
-            scanned.set(i, scanned.get(i).replaceAll("<=", "@1@"));
-            scanned.set(i, scanned.get(i).replaceAll(">=", "@2@"));
-            scanned.set(i, scanned.get(i).replaceAll("!=", "@3@"));
-            scanned.set(i, scanned.get(i).replaceAll("==", "@4@"));
-            scanned.set(i, scanned.get(i).replaceAll("(?<=if)(.*?)(?=\\()", ""));
-
-
-            scanned.set(i, scanned.get(i).replaceAll("[(]", "( "));
-            scanned.set(i, scanned.get(i).replaceAll("=", " = "));
-            String[] s = scanned.get(i).split("\\s+");
-            ArrayList<String> list = new ArrayList<>(Arrays.asList(s));
-            list = removeWhiteSpace(list);
-            StringBuilder out = new StringBuilder();
-            for (String l : list) {
-                if (list.indexOf(l) < list.size() - 1) {
-                    out.append(l).append(" ");
-                } else
-                    out.append(l);
-
-            }
-
-            scanned.set(i, out.toString());
+    private static void printSingleClass(ExtractedClass extractedClass, int depth){
+        String indent = "";
+        for (int i =0; i < depth; i++){
+            indent += "    ";
         }
-        scanned = removeWhiteSpace(scanned);
-        return scanned;
-    }
+        String indent2 = indent + "    ";
+        String indent3 = indent2 + "    ";
 
-    static void printAllClasses() {
-        for (ExtractedClass e : parsedClasses) {
-            if (e.getDepth() == 1) {
-                e.print();
-                printChildren(e);
+        System.out.println(indent + "Class: " + extractedClass.getName());
+
+        System.out.println(indent2 + "Vars: ");
+        extractedClass.getVariables().forEach(x-> System.out.println(indent3 + x.toString()) );
+
+        System.out.println(indent2 + "Methods: ");
+        extractedClass.getMethods().forEach(x-> System.out.println(indent3 + x.getName() ));
+
+        System.out.println(indent2 + "Constructors: ");
+        extractedClass.getConstructors().forEach(x-> System.out.println(indent3 + x.getDescription() ));
+
+        if (extractedClass.getClasses().size() > 0) {
+            System.out.println(indent2 + "Nested Classes: ");
+            for (ExtractedClass e : extractedClass.getClasses()){
+                System.out.println(indent2 + "-----------");
+                printSingleClass(e, depth + 1);
+                System.out.println(indent2 + "-----------");
             }
         }
-    }
-
-    static void printChildren(ExtractedClass e){
-        for (ExtractedClass e1 : e.getClasses()) {
-            ExtractedClass e2 = getClassByParent(e1.getName(), e.getName());
-            if (e2 != null) {
-                e2.print();
-                printChildren(e2);
-            }
-        }
-    }
-
-    static ExtractedClass getClassByParent(String cl, String parent) {
-        for (ExtractedClass c : parsedClasses) {
-            if (c.getName().equals(cl) && c.getParent().equals(parent))
-                return c;
-        }
-        return null;
-    }
-
-    private static ArrayList<String> removeWhiteSpace(ArrayList<String> strings) {
-        return strings.stream().filter(x -> x.length() > 0).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static void out(String s) {

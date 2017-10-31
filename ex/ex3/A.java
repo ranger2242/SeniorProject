@@ -1,7 +1,15 @@
 import static java.utils.Random.ass;
 public class A{
     int fuck = 0;
+    public static enum fucks{
+        SHIT, SDFSD,SDFSDFSD,SDFSDFSDFSDFDSF
+    }
     boolean rossiswrong = false;
+
+    public A(int i){
+
+    }
+
     int wooo(String ass){
         boolean inside;
         Object r = new Object();
@@ -23,15 +31,24 @@ public class B extends A{
         private String innerFunction(String qw){
             return qw;
         }
-        private class extra{
+
+        private class Extra{
             boolean red;
         }
 
     }
 
 
+
+
+
     A a = new A();
+
     public B(){
         a.fuck;
+    }
+
+    public B(int a, double r,String blue){
+
     }
 }

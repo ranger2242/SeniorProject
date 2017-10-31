@@ -44,18 +44,18 @@ class FileHandler {
         }
         return "error";
     }
-    public ExtractedPackage load(String path){
-       return load(path, new ExtractedPackage("root"));
+    public ExtractedDir load(String path){
+       return load(path, new ExtractedDir("root"));
     }
 
-    public ExtractedPackage load(String path, ExtractedPackage e){
+    public ExtractedDir load(String path, ExtractedDir e){
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
         for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].isFile() &&listOfFiles[i].getName().endsWith(".java") ) {
                 System.out.println("File " + listOfFiles[i].getName());
             } else if (listOfFiles[i].isDirectory()) {
-                e.addPackage(load(path+"\\"+listOfFiles[i].getName(), new ExtractedPackage(listOfFiles[i].getName())));
+                e.addPackage(load(path+"\\"+listOfFiles[i].getName(), new ExtractedDir(listOfFiles[i].getName())));
                 System.out.println("Directory " + listOfFiles[i].getName());
             }
         }

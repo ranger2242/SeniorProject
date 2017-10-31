@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/A.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GraphPanel.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/ClassBuilder.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/ClassBuilder.class" />
+    <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="REFACTORING">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Constructor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Parser.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ex/A.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/ClassBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/MethodBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ClassBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ExtractedPackage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MethodBuilder.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/ExtractedClass.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/ExtractedClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/FileHandler.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/FileHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/Main.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/Method.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/Method.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/MethodBuilder.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/MethodBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/Variable.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/Variable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Chris.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Chris.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_core_3_4_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_core_3_4_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AntiPatternFinder.iml" afterPath="$PROJECT_DIR$/AntiPatternFinder.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClassBuilder.java" afterPath="$PROJECT_DIR$/src/ClassBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExtractedClass.java" afterPath="$PROJECT_DIR$/src/ExtractedClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileHandler.java" afterPath="$PROJECT_DIR$/src/FileHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Method.java" afterPath="$PROJECT_DIR$/src/Method.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MethodBuilder.java" afterPath="$PROJECT_DIR$/src/MethodBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MethodUsage.java" afterPath="$PROJECT_DIR$/src/MethodUsage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Usage.java" afterPath="$PROJECT_DIR$/src/Usage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Variable.java" afterPath="$PROJECT_DIR$/src/Variable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VariableUsage.java" afterPath="$PROJECT_DIR$/src/VariableUsage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/AntiPatternProject/target/" />
@@ -40,38 +45,72 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#Main#0" expanded="false" />
+                <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
+                <element signature="method#printSingleClass#0;class#Main#0" expanded="false" />
+                <element signature="e#2098#2099#0" expanded="true" />
+                <element signature="e#2135#2136#0" expanded="true" />
+                <element signature="e#2176#2177#0" expanded="true" />
+                <element signature="e#2211#2212#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="A.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex/ex3/A.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="809">
+              <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+              <folding>
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ABSTRACT.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex/ABSTRACT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Output.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Output.java">
+      <file leaf-file-name="Constructor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Constructor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="450">
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setConstructorDeclaration#0;class#Constructor#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MethodBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MethodBuilder.java">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MethodUsage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MethodUsage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="350">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding>
+                <element signature="method#parsePackage#0;class#Parser#0" expanded="false" />
+                <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
+                <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
+                <element signature="method#formatCode#0;class#Parser#0" expanded="false" />
+                <element signature="method#listToLine#0;class#Parser#0" expanded="false" />
+                <element signature="method#removeWhiteSpace#0;class#Parser#0" expanded="false" />
+                <element signature="method#setExtractedClasses#0;class#Parser#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,19 +118,13 @@
       <file leaf-file-name="Method.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Variable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Variable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="425">
+              <caret line="59" column="47" lean-forward="true" selection-start-line="59" selection-start-column="47" selection-end-line="61" selection-end-column="58" />
+              <folding>
+                <element signature="method#extractInstance#0;class#Method#0" expanded="false" />
+                <element signature="method#parseOperations#0;class#Method#0" expanded="false" />
+                <element signature="method#print#0;class#Method#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,21 +132,36 @@
       <file leaf-file-name="FileHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="908">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExtractedDir.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ExtractedDir.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#ExtractedDir#0;class#ExtractedDir#0" expanded="false" />
+                <element signature="method#ExtractedDir#2;class#ExtractedDir#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClassBuilder.java">
+      <file leaf-file-name="Enum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Enum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1048">
-              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="250">
+              <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+              <folding>
+                <element signature="method#Enum#0;class#Enum#0" expanded="false" />
+                <element signature="method#print#0;class#Enum#0" expanded="false" />
+                <element signature="method#getTypes#0;class#Enum#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,14 +169,39 @@
       <file leaf-file-name="ExtractedClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="603">
+              <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+              <folding>
+                <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findMethods#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#toString#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="e#5606#5607#0" expanded="true" />
+                <element signature="e#5640#5641#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>findVariables</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,11 +215,37 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/ExtractedClass.java" />
+        <option value="$PROJECT_DIR$/A.java" />
+        <option value="$PROJECT_DIR$/src/ParseClass.java" />
+        <option value="$PROJECT_DIR$/HeightMap.java" />
+        <option value="$PROJECT_DIR$/src/HeightMap.java" />
+        <option value="$PROJECT_DIR$/src/ExtactedPackage.java" />
+        <option value="$PROJECT_DIR$/src/FileHandler.java" />
+        <option value="$PROJECT_DIR$/ex/ex2/ASS.java" />
+        <option value="$PROJECT_DIR$/ex/ass.txt" />
+        <option value="$PROJECT_DIR$/src/Output.java" />
+        <option value="$PROJECT_DIR$/src/ExtractedPackage.java" />
+        <option value="$PROJECT_DIR$/ex/A.java" />
+        <option value="$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/body/Parameter.class" />
+        <option value="$PROJECT_DIR$/src/MethodBuilder.java" />
+        <option value="$PROJECT_DIR$/src/Method.java" />
+        <option value="$PROJECT_DIR$/src/Variable.java" />
+        <option value="$PROJECT_DIR$/src/Enum.java" />
         <option value="$PROJECT_DIR$/src/ClassBuilder.java" />
+        <option value="$PROJECT_DIR$/src/ExtractedDir.java" />
+        <option value="$PROJECT_DIR$/src/Parser.java" />
+        <option value="$PROJECT_DIR$/src/Constructor.java" />
+        <option value="$PROJECT_DIR$/ex/ex3/A.java" />
+        <option value="$PROJECT_DIR$/src/ExtractedClass.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -176,6 +275,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
@@ -188,19 +289,55 @@
             <path>
               <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ex" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ex" type="462c0819:PsiDirectoryNode" />
+              <item name="ex2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ex" type="462c0819:PsiDirectoryNode" />
+              <item name="ex3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="SearchEverywhereHistoryKey" value="class&#9;PSI&#9;JAVA://ClassBuilder&#10;met&#9;FILE&#9;file://C:/Users/Chris/Desktop/SeniorProject-master/src/MethodBuilder.java&#10;var&#9;FILE&#9;file://C:/Users/Chris/Desktop/SeniorProject-master/src/Variable.java&#10;file&#9;FILE&#9;file://C:/Users/Chris/Desktop/SeniorProject-master/src/FileHandler.java&#10;varia&#9;FILE&#9;file://C:/Users/Chris/Desktop/SeniorProject-master/src/Variable.java&#10;meth&#9;PSI&#9;JAVA://Method" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Desktop\SeniorProject\ex" />
+      <recent name="C:\Users\Chris\Desktop\SeniorProject-master" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Desktop\SeniorProject\ex\ex3" />
+      <recent name="C:\Users\Chris\Desktop\SeniorProject-master\ex" />
+      <recent name="C:\Users\Chris\Desktop\SeniorProject-master\ex\ex2" />
+      <recent name="C:\Users\Chris\Desktop\SeniorProject-master" />
+      <recent name="C:\Users\Chris\Desktop\SeniorProject-master\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -319,6 +456,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="" />
@@ -326,85 +466,274 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508085475479</updated>
+      <workItem from="1508108368219" duration="4226000" />
+      <workItem from="1508112665331" duration="11261000" />
+      <workItem from="1508172622971" duration="780000" />
+      <workItem from="1508262016157" duration="3947000" />
+      <workItem from="1508360961246" duration="8000" />
+      <workItem from="1508381602590" duration="2590000" />
+      <workItem from="1508384415784" duration="2746000" />
+      <workItem from="1508387354536" duration="89000" />
+      <workItem from="1508387566694" duration="407000" />
+      <workItem from="1508430806811" duration="2168000" />
+      <workItem from="1508510774486" duration="75000" />
+      <workItem from="1509290096430" duration="6662000" />
+      <workItem from="1509298264067" duration="392000" />
+      <workItem from="1509471955738" duration="119000" />
+      <workItem from="1509476194665" duration="9767000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="45237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6205493" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27568668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48830113" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="REFACTORING" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTORING" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
+          <folding>
+            <element signature="method#parsePackage#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
+            <element signature="method#formatCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#listToLine#0;class#Parser#0" expanded="false" />
+            <element signature="method#removeWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#setExtractedClasses#0;class#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="52" />
+        <state relative-caret-position="506">
+          <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
+            <element signature="method#printSingleClass#0;class#Main#0" expanded="false" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Variable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex/Xbox360Pad.java" />
+    <entry file="file://$PROJECT_DIR$/src/MethodBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1408">
+          <caret line="74" column="74" lean-forward="false" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="946">
+          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#parsePackage#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
+            <element signature="method#formatCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#listToLine#0;class#Parser#0" expanded="false" />
+            <element signature="method#removeWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#setExtractedClasses#0;class#Parser#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
+            <element signature="method#printSingleClass#0;class#Main#0" expanded="false" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex/ex3/A.java" />
+    <entry file="file://$PROJECT_DIR$/src/MethodBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="50" column="87" lean-forward="false" selection-start-line="50" selection-start-column="87" selection-end-line="50" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2486">
+          <caret line="164" column="22" lean-forward="false" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="264">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findMethods#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#toString#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="e#5606#5607#0" expanded="true" />
+            <element signature="e#5640#5641#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClassBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="198">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="method#parsePackage#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
+            <element signature="method#formatCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#listToLine#0;class#Parser#0" expanded="false" />
+            <element signature="method#removeWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#setExtractedClasses#0;class#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="52" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
+            <element signature="method#printSingleClass#0;class#Main#0" expanded="false" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findMethods#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#toString#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="e#5606#5607#0" expanded="true" />
+            <element signature="e#5640#5641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="method#parsePackage#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
+            <element signature="method#formatCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#listToLine#0;class#Parser#0" expanded="false" />
+            <element signature="method#removeWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#setExtractedClasses#0;class#Parser#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -412,7 +741,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
+            <element signature="method#printSingleClass#0;class#Main#0" expanded="false" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -451,44 +788,255 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileHandler.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/Node.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="211">
+          <caret line="164" column="22" lean-forward="false" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
+    <entry file="file://$PROJECT_DIR$/src/ParseClass.java" />
+    <entry file="file://$PROJECT_DIR$/ex/ex2/HeightMap.java" />
+    <entry file="file://$PROJECT_DIR$/ex/ass.txt" />
+    <entry file="uml://JAVA/Main">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Main</OriginalElement>
+          <nodes>
+            <node x="197.67577089577088" y="119.0">ExtractedClass</node>
+            <node x="383.43424908424913" y="0.0">Variable</node>
+            <node x="186.49807692307695" y="228.0">Output</node>
+            <node x="2.750000000000057" y="119.0">ExtractedPackage</node>
+            <node x="340.49807692307695" y="525.0">MethodUsage</node>
+            <node x="356.49807692307695" y="446.0">Method</node>
+            <node x="303.49807692307695" y="228.0">ClassBuilder</node>
+            <node x="138.49807692307695" y="347.0">Main</node>
+            <node x="390.3314102564102" y="119.0">MethodBuilder</node>
+            <node x="538.3314102564102" y="119.0">VariableUsage</node>
+            <node x="0.0" y="228.0">FileHandler</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="ClassBuilder" target="Method">
+              <point x="42.0" y="14.5" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="ExtractedClass" target="Method">
+              <point x="6.149999999999977" y="14.5" />
+              <point x="265.32577089577086" y="208.0" />
+              <point x="282.99807692307695" y="208.0" />
+              <point x="282.99807692307695" y="406.0" />
+              <point x="381.49807692307695" y="406.0" />
+              <point x="-20.0" y="-14.5" />
+            </edge>
+            <edge source="Main" target="ExtractedPackage">
+              <point x="-23.076923076923066" y="-14.5" />
+              <point x="152.92115384615389" y="307.0" />
+              <point x="125.54325840825848" y="307.0" />
+              <point x="125.54325840825848" y="208.0" />
+              <point x="119.41666666666671" y="208.0" />
+              <point x="46.66666666666666" y="14.5" />
+            </edge>
+            <edge source="ExtractedClass" target="Main">
+              <point x="-43.05000000000001" y="14.5" />
+              <point x="216.12577089577087" y="188.0" />
+              <point x="170.22884615384618" y="188.0" />
+              <point x="-5.769230769230774" y="-14.5" />
+            </edge>
+            <edge source="MethodBuilder" target="Method">
+              <point x="0.0" y="14.5" />
+              <point x="453.8314102564102" y="208.0" />
+              <point x="469.99807692307695" y="208.0" />
+              <point x="469.99807692307695" y="396.0" />
+              <point x="411.49807692307695" y="396.0" />
+              <point x="10.0" y="-14.5" />
+            </edge>
+            <edge source="Main" target="Output">
+              <point x="5.769230769230774" y="-14.5" />
+              <point x="181.76730769230772" y="277.0" />
+              <point x="197.24807692307695" y="277.0" />
+              <point x="-32.25" y="14.5" />
+            </edge>
+            <edge source="MethodUsage" target="Method">
+              <point x="-30.5" y="-14.5" />
+              <point x="370.99807692307695" y="500.0" />
+              <point x="378.99807692307695" y="500.0" />
+              <point x="-22.5" y="14.5" />
+            </edge>
+            <edge source="Method" target="Main">
+              <point x="-40.0" y="-14.5" />
+              <point x="361.49807692307695" y="426.0" />
+              <point x="175.99807692307695" y="426.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="ClassBuilder" target="Variable">
+              <point x="28.0" y="-14.5" />
+              <point x="387.49807692307695" y="208.0" />
+              <point x="379.8314102564102" y="208.0" />
+              <point x="379.8314102564102" y="89.0" />
+              <point x="420.25243090243094" y="89.0" />
+              <point x="-8.181818181818187" y="14.5" />
+            </edge>
+            <edge source="FileHandler" target="ExtractedPackage">
+              <point x="-27.0" y="-14.5" />
+              <point x="-46.666666666666664" y="14.5" />
+            </edge>
+            <edge source="ClassBuilder" target="Main">
+              <point x="14.0" y="14.5" />
+              <point x="373.49807692307695" y="327.0" />
+              <point x="210.61346153846156" y="327.0" />
+              <point x="34.61538461538461" y="-14.5" />
+            </edge>
+            <edge source="VariableUsage" target="Variable">
+              <point x="-30.5" y="-14.5" />
+              <point x="568.8314102564102" y="79.0" />
+              <point x="452.9797036297037" y="79.0" />
+              <point x="24.54545454545456" y="14.5" />
+            </edge>
+            <edge source="Variable" target="Main">
+              <point x="-40.909090909090935" y="14.5" />
+              <point x="387.5251581751582" y="49.0" />
+              <point x="153.25000000000003" y="49.0" />
+              <point x="153.25000000000003" y="297.0" />
+              <point x="158.69038461538466" y="297.0" />
+              <point x="-17.307692307692292" y="-14.5" />
+            </edge>
+            <edge source="Main" target="ClassBuilder">
+              <point x="28.84615384615384" y="-14.5" />
+              <point x="204.8442307692308" y="317.0" />
+              <point x="345.49807692307695" y="317.0" />
+              <point x="-14.0" y="14.5" />
+            </edge>
+            <edge source="Output" target="ExtractedClass">
+              <point x="21.49999999999997" y="-14.5" />
+              <point x="250.99807692307692" y="208.0" />
+              <point x="253.02577089577088" y="208.0" />
+              <point x="-6.150000000000006" y="14.5" />
+            </edge>
+            <edge source="Output" target="Method">
+              <point x="32.24999999999997" y="14.5" />
+              <point x="261.74807692307695" y="297.0" />
+              <point x="250.8507708957709" y="297.0" />
+              <point x="250.8507708957709" y="416.0" />
+              <point x="371.49807692307695" y="416.0" />
+              <point x="-30.0" y="-14.5" />
+            </edge>
+            <edge source="MethodBuilder" target="Variable">
+              <point x="31.75" y="-14.5" />
+              <point x="485.5814102564102" y="99.0" />
+              <point x="436.6160672660673" y="99.0" />
+              <point x="8.181818181818187" y="14.5" />
+            </edge>
+            <edge source="Output" target="Main">
+              <point x="10.75" y="14.5" />
+              <point x="240.24807692307695" y="297.0" />
+              <point x="193.30576923076924" y="297.0" />
+              <point x="17.307692307692292" y="-14.5" />
+            </edge>
+            <edge source="Method" target="Variable">
+              <point x="40.0" y="-14.5" />
+              <point x="441.49807692307695" y="426.0" />
+              <point x="670.8314102564102" y="426.0" />
+              <point x="670.8314102564102" y="59.0" />
+              <point x="469.34333999334007" y="59.0" />
+              <point x="40.909090909090935" y="14.5" />
+            </edge>
+            <edge source="ClassBuilder" target="ExtractedClass">
+              <point x="-46.666666666666686" y="-14.5" />
+              <point x="312.8314102564102" y="188.0" />
+              <point x="289.9257708957709" y="188.0" />
+              <point x="30.75" y="14.5" />
+            </edge>
+            <edge source="Main" target="FileHandler">
+              <point x="-34.61538461538461" y="-14.5" />
+              <point x="141.38269230769234" y="327.0" />
+              <point x="27.0" y="327.0" />
+              <point x="-27.0" y="14.5" />
+            </edge>
+            <edge source="ExtractedClass" target="Variable">
+              <point x="30.75" y="-14.5" />
+              <point x="289.9257708957709" y="69.0" />
+              <point x="403.88879453879457" y="69.0" />
+              <point x="-24.54545454545456" y="14.5" />
+            </edge>
+            <edge source="Main" target="ExtractedClass">
+              <point x="-11.538461538461547" y="-14.5" />
+              <point x="164.4596153846154" y="178.0" />
+              <point x="203.8257708957709" y="178.0" />
+              <point x="-55.349999999999994" y="14.5" />
+            </edge>
+            <edge source="ClassBuilder" target="MethodBuilder">
+              <point x="46.666666666666686" y="-14.5" />
+              <point x="406.1647435897436" y="208.0" />
+              <point x="411.49807692307695" y="208.0" />
+              <point x="-42.333333333333314" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="79.0" y="103.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Main.png" />
+    <entry file="file://$PROJECT_DIR$/docs/Main2.png" />
+    <entry file="file://$PROJECT_DIR$/docs/Main.uml" />
+    <entry file="file://$PROJECT_DIR$/ex/ex2/ASS.java" />
+    <entry file="file://$PROJECT_DIR$/ex/GraphPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClassBuilder.java">
+    <entry file="file://$PROJECT_DIR$/ex/MapState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex/Xbox360Pad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/body/VariableDeclarator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="58" column="88" lean-forward="true" selection-start-line="58" selection-start-column="88" selection-end-line="58" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/body/Parameter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="50" column="19" lean-forward="false" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Output.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="775">
+          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MethodBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="425">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -501,79 +1049,221 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Method.java">
+    <entry file="file://$PROJECT_DIR$/src/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="400">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="method#Variable#0;class#Variable#0" expanded="false" />
+            <element signature="method#print#0;class#Variable#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="908">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Variable.java">
+    <entry file="file://$PROJECT_DIR$/src/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="59" column="47" lean-forward="true" selection-start-line="59" selection-start-column="47" selection-end-line="61" selection-end-column="58" />
+          <folding>
+            <element signature="method#extractInstance#0;class#Method#0" expanded="false" />
+            <element signature="method#parseOperations#0;class#Method#0" expanded="false" />
+            <element signature="method#print#0;class#Method#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding>
+            <element signature="method#Enum#0;class#Enum#0" expanded="false" />
+            <element signature="method#print#0;class#Enum#0" expanded="false" />
+            <element signature="method#getTypes#0;class#Enum#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExtractedDir.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding>
+            <element signature="method#ExtractedDir#0;class#ExtractedDir#0" expanded="false" />
+            <element signature="method#ExtractedDir#2;class#ExtractedDir#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex/ex3/A.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+          <folding>
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex/ABSTRACT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="method#parsePackage#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
+            <element signature="method#formatCode#0;class#Parser#0" expanded="false" />
+            <element signature="method#listToLine#0;class#Parser#0" expanded="false" />
+            <element signature="method#removeWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#setExtractedClasses#0;class#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setConstructorDeclaration#0;class#Constructor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+          <folding>
+            <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findMethods#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#toString#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="e#5606#5607#0" expanded="true" />
+            <element signature="e#5640#5641#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
+            <element signature="method#printSingleClass#0;class#Main#0" expanded="false" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
-  <component name="simpleUML.UMLToolWindowPlugin">
-    <General>
-      <option name="birdViewUpdateDelay" value="2000" />
-      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
-    </General>
-    <Classdiagram>
-      <option name="diagramTitleFont" value="SansSerif,1,12" />
-      <option name="diagramFont" value="SansSerif,0,10" />
-      <option name="defaultFieldsExpanded" value="false" />
-      <option name="defaultContructorsExpanded" value="false" />
-      <option name="defaultMethodsExpanded" value="false" />
-      <option name="showParameters" value="true" />
-      <option name="showTooltip" value="true" />
-      <option name="showReturnValues" value="true" />
-      <option name="longModifier" value="true" />
-      <option name="implementsBehaviour" value="1" />
-      <option name="extendsBehaviour" value="1" />
-      <option name="compartmentBehaviour" value="1" />
-      <option name="interfaceBackgroundColor" value="-6494306" />
-      <option name="abstractClassBackgroundColor" value="-1580132" />
-      <option name="classBackgroundColor" value="-6508057" />
-      <option name="diagramBackgroundColor" value="-1" />
-      <option name="useAntialiasedConnectors" value="true" />
-      <option name="quickSourceLinkColor" value="-16776961" />
-      <option name="quickDiagramLinkColor" value="-8454144" />
-      <option name="drawDecorations" value="false" />
-      <option name="hideFieldList" value="" />
-      <option name="showFieldList" value="" />
-      <option name="hideConstructorList" value="" />
-      <option name="showConstructorList" value="" />
-      <option name="hideMethodList" value="" />
-      <option name="showMethodList" value="" />
-      <option name="minimumFigureSize" value="0,0" />
-    </Classdiagram>
-    <Dependencydiagram>
-      <option name="diagramTitleFont" value="SansSerif,1,12" />
-      <option name="diagramFont" value="SansSerif,0,10" />
-      <option name="diagramBackgroundColor" value="-1" />
-      <option name="useAntialiasedConnectors" value="true" />
-      <option name="packageNameCompressionLevel" value="0" />
-    </Dependencydiagram>
-    <Packagediagram>
-      <option name="diagramTitleFont" value="SansSerif,0,12" />
-      <option name="diagramFont" value="SansSerif,0,10" />
-      <option name="packageBackgroundColor" value="-4144960" />
-      <option name="diagramBackgroundColor" value="-1" />
-      <option name="useAntialiasedConnectors" value="true" />
-      <option name="packageNameCompressionLevel" value="2" />
-    </Packagediagram>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>json-20090211</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>AntiPatternFinder</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.github.javaparser:javaparser-core:3.4.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

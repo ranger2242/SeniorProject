@@ -1,0 +1,97 @@
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.NodeList;
+import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.TypeDeclaration;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+class Parser {
+
+    static ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
+
+    public Parser(ExtractedDir e){
+        parsePackage(e);
+    }
+
+    private static void parsePackage(ExtractedDir e) {
+        FileHandler fileHandler = new FileHandler();
+        String output;
+
+        for (String s : e.getClassPaths()) {
+            output = fileHandler.load(new File(s));
+            output = output.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
+            ArrayList<String> scanned = formatCode(output);
+
+            ArrayList<ExtractedClass> newClasses = parseCode(listToLine(scanned));
+            extractedClasses.addAll(newClasses);
+        }
+        e.getPackages().forEach(x -> parsePackage(x));
+    }
+
+    private static ArrayList<ExtractedClass> parseCode(String code){
+        ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
+        CompilationUnit cu = JavaParser.parse(code);
+        NodeList<TypeDeclaration<?>> classes = cu.getTypes();
+        for (TypeDeclaration<?> cl : classes) {
+            ExtractedClass c = new ExtractedClass(cl);
+            listOfClasses.add(new ExtractedClass(cl));
+        }
+        return listOfClasses;
+    }
+
+    private void printAllChildNodes(ClassOrInterfaceDeclaration cid) {
+        cid.getChildNodes().stream().forEach(x -> Main.out(x.getClass().toString()));
+    }
+
+
+    //Formatting Tools
+    private static ArrayList<String> formatCode(String output) {
+        ArrayList<String> scanned = new ArrayList<>(Arrays.asList(output.split("\r\n")));
+        for (int i = 0; i < scanned.size(); i++) {
+            scanned.set(i, scanned.get(i).replaceAll("(?<=if)(.*?)(?=\\()", ""));
+            String[] s = scanned.get(i).split("\\s+");
+            ArrayList<String> list = new ArrayList<>(Arrays.asList(s));
+            list = removeWhiteSpace(list);
+            StringBuilder out = new StringBuilder();
+            for (String l : list) {
+                if (list.indexOf(l) < list.size() - 1) {
+                    out.append(l).append(" ");
+                } else
+                    out.append(l);
+            }
+
+            scanned.set(i, out.toString());
+        }
+        scanned = removeWhiteSpace(scanned);
+        return scanned;
+    }
+
+    private static String listToLine(ArrayList<String> code) {
+        StringBuilder in = new StringBuilder();
+
+        for (String line : code) {
+            in.append(line).append("\r\n");
+        }
+        return in.toString();
+    }
+
+    private static ArrayList<String> removeWhiteSpace(ArrayList<String> strings) {
+        return strings.stream().filter(x -> x.length() > 0).collect(Collectors.toCollection(ArrayList::new));
+    }
+
+
+    //Setters And Getters
+    public ArrayList<ExtractedClass> getExtractedClasses() {
+        return extractedClasses;
+    }
+
+    public void setExtractedClasses(ArrayList<ExtractedClass> extractedClasses) {
+        this.extractedClasses = extractedClasses;
+    }
+
+
+}
