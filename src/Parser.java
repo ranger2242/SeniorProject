@@ -2,16 +2,19 @@ import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 class Parser {
 
-    static ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
+    private static ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
+    private static ArrayList<Enum> globalEnums = new ArrayList<>();
 
     public Parser(ExtractedDir e){
         parsePackage(e);
@@ -37,11 +40,29 @@ class Parser {
         CompilationUnit cu = JavaParser.parse(code);
         NodeList<TypeDeclaration<?>> classes = cu.getTypes();
         for (TypeDeclaration<?> cl : classes) {
-            ExtractedClass c = new ExtractedClass(cl);
-            listOfClasses.add(new ExtractedClass(cl));
+            if(!cl.isEnumDeclaration()){
+                ExtractedClass newClass = new ExtractedClass(cl);
+                listOfClasses.addAll(createClassList(newClass));
+            }else{
+                globalEnums.add(new Enum(cl.asEnumDeclaration()));
+            }
         }
         return listOfClasses;
     }
+
+
+    private static ArrayList<ExtractedClass> createClassList(ExtractedClass extractedClass){
+
+        ArrayList<ExtractedClass> list = new ArrayList<>();
+        list.add(extractedClass);
+
+        for(ExtractedClass r : extractedClass.getClasses()){
+            list.addAll(createClassList(r));
+        }
+        return list;
+    }
+
+
 
     private void printAllChildNodes(ClassOrInterfaceDeclaration cid) {
         cid.getChildNodes().stream().forEach(x -> Main.out(x.getClass().toString()));
@@ -91,6 +112,10 @@ class Parser {
 
     public void setExtractedClasses(ArrayList<ExtractedClass> extractedClasses) {
         this.extractedClasses = extractedClasses;
+    }
+
+    public static ArrayList<Enum> getGlobalEnums() {
+        return globalEnums;
     }
 
 

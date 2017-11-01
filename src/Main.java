@@ -12,46 +12,55 @@ class Main {
 
     public final static String div = "-----------------------------------------------";
     public static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
+    public static Set<Enum> globalEnums = new LinkedHashSet<>();
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
         Parser parser = new Parser(fileHandler.load("ex\\ex3"));
-        parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses()) ;
+        parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
+        globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
 
         printAllClasses();
 
         System.out.println();
     }
 
-    private static void printAllClasses(){
-        for (ExtractedClass extractedClass :  parsedClasses){
-            printSingleClass(extractedClass, 0);
+    private static void printAllClasses() {
+        for (ExtractedClass extractedClass : parsedClasses) {
+            if (extractedClass.getParent().equals("")) {
+                printSingleClass(extractedClass, 0);
+            }
         }
 
     }
 
-    private static void printSingleClass(ExtractedClass extractedClass, int depth){
+    private static void printSingleClass(ExtractedClass extractedClass, int depth) {
         String indent = "";
-        for (int i =0; i < depth; i++){
+        for (int i = 0; i < depth; i++) {
             indent += "    ";
         }
         String indent2 = indent + "    ";
         String indent3 = indent2 + "    ";
 
-        System.out.println(indent + "Class: " + extractedClass.getName());
+
+        if(extractedClass.isInterface()){
+            System.out.println(indent + "Interface: " + extractedClass.getName());
+        }else {
+            System.out.println(indent + "Class: " + extractedClass.getName());
+        }
 
         System.out.println(indent2 + "Vars: ");
-        extractedClass.getVariables().forEach(x-> System.out.println(indent3 + x.toString()) );
+        extractedClass.getVariables().forEach(x -> System.out.println(indent3 + x.toString()));
 
         System.out.println(indent2 + "Methods: ");
-        extractedClass.getMethods().forEach(x-> System.out.println(indent3 + x.getName() ));
+        extractedClass.getMethods().forEach(x -> System.out.println(indent3 + x.getName()));
 
         System.out.println(indent2 + "Constructors: ");
-        extractedClass.getConstructors().forEach(x-> System.out.println(indent3 + x.getDescription() ));
+        extractedClass.getConstructors().forEach(x -> System.out.println(indent3 + x.getDescription()));
 
         if (extractedClass.getClasses().size() > 0) {
             System.out.println(indent2 + "Nested Classes: ");
-            for (ExtractedClass e : extractedClass.getClasses()){
+            for (ExtractedClass e : extractedClass.getClasses()) {
                 System.out.println(indent2 + "-----------");
                 printSingleClass(e, depth + 1);
                 System.out.println(indent2 + "-----------");

@@ -1,4 +1,13 @@
 import static java.utils.Random.ass;
+
+enum test{
+    t,e,r,o
+}
+
+interface anInterface{
+    int r = 5;
+}
+
 public class A{
     int fuck = 0;
     public static enum fucks{

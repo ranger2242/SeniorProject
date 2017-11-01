@@ -17,7 +17,7 @@ class ExtractedClass {
     private ArrayList<ExtractedClass> classes = new ArrayList<>();
     private TypeDeclaration<?> typeObject = null;
     private ArrayList<Enum> enums = new ArrayList<>();
-
+    private boolean isInterface = false;
 
     //Constructors
     public ExtractedClass() {
@@ -37,8 +37,7 @@ class ExtractedClass {
         this.enums = findEnum(typeD.asClassOrInterfaceDeclaration());
         this.extensions = findInheritance(typeD.asClassOrInterfaceDeclaration());
         this.implementations = findInterface(typeD.asClassOrInterfaceDeclaration());
-
-
+        this.isInterface =  ((ClassOrInterfaceDeclaration) typeD).isInterface();
     }
 
 
@@ -99,18 +98,6 @@ class ExtractedClass {
             }
         }
         return classes;
-    }
-
-
-    boolean isInMainList(ExtractedClass e) {
-        boolean b = false;
-        Iterator<ExtractedClass> a = Main.parsedClasses.iterator();
-        while (a.hasNext()) {
-            if (a.next().equals(e)) {
-                b = true;
-            }
-        }
-        return b;
     }
 
     ArrayList<Enum> findEnum(ClassOrInterfaceDeclaration cid) {
@@ -256,6 +243,14 @@ class ExtractedClass {
 
     public void setConstructors(ArrayList<Constructor> constructors) {
         this.constructors = constructors;
+    }
+
+    public boolean isInterface() {
+        return isInterface;
+    }
+
+    public void setInterface(boolean anInterface) {
+        isInterface = anInterface;
     }
 
 }
