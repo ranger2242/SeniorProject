@@ -48,19 +48,19 @@ class FileHandler {
        return load(path, new ExtractedDir("root"));
     }
 
-    public ExtractedDir load(String path, ExtractedDir e){
+    private ExtractedDir load(String path, ExtractedDir e){
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile() &&listOfFiles[i].getName().endsWith(".java") ) {
-                System.out.println("File " + listOfFiles[i].getName());
-            } else if (listOfFiles[i].isDirectory()) {
-                e.addPackage(load(path+"\\"+listOfFiles[i].getName(), new ExtractedDir(listOfFiles[i].getName())));
-                System.out.println("Directory " + listOfFiles[i].getName());
+        for (File listOfFile : listOfFiles != null ? listOfFiles : new File[0]) {
+            if (listOfFile.isFile() && listOfFile.getName().endsWith(".java")) {
+                System.out.println("File " + listOfFile.getName());
+            } else if (listOfFile.isDirectory()) {
+                e.addPackage(load(path + "\\" + listOfFile.getName(), new ExtractedDir(listOfFile.getName())));
+                System.out.println("Directory " + listOfFile.getName());
             }
         }
         ArrayList<String> paths = new ArrayList<>();
-        ArrayList<File> f= Arrays.asList(listOfFiles).stream().filter(x-> x.getAbsolutePath().endsWith(".java")).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<File> f= Arrays.stream(listOfFiles).filter(x-> x.getAbsolutePath().endsWith(".java")).collect(Collectors.toCollection(ArrayList::new));
         f.forEach(x->paths.add(x.getAbsolutePath()));
         e.setClasses(paths);
         return e;

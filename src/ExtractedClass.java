@@ -5,6 +5,7 @@ import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
 import java.util.*;
 
+@SuppressWarnings("ALL")
 class ExtractedClass {
 
     private String name;
@@ -18,7 +19,7 @@ class ExtractedClass {
     private ArrayList<ExtractedClass> classes = new ArrayList<>();
     private TypeDeclaration<?> typeObject = null;
     private ArrayList<Enum> enums = new ArrayList<>();
-    private ArrayList<ImportDeclaration> imports = new ArrayList<>();
+    private final ArrayList<ImportDeclaration> imports = new ArrayList<>();
     private boolean isInterface = false;
 
     //Constructors
@@ -117,7 +118,7 @@ class ExtractedClass {
         return "";
     }
 
-    public static ArrayList<String> lineToList(String code) {
+    private static ArrayList<String> lineToList(String code) {
         ArrayList<String> list = new ArrayList<>();
         list.addAll(Arrays.asList(code.split("\r\n")));
         return list;
@@ -134,9 +135,9 @@ class ExtractedClass {
     }
 
     public void printClass( int depth) {
-        String indent = "";
+        StringBuilder indent = new StringBuilder();
         for (int i = 0; i < depth; i++) {
-            indent += "    ";
+            indent.append("    ");
         }
         String indent2 = indent + "    ";
         String indent3 = indent2 + "    ";
@@ -235,7 +236,7 @@ class ExtractedClass {
 
     public void setImports(NodeList<ImportDeclaration> imports) {
         this.imports.clear();
-        imports.forEach(x->this.imports.add(x));
+        this.imports.addAll(imports);
     }
 
     public void setMethods(ArrayList<Method> methods) {
@@ -266,7 +267,7 @@ class ExtractedClass {
         this.constructors = constructors;
     }
 
-    public boolean isInterface() {
+    private boolean isInterface() {
         return isInterface;
     }
 

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Chris Cavazos on 10/29/2017.
  */
-public class Enum {
+class Enum {
 
     private String name = "";
     private EnumDeclaration dec = new EnumDeclaration();
@@ -18,9 +18,9 @@ public class Enum {
     }
 
     public void print(String s2) {
-        String mod="";
+        StringBuilder mod= new StringBuilder();
         for(Modifier m : dec.getModifiers()){
-            mod+=m.asString()+" ";
+            mod.append(m.asString()).append(" ");
         }
         Main.out(s2 +mod+ name+":");
     }

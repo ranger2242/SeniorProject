@@ -1,22 +1,19 @@
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Created by Chris Cavazos on 10/1/2017.
  */
+@SuppressWarnings("ALL")
 class Main {
 
     public final static String div = "-----------------------------------------------";
-    public static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
-    public static Set<Enum> globalEnums = new LinkedHashSet<>();
+    private static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
+    private static Set<Enum> globalEnums = new LinkedHashSet<>();
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        Parser parser = new Parser(fileHandler.load("ex"));
+        Parser parser = new Parser(fileHandler.load("ex\\ex3"));
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
 

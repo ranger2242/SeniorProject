@@ -4,7 +4,7 @@ import com.github.javaparser.ast.body.VariableDeclarator;
 
 import java.util.ArrayList;
 
-public class Constructor {
+class Constructor {
 
     private ArrayList<Variable> params = new ArrayList<>();
     private ConstructorDeclaration constructorDeclaration;
@@ -39,19 +39,19 @@ public class Constructor {
     }
 
     public String getDescription() {
-        String a = constructorDeclaration.getName().asString() + "(";
+        StringBuilder a = new StringBuilder(constructorDeclaration.getName().asString() + "(");
 
 
         if ( params.size() > 0 ){
-            a += params.get(0).type + " " + params.get(0).name;
+            a.append(params.get(0).type).append(" ").append(params.get(0).name);
             for (int i = 1; i < params.size(); i++) {
-                a += ", " + params.get(i).type + " " + params.get(i).name;
+                a.append(", ").append(params.get(i).type).append(" ").append(params.get(i).name);
             }
         }
 
 
-        a += ")";
-        return a;
+        a.append(")");
+        return a.toString();
     }
 
 }

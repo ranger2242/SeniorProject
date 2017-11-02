@@ -5,9 +5,9 @@ import java.util.ArrayList;
  */
 public class ExtractedDir {
 
-    String name;
-    ArrayList<String> classPaths = new ArrayList<>();
-    ArrayList<ExtractedDir> packages = new ArrayList<>();
+    private String name;
+    private ArrayList<String> classPaths = new ArrayList<>();
+    private ArrayList<ExtractedDir> packages = new ArrayList<>();
 
     public ExtractedDir() {
 

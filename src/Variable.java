@@ -7,7 +7,7 @@ public class Variable {
 
     String name;
     String type;
-    EnumSet<Modifier> modifiers = null;
+    private EnumSet<Modifier> modifiers = null;
 
     public Variable(VariableDeclarator variableDeclarator, EnumSet<Modifier> modifiers) {
         this.name = variableDeclarator.getNameAsString();
@@ -16,9 +16,9 @@ public class Variable {
     }
 
     public void print(String s2) {
-        String mod = "";
+        StringBuilder mod = new StringBuilder();
         for (Modifier m : modifiers) {
-            mod += m.asString() + " ";
+            mod.append(m.asString()).append(" ");
         }
         Main.out(s2 + mod + toString());
 

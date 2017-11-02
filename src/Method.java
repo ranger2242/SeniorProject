@@ -14,12 +14,12 @@ import java.util.stream.Collectors;
 
 public class Method {
 
-    String name;
-    String type;
+    private String name;
+    private String type;
     private ArrayList<Variable> params = new ArrayList<>();
     private ArrayList<Variable> instanceVars = new ArrayList<>();
-    ArrayList<String> operations = new ArrayList<>();
-    MethodDeclaration md = null;
+    private ArrayList<String> operations = new ArrayList<>();
+    private MethodDeclaration md = null;
 
     public Method(MethodDeclaration method) {
         this.name = method.getNameAsString();
@@ -42,13 +42,13 @@ public class Method {
             }
         }
         try {
-            List<VariableDeclarationExpr> e = l.getChildNodesByType(VariableDeclarationExpr.class);
+            List<VariableDeclarationExpr> e = l != null ? l.getChildNodesByType(VariableDeclarationExpr.class) : null;
             for (VariableDeclarationExpr expr : e) {
                 VariableDeclarator v = expr.getVariables().get(0);
                 instance.add(new Variable(v, expr.getModifiers()));
             }
 
-        } catch (NullPointerException e) {
+        } catch (NullPointerException ignored) {
 
         }
         return instance;
@@ -75,12 +75,12 @@ public class Method {
         String s1 = "" + String.join("", Collections.nCopies(depth + 1, "\t"));
         String s2 = s1 + "\t";
 
-        String tag = String.join("", Collections.nCopies(depth, "\t"));
+        StringBuilder tag = new StringBuilder(String.join("", Collections.nCopies(depth, "\t")));
         for (Modifier m : md.getModifiers()) {
-            tag += m.asString() + " ";
+            tag.append(m.asString()).append(" ");
         }
-        tag += type + " " + name;
-        Main.out(tag);
+        tag.append(type).append(" ").append(name);
+        Main.out(tag.toString());
         if (params.size() > 0) {
             Main.out(s1 + "Parameters:");
             params.forEach(x -> Main.out(s2 + x.toString()));

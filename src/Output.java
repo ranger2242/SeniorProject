@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by Chris Cavazos on 10/18/2017.
  */
-public class Output {
+class Output {
     ArrayList<ExtractedClass> classes = new ArrayList<>();
 
     public Output(ArrayList<ExtractedClass> classes) {
@@ -27,7 +28,7 @@ public class Output {
             for (ExtractedClass c2 : classes) {
                 for (Method m : c1.getMethods()) {
                     for(String s: m.getOperations()) {
-                        if(s.contains(c2.getName()) && !known.contains(c2.getName()) && c1.getName() !=c2.getName()) {
+                        if(s.contains(c2.getName()) && !known.contains(c2.getName()) && !Objects.equals(c1.getName(), c2.getName())) {
                             Main.out(c1.getName() + " --> " + c2.getName());
                             known.add(c2.getName());
                         }

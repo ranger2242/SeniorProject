@@ -3,7 +3,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
-import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 import java.io.File;
@@ -14,7 +13,7 @@ import java.util.stream.Collectors;
 class Parser {
 
     private static ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
-    private static ArrayList<Enum> globalEnums = new ArrayList<>();
+    private static final ArrayList<Enum> globalEnums = new ArrayList<>();
 
     public Parser(ExtractedDir e){
         parseDirectory(e);
@@ -32,7 +31,7 @@ class Parser {
             ArrayList<ExtractedClass> newClasses = parseCode(listToLine(scanned));
             extractedClasses.addAll(newClasses);
         }
-        e.getPackages().forEach(x -> parseDirectory(x));
+        e.getPackages().forEach(this::parseDirectory);
     }
 
     private ArrayList<ExtractedClass> parseCode(String code){
@@ -66,7 +65,7 @@ class Parser {
     }
 
     private void printAllChildNodes(ClassOrInterfaceDeclaration cid) {
-        cid.getChildNodes().stream().forEach(x -> Main.out(x.getClass().toString()));
+        cid.getChildNodes().forEach(x -> Main.out(x.getClass().toString()));
     }
 
 
@@ -112,10 +111,10 @@ class Parser {
     }
 
     public void setExtractedClasses(ArrayList<ExtractedClass> extractedClasses) {
-        this.extractedClasses = extractedClasses;
+        Parser.extractedClasses = extractedClasses;
     }
 
-    public static ArrayList<Enum> getGlobalEnums() {
+    public ArrayList<Enum> getGlobalEnums() {
         return globalEnums;
     }
 
