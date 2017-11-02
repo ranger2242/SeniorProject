@@ -1,5 +1,7 @@
 import static java.utils.Random.ass;
 
+import static java.utils.Random.nextInt;
+
 enum test{
     t,e,r,o
 }
@@ -60,4 +62,8 @@ public class B extends A{
     public B(int a, double r,String blue){
 
     }
+}
+
+interface er{
+    int r = 5;
 }

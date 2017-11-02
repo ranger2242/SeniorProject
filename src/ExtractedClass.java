@@ -1,3 +1,5 @@
+import com.github.javaparser.ast.ImportDeclaration;
+import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
@@ -7,7 +9,6 @@ class ExtractedClass {
 
     private String name;
     private String parent = "";
-    private ArrayList<Variable> imports = new ArrayList<>();
     private ArrayList<Variable> variables = new ArrayList<>();
     private ArrayList<Constructor> constructors = new ArrayList<>();
     private ArrayList<Method> methods = new ArrayList<>();
@@ -17,6 +18,7 @@ class ExtractedClass {
     private ArrayList<ExtractedClass> classes = new ArrayList<>();
     private TypeDeclaration<?> typeObject = null;
     private ArrayList<Enum> enums = new ArrayList<>();
+    private ArrayList<ImportDeclaration> imports = new ArrayList<>();
     private boolean isInterface = false;
 
     //Constructors
@@ -38,6 +40,7 @@ class ExtractedClass {
         this.extensions = findInheritance(typeD.asClassOrInterfaceDeclaration());
         this.implementations = findInterface(typeD.asClassOrInterfaceDeclaration());
         this.isInterface =  ((ClassOrInterfaceDeclaration) typeD).isInterface();
+
     }
 
 
@@ -93,21 +96,20 @@ class ExtractedClass {
         ArrayList<ExtractedClass> classes = new ArrayList<>();
         for (ClassOrInterfaceDeclaration nestedClass : nestedClasses) {
             if(nestedClass.getParentNode().get().equals(classAsDeclaration)){
-                TypeDeclaration<?> n = nestedClass;
-                classes.add(new ExtractedClass(n));
+                classes.add(new ExtractedClass(nestedClass));
             }
         }
         return classes;
     }
 
-    ArrayList<Enum> findEnum(ClassOrInterfaceDeclaration cid) {
+    private ArrayList<Enum> findEnum(ClassOrInterfaceDeclaration cid) {
         ArrayList<Enum> e = new ArrayList<>();
         List<EnumDeclaration> d = cid.getChildNodesByType(EnumDeclaration.class);
         d.forEach(x -> e.add(new Enum(x)));
         return e;
     }
 
-    String findParent(TypeDeclaration<?> typeD) {
+    private String findParent(TypeDeclaration<?> typeD) {
         if (typeD.isNestedType()) {
             TypeDeclaration<?> a = (TypeDeclaration<?>) typeD.getParentNode().get();
             return a.getName().asString();
@@ -121,27 +123,6 @@ class ExtractedClass {
         return list;
     }
 
-    public String toString() {
-
-        StringBuilder str = new StringBuilder(name + "\n");
-
-        if (variables != null) {
-            str.append("Variables\n");
-            for (Variable var : variables) {
-                str.append("-").append(var.type).append(" ").append(var.name).append("\n");
-            }
-        }
-
-        if (methods != null) {
-            str.append("Functions\n");
-            for (Method func : methods) {
-                str.append("-").append(func.type).append(" ").append(func.name).append("\n");
-            }
-        }
-
-        return str.toString();
-    }
-
     public boolean equals(ExtractedClass e) {
         return this.name.equals(e.name) && this.parent.equals(e.parent);
     }
@@ -151,6 +132,45 @@ class ExtractedClass {
     private void printClasses(String s) {
         Main.out(s + name);
     }
+
+    public void printClass( int depth) {
+        String indent = "";
+        for (int i = 0; i < depth; i++) {
+            indent += "    ";
+        }
+        String indent2 = indent + "    ";
+        String indent3 = indent2 + "    ";
+
+        if(isInterface()){
+            System.out.println(indent + "Interface: " + getName());
+        }else {
+            System.out.println(indent + "Class: " + getName());
+        }
+
+
+        System.out.println(indent2 + "Imports");
+        imports.forEach(x -> System.out.println(indent3 + x.getName().asString()));
+
+
+        System.out.println(indent2 + "Vars: ");
+        variables.forEach(x -> System.out.println(indent3 + x.toString()));
+
+        System.out.println(indent2 + "Methods: ");
+        methods.forEach(x->x.print(depth + 1));
+
+        System.out.println(indent2 + "Constructors: ");
+        constructors.forEach(x -> System.out.println(indent3 + x.getDescription()));
+
+        if (classes.size() > 0) {
+            System.out.println(indent2 + "Nested Classes: ");
+            for (ExtractedClass e : getClasses()) {
+                System.out.println(indent2 + "-----------");
+                e.printClass( depth + 1);
+                System.out.println(indent2 + "-----------");
+            }
+        }
+    }
+
 
     //Setters And Getters
     public void setExtensions(ArrayList<String> extensions) {
@@ -197,7 +217,7 @@ class ExtractedClass {
         return variables;
     }
 
-    public ArrayList<Variable> getImports() {
+    public ArrayList<ImportDeclaration> getImports() {
         return imports;
     }
 
@@ -213,8 +233,9 @@ class ExtractedClass {
         this.variables = variables;
     }
 
-    public void setImports(ArrayList<Variable> imports) {
-        this.imports = imports;
+    public void setImports(NodeList<ImportDeclaration> imports) {
+        this.imports.clear();
+        imports.forEach(x->this.imports.add(x));
     }
 
     public void setMethods(ArrayList<Method> methods) {

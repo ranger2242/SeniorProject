@@ -1,5 +1,6 @@
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.EnumDeclaration;
@@ -8,7 +9,6 @@ import com.github.javaparser.ast.body.TypeDeclaration;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 class Parser {
@@ -17,10 +17,10 @@ class Parser {
     private static ArrayList<Enum> globalEnums = new ArrayList<>();
 
     public Parser(ExtractedDir e){
-        parsePackage(e);
+        parseDirectory(e);
     }
 
-    private static void parsePackage(ExtractedDir e) {
+    private void parseDirectory(ExtractedDir e) {
         FileHandler fileHandler = new FileHandler();
         String output;
 
@@ -32,26 +32,29 @@ class Parser {
             ArrayList<ExtractedClass> newClasses = parseCode(listToLine(scanned));
             extractedClasses.addAll(newClasses);
         }
-        e.getPackages().forEach(x -> parsePackage(x));
+        e.getPackages().forEach(x -> parseDirectory(x));
     }
 
-    private static ArrayList<ExtractedClass> parseCode(String code){
+    private ArrayList<ExtractedClass> parseCode(String code){
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
         CompilationUnit cu = JavaParser.parse(code);
         NodeList<TypeDeclaration<?>> classes = cu.getTypes();
+        NodeList<ImportDeclaration> imports = cu.getImports();
+
         for (TypeDeclaration<?> cl : classes) {
-            if(!cl.isEnumDeclaration()){
-                ExtractedClass newClass = new ExtractedClass(cl);
-                listOfClasses.addAll(createClassList(newClass));
-            }else{
+            if(cl.isEnumDeclaration()){
                 globalEnums.add(new Enum(cl.asEnumDeclaration()));
+            }else{
+                //Assumed a class or interface
+                ExtractedClass newClass = new ExtractedClass(cl);
+                newClass.setImports(imports);
+                listOfClasses.addAll(createClassList(newClass));
             }
         }
         return listOfClasses;
     }
 
-
-    private static ArrayList<ExtractedClass> createClassList(ExtractedClass extractedClass){
+    private ArrayList<ExtractedClass> createClassList(ExtractedClass extractedClass){
 
         ArrayList<ExtractedClass> list = new ArrayList<>();
         list.add(extractedClass);
@@ -61,8 +64,6 @@ class Parser {
         }
         return list;
     }
-
-
 
     private void printAllChildNodes(ClassOrInterfaceDeclaration cid) {
         cid.getChildNodes().stream().forEach(x -> Main.out(x.getClass().toString()));

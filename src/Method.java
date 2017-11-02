@@ -74,9 +74,8 @@ public class Method {
     public void print(int depth) {
         String s1 = "" + String.join("", Collections.nCopies(depth + 1, "\t"));
         String s2 = s1 + "\t";
-        String s3 = String.join("", Collections.nCopies(depth, "\t"));
 
-        String tag = s3;
+        String tag = String.join("", Collections.nCopies(depth, "\t"));
         for (Modifier m : md.getModifiers()) {
             tag += m.asString() + " ";
         }

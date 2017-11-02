@@ -16,7 +16,7 @@ class Main {
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        Parser parser = new Parser(fileHandler.load("ex\\ex3"));
+        Parser parser = new Parser(fileHandler.load("ex"));
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
 
@@ -28,45 +28,11 @@ class Main {
     private static void printAllClasses() {
         for (ExtractedClass extractedClass : parsedClasses) {
             if (extractedClass.getParent().equals("")) {
-                printSingleClass(extractedClass, 0);
-            }
-        }
-
-    }
-
-    private static void printSingleClass(ExtractedClass extractedClass, int depth) {
-        String indent = "";
-        for (int i = 0; i < depth; i++) {
-            indent += "    ";
-        }
-        String indent2 = indent + "    ";
-        String indent3 = indent2 + "    ";
-
-
-        if(extractedClass.isInterface()){
-            System.out.println(indent + "Interface: " + extractedClass.getName());
-        }else {
-            System.out.println(indent + "Class: " + extractedClass.getName());
-        }
-
-        System.out.println(indent2 + "Vars: ");
-        extractedClass.getVariables().forEach(x -> System.out.println(indent3 + x.toString()));
-
-        System.out.println(indent2 + "Methods: ");
-        extractedClass.getMethods().forEach(x -> System.out.println(indent3 + x.getName()));
-
-        System.out.println(indent2 + "Constructors: ");
-        extractedClass.getConstructors().forEach(x -> System.out.println(indent3 + x.getDescription()));
-
-        if (extractedClass.getClasses().size() > 0) {
-            System.out.println(indent2 + "Nested Classes: ");
-            for (ExtractedClass e : extractedClass.getClasses()) {
-                System.out.println(indent2 + "-----------");
-                printSingleClass(e, depth + 1);
-                System.out.println(indent2 + "-----------");
+               extractedClass.printClass(0);
             }
         }
     }
+
 
     public static void out(String s) {
         System.out.println(s);
