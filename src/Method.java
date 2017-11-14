@@ -6,10 +6,7 @@ import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Method {
@@ -69,6 +66,46 @@ public class Method {
         String code = md.getChildNodesByType(BlockStmt.class).toString();
         ArrayList<String> spCode = new ArrayList<>(Arrays.asList(code.split("\r\n")));
         operations = spCode.stream().filter(x -> x.contains(".") || x.contains(" new ")).collect(Collectors.toCollection(ArrayList::new));
+
+       /* try {
+            BlockStmt code = md.getBody().get();
+            for (Statement s : code.getStatements()) {
+                Main.out(s.toString());
+                for (Node n1 : s.getChildNodesByType(Method+CallExpr.class )) {
+                    List<NameExpr> names = n1.getChildNodesByType(NameExpr.class);
+                    List<SimpleName> meth = n1.getChildNodesByType(SimpleName.class);
+                    MethodCallExpr e=  n1 instanceof MethodCallExpr ? (MethodCallExpr) n1 : null;
+
+                    NodeList<Expression> list= e.getArguments();
+                    if(!e.getScope().equals(null)) {
+                        Main.outa(e.getScope().get().toString());
+                    }
+                    Main.outa(" "+e.getName().asString());
+                    Main.out("");
+                    for(Expression e1: list){
+                            e1.asNameExpr().
+                            Main.outa(e1.getScope().get().toString());
+
+                        Main.outa(" "+e.getName().asString());
+                        Main.out("");                    }
+                   *//* for (int i = 0; i < Math.max(names.size(), meth.size()); i++) {
+                        String s1 = "";
+                        String s2 = "";
+                        if (i < names.size())
+                            s1 = names.get(i).toString();
+                        if (i < meth.size())
+                            s2 = meth.get(i).asString();
+
+                        Main.out(s1 + " " + s2);
+
+                    }*//*
+                }
+            }
+
+
+            //operations.addAll(str);
+        } catch (NoSuchElementException e) {
+        }*/
     }
 
     public void print(int depth) {
@@ -122,5 +159,31 @@ public class Method {
 
     public ArrayList<String> getOperations() {
         return operations;
+    }
+
+    public void printAlt() {
+        String s = "";
+        EnumSet<Modifier> modifiers = md.getModifiers();
+        if (modifiers.contains(Modifier.PRIVATE) ) {
+            s += "-";
+        }
+        if( modifiers.contains(Modifier.PROTECTED)){
+            s += "#";
+        }
+        if( modifiers.contains(Modifier.PUBLIC)){
+            s += "+";
+        }
+
+
+        s += name + "(";
+        for (int i = 0; i < params.size(); i++) {
+            Variable v = params.get(i);
+            s += v.getType();
+            if (i < params.size() - 1) {
+                s += ", ";
+            }
+        }
+        s += "):" + type;
+        Main.out(s);
     }
 }

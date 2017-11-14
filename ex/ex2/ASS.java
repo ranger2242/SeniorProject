@@ -80,7 +80,7 @@ class Rectangle extends Shape {
     }
 
     // accessors for the width & height
-    int getWidth() {
+    public int getWidth() {
         return width; }
     int getHeight() {
         return height; }

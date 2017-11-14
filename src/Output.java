@@ -10,6 +10,8 @@ class Output {
     public Output(ArrayList<ExtractedClass> classes) {
         checkInheritence(classes);
         checkUses(classes);
+        Main.out("");
+        this.classes=classes;
     }
 
     private void checkInheritence(ArrayList<ExtractedClass> classes) {
@@ -20,6 +22,18 @@ class Output {
                 }
             }
         }
+    }
+
+    public void printAll(){
+        classes.forEach(x->printClass(x));
+    }
+
+    private void printClass(ExtractedClass e){
+        Main.out("class "+e.getName()+"{");
+        e.getVariables().forEach(x->x.printAlt());
+        e.getMethods().forEach(x->x.printAlt());
+        Main.out("}\n");
+
     }
 
     private void checkUses(ArrayList<ExtractedClass> classes) {

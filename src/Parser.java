@@ -34,7 +34,9 @@ class Parser {
         e.getPackages().forEach(this::parseDirectory);
     }
 
+
     private ArrayList<ExtractedClass> parseCode(String code){
+        code= code.replaceAll("\\(","\\( ");
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
         CompilationUnit cu = JavaParser.parse(code);
         NodeList<TypeDeclaration<?>> classes = cu.getTypes();

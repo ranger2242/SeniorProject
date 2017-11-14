@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -8,17 +9,18 @@ import java.util.Set;
 class Main {
 
     public final static String div = "-----------------------------------------------";
-    private static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
-    private static Set<Enum> globalEnums = new LinkedHashSet<>();
+    public static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
+    public static Set<Enum> globalEnums = new LinkedHashSet<>();
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        Parser parser = new Parser(fileHandler.load("ex\\ex3"));
+        Parser parser = new Parser(fileHandler.load("ex\\ex2"));
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
-
-        printAllClasses();
-
+        ArrayList<ExtractedClass> cl = new ArrayList<>(parsedClasses);
+     //   printAllClasses();
+        Output o = new Output(cl);
+        o.printAll();
         System.out.println();
     }
 

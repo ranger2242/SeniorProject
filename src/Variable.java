@@ -33,6 +33,21 @@ public class Variable {
         return name;
     }
 
+    public void printAlt(){
+        String s="";
+        if (modifiers.contains(Modifier.PRIVATE) ) {
+            s += "-";
+        }
+        if( modifiers.contains(Modifier.PROTECTED)){
+            s += "#";
+        }
+        if( modifiers.contains(Modifier.PUBLIC)){
+            s += "+";
+        }
+        s+=name+":"+type;
+        Main.out(s);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
