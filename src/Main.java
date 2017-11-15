@@ -18,9 +18,21 @@ class Main {
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
         ArrayList<ExtractedClass> cl = new ArrayList<>(parsedClasses);
-     //   printAllClasses();
-        Output o = new Output(cl);
-        o.printAll();
+//        printAllClasses();
+//        Output o = new Output(cl);
+//        o.printAll();
+
+
+        //Test list of matrices for pipeline
+        Pipeline pipeline = new Pipeline();
+        ArrayList<int[][]> list = new ArrayList<>();
+        int[][] array = {{1,3,5}, {3,2,9}, {8,8,8}};
+        list.add(array);
+
+        //Create json file for Python project
+        pipeline.createJSONFile(list);
+
+
         System.out.println();
     }
 
