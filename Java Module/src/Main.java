@@ -1,8 +1,8 @@
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
+//import Sock
 
 /**
  * Created by Chris Cavazos on 10/1/2017.
@@ -25,19 +25,19 @@ class Main {
 //        o.printAll();
 
 
-        //Test list of matrices for pipeline
-        Pipeline pipeline = new Pipeline();
-        ArrayList<int[][]> list = new ArrayList<>();
-        int[][] array = {{1,3,5}, {3,2,9}, {8,8,8}};
-        list.add(array);
 
+
+
+        System.out.println();
+    }
+
+    public static JSONObject initPipeline(ArrayList<int[][]> list){
         //Create json file for Python project
+        Pipeline pipeline = new Pipeline();
         pipeline.createJSONFile(list);
         pipeline.launchPython();
         JSONObject json = pipeline.readJSONFile("python_output", ".json");
-        System.out.println(json);
-
-        System.out.println();
+        return json;
     }
 
     private static void printAllClasses() {

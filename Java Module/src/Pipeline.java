@@ -25,7 +25,14 @@ public class Pipeline {
         }
 
         if (tmpFile.exists()){
-            System.out.println("FILE STILL BEING WRITTEN TO");
+            try {
+                System.out.println("FILE STILL BEING WRITTEN TO -- waiting -- ");
+                Thread.sleep(200);
+                return readJSONFile(fileName, extension);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             return null;
         }
 
