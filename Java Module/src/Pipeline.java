@@ -12,13 +12,20 @@ public class Pipeline {
 
     }
 
-    public JSONObject readJSONFile(String fileName){
+    public JSONObject readJSONFile(String fileName, String extension){
         String directory = getJSONDirectory();
         File folder = new File(directory);
-        File jsonFile = new File(folder + "\\" + fileName);
+        File jsonFile = new File(folder + "\\" + fileName + extension);
+        File tmpFile = new File(folder + "\\" + fileName + ".tmp");
+
 
         if ( !jsonFile.exists()){
             System.out.println("Can not find: " + jsonFile.getAbsolutePath());
+            return null;
+        }
+
+        if (tmpFile.exists()){
+            System.out.println("FILE STILL BEING WRITTEN TO");
             return null;
         }
 

@@ -1,6 +1,6 @@
 import json
 import sys
-
+import os
 
 # Prints JSON once read
 def printJSON(json):
@@ -30,11 +30,15 @@ def getProjectRootDirectory():
 def createOutputJSONFile(content):
     root = getProjectRootDirectory()
     jsonDirectory = root + "json/"
+    tmp = open(jsonDirectory + "python_output.tmp", "w")
+    tmp.close()
     file = open(jsonDirectory + "python_output.json", "w")
     file.write("{")
     file.write(content)
     file.write("}")
     file.close()
+    os.remove(jsonDirectory + "python_output.tmp")
+
 
 
 # Read from json file into a matrix
@@ -43,5 +47,27 @@ path = path + "\json\matrices.json"
 data = json.load(open(path))
 
 
-createOutputJSONFile("\"hello\" : \"world\"")
+def writeMatricesBackToJava(dataToWrite):
+    matrices = ""
+
+    for key in dataToWrite.keys():
+        matrices += "\"" +key + "\" : ["
+        for i in range(len(dataToWrite[key])):
+            matrices += "["
+            for j in range(len(dataToWrite[key][i])):
+                value = dataToWrite[key][j][i]
+                matrices += str(value)
+            matrices += "],"
+        matrices += "]"
+
+
+    matrices = matrices[:-2] + "]" #Remove last comma
+    return matrices
+
+
+j = "\"post\" : \"python\", " + writeMatricesBackToJava(data)
+createOutputJSONFile(j)
+
+
+# createOutputJSONFile("\"hello\" : \"there\"")
 

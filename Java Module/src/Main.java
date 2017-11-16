@@ -34,7 +34,7 @@ class Main {
         //Create json file for Python project
         pipeline.createJSONFile(list);
         pipeline.launchPython();
-        JSONObject json = pipeline.readJSONFile("python_output.json");
+        JSONObject json = pipeline.readJSONFile("python_output", ".json");
         System.out.println(json);
 
         System.out.println();
