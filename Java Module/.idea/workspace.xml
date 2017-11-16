@@ -36,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
@@ -44,6 +44,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Method.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Method.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,13 +121,13 @@
         <option value="$PROJECT_DIR$/src/ExtractedClass.java" />
         <option value="$PROJECT_DIR$/ex/ex2/ASS.java" />
         <option value="$PROJECT_DIR$/src/Output.java" />
-        <option value="$PROJECT_DIR$/src/Method.java" />
         <option value="$PROJECT_DIR$/src/Variable.java" />
         <option value="$PROJECT_DIR$/src/Parser.java" />
         <option value="$PROJECT_DIR$/src/Pipeline.java" />
         <option value="$PROJECT_DIR$/src/MainTest.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/tests/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/Method.java" />
       </list>
     </option>
   </component>
@@ -134,7 +144,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -396,7 +406,7 @@
       <workItem from="1510771582716" duration="4613000" />
       <workItem from="1510791224736" duration="12703000" />
       <workItem from="1510806771450" duration="771000" />
-      <workItem from="1510847307424" duration="2332000" />
+      <workItem from="1510847307424" duration="2482000" />
     </task>
     <servers />
   </component>
@@ -421,10 +431,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89176000" />
+    <option name="totallyTimeSpent" value="89326000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -775,7 +785,6 @@
     <entry file="file://$PROJECT_DIR$/ex/MapState.java" />
     <entry file="file://$PROJECT_DIR$/ex/ex4/GraphPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/Output.java" />
-    <entry file="file://$PROJECT_DIR$/src/Method.java" />
     <entry file="file://$PROJECT_DIR$/src/Variable.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.py" />
     <entry file="file://$PROJECT_DIR$/AntiPatternProject/AntiPatternProject.iml">
@@ -834,6 +843,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
