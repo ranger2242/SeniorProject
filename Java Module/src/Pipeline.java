@@ -1,10 +1,6 @@
-import jdk.nashorn.internal.parser.JSONParser;
-import org.json.*;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class Pipeline {
 
@@ -12,7 +8,7 @@ public class Pipeline {
 
     }
 
-    public JSONObject readJSONFile(String fileName, String extension){
+/*    public JSONObject readJSONFile(String fileName, String extension){
         String directory = getJSONDirectory();
         File folder = new File(directory);
         File jsonFile = new File(folder + "\\" + fileName + extension);
@@ -40,7 +36,7 @@ public class Pipeline {
         String fileText = fileHandler.load(jsonFile);
         JSONObject json= new JSONObject(fileText);
         return json;
-    }
+    }*/
 
     public void launchPython(){
         String directory = getRootDirectory();
@@ -56,11 +52,11 @@ public class Pipeline {
     }
 
     public void createJSONFile(ArrayList<int[][]> matrices){
-        JSONObject json = new JSONObject();
+        /*JSONObject json = new JSONObject();
 
-        for ( int i = 0; i < matrices.size(); i++ ){
+        *//*for ( int i = 0; i < matrices.size(); i++ ){
             json.put("mat" + i , matrices.get(i));
-        }
+        }*//*
 
         String fileName = "matrices.json";
         String directory = getJSONDirectory();
@@ -71,7 +67,7 @@ public class Pipeline {
         } catch (IOException e) {
             System.out.println("Pipeline ERROR");
             e.printStackTrace();
-        }
+        }*/
     }
 
     private String getRootDirectory(){

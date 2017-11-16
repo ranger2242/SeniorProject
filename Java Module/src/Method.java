@@ -9,8 +9,10 @@ import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
 
 public class Method {
 
@@ -18,7 +20,7 @@ public class Method {
     private String type;
     private ArrayList<Variable> params = new ArrayList<>();
     private ArrayList<Variable> instanceVars = new ArrayList<>();
-    private ArrayList<String> operations = new ArrayList<>();
+    private ArrayList<Expression> ops= new ArrayList<>();
     private MethodDeclaration md = null;
 
     public Method(MethodDeclaration method) {
@@ -75,9 +77,10 @@ public class Method {
         for (Node s : code.getStatements()) {
             calls.addAll(lookThroughChildren(s));
         }
+        ops= calls;
 
         //Print stuff
-        Main.out(name);
+        /*Main.out(name);
         for (Expression expression : calls) {
 
             if (expression instanceof MethodCallExpr) {
@@ -95,7 +98,7 @@ public class Method {
             }
 
         }
-
+*/
     }
 
     private ArrayList<Expression> lookThroughChildren(Node node) {
@@ -136,9 +139,9 @@ public class Method {
             instanceVars.forEach(x -> Main.out(s2 + x.toString()));
             Main.out("");
         }
-        if (operations.size() > 0) {
+        if (ops.size() > 0) {
             Main.out(s1 + "Operations:");
-            operations.forEach(x -> Main.out(s2 + x));
+            ops.forEach(x -> Main.out(s2 + x));
             Main.out("");
 
         }
@@ -165,8 +168,8 @@ public class Method {
         this.type = type;
     }
 
-    public ArrayList<String> getOperations() {
-        return operations;
+    public ArrayList<Expression> getOperations() {
+        return ops;
     }
 
     public void printAlt() {

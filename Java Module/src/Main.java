@@ -1,5 +1,10 @@
-import org.json.JSONObject;
+import com.google.gson.Gson;
+import io.socket.client.IO;
+import io.socket.emitter.Emitter;
+
+import java.net.*;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.LinkedHashSet;
 import java.util.Set;
 //import Sock
@@ -14,6 +19,12 @@ class Main {
     public static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
     public static Set<Enum> globalEnums = new LinkedHashSet<>();
 
+    static String port = "2242";
+    public static String dir = "http://" + "localhost" + ":" + port;
+    static Gson gson = new Gson();
+
+    static io.socket.client.Socket socket;
+
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
         Parser parser = new Parser(fileHandler.load("ex\\ex2"));
@@ -24,26 +35,152 @@ class Main {
 //        Output o = new Output(cl);
 //        o.printAll();
 
-
-
+        try {
+            connectSocket();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
 
         System.out.println();
     }
 
-    public static JSONObject initPipeline(ArrayList<int[][]> list){
-        //Create json file for Python project
-        Pipeline pipeline = new Pipeline();
-        pipeline.createJSONFile(list);
-        pipeline.launchPython();
-        JSONObject json = pipeline.readJSONFile("python_output", ".json");
-        return json;
+    /*
+        public static JSONObject initPipeline(ArrayList<int[][]> list){
+            //Create json file for Python project
+            Pipeline pipeline = new Pipeline();
+            pipeline.createJSONFile(list);
+            pipeline.launchPython();
+            JSONObject json = pipeline.readJSONFile("python_output", ".json");
+            return json;
+        }
+    */
+    public static String getIp() {
+
+        return "localhost";
+        //return "127.0.0.1";
+        // return "0.0.0.0";
+        /*
+        URL whatismyip = null;
+        try {
+            whatismyip = new URL("http://checkip.amazonaws.com");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        if (whatismyip != null) {
+            BufferedReader in = null;
+            try {
+                in = new BufferedReader(new InputStreamReader(
+                        whatismyip.openStream()));
+                String ip = in.readLine();
+               //return InetAddress.getLocalHost().getHostAddress();
+                 //return ip;
+                return "localhost";
+               //return "127.0.0.1";
+               // return "0.0.0.0";
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (in != null) {
+                    try {
+                        in.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        return "null IP";
+        */
+    }
+
+    public static void connectSocket() throws URISyntaxException {
+
+        socket = IO.socket(dir);
+        socket.connect();
+
+        socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
+            @Override
+            public void call(Object... args) {
+                String msg = "-Connection Established-";
+
+                socket.emit("getSocketID", msg);//ask server for socketID
+            }
+
+        });
+        socket.on("recieveCurrTurn", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+            }
+
+        });
+
+        socket.on(io.socket.client.Socket.EVENT_DISCONNECT, new Emitter.Listener() {
+
+            @Override
+            public void call(Object... args) {
+            }
+
+        });
+        socket.connect();
+    }
+
+    public static void viewIP() {
+        try {
+            Main.out("Your Host addr: " + InetAddress.getLocalHost().getHostAddress());  // often returns "127.0.0.1"
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        Enumeration<NetworkInterface> n = null;
+        try {
+            n = NetworkInterface.getNetworkInterfaces();
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+        for (; n.hasMoreElements(); ) {
+            NetworkInterface e = n.nextElement();
+
+            Enumeration<InetAddress> a = e.getInetAddresses();
+            for (; a.hasMoreElements(); ) {
+                InetAddress addr = a.nextElement();
+                Main.out("  " + addr.getHostAddress());
+            }
+        }
+    }
+
+    public static boolean validIP(String ip) {
+        try {
+            if (ip == null || ip.isEmpty()) {
+                return false;
+            }
+
+            String[] parts = ip.split("\\.");
+            if (parts.length != 4) {
+                return false;
+            }
+
+            for (String s : parts) {
+                int i = Integer.parseInt(s);
+                if ((i < 0) || (i > 255)) {
+                    return false;
+                }
+            }
+            if (ip.endsWith(".")) {
+                return false;
+            }
+
+            return true;
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
     }
 
     private static void printAllClasses() {
         for (ExtractedClass extractedClass : parsedClasses) {
             if (extractedClass.getParent().equals("")) {
-               extractedClass.printClass(0);
+                extractedClass.printClass(0);
             }
         }
     }

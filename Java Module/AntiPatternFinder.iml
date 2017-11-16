@@ -30,5 +30,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="gson-2.6.2" level="project" />
+    <orderEntry type="library" name="json-20090211" level="project" />
+    <orderEntry type="library" name="socket.io-client-1.0.0" level="project" />
+    <orderEntry type="library" name="engine.io-client-0.7.0" level="project" />
   </component>
 </module>
