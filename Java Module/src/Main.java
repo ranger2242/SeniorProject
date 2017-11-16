@@ -1,3 +1,5 @@
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -31,7 +33,9 @@ class Main {
 
         //Create json file for Python project
         pipeline.createJSONFile(list);
-
+        pipeline.launchPython();
+        JSONObject json = pipeline.readJSONFile("python_output.json");
+        System.out.println(json);
 
         System.out.println();
     }

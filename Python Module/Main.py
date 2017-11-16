@@ -1,15 +1,8 @@
 import json
-import os
 import sys
 
-#Move Up one directory
-def upAFolder(path):
-    while path[-1] != '/':
-        path = path[:-1]
-    return path
 
-
-#Prints JSON once read
+# Prints JSON once read
 def printJSON(json):
     keys = list(json)
     for key in keys:
@@ -18,13 +11,37 @@ def printJSON(json):
         print()
 
 
-#Read from json file into a matrix
-path = os.path.dirname(sys.modules['__main__'].__file__)
-path = upAFolder(path)
-path = path + "json/matrices.json"
+# Get project Directory
+def getProjectRootDirectory():
+
+    # Move Up one directory
+    def upAFolder(path):
+        if path != "":
+            while path[-1] != '\\' :
+                path = path[:-1]
+        return path
+
+    path = sys.path.__getitem__(0)
+    path = upAFolder(path)
+    return path
+
+
+# Create JSON output file
+def createOutputJSONFile(content):
+    root = getProjectRootDirectory()
+    jsonDirectory = root + "json/"
+    file = open(jsonDirectory + "python_output.json", "w")
+    file.write("{")
+    file.write(content)
+    file.write("}")
+    file.close()
+
+
+# Read from json file into a matrix
+path = getProjectRootDirectory()
+path = path + "\json\matrices.json"
 data = json.load(open(path))
 
-printJSON(data)
 
-
+createOutputJSONFile("\"hello\" : \"world\"")
 
