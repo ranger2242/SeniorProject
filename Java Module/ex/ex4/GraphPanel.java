@@ -50,6 +50,13 @@ class GraphPanel extends JPanel implements Serializable {
 
 
     public void addLine(Line l) {
+
+        RandomClassForTesting ran = new RandomClassForTesting();
+        int someInt = 1;
+
+        ran.one = 5;
+        someInt = 5;
+
         lines.add(l);
     }
 

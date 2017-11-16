@@ -3,6 +3,9 @@ import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.expr.FieldAccessExpr;
+import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
 
@@ -63,49 +66,54 @@ public class Method {
     }
 
     private void parseOperations() {
-        String code = md.getChildNodesByType(BlockStmt.class).toString();
-        ArrayList<String> spCode = new ArrayList<>(Arrays.asList(code.split("\r\n")));
-        operations = spCode.stream().filter(x -> x.contains(".") || x.contains(" new ")).collect(Collectors.toCollection(ArrayList::new));
+        if (!md.getBody().isPresent()) {
+            return;
+        }
 
-       /* try {
-            BlockStmt code = md.getBody().get();
-            for (Statement s : code.getStatements()) {
-                Main.out(s.toString());
-                for (Node n1 : s.getChildNodesByType(Method+CallExpr.class )) {
-                    List<NameExpr> names = n1.getChildNodesByType(NameExpr.class);
-                    List<SimpleName> meth = n1.getChildNodesByType(SimpleName.class);
-                    MethodCallExpr e=  n1 instanceof MethodCallExpr ? (MethodCallExpr) n1 : null;
+        ArrayList<Expression> calls = new ArrayList<>();
+        BlockStmt code = md.getBody().get();
+        for (Node s : code.getStatements()) {
+            calls.addAll(lookThroughChildren(s));
+        }
 
-                    NodeList<Expression> list= e.getArguments();
-                    if(!e.getScope().equals(null)) {
-                        Main.outa(e.getScope().get().toString());
-                    }
-                    Main.outa(" "+e.getName().asString());
-                    Main.out("");
-                    for(Expression e1: list){
-                            e1.asNameExpr().
-                            Main.outa(e1.getScope().get().toString());
+        //Print stuff
+        Main.out(name);
+        for (Expression expression : calls) {
 
-                        Main.outa(" "+e.getName().asString());
-                        Main.out("");                    }
-                   *//* for (int i = 0; i < Math.max(names.size(), meth.size()); i++) {
-                        String s1 = "";
-                        String s2 = "";
-                        if (i < names.size())
-                            s1 = names.get(i).toString();
-                        if (i < meth.size())
-                            s2 = meth.get(i).asString();
-
-                        Main.out(s1 + " " + s2);
-
-                    }*//*
+            if (expression instanceof MethodCallExpr) {
+                MethodCallExpr methodCallExpr = expression.asMethodCallExpr();
+                String methodName = methodCallExpr.getNameAsString();
+                if (methodCallExpr.getScope().isPresent()) {
+                    String objectName = methodCallExpr.getScope().get().toString();
+                    Main.out("---" + objectName + "." + methodName + methodCallExpr.getArguments().toString());
+                } else {
+                    Main.out("---" + methodName + methodCallExpr.getArguments().toString());
                 }
+            }else if (expression instanceof FieldAccessExpr) {
+                FieldAccessExpr fieldAccessExpr = expression.asFieldAccessExpr();
+                Main.out("---"  + fieldAccessExpr.toString());
             }
 
+        }
 
-            //operations.addAll(str);
-        } catch (NoSuchElementException e) {
-        }*/
+    }
+
+    private ArrayList<Expression> lookThroughChildren(Node node) {
+        ArrayList<Expression> expressions = new ArrayList<>();
+        MethodCallExpr methodCallExpr = node instanceof MethodCallExpr ? ((MethodCallExpr) node) : null;
+        FieldAccessExpr fieldAccessExpr = node instanceof FieldAccessExpr ? ((FieldAccessExpr) node) : null;
+
+        if ((methodCallExpr == null) && (fieldAccessExpr == null)) {
+            for (Node child : node.getChildNodes()) {
+                expressions.addAll(lookThroughChildren(child));
+            }
+        } else if (methodCallExpr != null) {
+            expressions.add(methodCallExpr);
+        }else if (fieldAccessExpr != null)  {
+            expressions.add(fieldAccessExpr);
+        }
+
+        return expressions;
     }
 
     public void print(int depth) {
