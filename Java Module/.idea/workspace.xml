@@ -2,34 +2,115 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="operations?">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pipeline.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/CDL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/Cookie.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/CookieList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/HTTP.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/HTTPTokener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONArray.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONML.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONPointer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONPointerException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONString.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONStringer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONTokener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/JSONWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/Property.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/XML.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/json/XMLTokener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/Main.class" afterPath="$PROJECT_DIR$/out/production/AntiPatternFinder/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Python Module/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/Main.py" afterPath="$PROJECT_DIR$/Python Module/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex/ex4/GraphPanel.java" afterPath="$PROJECT_DIR$/ex/ex4/GraphPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/dictionaries/Chris.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_github_javaparser_javaparser_core_3_4_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_tensorflow_libtensorflow_1_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_tensorflow_libtensorflow_jni_1_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_tensorflow_tensorflow_1_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/libtensorflow_1_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AntiPatternFinder.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AntiPatternProject/AntiPatternProject.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AntiPatternProject/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/matrices.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/testing.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../_gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../docs/Main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../docs/Main.uml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../docs/Main2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/ABSTRACT.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/MapState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/Xbox360Pad.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/ass.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/ex2/ASS.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/ex3/A.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ex/ex4/GraphPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../libtensorflow-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Constructor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Enum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/ExtractedClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/ExtractedDir.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/FileHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Method.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/MethodUsage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Output.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Parser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Pipeline.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/SomeTensorFlow.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Usage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/Variable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/VariableUsage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/CDL.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/Cookie.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/CookieList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/HTTP.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/HTTPTokener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONArray.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONML.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONObject$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONObject$Null.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONPointer$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONPointer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONPointerException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONString.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONStringer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONTokener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/JSONWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/Property.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/XML$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/XML$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/XML.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/AntiPatternFinder/org/json/XMLTokener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Constructor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Enum.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/ExtractedClass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/ExtractedDir.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/FileHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Method.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/MethodUsage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Output.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Parser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Pipeline.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/SomeTensorFlow.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Usage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/Variable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/VariableUsage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/CDL.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/Cookie.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/CookieList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/HTTP.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/HTTPTokener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONArray.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONML.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONObject.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONPointer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONPointerException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONString.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONStringer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONTokener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/JSONWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/Property.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/XML.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/org/json/XMLTokener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../tensorflow_jni.dll" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/AntiPatternProject/target/" />
@@ -45,8 +126,20 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="250">
+              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+              <folding>
+                <element signature="e#133#157#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AntiPatternProject.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AntiPatternProject/AntiPatternProject.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,8 +148,8 @@
       <file leaf-file-name="Pipeline.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="500">
+              <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,7 +249,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -210,12 +303,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1221" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -238,12 +332,12 @@
         <subPane>
           <expand>
             <path>
-              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -255,7 +349,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/tensorflow_jni.dll" />
@@ -429,14 +523,16 @@
       <workItem from="1510692612943" duration="128000" />
       <workItem from="1510771363879" duration="124000" />
       <workItem from="1510771582716" duration="4613000" />
+      <workItem from="1510791224736" duration="153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73370000" />
+    <option name="totallyTimeSpent" value="73523000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -446,7 +542,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3578125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -457,8 +553,9 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38453713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -475,6 +572,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="REFACTORING" />
     <MESSAGE value="operations?" />
     <option name="LAST_COMMIT_MESSAGE" value="operations?" />
@@ -490,7 +590,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1034">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#133#157#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -525,7 +627,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
           <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="52" />
-          <folding />
+          <folding>
+            <element signature="e#133#157#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -558,7 +662,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#133#157#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -573,13 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AntiPatternProject/AntiPatternProject.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -913,7 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1600">
           <caret line="68" column="24" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,29 +1078,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py" />
     <entry file="file://$PROJECT_DIR$/src/Pipeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="500">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AntiPatternProject/AntiPatternProject.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="250">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#133#157#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
