@@ -1,21 +1,26 @@
 import json
 import sys
 import os
+
+
+
+ip = "localhost"
+port = 2242
+
+# This works
 import socketIO_client as client
-
-ip = "10.133.225.28"
-globIp = "139.94.249.166"
-callBack = client.SocketIO
-port = "2242"
-http = "http://"
-path = http + ip + ":" + port
-nameSpace = client.SocketIO.get_namespace(path)
+socketIO = client.SocketIO(ip, 2242, client.LoggingNamespace)
 
 
-socket = client.SocketIO(ip, port, nameSpace, True)
+#This also works
+# import socket
+# socketIO = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# path = (ip, port)
+# connection = socket.create_connection(path)
 
 
-# socket.emit("msg", "Hello here")
+
+
 
 # Prints JSON once read
 def printJSON(json):
