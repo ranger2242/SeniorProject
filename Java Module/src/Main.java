@@ -1,7 +1,10 @@
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import io.socket.client.IO;
 import io.socket.emitter.Emitter;
-
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -21,7 +24,7 @@ class Main {
 
     static String port = "2242";
     public static String dir = "http://" + "localhost" + ":" + port;
-    static Gson gson = new Gson();
+//    static Gson gson = new Gson();
 
     static io.socket.client.Socket socket;
 
@@ -55,48 +58,31 @@ class Main {
             return json;
         }
     */
-    public static String getIp() {
 
+    public static String getIp() {
         return "localhost";
-        //return "127.0.0.1";
-        // return "0.0.0.0";
-        /*
-        URL whatismyip = null;
-        try {
-            whatismyip = new URL("http://checkip.amazonaws.com");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        if (whatismyip != null) {
-            BufferedReader in = null;
-            try {
-                in = new BufferedReader(new InputStreamReader(
-                        whatismyip.openStream()));
-                String ip = in.readLine();
-               //return InetAddress.getLocalHost().getHostAddress();
-                 //return ip;
-                return "localhost";
-               //return "127.0.0.1";
-               // return "0.0.0.0";
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (in != null) {
-                    try {
-                        in.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-        return "null IP";
-        */
     }
 
     public static void connectSocket() throws URISyntaxException {
+
+
+        try {
+            Socket s = new Socket("localhost", 2242);
+            s.setKeepAlive(true);
+//            OutputStreamWriter os = new OutputStreamWriter(s.getOutputStream());
+//            PrintWriter out = new PrintWriter(os);
+//            os.write(0);
+
+            while(true){
+                //do nothing
+            }
+
+
+
+        } catch (IOException e) {
+            System.out.println("Disconnected from server");
+            e.printStackTrace();
+        }
 
         socket = IO.socket(dir);
         socket.connect();

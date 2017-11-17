@@ -1,6 +1,7 @@
 import socket
 import time
 from _thread import *
+import select
 
 '''
     IDs:
@@ -9,31 +10,17 @@ from _thread import *
 '''
 
 
-# Start Server
-def startServer():
-    host = "localhost"
-    port = 2242
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    try:
-        s.bind((host, port))
-    except socket.error as e:
-        print(str(e))
-
-    s.listen(10)
-    return s
-
-
-
 def threaded_client(connection):
+    print("Connection:", end=" ")
 
     while True:
         data = connection.recv(4096)
         clientID = int(data.decode("utf-8"))
 
         if clientID == 0:
-            print("Connected: Java Client")
+            print("Java Client")
         if clientID == 1:
-            print("Connected: Python Client")
+            print("Python Client")
         else:
             print("Bad ID -- Rejecting Client")
             break
@@ -43,12 +30,33 @@ def threaded_client(connection):
     connection.close()
 
 
+class Server:
+
+    def __init__(self, host, port):
+
+        self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        try:
+            self.s.bind((host, port))
+        except socket.error as e:
+            print(str(e))
+
+        self.s.listen(5)
+
+
+    def run(self):
+        while True:
+            conn, address = self.s.accept()
+            start_new_thread(threaded_client, (conn,))
+
+
+
+
+
 # --Program Start--
-server = startServer()
+host = "localhost"
+port = 2242
+server = Server(host, 2242)
 print("Server is running")
-
-while True:
-    conn, address = server.accept()
-    start_new_thread(threaded_client, (conn,))
-
+server.run()
 print("Server: SHUT DOWN")
