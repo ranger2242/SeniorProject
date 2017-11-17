@@ -1,25 +1,27 @@
 import json
 import sys
 import os
-
-
+import socket
 
 ip = "localhost"
 port = 2242
 
-# This works
-import socketIO_client as client
-socketIO = client.SocketIO(ip, 2242, client.LoggingNamespace)
+socketIO = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+path = (ip, port)
+connection = socket.create_connection(path)
+ID = "1"
+connection.send(ID.encode())
 
 
-#This also works
-# import socket
-# socketIO = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# path = (ip, port)
-# connection = socket.create_connection(path)
+while True:
 
+    data = connection.recv(4096)
+    text = data.decode("utf-8")
 
+    if not data:
+        break
 
+print("no more data")
 
 
 # Prints JSON once read
