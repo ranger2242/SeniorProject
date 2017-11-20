@@ -1,10 +1,8 @@
 //import com.google.gson.Gson;
 import io.socket.client.IO;
 import io.socket.emitter.Emitter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+
+import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -65,19 +63,25 @@ class Main {
 
     public static void connectSocket() throws URISyntaxException {
 
-
         try {
             Socket s = new Socket("localhost", 2242);
             s.setKeepAlive(true);
-//            OutputStreamWriter os = new OutputStreamWriter(s.getOutputStream());
-//            PrintWriter out = new PrintWriter(os);
-//            os.write(0);
 
-            while(true){
-                //do nothing
+            String id = "0";
+            sendMessage(s,id);
+            sendMessage(s, "Ready");
+
+
+            DataInputStream din = new DataInputStream(s.getInputStream());
+
+            while(s.isConnected()){
+                ArrayList<Byte> messageByte = new ArrayList<>();
+                while(din.available() == 1){
+                    messageByte.add(new Byte(din.readByte()));
+                    messageByte.forEach(x->System.out.println(x));
+                }
+
             }
-
-
 
         } catch (IOException e) {
             System.out.println("Disconnected from server");
@@ -112,6 +116,15 @@ class Main {
         });
         socket.connect();
     }
+
+    private static void sendMessage(Socket s, String message) throws IOException{
+        OutputStream os = s.getOutputStream();
+        OutputStreamWriter osw = new OutputStreamWriter(os);
+        BufferedWriter bw = new BufferedWriter(osw);
+        bw.write(message);
+        bw.flush();
+    }
+
 
     public static void viewIP() {
         try {

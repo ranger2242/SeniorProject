@@ -3,93 +3,79 @@ import sys
 import os
 import socket
 
-ip = "localhost"
-port = 2242
+class Main:
 
-socketIO = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-path = (ip, port)
-connection = socket.create_connection(path)
-ID = "1"
-connection.send(ID.encode())
+    ip = "localhost"
+    port = 2242
 
+    socketIO = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    path = (ip, port)
+    connection = socket.create_connection(path)
+    ID = "1"
+    connection.send(ID.encode())
+    connection.send("Ready".encode())
 
-while True:
+    while not connection._closed:
 
-    data = connection.recv(4096)
-    text = data.decode("utf-8")
-
-    if not data:
-        break
-
-print("no more data")
-
-
-# Prints JSON once read
-def printJSON(json):
-    keys = list(json)
-    for key in keys:
-        for i in range(len(json[key])):
-            print(json[key][i])
-        print()
+        data = connection.recv(4096)
+        text = data.decode("utf-8")
+        print(text)
+        # handleCode(text)
+        if not data:
+            break
 
 
-# Get project Directory
-def getProjectRootDirectory():
 
-    # Move Up one directory
-    def upAFolder(path):
-        if path != "":
-            while path[-1] != '\\' :
-                path = path[:-1]
+    # Prints JSON once read
+    def printJSON(self, json):
+        keys = list(json)
+        for key in keys:
+            for i in range(len(json[key])):
+                print(json[key][i])
+            print()
+
+
+    # Get project Directory
+    def getProjectRootDirectory(self):
+
+        # Move Up one directory
+        def upAFolder(path):
+            if path != "":
+                while path[-1] != '\\':
+                    path = path[:-1]
+            return path
+
+        path = sys.path.__getitem__(0)
+        path = upAFolder(path)
         return path
 
-    path = sys.path.__getitem__(0)
-    path = upAFolder(path)
-    return path
 
+    # Create JSON output file
+    def createOutputJSONFile(self, content):
+        root = self.getProjectRootDirectory()
+        jsonDirectory = root + "json/"
+        tmp = open(jsonDirectory + "python_output.tmp", "w")
+        tmp.close()
+        file = open(jsonDirectory + "python_output.json", "w")
+        file.write("{")
+        file.write(content)
+        file.write("}")
+        file.close()
+        os.remove(jsonDirectory + "python_output.tmp")
 
-# Create JSON output file
-def createOutputJSONFile(content):
-    root = getProjectRootDirectory()
-    jsonDirectory = root + "json/"
-    tmp = open(jsonDirectory + "python_output.tmp", "w")
-    tmp.close()
-    file = open(jsonDirectory + "python_output.json", "w")
-    file.write("{")
-    file.write(content)
-    file.write("}")
-    file.close()
-    os.remove(jsonDirectory + "python_output.tmp")
+    def readJSON(self):
+        # Read from json file into a matrix
+        path = self.getProjectRootDirectory()
+        path = path + "\json\matrices.json"
+        data = json.load(open(path))
 
+    def handleCode(self, code):
+        print()
+        # if code == "R1":
+        #     self.R1()
+        # if code == "JSON1":
+        #     self.readJSON()
 
-
-# Read from json file into a matrix
-# path = getProjectRootDirectory()
-# path = path + "\json\matrices.json"
-# data = json.load(open(path))
-
-
-def writeMatricesBackToJava(dataToWrite):
-    matrices = ""
-
-    for key in dataToWrite.keys():
-        matrices += "\"" +key + "\" : ["
-        for i in range(len(dataToWrite[key])):
-            matrices += "["
-            for j in range(len(dataToWrite[key][i])):
-                value = dataToWrite[key][j][i]
-                matrices += str(value)
-            matrices += "],"
-        matrices += "]"
-
-
-    matrices = matrices[:-2] + "]" #Remove last comma
-    return matrices
-
-
-# j = "\"post\" : \"python\", " + writeMatricesBackToJava(data)
-# createOutputJSONFile(j)
-
-
-# createOutputJSONFile("\"hello\" : \"there\"")
+    def R1(self):
+        print("R1 received")
 
