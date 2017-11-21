@@ -1,12 +1,11 @@
 import com.google.gson.Gson;
 import io.socket.client.IO;
+import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
 import java.net.*;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 //import Sock
 
 /**
@@ -20,41 +19,56 @@ class Main {
     public static Set<Enum> globalEnums = new LinkedHashSet<>();
 
     static String port = "2242";
-    public static String dir = "http://" + "localhost" + ":" + port;
+    static String ip="10.133.228.186";
+    static String ip3="139.94.249.166";
+
+    static String ip2= "localhost";
+    public static String dir = "http://" +ip+ ":" + port;
     static Gson gson = new Gson();
 
-    static io.socket.client.Socket socket;
+    static Socket socket;
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        Parser parser = new Parser(fileHandler.load("ex\\ex2"));
+        String path = "ex\\ex2";
+        Parser parser = new Parser(fileHandler.load(path));
+        slog("Loaded dir: " + path);
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
+        slog("Classes Parsed");
         ArrayList<ExtractedClass> cl = new ArrayList<>(parsedClasses);
-//        printAllClasses();
-//        Output o = new Output(cl);
-//        o.printAll();
-
         try {
+            slog("Connecting to " + dir);
             connectSocket();
         } catch (URISyntaxException e) {
+            slog("Failed to connect");
             e.printStackTrace();
         }
-
-
-        System.out.println();
     }
+    public static void setShutdownOperations(){
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                slog("Disconnected from server");
+                socket.disconnect();
+            }
+        });
+    }
+    public static void slog(String msg) {
+        Date d = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy::HH:mm:ss a");
 
-    /*
-        public static JSONObject initPipeline(ArrayList<int[][]> list){
+        out(s.format(d) + ":\t" + msg);
+    }
+      /*  public static JSONObject initPipeline(ArrayList<int[][]> list){
             //Create json file for Python project
             Pipeline pipeline = new Pipeline();
             pipeline.createJSONFile(list);
             pipeline.launchPython();
             JSONObject json = pipeline.readJSONFile("python_output", ".json");
             return json;
-        }
-    */
+        }*/
+
     public static String getIp() {
 
         return "localhost";
@@ -97,15 +111,14 @@ class Main {
     }
 
     public static void connectSocket() throws URISyntaxException {
-
         socket = IO.socket(dir);
-        socket.connect();
 
         socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
             @Override
             public void call(Object... args) {
                 String msg = "-Connection Established-";
-
+                socket.emit("msg", "ERGO JAVA CLIENT CONNECTED");
+                slog("Connected to server");
                 socket.emit("getSocketID", msg);//ask server for socketID
             }
 
@@ -121,6 +134,7 @@ class Main {
 
             @Override
             public void call(Object... args) {
+                slog("Disconnected from server");
             }
 
         });
