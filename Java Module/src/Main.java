@@ -23,7 +23,7 @@ class Main {
     static String ip3="139.94.249.166";
 
     static String ip2= "localhost";
-    public static String dir = "http://" +ip+ ":" + port;
+    public static String dir = "http://" +ip2+ ":" + port;
     static Gson gson = new Gson();
 
     static Socket socket;

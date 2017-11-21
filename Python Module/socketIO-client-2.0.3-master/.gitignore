@@ -1,0 +1,15 @@
+# Python
+*.egg*
+*.py[co]
+.cache
+.coverage
+__pycache__
+build
+dist
+sdist
+# Transient
+*.log
+# Vim
+*.sw[op]
+*~
+.idea

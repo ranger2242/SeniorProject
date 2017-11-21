@@ -1,12 +1,8 @@
-.. image:: https://travis-ci.org/invisibleroads/socketIO-client.svg?branch=master
-    :target: https://travis-ci.org/invisibleroads/socketIO-client
-
-
-socketIO-client
+socketIO-client-nexus
 ===============
 Here is a `socket.io <http://socket.io>`_ client library for Python.  You can use it to write test code for your socket.io server.
 
-Please note that this version implements `socket.io protocol 1.x <https://github.com/automattic/socket.io-protocol>`_, which is not backwards compatible.  If you want to communicate using `socket.io protocol 0.9 <https://github.com/learnboost/socket.io-spec>`_ (which is compatible with `gevent-socketio <https://github.com/abourget/gevent-socketio>`_), please use `socketIO-client 0.5.7.2 <https://pypi.python.org/pypi/socketIO-client/0.5.7.2>`_.
+This is a forked version to implement the Socket.io 2.x changes. You can find the original `here <https://github.com/invisibleroads/socketIO-client>`_.
 
 
 Installation
@@ -22,7 +18,7 @@ Install the package in an isolated environment. ::
     source $VIRTUAL_ENV/bin/activate
 
     # Install package
-    pip install -U socketIO-client
+    pip install -U socketIO-client-nexus
 
 
 Usage
@@ -34,8 +30,8 @@ Activate isolated environment. ::
 
 Launch your socket.io server. ::
 
-    cd $(python -c "import os, socketIO_client;\
-        print(os.path.dirname(socketIO_client.__file__))")
+    cd $(python -c "import os, socketIO_client_nexus;\
+        print(os.path.dirname(socketIO_client_nexus.__file__))")
 
     DEBUG=* node tests/serve.js  # Start socket.io server in terminal one
     DEBUG=* node tests/proxy.js  # Start proxy server in terminal two
@@ -44,12 +40,12 @@ Launch your socket.io server. ::
 For debugging information, run these commands first. ::
 
     import logging
-    logging.getLogger('socketIO-client').setLevel(logging.DEBUG)
+    logging.getLogger('socketIO-client-nexus').setLevel(logging.DEBUG)
     logging.basicConfig()
 
 Emit. ::
 
-    from socketIO_client import SocketIO, LoggingNamespace
+    from socketIO_client_nexus import SocketIO, LoggingNamespace
 
     with SocketIO('localhost', 8000, LoggingNamespace) as socketIO:
         socketIO.emit('aaa')
@@ -57,7 +53,7 @@ Emit. ::
 
 Emit with callback. ::
 
-    from socketIO_client import SocketIO, LoggingNamespace
+    from socketIO_client_nexus import SocketIO, LoggingNamespace
 
     def on_bbb_response(*args):
         print('on_bbb_response', args)
@@ -68,7 +64,7 @@ Emit with callback. ::
 
 Define events. ::
 
-    from socketIO_client import SocketIO, LoggingNamespace
+    from socketIO_client_nexus import SocketIO, LoggingNamespace
 
     def on_connect():
         print('connect')
@@ -106,7 +102,7 @@ Define events. ::
 
 Define events in a namespace. ::
 
-    from socketIO_client import SocketIO, BaseNamespace
+    from socketIO_client_nexus import SocketIO, BaseNamespace
 
     class Namespace(BaseNamespace):
 
@@ -120,7 +116,7 @@ Define events in a namespace. ::
 
 Define standard events. ::
 
-    from socketIO_client import SocketIO, BaseNamespace
+    from socketIO_client_nexus import SocketIO, BaseNamespace
 
     class Namespace(BaseNamespace):
 
@@ -138,7 +134,7 @@ Define standard events. ::
 
 Define different namespaces on a single socket. ::
 
-    from socketIO_client import SocketIO, BaseNamespace
+    from socketIO_client_nexus import SocketIO, BaseNamespace
 
     class ChatNamespace(BaseNamespace):
 
@@ -160,7 +156,7 @@ Define different namespaces on a single socket. ::
 
 Connect via SSL (https://github.com/invisibleroads/socketIO-client/issues/54). ::
 
-    from socketIO_client import SocketIO
+    from socketIO_client_nexus import SocketIO
 
     # Skip server certificate verification
     SocketIO('https://localhost', verify=False)
@@ -172,11 +168,11 @@ Connect via SSL (https://github.com/invisibleroads/socketIO-client/issues/54). :
 
 Specify params, headers, cookies, proxies thanks to the `requests <http://python-requests.org>`_ library. ::
 
-    from socketIO_client import SocketIO
+    from socketIO_client_nexus import SocketIO
     from base64 import b64encode
 
     SocketIO(
-        localhost', 8000,
+        'localhost', 8000,
         params={'q': 'qqq'},
         headers={'Authorization': 'Basic ' + b64encode('username:password')},
         cookies={'a': 'aaa'},
@@ -184,10 +180,21 @@ Specify params, headers, cookies, proxies thanks to the `requests <http://python
 
 Wait forever. ::
 
-    from socketIO_client import SocketIO
+    from socketIO_client_nexus import SocketIO
 
     socketIO = SocketIO('localhost', 8000)
     socketIO.wait()
+
+Don't wait forever. ::
+
+    from requests.exceptions import ConnectionError
+    from socketIO_client_nexus import SocketIO
+
+    try:
+        socket = SocketIO('localhost', 8000, wait_for_connection=False)
+        socket.wait()
+    except ConnectionError:
+        print('The server is down. Try again later.')
 
 
 License
@@ -199,7 +206,7 @@ Credits
 -------
 - `Guillermo Rauch <https://github.com/rauchg>`_ wrote the `socket.io specification <https://github.com/automattic/socket.io-protocol>`_.
 - `Hiroki Ohtani <https://github.com/liris>`_ wrote `websocket-client <https://github.com/liris/websocket-client>`_.
-- `rod <http://stackoverflow.com/users/370115/rod>`_ wrote a `prototype for a Python client to a socket.io server <http://stackoverflow.com/questions/6692908/formatting-messages-to-send-to-socket-io-node-js-server-from-python-client>`_.
+- `Roderick Hodgson <https://github.com/roderickhodgson>`_ wrote a `prototype for a Python client to a socket.io server <http://stackoverflow.com/questions/6692908/formatting-messages-to-send-to-socket-io-node-js-server-from-python-client>`_.
 - `Alexandre Bourget <https://github.com/abourget>`_ wrote `gevent-socketio <https://github.com/abourget/gevent-socketio>`_, which is a socket.io server written in Python.
 - `Paul Kienzle <https://github.com/pkienzle>`_, `Zac Lee <https://github.com/zratic>`_, `Josh VanderLinden <https://github.com/codekoala>`_, `Ian Fitzpatrick <https://github.com/ifitzpatrick>`_, `Lucas Klein <https://github.com/lukasklein>`_, `Rui Chicoria <https://github.com/rchicoria>`_, `Travis Odom <https://github.com/burstaholic>`_, `Patrick Huber <https://github.com/stackmagic>`_, `Brad Campbell <https://github.com/bradjc>`_, `Daniel <https://github.com/dabidan>`_, `Sean Arietta <https://github.com/sarietta>`_, `Sacha Stafyniak <https://github.com/stafyniaksacha>`_ submitted code to expand support of the socket.io protocol.
 - `Bernard Pratz <https://github.com/guyzmo>`_, `Francis Bull <https://github.com/franbull>`_ wrote prototypes to support xhr-polling and jsonp-polling.

@@ -1,88 +1,56 @@
 import json
 import sys
 import os
-import socketIO_client as client
+from socketIO_client_nexus import SocketIO, LoggingNamespace
 
-ip = "10.133.225.28"
-globIp = "139.94.249.166"
-callBack = client.SocketIO
-port = "2242"
-http = "http://"
-path = http + ip + ":" + port
-nameSpace = client.SocketIO.get_namespace(path)
+class Main:
 
+    # Prints JSON once read
+    def printJSON(self, json):
+        keys = list(json)
+        for key in keys:
+            for i in range(len(json[key])):
+                print(json[key][i])
+            print()
 
-socket = client.SocketIO(ip, port, nameSpace, True)
+    # Get project Directory
+    def getProjectRootDirectory(self):
 
+        # Move Up one directory
+        def upAFolder(path):
+            if path != "":
+                while path[-1] != '\\':
+                    path = path[:-1]
+            return path
 
-# socket.emit("msg", "Hello here")
-
-# Prints JSON once read
-def printJSON(json):
-    keys = list(json)
-    for key in keys:
-        for i in range(len(json[key])):
-            print(json[key][i])
-        print()
-
-
-# Get project Directory
-def getProjectRootDirectory():
-
-    # Move Up one directory
-    def upAFolder(path):
-        if path != "":
-            while path[-1] != '\\' :
-                path = path[:-1]
+        path = sys.path.__getitem__(0)
+        path = upAFolder(path)
         return path
 
-    path = sys.path.__getitem__(0)
-    path = upAFolder(path)
-    return path
+    # Create JSON output file
+    def createOutputJSONFile(self, fileName,content):
+        root = self.getProjectRootDirectory()
+        jsonDirectory = root + "json/"
+        file = open(jsonDirectory + fileName, "w")
+        file.write(content)
+        file.close()
+
+    #Connect to JS Server
+    def connectToServer(self, ip, port):
+
+        def on_bbb_response(*args):
+            print('on_bbb_response', args)
+
+        socket = SocketIO(ip, port, LoggingNamespace)
+
+        socket.emit("msg", "ERGO PYTHON CLIENT CONNECTED", on_bbb_response)
+        socket.wait_for_callbacks(seconds=2)
 
 
-# Create JSON output file
-def createOutputJSONFile(content):
-    root = getProjectRootDirectory()
-    jsonDirectory = root + "json/"
-    tmp = open(jsonDirectory + "python_output.tmp", "w")
-    tmp.close()
-    file = open(jsonDirectory + "python_output.json", "w")
-    file.write("{")
-    file.write(content)
-    file.write("}")
-    file.close()
-    os.remove(jsonDirectory + "python_output.tmp")
+#--Code start--
+ip = "localhost" #"10.133.225.28"
+port = "2242"
+m = Main()
+m.connectToServer(ip, port)
 
-
-
-# Read from json file into a matrix
-# path = getProjectRootDirectory()
-# path = path + "\json\matrices.json"
-# data = json.load(open(path))
-
-
-def writeMatricesBackToJava(dataToWrite):
-    matrices = ""
-
-    for key in dataToWrite.keys():
-        matrices += "\"" +key + "\" : ["
-        for i in range(len(dataToWrite[key])):
-            matrices += "["
-            for j in range(len(dataToWrite[key][i])):
-                value = dataToWrite[key][j][i]
-                matrices += str(value)
-            matrices += "],"
-        matrices += "]"
-
-
-    matrices = matrices[:-2] + "]" #Remove last comma
-    return matrices
-
-
-# j = "\"post\" : \"python\", " + writeMatricesBackToJava(data)
-# createOutputJSONFile(j)
-
-
-# createOutputJSONFile("\"hello\" : \"there\"")
 
