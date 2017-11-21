@@ -1,6 +1,21 @@
 import json
 import sys
 import os
+import socketIO_client as client
+
+ip = "10.133.225.28"
+globIp = "139.94.249.166"
+callBack = client.SocketIO
+port = "2242"
+http = "http://"
+path = http + ip + ":" + port
+nameSpace = client.SocketIO.get_namespace(path)
+
+
+socket = client.SocketIO(ip, port, nameSpace, True)
+
+
+# socket.emit("msg", "Hello here")
 
 # Prints JSON once read
 def printJSON(json):
@@ -42,9 +57,9 @@ def createOutputJSONFile(content):
 
 
 # Read from json file into a matrix
-path = getProjectRootDirectory()
-path = path + "\json\matrices.json"
-data = json.load(open(path))
+# path = getProjectRootDirectory()
+# path = path + "\json\matrices.json"
+# data = json.load(open(path))
 
 
 def writeMatricesBackToJava(dataToWrite):
@@ -65,8 +80,8 @@ def writeMatricesBackToJava(dataToWrite):
     return matrices
 
 
-j = "\"post\" : \"python\", " + writeMatricesBackToJava(data)
-createOutputJSONFile(j)
+# j = "\"post\" : \"python\", " + writeMatricesBackToJava(data)
+# createOutputJSONFile(j)
 
 
 # createOutputJSONFile("\"hello\" : \"there\"")
