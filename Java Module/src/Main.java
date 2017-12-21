@@ -40,6 +40,9 @@ class Main {
         try {
             slog("Connecting to " + dir);
             connectSocket();
+
+            socket.emit("SEND-PYTHON","testString");
+
         } catch (URISyntaxException e) {
             slog("Failed to connect");
             e.printStackTrace();
@@ -57,7 +60,6 @@ class Main {
     public static void slog(String msg) {
         Date d = new Date();
         SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy::HH:mm:ss a");
-
         out(s.format(d) + ":\t" + msg);
     }
       /*  public static JSONObject initPipeline(ArrayList<int[][]> list){
@@ -70,44 +72,7 @@ class Main {
         }*/
 
     public static String getIp() {
-
         return "localhost";
-        //return "127.0.0.1";
-        // return "0.0.0.0";
-        /*
-        URL whatismyip = null;
-        try {
-            whatismyip = new URL("http://checkip.amazonaws.com");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        if (whatismyip != null) {
-            BufferedReader in = null;
-            try {
-                in = new BufferedReader(new InputStreamReader(
-                        whatismyip.openStream()));
-                String ip = in.readLine();
-               //return InetAddress.getLocalHost().getHostAddress();
-                 //return ip;
-                return "localhost";
-               //return "127.0.0.1";
-               // return "0.0.0.0";
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (in != null) {
-                    try {
-                        in.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-        return "null IP";
-        */
     }
 
     public static void connectSocket() throws URISyntaxException {
@@ -117,8 +82,7 @@ class Main {
             @Override
             public void call(Object... args) {
                 String msg = "-Connection Established-";
-                socket.emit("msg", "ERGO JAVA CLIENT CONNECTED");
-                slog("Connected to server");
+                socket.emit("id", 0);
                 socket.emit("getSocketID", msg);//ask server for socketID
             }
 
@@ -126,6 +90,22 @@ class Main {
         socket.on("recieveCurrTurn", new Emitter.Listener() {
             @Override
             public void call(Object... args) {
+            }
+
+        });
+
+        socket.on("CONNECTED", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                slog("Connected to server");
+            }
+
+        });
+
+        socket.on("id", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                System.out.println("id called");
             }
 
         });

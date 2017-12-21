@@ -2,45 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/CHANGES.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/MANIFEST.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/PKG-INFO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/README.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/desktop.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/setup.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/setup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/PKG-INFO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/SOURCES.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/dependency_links.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/desktop.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/not-zip-safe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/requires.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client.egg-info/top_level.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/desktop.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/exceptions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/heartbeats.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/logs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/namespaces.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/parsers.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/symmetries.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/desktop.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/proxy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/serve.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/ssl.crt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/tests/ssl.key" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Python Module/socketIO-client-0.7.2/socketIO_client/transports.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/libs/desktop.ini" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/libs/engine.io-client-0.7.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/libs/gson-2.6.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/libs/json-20090211.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/libs/libtensorflow-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AntiPatternFinder/libs/socket.io-client-1.0.0.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$1.class" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$2.class" afterPath="$PROJECT_DIR$/target/classes/Main$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$3.class" afterPath="$PROJECT_DIR$/target/classes/Main$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$4.class" afterPath="$PROJECT_DIR$/target/classes/Main$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.bat" afterPath="$PROJECT_DIR$/server/server.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Python Module/.idea/Python Module.iml" afterPath="$PROJECT_DIR$/../Python Module/.idea/Python Module.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Python Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Python Module/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Python Module/Main.py" afterPath="$PROJECT_DIR$/../Python Module/Main.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/AntiPatternProject/target/" />
@@ -57,26 +33,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="55" selection-end-column="26" />
+            <state relative-caret-position="87">
+              <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="120" column="44" lean-forward="true" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
+            <state relative-caret-position="449">
+              <caret line="96" column="55" lean-forward="false" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#263#287#1" expanded="true" />
-                <element signature="e#1585#1764#0" expanded="true" />
-                <element signature="e#1763#1764#0" expanded="true" />
+                <element signature="e#1640#1819#0" expanded="true" />
+                <element signature="e#1818#1819#0" expanded="true" />
+                <element signature="e#2424#2425#0" expanded="true" />
+                <element signature="e#2458#2459#0" expanded="true" />
+                <element signature="e#3203#3204#0" expanded="true" />
+                <element signature="e#3262#3263#0" expanded="true" />
+                <element signature="e#3394#3395#0" expanded="true" />
+                <element signature="e#3457#3458#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,9 +119,9 @@
         <option value="$PROJECT_DIR$/src/Output.java" />
         <option value="$PROJECT_DIR$/tests/MainTest.java" />
         <option value="$PROJECT_DIR$/src/Pipeline.java" />
-        <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/server/index.js" />
       </list>
     </option>
   </component>
@@ -180,7 +162,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -202,8 +184,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,11 +211,13 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Google Drive/JAVA/LIBRARIES/socket.io-client-0.6.2.jar!/" />
@@ -462,6 +444,7 @@
       <workItem from="1511114111997" duration="2548000" />
       <workItem from="1511288178482" duration="1112000" />
       <workItem from="1511289865339" duration="2375000" />
+      <workItem from="1513866208539" duration="11128000" />
     </task>
     <task id="LOCAL-00001" summary="started adding socketIO">
       <created>1510856306665</created>
@@ -494,26 +477,26 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105814000" />
+    <option name="totallyTimeSpent" value="116942000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="735" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36655948" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3601896" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900847" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.89133626" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25841874" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22521138" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22474378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17510776" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -836,13 +819,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MethodUsage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MethodUsage.java" />
     <entry file="jar://$PROJECT_DIR$/libs/socket.io-client-1.0.0.jar!/io/socket/client/Socket.class" />
     <entry file="jar://$PROJECT_DIR$/src/libs/socket.io-client-1.0.0.jar!/io/socket/client/IO.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -907,24 +884,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="55" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="120" column="44" lean-forward="true" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
+        <state relative-caret-position="449">
+          <caret line="96" column="55" lean-forward="false" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#263#287#1" expanded="true" />
-            <element signature="e#1585#1764#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
+            <element signature="e#1640#1819#0" expanded="true" />
+            <element signature="e#1818#1819#0" expanded="true" />
+            <element signature="e#2424#2425#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
+            <element signature="e#3262#3263#0" expanded="true" />
+            <element signature="e#3394#3395#0" expanded="true" />
+            <element signature="e#3457#3458#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

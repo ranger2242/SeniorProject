@@ -41,16 +41,18 @@ class Main:
         def on_bbb_response(*args):
             print('on_bbb_response', args)
 
+        def receive_data(*args):
+            print("receive", args)
+
         socket = SocketIO(ip, port, LoggingNamespace)
-
-        socket.emit("msg", "ERGO PYTHON CLIENT CONNECTED", on_bbb_response)
-        socket.wait_for_callbacks(seconds=2)
-
+        socket.emit("id", 1, on_bbb_response)
+        socket.on("SEND-PYTHON", receive_data)
+        socket.wait_for_callbacks(seconds=100)
 
 #--Code start--
 ip = "localhost" #"10.133.225.28"
 port = "2242"
-m = Main()
-m.connectToServer(ip, port)
+main = Main()
+main.connectToServer(ip, port)
 
 
