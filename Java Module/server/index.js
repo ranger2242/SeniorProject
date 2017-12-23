@@ -3,6 +3,8 @@ var app = require('express')();
 var server = require('http').Server();
 var io = require('socket.io')(server);
 
+var pythonId;
+var javaId;
 
 slog("SERVER INITIALIZED", 0);
 io.listen(2242,function(){
@@ -10,20 +12,17 @@ io.listen(2242,function(){
 });
 
 
-var pythonId;
-var javaId;
-
 // Add a connect listener
 io.on('connection', function(socket) {
 
     slog(socket.id,0);
 
-    socket.on('id',function (msg) {
-        if( msg == 0 ){
+    socket.on('id',function (id) {
+        if( id == 0 ){
             javaId = socket.id;
             socket.broadcast.to(javaId).emit("CONNECTED", true);
             slog("Java Client: " + javaId, 50);
-        }else if( msg == 1 ){
+        }else if( id == 1 ){
             pythonId = socket.id;
             socket.broadcast.to(pythonId).emit("CONNECTED", true);
             slog("Python Client: " + pythonId, 50);

@@ -62,14 +62,6 @@ class Main {
         SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy::HH:mm:ss a");
         out(s.format(d) + ":\t" + msg);
     }
-      /*  public static JSONObject initPipeline(ArrayList<int[][]> list){
-            //Create json file for Python project
-            Pipeline pipeline = new Pipeline();
-            pipeline.createJSONFile(list);
-            pipeline.launchPython();
-            JSONObject json = pipeline.readJSONFile("python_output", ".json");
-            return json;
-        }*/
 
     public static String getIp() {
         return "localhost";
@@ -87,6 +79,7 @@ class Main {
             }
 
         });
+
         socket.on("recieveCurrTurn", new Emitter.Listener() {
             @Override
             public void call(Object... args) {
@@ -110,14 +103,25 @@ class Main {
 
         });
 
-        socket.on(io.socket.client.Socket.EVENT_DISCONNECT, new Emitter.Listener() {
+        socket.on("SEND-CLIENT", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
 
+                System.out.println("Data Recieved: ");
+                for( Object object : args ) {
+                    String data = (String) object;
+                    System.out.println(data);
+                }
+            }
+        });
+
+        socket.on(io.socket.client.Socket.EVENT_DISCONNECT, new Emitter.Listener() {
             @Override
             public void call(Object... args) {
                 slog("Disconnected from server");
             }
-
         });
+
         socket.connect();
     }
 
