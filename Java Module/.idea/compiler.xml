@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AntiPatternFinder" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AntiPatternFinder" target="1.8" />
       <module name="AntiPatternProject" target="1.5" />
     </bytecodeTargetLevel>
   </component>

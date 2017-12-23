@@ -1,30 +1,9 @@
 import json
 import sys
 import os
-import socket
+from socketIO_client_nexus import SocketIO, LoggingNamespace
 
 class Main:
-
-    ip = "localhost"
-    port = 2242
-
-    socketIO = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    path = (ip, port)
-    connection = socket.create_connection(path)
-    ID = "1"
-    connection.send(ID.encode())
-    connection.send("Ready".encode())
-
-    while not connection._closed:
-
-        data = connection.recv(4096)
-        text = data.decode("utf-8")
-        print(text)
-        # handleCode(text)
-        if not data:
-            break
-
-
 
     # Prints JSON once read
     def printJSON(self, json):
@@ -33,7 +12,6 @@ class Main:
             for i in range(len(json[key])):
                 print(json[key][i])
             print()
-
 
     # Get project Directory
     def getProjectRootDirectory(self):
@@ -49,33 +27,32 @@ class Main:
         path = upAFolder(path)
         return path
 
-
     # Create JSON output file
-    def createOutputJSONFile(self, content):
+    def createOutputJSONFile(self, fileName,content):
         root = self.getProjectRootDirectory()
         jsonDirectory = root + "json/"
-        tmp = open(jsonDirectory + "python_output.tmp", "w")
-        tmp.close()
-        file = open(jsonDirectory + "python_output.json", "w")
-        file.write("{")
+        file = open(jsonDirectory + fileName, "w")
         file.write(content)
-        file.write("}")
         file.close()
-        os.remove(jsonDirectory + "python_output.tmp")
 
-    def readJSON(self):
-        # Read from json file into a matrix
-        path = self.getProjectRootDirectory()
-        path = path + "\json\matrices.json"
-        data = json.load(open(path))
+    #Connect to JS Server
+    def connectToServer(self, ip, port):
 
-    def handleCode(self, code):
-        print()
-        # if code == "R1":
-        #     self.R1()
-        # if code == "JSON1":
-        #     self.readJSON()
+        def on_bbb_response(*args):
+            print('on_bbb_response', args)
 
-    def R1(self):
-        print("R1 received")
+        def receive_data(*args):
+            print("receive", args)
+
+        socket = SocketIO(ip, port, LoggingNamespace)
+        socket.emit("id", 1, on_bbb_response)
+        socket.on("SEND-PYTHON", receive_data)
+        socket.wait_for_callbacks(seconds=100)
+
+#--Code start--
+ip = "localhost" #"10.133.225.28"
+port = "2242"
+main = Main()
+main.connectToServer(ip, port)
+
 

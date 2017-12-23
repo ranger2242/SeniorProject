@@ -1,13 +1,11 @@
-//import com.google.gson.Gson;
+import com.google.gson.Gson;
 import io.socket.client.IO;
+import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
-import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 //import Sock
 
 /**
@@ -21,81 +19,70 @@ class Main {
     public static Set<Enum> globalEnums = new LinkedHashSet<>();
 
     static String port = "2242";
-    public static String dir = "http://" + "localhost" + ":" + port;
-//    static Gson gson = new Gson();
+    static String ip="10.133.228.186";
+    static String ip3="139.94.249.166";
 
-    static io.socket.client.Socket socket;
+    static String ip2= "localhost";
+    public static String dir = "http://" +ip2+ ":" + port;
+    static Gson gson = new Gson();
+
+    static Socket socket;
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        Parser parser = new Parser(fileHandler.load("ex\\ex2"));
+        String path = "ex\\ex2";
+        Parser parser = new Parser(fileHandler.load(path));
+        slog("Loaded dir: " + path);
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
+        slog("Classes Parsed");
         ArrayList<ExtractedClass> cl = new ArrayList<>(parsedClasses);
-//        printAllClasses();
-//        Output o = new Output(cl);
-//        o.printAll();
-
         try {
+            slog("Connecting to " + dir);
             connectSocket();
+
+            socket.emit("SEND-PYTHON","testString");
+
         } catch (URISyntaxException e) {
+            slog("Failed to connect");
             e.printStackTrace();
         }
-
-
-        System.out.println();
     }
-
-    /*
-        public static JSONObject initPipeline(ArrayList<int[][]> list){
+    public static void setShutdownOperations(){
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                slog("Disconnected from server");
+                socket.disconnect();
+            }
+        });
+    }
+    public static void slog(String msg) {
+        Date d = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy::HH:mm:ss a");
+        out(s.format(d) + ":\t" + msg);
+    }
+      /*  public static JSONObject initPipeline(ArrayList<int[][]> list){
             //Create json file for Python project
             Pipeline pipeline = new Pipeline();
             pipeline.createJSONFile(list);
             pipeline.launchPython();
             JSONObject json = pipeline.readJSONFile("python_output", ".json");
             return json;
-        }
-    */
+        }*/
 
     public static String getIp() {
         return "localhost";
     }
 
     public static void connectSocket() throws URISyntaxException {
-
-        try {
-            Socket s = new Socket("localhost", 2242);
-            s.setKeepAlive(true);
-
-            String id = "0";
-            sendMessage(s,id);
-            sendMessage(s, "Ready");
-
-
-            DataInputStream din = new DataInputStream(s.getInputStream());
-
-            while(s.isConnected()){
-                ArrayList<Byte> messageByte = new ArrayList<>();
-                while(din.available() == 1){
-                    messageByte.add(new Byte(din.readByte()));
-                    messageByte.forEach(x->System.out.println(x));
-                }
-
-            }
-
-        } catch (IOException e) {
-            System.out.println("Disconnected from server");
-            e.printStackTrace();
-        }
-
         socket = IO.socket(dir);
-        socket.connect();
 
         socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
             @Override
             public void call(Object... args) {
                 String msg = "-Connection Established-";
-
+                socket.emit("id", 0);
                 socket.emit("getSocketID", msg);//ask server for socketID
             }
 
@@ -107,24 +94,32 @@ class Main {
 
         });
 
+        socket.on("CONNECTED", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                slog("Connected to server");
+            }
+
+        });
+
+        socket.on("id", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                System.out.println("id called");
+            }
+
+        });
+
         socket.on(io.socket.client.Socket.EVENT_DISCONNECT, new Emitter.Listener() {
 
             @Override
             public void call(Object... args) {
+                slog("Disconnected from server");
             }
 
         });
         socket.connect();
     }
-
-    private static void sendMessage(Socket s, String message) throws IOException{
-        OutputStream os = s.getOutputStream();
-        OutputStreamWriter osw = new OutputStreamWriter(os);
-        BufferedWriter bw = new BufferedWriter(osw);
-        bw.write(message);
-        bw.flush();
-    }
-
 
     public static void viewIP() {
         try {
