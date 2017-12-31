@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import io.socket.client.Ack;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
@@ -41,7 +42,7 @@ class Main {
             slog("Connecting to " + dir);
             connectSocket();
 
-            socket.emit("SEND-PYTHON","testString");
+            //sendToServer("testString");
 
         } catch (URISyntaxException e) {
             slog("Failed to connect");
@@ -63,24 +64,21 @@ class Main {
         out(s.format(d) + ":\t" + msg);
     }
 
+    public static void sendToServer(String data){
+        socket.emit("SEND-PYTHON", data);
+    }
+
+
     public static String getIp() {
         return "localhost";
     }
+
+    private static String clientID;
 
     public static void connectSocket() throws URISyntaxException {
         socket = IO.socket(dir);
 
         socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
-            @Override
-            public void call(Object... args) {
-                String msg = "-Connection Established-";
-                socket.emit("id", 0);
-                socket.emit("getSocketID", msg);//ask server for socketID
-            }
-
-        });
-
-        socket.on("recieveCurrTurn", new Emitter.Listener() {
             @Override
             public void call(Object... args) {
             }
@@ -91,14 +89,14 @@ class Main {
             @Override
             public void call(Object... args) {
                 slog("Connected to server");
+                clientID = (String) args[0];
             }
-
         });
 
-        socket.on("id", new Emitter.Listener() {
+        socket.on("ID", new Emitter.Listener() {
             @Override
             public void call(Object... args) {
-                System.out.println("id called");
+                socket.emit("ID", 0);
             }
 
         });

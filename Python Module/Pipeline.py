@@ -6,6 +6,8 @@ import json
 
 class Pipeline:
 
+    id = str
+
     def __init__(self):
         print("Pipeline Initialized")
 
@@ -34,19 +36,28 @@ class Pipeline:
 
     # Connect to JS Server
     def connectToServer(self, ip, port):
-        def on_bbb_response(*args):
-            print('on_bbb_response', args)
 
         def receive_data(*args):
-            print("Received:", args[0])
+            id = args[0]['id']
+            data = args[0]['data']
+            print("Received:", data, '\tFrom Client ID:', id)
+            send_to_client(id, "received", "true")
 
-        def send_to_client(key, data):
+        def send_to_client(client_id, key, data):
             j = {key: data}
-            socket.emit("SEND-CLIENT", json.dumps(j))
+            socket.emit("SEND-CLIENT", (client_id, json.dumps(j)))
+
+        def connected(*args):
+            print("Connected To Server")
+
+        def id(*args):
+            socket.emit("ID", 1)
+            self.id = args[0]
 
         socket = SocketIO(ip, port, LoggingNamespace)
-        socket.emit("id", 1, on_bbb_response)
         socket.on("SEND-PYTHON", receive_data)
-        socket.wait_for_callbacks(seconds=60)
+        socket.on("CONNECTED", connected)
+        socket.on("ID", id)
+        socket.wait_for_callbacks(seconds=5000)
 
-
+        socket.wait()
