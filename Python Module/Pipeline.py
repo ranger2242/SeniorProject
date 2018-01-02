@@ -3,13 +3,23 @@ import sys
 import os
 from socketIO_client_nexus import SocketIO, LoggingNamespace
 import json
+import _datetime as datetime
+
 
 class Pipeline:
-
     id = str
 
+
+
     def __init__(self):
-        print("Pipeline Initialized")
+        self.slog("Pipeline Initialized")
+
+
+    # Logs server communication with time
+    def slog(self, message):
+        fmt = '%Y-%m-%d::%H:%M:%S: '
+        date_string = datetime.datetime.now().strftime(fmt)
+        print(date_string + message)
 
 
     # Prints JSON once read
@@ -35,7 +45,7 @@ class Pipeline:
         return path
 
     # Connect to JS Server
-    def connectToServer(self, ip, port):
+    def connect_to_server(self, ip, port):
 
         def receive_data(*args):
             id = args[0]['id']
@@ -43,16 +53,20 @@ class Pipeline:
             print("Received:", data, '\tFrom Client ID:', id)
             send_to_client(id, "received", "true")
 
+            # Send data to NN here
+
         def send_to_client(client_id, key, data):
             j = {key: data}
             socket.emit("SEND-CLIENT", (client_id, json.dumps(j)))
 
         def connected(*args):
-            print("Connected To Server")
+            self.slog("Connected To Server")
 
         def id(*args):
             socket.emit("ID", 1)
             self.id = args[0]
+
+
 
         socket = SocketIO(ip, port, LoggingNamespace)
         socket.on("SEND-PYTHON", receive_data)

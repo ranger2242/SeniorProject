@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main$7.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$2.class" afterPath="$PROJECT_DIR$/target/classes/Main$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$3.class" afterPath="$PROJECT_DIR$/target/classes/Main$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$4.class" afterPath="$PROJECT_DIR$/target/classes/Main$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$5.class" afterPath="$PROJECT_DIR$/target/classes/Main$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SomeTensorFlow.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Python Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Python Module/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Python Module/Pipeline.py" afterPath="$PROJECT_DIR$/../Python Module/Pipeline.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/AntiPatternProject/target/" />
@@ -46,14 +37,24 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+            <state relative-caret-position="531">
+              <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2089#2090#0" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2898#2899#0" expanded="true" />
-                <element signature="e#2950#2951#0" expanded="true" />
+                <element signature="docComment;class#Main#0" expanded="false" />
+                <element signature="method#transformData#0;class#Main#0" expanded="false" />
+                <element signature="method#setShutdownOperations#0;class#Main#0" expanded="false" />
+                <element signature="method#slog#0;class#Main#0" expanded="false" />
+                <element signature="class#2669:2795" expanded="false" />
+                <element signature="class#2834:3037" expanded="false" />
+                <element signature="class#3069:3220" expanded="false" />
+                <element signature="e#3157#3158#0" expanded="true" />
+                <element signature="e#3209#3210#0" expanded="true" />
+                <element signature="class#3261:3591" expanded="false" />
+                <element signature="e#3747#3748#0" expanded="true" />
+                <element signature="e#3811#3812#0" expanded="true" />
+                <element signature="method#viewIP#0;class#Main#0" expanded="false" />
+                <element signature="method#validIP#0;class#Main#0" expanded="false" />
+                <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -207,6 +208,11 @@
               <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java Module" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -449,7 +455,7 @@
       <workItem from="1511289865339" duration="2375000" />
       <workItem from="1513866208539" duration="11128000" />
       <workItem from="1514064967252" duration="4230000" />
-      <workItem from="1514740319725" duration="10634000" />
+      <workItem from="1514740319725" duration="13039000" />
     </task>
     <task id="LOCAL-00001" summary="started adding socketIO">
       <created>1510856306665</created>
@@ -482,11 +488,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131806000" />
+    <option name="totallyTimeSpent" value="134211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -497,11 +502,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900847" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19895834" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17510776" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -781,7 +786,6 @@
     <entry file="file://$PROJECT_DIR$/src/Constructor.java" />
     <entry file="file://$PROJECT_DIR$/src/VariableUsage.java" />
     <entry file="jar://$PROJECT_DIR$/libtensorflow-1.3.0.jar!/org/tensorflow/TensorFlow.class" />
-    <entry file="file://$PROJECT_DIR$/src/SomeTensorFlow.java" />
     <entry file="file://$PROJECT_DIR$/src/Enum.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/body/EnumDeclaration.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -911,15 +915,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+        <state relative-caret-position="531">
+          <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2898#2899#0" expanded="true" />
-            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#transformData#0;class#Main#0" expanded="false" />
+            <element signature="method#setShutdownOperations#0;class#Main#0" expanded="false" />
+            <element signature="method#slog#0;class#Main#0" expanded="false" />
+            <element signature="class#2669:2795" expanded="false" />
+            <element signature="class#2834:3037" expanded="false" />
+            <element signature="class#3069:3220" expanded="false" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3209#3210#0" expanded="true" />
+            <element signature="class#3261:3591" expanded="false" />
+            <element signature="e#3747#3748#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="method#viewIP#0;class#Main#0" expanded="false" />
+            <element signature="method#validIP#0;class#Main#0" expanded="false" />
+            <element signature="method#printAllClasses#0;class#Main#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SomeTensorFlow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -28,6 +28,7 @@ class Main {
     static Gson gson = new Gson();
 
     static Socket socket;
+    private static String clientID;
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
@@ -37,18 +38,32 @@ class Main {
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
         slog("Classes Parsed");
-        ArrayList<ExtractedClass> cl = new ArrayList<>(parsedClasses);
+
+
+
         try {
             slog("Connecting to " + dir);
             connectSocket();
 
-            //sendToServer("testString");
+            int[][] matrices = transformData(parsedClasses);
+            Gson gson = new Gson();
+            String json = gson.toJson(matrices);
+
+            sendToServer(json);
 
         } catch (URISyntaxException e) {
             slog("Failed to connect");
             e.printStackTrace();
         }
+
     }
+
+    //Method not implemented yet
+    public static int[][] transformData(Set<ExtractedClass> classes){
+        int[][] dummyData = {{4, 5, 7,}, {2, 8, 9}};
+        return dummyData;
+    }
+
     public static void setShutdownOperations(){
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
@@ -58,6 +73,7 @@ class Main {
             }
         });
     }
+
     public static void slog(String msg) {
         Date d = new Date();
         SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy::HH:mm:ss a");
@@ -68,12 +84,9 @@ class Main {
         socket.emit("SEND-PYTHON", data);
     }
 
-
     public static String getIp() {
         return "localhost";
     }
-
-    private static String clientID;
 
     public static void connectSocket() throws URISyntaxException {
         socket = IO.socket(dir);
@@ -98,7 +111,6 @@ class Main {
             public void call(Object... args) {
                 socket.emit("ID", 0);
             }
-
         });
 
         socket.on("SEND-CLIENT", new Emitter.Listener() {
@@ -173,6 +185,12 @@ class Main {
         }
     }
 
+
+
+
+
+
+
     private static void printAllClasses() {
         for (ExtractedClass extractedClass : parsedClasses) {
             if (extractedClass.getParent().equals("")) {
@@ -180,7 +198,6 @@ class Main {
             }
         }
     }
-
 
     public static void out(String s) {
         System.out.println(s);
