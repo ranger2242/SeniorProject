@@ -83,7 +83,7 @@ function slog(message, type) {
             messageType+="DISCONNECTED:\t";
             break;
         case 0:
-            messageType+="CONNECTED:\t";
+            messageType+="CONNECTED:\t\t";
             break;
         case 1:
             messageType+="MESSAGE:\t";
@@ -95,7 +95,7 @@ function slog(message, type) {
             messageType+="SEND:\t\t";
             break;
         case -99:
-            messageType+="ERROR:\t";
+            messageType+="ERROR:\t\t";
             break;
         default:
             messageType+="UNDEF:\t\t";

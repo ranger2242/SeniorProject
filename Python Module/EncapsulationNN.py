@@ -3,78 +3,85 @@ import tensorflow as tf
 import numpy as np
 
 
-number_nodes_input = 1000
-number_nodes_hl1 = 500
-number_nodes_hl2 = 500
-number_nodes_hl3 = 500
-number_nodes_output = 2
+class EncapsulationNeuralNetwork:
 
-batch_size = 100
+    input_data = None
+    number_nodes_input = 1000
+    number_nodes_hl1 = 500
+    number_nodes_hl2 = 500
+    number_nodes_hl3 = 500
+    number_nodes_output = 2
 
-x = tf.placeholder('float', [None, number_nodes_input])
-y = tf.placeholder('float')
+    batch_size = 100
 
-def neural_network_model(data):
-    hidden_1_layer = {'weights': tf.Variable(tf.random_normal([number_nodes_input, number_nodes_hl1])), 'biases': tf.Variable(tf.random_normal([number_nodes_hl1]))}
+    x = tf.placeholder('float', [None, number_nodes_input])
+    y = tf.placeholder('float')
 
-    hidden_2_layer = {'weights': tf.Variable(tf.random_normal([number_nodes_hl1, number_nodes_hl2])), 'biases': tf.Variable(tf.random_normal([number_nodes_hl2]))}
+    def __init__(self, input_data):
+        self.input_data = input_data
+        #use NN here...
 
-    hidden_3_layer = {'weights': tf.Variable(tf.random_normal([number_nodes_hl2, number_nodes_hl3])), 'biases': tf.Variable(tf.random_normal([number_nodes_hl3]))}
+    def neural_network_model(self, data):
+        hidden_1_layer = {'weights': tf.Variable(tf.random_normal([self.number_nodes_input, self.number_nodes_hl1])), 'biases': tf.Variable(tf.random_normal([self.number_nodes_hl1]))}
 
-    output_layer = {'weights': tf.Variable(tf.random_normal([number_nodes_hl3, number_nodes_output])), 'biases': tf.Variable(tf.random_normal([number_nodes_output]))}
+        hidden_2_layer = {'weights': tf.Variable(tf.random_normal([self.number_nodes_hl1, self.number_nodes_hl2])), 'biases': tf.Variable(tf.random_normal([self.number_nodes_hl2]))}
 
-    layer1 = tf.add(tf.matmul(data, hidden_1_layer['weights']), hidden_1_layer["biases"])
-    layer1 = tf.nn.relu(layer1)
+        hidden_3_layer = {'weights': tf.Variable(tf.random_normal([self.number_nodes_hl2, self.number_nodes_hl3])), 'biases': tf.Variable(tf.random_normal([self.number_nodes_hl3]))}
 
-    layer2 = tf.add(tf.matmul(layer1, hidden_2_layer['weights']), hidden_2_layer["biases"])
-    layer2 = tf.nn.relu(layer2)
+        output_layer = {'weights': tf.Variable(tf.random_normal([self.number_nodes_hl3, self.number_nodes_output])), 'biases': tf.Variable(tf.random_normal([self.number_nodes_output]))}
 
-    layer3 = tf.add(tf.matmul(layer2, hidden_3_layer['weights']), hidden_3_layer["biases"])
-    layer3 = tf.nn.relu(layer3)
+        layer1 = tf.add(tf.matmul(data, hidden_1_layer['weights']), hidden_1_layer["biases"])
+        layer1 = tf.nn.relu(layer1)
 
-    output = tf.add(tf.matmul(layer3, output_layer['weights']), output_layer["biases"])
-    return output
+        layer2 = tf.add(tf.matmul(layer1, hidden_2_layer['weights']), hidden_2_layer["biases"])
+        layer2 = tf.nn.relu(layer2)
 
+        layer3 = tf.add(tf.matmul(layer2, hidden_3_layer['weights']), hidden_3_layer["biases"])
+        layer3 = tf.nn.relu(layer3)
 
-def train_neural_network(x):
-    prediction = neural_network_model(x)
-    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=prediction, labels=y))
-    optimizer = tf.train.AdamOptimizer().minimize(cost)
+        output = tf.add(tf.matmul(layer3, output_layer['weights']), output_layer["biases"])
+        return output
 
-    hm_epochs = 10
+    #incorrect function.. this uses supervised learning.. need to find an unsupervised algorithm
+    def train_neural_network(self, x):
+        prediction = self.neural_network_model(x)
+        cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=prediction, labels=self.y))
+        optimizer = tf.train.AdamOptimizer().minimize(cost)
 
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
+        hm_epochs = 10
 
-        # for epoch in range(hm_epochs):
-        #     epoch_loss = 0
-        #     for _ in range(int(mnist.train.num_examples/batch_size)):
-        #         epoch_x, epoch_y = mnist.train.next_batch(batch_size=batch_size)
-        #         _, c = sess.run([optimizer, cost], feed_dict={x: epoch_x, y: epoch_y})
-        #         epoch_loss += c
-        #     print("Training Cycle:", epoch + 1, "  Loss:", epoch_loss)
+        with tf.Session() as sess:
+            sess.run(tf.global_variables_initializer())
 
-
-        # correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
-        # accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
-        # print('Accuracy:', accuracy.eval({x: mnist.test.images, y: mnist.test.labels}))
-
-        # print("Saving...")
-        # saver = tf.train.Saver()
-        # saver.save(sess, 'C:\\Users\\Ross\\Desktop\\Numbers\\model.ckpt')
-        # print("Model Saved!")
+            # for epoch in range(hm_epochs):
+            #     epoch_loss = 0
+            #     for _ in range(int(mnist.train.num_examples/batch_size)):
+            #         epoch_x, epoch_y = mnist.train.next_batch(batch_size=batch_size)
+            #         _, c = sess.run([optimizer, cost], feed_dict={x: epoch_x, y: epoch_y})
+            #         epoch_loss += c
+            #     print("Training Cycle:", epoch + 1, "  Loss:", epoch_loss)
 
 
+            # correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
+            # accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
+            # print('Accuracy:', accuracy.eval({x: mnist.test.images, y: mnist.test.labels}))
 
-def use_neural_network(data):
-    prediction = neural_network_model(x)
+            # print("Saving...")
+            # saver = tf.train.Saver()
+            # saver.save(sess, 'C:\\Users\\Ross\\Desktop\\Numbers\\model.ckpt')
+            # print("Model Saved!")
 
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-        # saver = tf.train.Saver()
-        # saver.restore(sess, "model.ckpt")
 
-        result = (sess.run(tf.argmax(prediction.eval(feed_dict={x: [data]}), 1)))
-        print(result)
+    def use_neural_network(self, data):
+        prediction = self.neural_network_model(x)
+
+        with tf.Session() as sess:
+            sess.run(tf.global_variables_initializer())
+            # saver = tf.train.Saver()
+            # saver.restore(sess, "model.ckpt")
+
+            result = (sess.run(tf.argmax(prediction.eval(feed_dict={self.x: [data]}), 1)))
+            print(result)
+
 
 

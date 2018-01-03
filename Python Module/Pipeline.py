@@ -7,20 +7,19 @@ import _datetime as datetime
 
 
 class Pipeline:
-    id = str
 
+    id = str
+    socket = SocketIO
 
 
     def __init__(self):
         self.slog("Pipeline Initialized")
-
 
     # Logs server communication with time
     def slog(self, message):
         fmt = '%Y-%m-%d::%H:%M:%S: '
         date_string = datetime.datetime.now().strftime(fmt)
         print(date_string + message)
-
 
     # Prints JSON once read
     def print_json(self, json):
@@ -51,27 +50,31 @@ class Pipeline:
             id = args[0]['id']
             data = args[0]['data']
             print("Received:", data, '\tFrom Client ID:', id)
-            send_to_client(id, "received", "true")
+            self.send_to_client(id, "received", "true")
 
+            # Proabably start a new thread here
             # Send data to NN here
 
-        def send_to_client(client_id, key, data):
-            j = {key: data}
-            socket.emit("SEND-CLIENT", (client_id, json.dumps(j)))
+
 
         def connected(*args):
             self.slog("Connected To Server")
 
         def id(*args):
-            socket.emit("ID", 1)
+            self.socket.emit("ID", 1)
             self.id = args[0]
 
 
 
-        socket = SocketIO(ip, port, LoggingNamespace)
-        socket.on("SEND-PYTHON", receive_data)
-        socket.on("CONNECTED", connected)
-        socket.on("ID", id)
-        socket.wait_for_callbacks(seconds=5000)
+        self.socket = SocketIO(ip, port, LoggingNamespace)
+        self.socket.on("SEND-PYTHON", receive_data)
+        self.socket.on("CONNECTED", connected)
+        self.socket.on("ID", id)
+        self.socket.wait()
 
-        socket.wait()
+    def send_to_client(self, client_id, key, data):
+        j = {key: data}
+        self.socket.emit("SEND-CLIENT", (client_id, json.dumps(j)))
+
+
+
