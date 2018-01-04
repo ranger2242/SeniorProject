@@ -30,14 +30,17 @@ class Main {
 
     public static void main(String[] args) {
         FileHandler fileHandler = new FileHandler();
-        String path = "ex\\ex2";
+        String path = "ex\\ex4";
         Parser parser = new Parser(fileHandler.load(path));
         slog("Loaded dir: " + path);
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
         globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
         slog("Classes Parsed");
 
-        int[][] matrices = transformData(parsedClasses);
+        Transformer transformer = new Transformer(parsedClasses, globalEnums);
+        int[][][] matrices = transformer.transform();
+        slog("Data Transformed");
+
         Gson gson = new Gson();
         String json = gson.toJson(matrices);
 
@@ -46,13 +49,6 @@ class Main {
 
     }
 
-
-
-    //Method not implemented yet
-    public static int[][] transformData(Set<ExtractedClass> classes){
-        int[][] dummyData = {{4, 5, 7,}, {2, 8, 9}};
-        return dummyData;
-    }
 
     private static void printAllClasses() {
         for (ExtractedClass extractedClass : parsedClasses) {

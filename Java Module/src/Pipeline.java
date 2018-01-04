@@ -5,11 +5,6 @@ import io.socket.emitter.Emitter;
 import java.net.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-//import slog;
-
-
-
-
 
 
 public class Pipeline {
@@ -54,6 +49,7 @@ public class Pipeline {
         for(int i = 0; i < 15; i++){
             if(serverIsReady){
                 socket.emit("SEND-PYTHON", data);
+                slog("Data Sent To Server");
                 return;
             } else {
                 try {

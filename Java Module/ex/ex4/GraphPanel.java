@@ -2,10 +2,25 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
+class Test{
+    public int testVar = 5;
+    public Test(){
+
+    }
+}
+
+
 public class RandomClassForTesting{
     GraphPanel var = new  GraphPanel();
 
     int one = var.one();
+
+
+    int hello = var.width;
+//    var.width = 5;
+
+//    Test t = new Test();
+//    t.testVar = 7;
 
 }
 

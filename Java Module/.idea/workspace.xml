@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main$6.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Transformer.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Pipeline.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex/ex4/GraphPanel.java" afterPath="$PROJECT_DIR$/ex/ex4/GraphPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pipeline.java" afterPath="$PROJECT_DIR$/src/Pipeline.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Python Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Python Module/.idea/workspace.xml" />
@@ -27,24 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1460">
-              <caret line="86" column="18" lean-forward="true" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
-              <folding>
-                <element signature="e#195#243#0" expanded="false" />
-                <element signature="n#!!block;n#askForID#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state relative-caret-position="326">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#277#301#1" expanded="true" />
@@ -54,18 +46,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pipeline.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex/ex4/GraphPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transformer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Transformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExtractedClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <folding>
+                <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#ExtractedClass#1;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findNests#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="method#printClass#0;class#ExtractedClass#0" expanded="false" />
+                <element signature="e#7369#7370#0" expanded="true" />
+                <element signature="e#7402#7403#0" expanded="true" />
+                <element signature="method#setImports#0;class#ExtractedClass#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypeDeclaration.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/body/TypeDeclaration.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1300">
+              <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pipeline.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="485">
+              <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#setShutdownOperations#0;class#Pipeline#0" expanded="false" />
-                <element signature="method#sendToServer#0;class#Pipeline#0" expanded="false" />
                 <element signature="method#connectSocket#0;class#Pipeline#0" expanded="false" />
-                <element signature="class#1824:1950" expanded="false" />
-                <element signature="method#call#0;class#1824:1950" expanded="false" />
-                <element signature="method#call#0;class#2454:2784" expanded="false" />
+                <element signature="class#1850:1976" expanded="false" />
+                <element signature="method#call#0;class#1850:1976" expanded="false" />
+                <element signature="method#call#0;class#2480:2810" expanded="false" />
                 <element signature="method#viewIP#0;class#Pipeline#0" expanded="false" />
                 <element signature="method#validIP#0;class#Pipeline#0" expanded="false" />
               </folding>
@@ -88,8 +147,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -140,9 +199,11 @@
         <option value="$PROJECT_DIR$/tests/MainTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$MAVEN_REPOSITORY$/io/socket/socket.io-client/1.0.0/socket.io-client-1.0.0.jar!/io/socket/client/Socket.class" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/src/Pipeline.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/ex/ex4/GraphPanel.java" />
+        <option value="$PROJECT_DIR$/src/Transformer.java" />
       </list>
     </option>
   </component>
@@ -216,6 +277,17 @@
               <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java Module" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+              <item name="ex" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+              <item name="ex" type="462c0819:PsiDirectoryNode" />
+              <item name="ex4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
@@ -501,7 +573,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136130000" />
+    <option name="totallyTimeSpent" value="142374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
@@ -516,18 +588,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900847" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39270833" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17510776" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38453713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48118007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -539,6 +611,39 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4514039" sideWeight="0.50410676" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27568668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900847" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3761562" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4326466" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17510776" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48118007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36012208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39270833" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4514039" sideWeight="0.50410676" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27568668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -557,25 +662,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="47" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AntiPatternFinder.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="67" column="11" lean-forward="false" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AntiPatternFinder.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -808,16 +899,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java" />
     <entry file="file://$PROJECT_DIR$/ex/ex2/ASS.java" />
     <entry file="file://$PROJECT_DIR$/ex/ex3/A.java" />
     <entry file="file://$PROJECT_DIR$/ex/MapState.java" />
-    <entry file="file://$PROJECT_DIR$/ex/ex4/GraphPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/Variable.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.py" />
     <entry file="file://$PROJECT_DIR$/AntiPatternProject/AntiPatternProject.iml" />
     <entry file="file://$PROJECT_DIR$/src/FileHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/Parser.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/objects/Global.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7725">
@@ -910,6 +998,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1300">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setShutdownOperations#0;class#Pipeline#0" expanded="false" />
+            <element signature="method#connectSocket#0;class#Pipeline#0" expanded="false" />
+            <element signature="class#1850:1976" expanded="false" />
+            <element signature="method#call#0;class#1850:1976" expanded="false" />
+            <element signature="method#call#0;class#2480:2810" expanded="false" />
+            <element signature="method#viewIP#0;class#Pipeline#0" expanded="false" />
+            <element signature="method#validIP#0;class#Pipeline#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1460">
@@ -921,10 +1034,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ex/ex4/GraphPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExtractedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#ExtractedClass#1;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findNests#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="method#printClass#0;class#ExtractedClass#0" expanded="false" />
+            <element signature="e#7369#7370#0" expanded="true" />
+            <element signature="e#7402#7403#0" expanded="true" />
+            <element signature="method#setImports#0;class#ExtractedClass#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.4.3/javaparser-core-3.4.3.jar!/com/github/javaparser/ast/body/TypeDeclaration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="326">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#277#301#1" expanded="true" />
@@ -933,19 +1085,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pipeline.java">
+    <entry file="file://$PROJECT_DIR$/src/Transformer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="670">
+          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
           <folding>
-            <element signature="method#setShutdownOperations#0;class#Pipeline#0" expanded="false" />
-            <element signature="method#sendToServer#0;class#Pipeline#0" expanded="false" />
-            <element signature="method#connectSocket#0;class#Pipeline#0" expanded="false" />
-            <element signature="class#1824:1950" expanded="false" />
-            <element signature="method#call#0;class#1824:1950" expanded="false" />
-            <element signature="method#call#0;class#2454:2784" expanded="false" />
-            <element signature="method#viewIP#0;class#Pipeline#0" expanded="false" />
-            <element signature="method#validIP#0;class#Pipeline#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
