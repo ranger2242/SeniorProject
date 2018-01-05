@@ -3,6 +3,8 @@ var app = require('express')();
 var server = require('http').Server();
 var io = require('socket.io')(server);
 
+var pythonId;
+var javaId;
 
 slog("SERVER INITIALIZED", 0);
 io.listen(2242,function(){
@@ -10,26 +12,27 @@ io.listen(2242,function(){
 });
 
 
-var pythonId;
-var javaId;
+function askForID(socket) {
+    socket.emit('ID', socket.id);
+}
 
 // Add a connect listener
 io.on('connection', function(socket) {
 
-    slog(socket.id,0);
+    askForID(socket);
 
-    socket.on('id',function (msg) {
-        if( msg == 0 ){
-            javaId = socket.id;
-            socket.broadcast.to(javaId).emit("CONNECTED", true);
-            slog("Java Client: " + javaId, 50);
-        }else if( msg == 1 ){
+    socket.on('ID',function (id) {
+
+        if( id == 0 ){
+            socket.emit('CONNECTED', socket.id);
+            slog("Java Client: " + socket.id, 0);
+        }else if( id == 1 ){
             pythonId = socket.id;
-            socket.broadcast.to(pythonId).emit("CONNECTED", true);
-            slog("Python Client: " + pythonId, 50);
+            socket.emit("CONNECTED", socket.id);
+            slog("Python Client: " + pythonId, 0);
         }else{
             slog("Unknown client", -99);
-            socket.broadcast.to(pythonId).emit("CONNECTED", false);
+            socket.emit("CONNECTED", null);
         }
     });
 
@@ -44,20 +47,26 @@ io.on('connection', function(socket) {
 	socket.on('SEND-PYTHON', function(message){
 		slog(message, 100);
 		if (pythonId != null){
-            socket.broadcast.to(pythonId).emit("SEND-PYTHON", message);
+            var data = {id: socket.id, data: message}
+            socket.broadcast.to(pythonId).emit("SEND-PYTHON", data);
         }else{
 		    slog("Python Client not connected", -99)
         }
 	});
 
     socket.on('SEND-CLIENT', function(message){
-        slog(message, 100);
-        if (javaId != null){
-            socket.broadcast.to(javaId).emit("SEND-CLIENT", message);
+
+        var id = message[0];
+        var data = message[1];
+        slog("To: " + id + "\tData: " + data, 100);
+
+        if (id != null){
+            socket.broadcast.to(id).emit("SEND-CLIENT", data);
         }else{
             slog("Java Client not connected", -99)
         }
     });
+
 });
 
 function emitAll(socket,event,arg){
@@ -74,7 +83,7 @@ function slog(message, type) {
             messageType+="DISCONNECTED:\t";
             break;
         case 0:
-            messageType+="CONNECTED:\t";
+            messageType+="CONNECTED:\t\t";
             break;
         case 1:
             messageType+="MESSAGE:\t";
@@ -86,10 +95,10 @@ function slog(message, type) {
             messageType+="SEND:\t\t";
             break;
         case -99:
-            messageType+="ERROR:\t";
+            messageType+="ERROR:\t\t";
             break;
         default:
-            messageType+="UNDEF:\t";
+            messageType+="UNDEF:\t\t";
     }    console.log(timeStamp + messageType + message);
 
 }

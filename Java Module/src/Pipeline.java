@@ -1,88 +1,170 @@
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import java.net.*;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 
 public class Pipeline {
 
+
+    private static Socket socket;
+    private static String ip= "localhost";
+    private static String port = "2242";
+    private static String dir = "http://" + ip + ":" + port;
+    private static String clientID;
+    private static boolean serverIsReady = false;
+
+
     public Pipeline(){
 
+        try {
+            slog("Connecting to " + dir);
+            connectSocket();
+        } catch (URISyntaxException e) {
+            slog("Failed to connect");
+            e.printStackTrace();
+        }
     }
 
-/*    public JSONObject readJSONFile(String fileName, String extension){
-        String directory = getJSONDirectory();
-        File folder = new File(directory);
-        File jsonFile = new File(folder + "\\" + fileName + extension);
-        File tmpFile = new File(folder + "\\" + fileName + ".tmp");
 
+    public static void setShutdownOperations(){
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                slog("Disconnected from server");
+                socket.disconnect();
+            }
+        });
+    }
 
-        if ( !jsonFile.exists()){
-            System.out.println("Can not find: " + jsonFile.getAbsolutePath());
-            return null;
+    public static void slog(String msg) {
+        Main.slog(msg);
+    }
+
+    public static void sendToServer(String data){
+        //Attempt to send message to server, will timeout after 15 seconds
+        for(int i = 0; i < 15; i++){
+            if(serverIsReady){
+                socket.emit("SEND-PYTHON", data);
+                slog("Data Sent To Server");
+                return;
+            } else {
+                try {
+                    Thread.sleep(1000);
+                } catch(InterruptedException ex) {
+                    slog("Error happened while waiting for server to connect...");
+                }
+            }
         }
+        slog("Message to server timed out...");
+    }
 
-        if (tmpFile.exists()){
-            try {
-                System.out.println("FILE STILL BEING WRITTEN TO -- waiting -- ");
-                Thread.sleep(200);
-                return readJSONFile(fileName, extension);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public static void connectSocket() throws URISyntaxException {
+        socket = IO.socket(dir);
+
+        socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
+            @Override
+            public void call(Object... args) {
             }
 
-            return null;
-        }
+        });
 
-        FileHandler fileHandler = new FileHandler();
-        String fileText = fileHandler.load(jsonFile);
-        JSONObject json= new JSONObject(fileText);
-        return json;
-    }*/
+        socket.on("CONNECTED", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                slog("Connected to server");
+                clientID = (String) args[0];
+                serverIsReady = true;
+            }
+        });
 
-    public void launchPython(){
-        String directory = getRootDirectory();
-        directory += "Batch Files\\run_main_python.bat";
+        socket.on("ID", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                socket.emit("ID", 0);
+            }
+        });
 
-        try{
-            Process p = Runtime.getRuntime().exec(directory);
-        }catch (IOException e){
-            System.out.println("ERROR: Can't run run_main_python.bat file");
+        socket.on("SEND-CLIENT", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+
+                System.out.println("Data Recieved: ");
+                for( Object object : args ) {
+                    String data = (String) object;
+                    System.out.println(data);
+                }
+            }
+        });
+
+        socket.on(io.socket.client.Socket.EVENT_DISCONNECT, new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                slog("Disconnected from server");
+                serverIsReady = false;
+            }
+        });
+
+        socket.connect();
+    }
+
+    public static void viewIP() {
+        try {
+            Main.out("Your Host addr: " + InetAddress.getLocalHost().getHostAddress());  // often returns "127.0.0.1"
+        } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public void createJSONFile(ArrayList<int[][]> matrices){
-        /*JSONObject json = new JSONObject();
-
-        *//*for ( int i = 0; i < matrices.size(); i++ ){
-            json.put("mat" + i , matrices.get(i));
-        }*//*
-
-        String fileName = "matrices.json";
-        String directory = getJSONDirectory();
-
-        try(FileWriter file  = new FileWriter(new File(directory, fileName))){
-            file.write(json.toString());
-            file.flush();
-        } catch (IOException e) {
-            System.out.println("Pipeline ERROR");
+        Enumeration<NetworkInterface> n = null;
+        try {
+            n = NetworkInterface.getNetworkInterfaces();
+        } catch (SocketException e) {
             e.printStackTrace();
-        }*/
-    }
-
-    private String getRootDirectory(){
-        String directory = System.getProperty("user.dir");
-
-        while( !directory.endsWith("\\") ){
-            directory = directory.substring(0,directory.length() - 1 );
         }
-        return directory;
+        for (; n.hasMoreElements(); ) {
+            NetworkInterface e = n.nextElement();
+
+            Enumeration<InetAddress> a = e.getInetAddresses();
+            for (; a.hasMoreElements(); ) {
+                InetAddress addr = a.nextElement();
+                Main.out("  " + addr.getHostAddress());
+            }
+        }
     }
 
-    private String getJSONDirectory(){
-        String directory = getRootDirectory();
-        directory += "json";
-        return directory;
+    public static boolean validIP(String ip) {
+        try {
+            if (ip == null || ip.isEmpty()) {
+                return false;
+            }
+
+            String[] parts = ip.split("\\.");
+            if (parts.length != 4) {
+                return false;
+            }
+
+            for (String s : parts) {
+                int i = Integer.parseInt(s);
+                if ((i < 0) || (i > 255)) {
+                    return false;
+                }
+            }
+            if (ip.endsWith(".")) {
+                return false;
+            }
+
+            return true;
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
     }
+
+
+
+
+
+
 
 }
