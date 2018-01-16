@@ -23,10 +23,10 @@ io.on('connection', function(socket) {
 
     socket.on('ID',function (id) {
 
-        if( id == 0 ){
+        if( id === 0 ){
             socket.emit('CONNECTED', socket.id);
             slog("Java Client: " + socket.id, 0);
-        }else if( id == 1 ){
+        }else if( id === 1 ){
             pythonId = socket.id;
             socket.emit("CONNECTED", socket.id);
             slog("Python Client: " + pythonId, 0);

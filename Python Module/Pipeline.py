@@ -4,7 +4,7 @@ import os
 from socketIO_client_nexus import SocketIO, LoggingNamespace
 import json
 import _datetime as datetime
-
+from GP import GP
 
 class Pipeline:
 
@@ -54,6 +54,7 @@ class Pipeline:
 
             # Proabably start a new thread here
             # Send data to NN here
+            self.run_neural_networks(data)
 
 
 
@@ -75,6 +76,11 @@ class Pipeline:
     def send_to_client(self, client_id, key, data):
         j = {key: data}
         self.socket.emit("SEND-CLIENT", (client_id, json.dumps(j)))
+
+
+    def run_neural_networks(self, data):
+        gp = GP(data)
+        gp.run()
 
 
 

@@ -10,6 +10,9 @@ import java.util.*;
 /**
  * Created by Chris Cavazos on 10/1/2017.
  */
+
+
+
 @SuppressWarnings("ALL")
 class Main {
 
@@ -29,6 +32,7 @@ class Main {
     private static String clientID;
 
     public static void main(String[] args) {
+
         FileHandler fileHandler = new FileHandler();
         String path = "ex\\ex4";
         Parser parser = new Parser(fileHandler.load(path));
@@ -38,7 +42,7 @@ class Main {
         slog("Classes Parsed");
 
         Transformer transformer = new Transformer(parsedClasses, globalEnums);
-        int[][][] matrices = transformer.transform();
+        double[][][] matrices = transformer.transform();
         slog("Data Transformed");
 
         Gson gson = new Gson();

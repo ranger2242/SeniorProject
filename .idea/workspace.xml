@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09850a3e-d51a-45c7-9ffa-33f847350918" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Module/.idea/dictionaries/Ross.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Module/ex/testing1/TestingClass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Python Module/.idea/dictionaries/Ross.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Python Module/ColorNN.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Python Module/GP.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Python Module/RBM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/target/classes/ExtractedClass.class" afterPath="$PROJECT_DIR$/Java Module/target/classes/ExtractedClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/target/classes/Main.class" afterPath="$PROJECT_DIR$/Java Module/target/classes/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/target/classes/Transformer.class" afterPath="$PROJECT_DIR$/Java Module/target/classes/Transformer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Java Module/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/ex/ex4/GraphPanel.java" afterPath="$PROJECT_DIR$/Java Module/ex/ex4/GraphPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/server/index.js" afterPath="$PROJECT_DIR$/Java Module/server/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/src/ExtractedClass.java" afterPath="$PROJECT_DIR$/Java Module/src/ExtractedClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/src/Main.java" afterPath="$PROJECT_DIR$/Java Module/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Module/src/Transformer.java" afterPath="$PROJECT_DIR$/Java Module/src/Transformer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/Python Module/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Python Module/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/Main.py" afterPath="$PROJECT_DIR$/Python Module/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/server.py" afterPath="$PROJECT_DIR$/Python Module/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python Module/Pipeline.py" afterPath="$PROJECT_DIR$/Python Module/Pipeline.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +30,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ExtractedClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Module/src/ExtractedClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transformer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Java Module/src/Transformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,9 +71,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/Java Module/server/node_modules" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="60" />
+    <option name="x" value="-1287" />
+    <option name="y" value="-9" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -51,6 +95,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -60,12 +106,21 @@
               <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,14 +236,16 @@
       <updated>1510847701787</updated>
       <workItem from="1510850008009" duration="8000" />
       <workItem from="1511216839331" duration="12000" />
+      <workItem from="1516056862344" duration="24000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43000" />
+    <option name="totallyTimeSpent" value="67000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -197,19 +254,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.83189654" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31434384" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38453713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -261,8 +319,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Method.java" />
-    <entry file="file://$PROJECT_DIR$/src/Parser.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/ex/ex3/A.java" />
     <entry file="file://$PROJECT_DIR$/src/MethodBuilder.java" />
@@ -530,5 +586,25 @@
     <entry file="file://$PROJECT_DIR$/src/Parser.java" />
     <entry file="file://$PROJECT_DIR$/AntiPatternProject/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Java Module/src/ExtractedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Module/src/Transformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
