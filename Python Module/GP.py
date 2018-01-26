@@ -1,5 +1,4 @@
-import tensorflow as tf
-
+from SOMObject import SOM
 
 '''
 Data Model from Client
@@ -17,62 +16,39 @@ data: [
 
 '''
 
-# This model is obsolete...
 
 class GP:
 
-    number_of_input_nodes = 5
-    number_of_hidden_layer_1_nodes = 100
-    number_of_hidden_layer_2_nodes = 100
-    number_of_hidden_layer_3_nodes = 100
-    number_of_output_nodes = 2
+    def __init__(self):
+        m = 50
+        n = 50
+        input_size = 8
+        iterations = 50
 
-    def __init__(self, data):
-        tf.initialize_all_variables()
-        self.data = data
+        self.som = SOM(m, n, input_size, iterations)
 
+        if self.som.trained is True:
+            self.map_network()
 
-    def preprocessing(self, data):
-        # do any nessary preprocessing here
-        return data
+    def preprocessing(self, raw_data):
+        # Do any preprocessing here :)
+        return raw_data
 
+    def train(self, raw_data):
+        if self.som.trained is False:
+            data = self.preprocessing(raw_data)
+            self.som.train(data)
+        else:
+            print('Network Already Trained...')
 
-    def run(self):
-        input_data = self.preprocessing(self.data)
-        predication = self.network_model(input_data)
+    def map_network(self):
+        print('Mapping not yet implemented')
+        # some_mapping_points = []
+        # self.som.map_colors(some_mapping_points)
 
-        sess = tf.Session()
-
-
-        # Do network stuff here
-
-    def network_model(self, data):
-
-        hidden_layer_1 = { 'weights': tf.Variable(tf.random_normal([self.number_of_input_nodes, self.number_of_hidden_layer_1_nodes])),
-            'biases': tf.Variable(tf.random_normal([self.number_of_hidden_layer_1_nodes]))}
-
-        hidden_layer_2 = {'weights': tf.Variable(tf.random_normal([self.number_of_hidden_layer_1_nodes, self.number_of_hidden_layer_2_nodes])),
-            'biases': tf.Variable(tf.random_normal([self.number_of_hidden_layer_2_nodes]))}
-
-        hidden_layer_3 = { 'weights': tf.Variable(tf.random_normal([self.number_of_hidden_layer_2_nodes, self.number_of_hidden_layer_3_nodes])),
-            'biases': tf.Variable(tf.random_normal([self.number_of_hidden_layer_3_nodes]))}
-
-        output_layer = {'weights': tf.Variable(tf.random_normal([self.number_of_hidden_layer_3_nodes, self.number_of_output_nodes])),
-            'biases': tf.Variable(tf.random_normal([self.number_of_output_nodes]))}
-
-        hidden_1 = tf.add(tf.matmul(data, hidden_layer_1['weights']), hidden_layer_1["biases"])
-        hidden_1 = tf.nn.relu(hidden_1)
-
-        hidden_2 = tf.add(tf.matmul(hidden_1, hidden_layer_2['weights']), hidden_layer_2["biases"])
-        hidden_2 = tf.nn.relu(hidden_2)
-
-        hidden_3 = tf.add(tf.matmul(hidden_2, hidden_layer_3['weights']), hidden_layer_3["biases"])
-        hidden_3 = tf.nn.relu(hidden_3)
-
-        output = tf.add(tf.matmul(hidden_3, output_layer['weights']), output_layer["biases"])
-        return output
-
-
+    def make_prediction(self, raw_data):
+        data = self.preprocessing(raw_data)
+        return self.som.make_prediction(data)
 
 
 

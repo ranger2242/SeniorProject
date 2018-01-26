@@ -2,34 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28beb00e-580a-4319-ad77-7dcd924d537f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Java Module/.idea/dictionaries/Ross.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Java Module/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_1_0_M1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Java Module/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_1_0_M1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Java Module/.idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Java Module/ex/testing1/TestingClass.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Java Module/src/GodObjectTransformer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Ross.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GP.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SOMObject.py" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/AntiPatternFinder.iml" afterPath="$PROJECT_DIR$/../Java Module/AntiPatternFinder.iml" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/ex/ex4/GraphPanel.java" afterPath="$PROJECT_DIR$/../Java Module/ex/ex4/GraphPanel.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/pom.xml" afterPath="$PROJECT_DIR$/../Java Module/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/server/index.js" afterPath="$PROJECT_DIR$/../Java Module/server/index.js" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/ExtractedClass.java" afterPath="$PROJECT_DIR$/../Java Module/src/ExtractedClass.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/Main.java" afterPath="$PROJECT_DIR$/../Java Module/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/Transformer.java" afterPath="$PROJECT_DIR$/../Java Module/src/Transformer.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/ExtractedClass.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/ExtractedClass.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Transformer.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Transformer.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/test-classes/MainTest.class" afterPath="$PROJECT_DIR$/../Java Module/target/test-classes/MainTest.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/tests/MainTest.java" afterPath="$PROJECT_DIR$/../Java Module/tests/MainTest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Ross.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Ross.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
-      <change beforePath="$PROJECT_DIR$/Pipeline.py" afterPath="$PROJECT_DIR$/Pipeline.py" />
+      <change beforePath="$PROJECT_DIR$/EncapsulationNN.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/GP.py" afterPath="$PROJECT_DIR$/GP.py" />
+      <change beforePath="$PROJECT_DIR$/SOMObject.py" afterPath="$PROJECT_DIR$/SOMObject.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +27,7 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="0">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -63,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/Pipeline.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#354#479#0" expanded="false" />
@@ -77,9 +54,24 @@
       <file leaf-file-name="SOMObject.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SOMObject.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="275">
+              <caret line="108" column="33" lean-forward="false" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+              <folding>
+                <element signature="e#299#3963#0" expanded="false" />
+                <element signature="e#1076#1093#0" expanded="false" />
+                <element signature="e#2736#2849#0" expanded="false" />
+                <element signature="e#4011#4099#0" expanded="false" />
+                <element signature="e#4042#4099#0" expanded="false" />
+                <element signature="e#4143#4642#0" expanded="false" />
+                <element signature="e#4303#4543#0" expanded="false" />
+                <element signature="e#4687#5078#0" expanded="false" />
+                <element signature="e#5117#5223#0" expanded="false" />
+                <element signature="e#5272#5638#0" expanded="false" />
+                <element signature="e#5414#5612#0" expanded="false" />
+                <element signature="e#5698#5984#0" expanded="false" />
+                <element signature="e#6026#6244#0" expanded="false" />
+                <element signature="e#6861#7137#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,24 +79,9 @@
       <file leaf-file-name="GP.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+            <state relative-caret-position="283">
+              <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EncapsulationNN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EncapsulationNN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#2171#3092#0" expanded="false" />
-                <element signature="e#2228#2260#0" expanded="false" />
-                <element signature="e#3233#3481#0" expanded="false" />
-                <element signature="e#3289#3315#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -132,9 +109,9 @@
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/../../Numbers/Main.py" />
         <option value="$PROJECT_DIR$/ColorNN.py" />
-        <option value="$PROJECT_DIR$/GP.py" />
         <option value="$PROJECT_DIR$/SOM.py" />
         <option value="$PROJECT_DIR$/SOMObject.py" />
+        <option value="$PROJECT_DIR$/GP.py" />
       </list>
     </option>
   </component>
@@ -144,7 +121,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -166,8 +143,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,6 +154,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +305,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -337,9 +314,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1671875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1669107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -349,7 +327,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -367,14 +344,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RBM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RBM.py" />
     <entry file="file://$PROJECT_DIR$/GP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
@@ -387,23 +357,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ColorNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1431">
-          <caret line="122" column="32" lean-forward="true" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ColorNN.py" />
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -427,24 +385,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RBM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RBM.py" />
     <entry file="file://$PROJECT_DIR$/EncapsulationNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -479,24 +425,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RBM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RBM.py" />
     <entry file="file://$PROJECT_DIR$/EncapsulationNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,12 +469,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -571,12 +500,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -607,12 +531,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -711,71 +630,13 @@
     <entry file="file://$PROJECT_DIR$/matrices.json" />
     <entry file="file://$PROJECT_DIR$/testing.txt" />
     <entry file="file://$PROJECT_DIR$/../Main.py" />
-    <entry file="file://$PROJECT_DIR$/EncapsulationNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#2171#3092#0" expanded="false" />
-            <element signature="e#2228#2260#0" expanded="false" />
-            <element signature="e#3233#3481#0" expanded="false" />
-            <element signature="e#3289#3315#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../models-master/tutorials/rnn/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../models-master/tutorials/rnn/ptb/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../models-master/tutorials/rnn/ptb/ptb_word_lm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="139" column="49" lean-forward="false" selection-start-line="139" selection-start-column="49" selection-end-line="139" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Numbers/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="87" column="21" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="87" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ColorNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1495">
-          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RBM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SOM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../models-master/tutorials/rnn/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/../../models-master/tutorials/rnn/ptb/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/../../models-master/tutorials/rnn/ptb/ptb_word_lm.py" />
+    <entry file="file://$PROJECT_DIR$/../../Numbers/Main.py" />
+    <entry file="file://$PROJECT_DIR$/ColorNN.py" />
+    <entry file="file://$PROJECT_DIR$/RBM.py" />
+    <entry file="file://$PROJECT_DIR$/SOM.py" />
     <entry file="file://$PROJECT_DIR$/../../Color-NN/SOM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -796,18 +657,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SOMObject.py">
+    <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#354#479#0" expanded="false" />
@@ -817,20 +680,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/EncapsulationNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="533">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SOMObject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="108" column="33" lean-forward="false" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#299#3963#0" expanded="false" />
+            <element signature="e#1076#1093#0" expanded="false" />
+            <element signature="e#2736#2849#0" expanded="false" />
+            <element signature="e#4011#4099#0" expanded="false" />
+            <element signature="e#4042#4099#0" expanded="false" />
+            <element signature="e#4143#4642#0" expanded="false" />
+            <element signature="e#4303#4543#0" expanded="false" />
+            <element signature="e#4687#5078#0" expanded="false" />
+            <element signature="e#5117#5223#0" expanded="false" />
+            <element signature="e#5272#5638#0" expanded="false" />
+            <element signature="e#5414#5612#0" expanded="false" />
+            <element signature="e#5698#5984#0" expanded="false" />
+            <element signature="e#6026#6244#0" expanded="false" />
+            <element signature="e#6861#7137#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="283">
+          <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
           <folding />
         </state>
       </provider>
