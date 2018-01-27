@@ -35,7 +35,6 @@ class FileHandler {
             while ((ch = fin.read()) != -1) {
                 sb.append((char) ch);
             }
-            //  System.out.println("File content: " + sb);
             return sb.toString();
         } catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -44,6 +43,7 @@ class FileHandler {
         }
         return "error";
     }
+
     public ExtractedDir load(String path){
        return load(path, new ExtractedDir("root"));
     }

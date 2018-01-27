@@ -7,9 +7,8 @@ import os
 class SOM(object):
     # To check if the SOM has been trained
     trained = False
-    model_name = 'GP_model.ckpt'
 
-    def __init__(self, m, n, dim, n_iterations=100, alpha=None, sigma=None):
+    def __init__(self, m, n, dim, n_iterations=100, alpha=None, sigma=None, model_name='model.ckpt'):
 
         print('Creating Map...')
 
@@ -17,6 +16,9 @@ class SOM(object):
         self.m = m
         self.n = n
         self.time_stamp = None
+        self.model_name = model_name
+        self.references_points = None
+        self.labels = None
 
         if alpha is None:
             alpha = 0.2
@@ -161,17 +163,16 @@ class SOM(object):
         self.saver.save(sess, file_path)
         print("Model Saved!")
 
-
-
-    def map_colors(self, colors, labels):
-        print('mapping not implemented yet...')
+    def map_refernces_points(self, data, labels):
+        self.references_points = self.map_vects(data)
+        self.labels = labels
 
     def make_prediction(self, input_vector):
         print('prediction not implemented yet...')
         mapped_vector = self.map_vects([input_vector])[0]
 
         distances = []
-        for c in self.mapped_colors:
+        for c in self.references_points:
             distances.append(self.calculate_distance(mapped_vector, c))
 
         min_index = 0
@@ -179,8 +180,7 @@ class SOM(object):
             if distances[min_index] > distances[i]:
                 min_index = i
 
-
-        return self.colors[min_index]
+        return self.labels[min_index]
 
     def calculate_distance(self, x, y):
 

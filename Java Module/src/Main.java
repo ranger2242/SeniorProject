@@ -31,7 +31,14 @@ class Main {
     static Socket socket;
     private static String clientID;
 
+    private static boolean trainingMode = false;
+
     public static void main(String[] args) {
+
+        if (trainingMode) {
+            //Do training stuff here
+        }
+
 
         FileHandler fileHandler = new FileHandler();
         String path = "ex\\ex4";
