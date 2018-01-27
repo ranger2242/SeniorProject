@@ -7,20 +7,58 @@ class Test{
     public Test(){
 
     }
+
+    //3 methods below are to test copy paste programming
+
+//    int methodOne(){
+//        int x = 0;
+//        for(int i = 0; i < 10; i++){
+//            if(i == 5){
+//                x = i
+//            }
+//        }
+//        return x;
+//    }
+//
+//    int methodTwo(){
+//        int x = 0;
+//        for(int i = 0; i < 10; i++){
+//            if(i == 5){
+//                x = i
+//            }
+//        }
+//        return x;
+//    }
+//
+//    int methodThree(){
+//        int x = 1;
+//        for(int i = 0; i < 10; i++){
+//            if(i == 3){
+//                x = i
+//            }
+//        }
+//        return x;
+//    }
+
 }
 
 
 public class RandomClassForTesting{
     GraphPanel var = new  GraphPanel();
+    GraphPanel testVar = var;
 
+    int too = 5;
     int one = var.one();
-
-
     int hello = var.width;
-//    var.width = 5;
 
-//    Test t = new Test();
-//    t.testVar = 7;
+
+    void something(){
+
+        Test t = new Test();
+        t.testVar = 7;
+
+    }
+
 
 }
 

@@ -128,7 +128,6 @@ class ExtractedClass {
         return this.name.equals(e.name) && this.parent.equals(e.parent);
     }
 
-
     //Prints
     private void printClasses(String s) {
         Main.out(s + name);
