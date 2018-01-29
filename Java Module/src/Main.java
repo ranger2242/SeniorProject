@@ -1,11 +1,10 @@
 import com.google.gson.Gson;
-import io.socket.client.Ack;
-import io.socket.client.IO;
 import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
-import java.net.*;
+
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Created by Chris Cavazos on 10/1/2017.
@@ -41,7 +40,9 @@ class Main {
 
 
         FileHandler fileHandler = new FileHandler();
-        String path = "ex\\ex4";
+        //String path = "ex\\ex5";
+        String path="C:\\Users\\Chris\\Desktop\\JAVA";
+        //String path ="C:\\Users\\Chris\\Google Drive\\JAVA\\untitled";
         Parser parser = new Parser(fileHandler.load(path));
         slog("Loaded dir: " + path);
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
@@ -51,12 +52,12 @@ class Main {
         Transformer transformer = new Transformer(parsedClasses, globalEnums);
         double[][][] matrices = transformer.transform();
         slog("Data Transformed");
-
+/*
         Gson gson = new Gson();
         String json = gson.toJson(matrices);
 
         Pipeline pipeline = new Pipeline();
-        pipeline.sendToServer(json);
+        pipeline.sendToServer(json);*/
 
     }
 

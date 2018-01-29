@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 class FileHandler {
 
 
-    public String load(){//trying to upload new load function
+    public String load() {//trying to upload new load function
         JFrame parentFrame = new JFrame();
 
         JFileChooser fileChooser = new JFileChooser();
@@ -24,6 +24,7 @@ class FileHandler {
         }
         return load(f);
     }
+
 
     public String load(File file) {//trying to upload new load function
         FileInputStream fin;
@@ -44,24 +45,59 @@ class FileHandler {
         return "error";
     }
 
-    public ExtractedDir load(String path){
-       return load(path, new ExtractedDir("root"));
+    public ArrayList<ExtractedDir> load(String path) {
+        initPaths(path);
+        ArrayList<ExtractedDir> dirs = new ArrayList<>();
+        for(String s: foundSrc){
+            dirs.add(load(s, new ExtractedDir(s)));
+        }
+        return dirs;//load(path, new ExtractedDir("root"));
     }
 
-    private ExtractedDir load(String path, ExtractedDir e){
+    int c = 0;
+    ArrayList<String> paths = new ArrayList<>();
+    ArrayList<String> foundSrc = new ArrayList<>();
+
+    void initPaths(String path) {
+        File folder = new File(path);
+        File[] listOfFiles = folder.listFiles();
+        paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
+        for (String s : paths) {
+            findSrc(s,0);
+        }
+    }
+
+    void findSrc(String path, int d) {
+        //System.out.println("");
+        File folder = new File(path);
+        File[] listOfFiles = folder.listFiles();
+        for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
+            if (f.isDirectory() && f.getName().equals("src")) {
+                foundSrc.add(f.getAbsolutePath());
+                System.out.println("SRC FILE: " + f.getAbsolutePath());
+            }
+        }
+        for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
+            if (f.isDirectory()) {
+                findSrc(path + "\\" + f.getName(), d++);
+            }
+        }
+    }
+
+    private ExtractedDir load(String path, ExtractedDir e) {
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
         for (File listOfFile : listOfFiles != null ? listOfFiles : new File[0]) {
             if (listOfFile.isFile() && listOfFile.getName().endsWith(".java")) {
-                System.out.println("File " + listOfFile.getName());
+                //System.out.println("File " + listOfFile.getName());
             } else if (listOfFile.isDirectory()) {
                 e.addPackage(load(path + "\\" + listOfFile.getName(), new ExtractedDir(listOfFile.getName())));
-                System.out.println("Directory " + listOfFile.getName());
+                //System.out.println("Directory " + listOfFile.getName());
             }
         }
         ArrayList<String> paths = new ArrayList<>();
-        ArrayList<File> f= Arrays.stream(listOfFiles).filter(x-> x.getAbsolutePath().endsWith(".java")).collect(Collectors.toCollection(ArrayList::new));
-        f.forEach(x->paths.add(x.getAbsolutePath()));
+        ArrayList<File> f = Arrays.stream(listOfFiles).filter(x -> x.getAbsolutePath().endsWith(".java")).collect(Collectors.toCollection(ArrayList::new));
+        f.forEach(x -> paths.add(x.getAbsolutePath()));
         e.setClasses(paths);
         return e;
     }

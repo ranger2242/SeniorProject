@@ -1,4 +1,5 @@
 import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParseProblemException;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.NodeList;
@@ -15,44 +16,56 @@ class Parser {
     private static ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
     private static final ArrayList<Enum> globalEnums = new ArrayList<>();
 
-    public Parser(ExtractedDir e){
-        parseDirectory(e);
+    public Parser(ArrayList<ExtractedDir> e){
+        for(ExtractedDir d:e){
+            parseDirectory(d);
+        }
     }
+    FileHandler fileHandler = new FileHandler();
 
     private void parseDirectory(ExtractedDir e) {
-        FileHandler fileHandler = new FileHandler();
-        String output;
 
         for (String s : e.getClassPaths()) {
-            output = fileHandler.load(new File(s));
-            output = output.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
-            ArrayList<String> scanned = formatCode(output);
 
-            ArrayList<ExtractedClass> newClasses = parseCode(listToLine(scanned));
+
+            ArrayList<ExtractedClass> newClasses = parseCode(s);
             extractedClasses.addAll(newClasses);
         }
         e.getPackages().forEach(this::parseDirectory);
     }
 
 
-    private ArrayList<ExtractedClass> parseCode(String code){
+    private ArrayList<ExtractedClass> parseCode(String dir){
+        String output;
+
+        output = fileHandler.load(new File(dir));
+        output = output.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
+        ArrayList<String> scanned = formatCode(output);
+        String code =listToLine(scanned);
         code= code.replaceAll("\\(","\\( ");
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
-        CompilationUnit cu = JavaParser.parse(code);
-        NodeList<TypeDeclaration<?>> classes = cu.getTypes();
-        NodeList<ImportDeclaration> imports = cu.getImports();
+        try {
+            System.out.println("PROCESSING: "+dir);
+            CompilationUnit cu = JavaParser.parse(code);
+            NodeList<TypeDeclaration<?>> classes = cu.getTypes();
+            NodeList<ImportDeclaration> imports = cu.getImports();
 
-        for (TypeDeclaration<?> cl : classes) {
-            if(cl.isEnumDeclaration()){
-                globalEnums.add(new Enum(cl.asEnumDeclaration()));
-            }else{
-                //Assumed a class or interface
-                ExtractedClass newClass = new ExtractedClass(cl);
-                newClass.setImports(imports);
-                listOfClasses.addAll(createClassList(newClass));
+            for (TypeDeclaration<?> cl : classes) {
+                if (cl.isEnumDeclaration()) {
+                    globalEnums.add(new Enum(cl.asEnumDeclaration()));
+                } else {
+                    //Assumed a class or interface
+                    ExtractedClass newClass = new ExtractedClass(cl);
+                    newClass.setImports(imports);
+                    listOfClasses.addAll(createClassList(newClass));
+                }
             }
+            return listOfClasses;
+        }catch (ParseProblemException e){
+            System.out.println("###ERROR: "+dir);
+           // e.printStackTrace();
+            return new ArrayList<>();
         }
-        return listOfClasses;
     }
 
     private ArrayList<ExtractedClass> createClassList(ExtractedClass extractedClass){
