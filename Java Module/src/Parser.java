@@ -26,8 +26,6 @@ class Parser {
     private void parseDirectory(ExtractedDir e) {
 
         for (String s : e.getClassPaths()) {
-
-
             ArrayList<ExtractedClass> newClasses = parseCode(s);
             extractedClasses.addAll(newClasses);
         }

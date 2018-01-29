@@ -1,16 +1,15 @@
-import json
 import sys
-import os
 from socketIO_client_nexus import SocketIO, LoggingNamespace
 import json
 import _datetime as datetime
-from GP import GP
+from Analyzer import Analyzer
+
 
 class Pipeline:
 
     id = str
     socket = SocketIO
-
+    analyzer = Analyzer()
 
     def __init__(self):
         self.slog("Pipeline Initialized")
@@ -54,9 +53,7 @@ class Pipeline:
 
             # Proabably start a new thread here
             # Send data to NN here
-            self.run_neural_networks(data)
-
-
+            Analyzer.use_neural_networks(data)
 
         def connected(*args):
             self.slog("Connected To Server")
@@ -78,9 +75,9 @@ class Pipeline:
         self.socket.emit("SEND-CLIENT", (client_id, json.dumps(j)))
 
 
-    def run_neural_networks(self, data):
-        gp = GP(data)
-        gp.run()
 
-
-
+# Connect To Server
+ip = "localhost"
+port = "2242"
+pipeline = Pipeline()
+pipeline.connect_to_server(ip, port)

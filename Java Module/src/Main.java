@@ -1,6 +1,9 @@
 import com.google.gson.Gson;
 import io.socket.client.Socket;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashSet;
@@ -30,19 +33,16 @@ class Main {
     static Socket socket;
     private static String clientID;
 
-    private static boolean trainingMode = false;
+    private static boolean trainingMode = true;
 
     public static void main(String[] args) {
 
-        if (trainingMode) {
-            //Do training stuff here
-        }
 
+        //String path = "ex\\ex5";
+        String path = "C:\\Users\\Ross\\Desktop\\test_dataset";
+        //String path = "C:\\Users\\Chris\\Google Drive\\JAVA\\untitled";
 
         FileHandler fileHandler = new FileHandler();
-        //String path = "ex\\ex5";
-        String path="C:\\Users\\Chris\\Desktop\\JAVA";
-        //String path ="C:\\Users\\Chris\\Google Drive\\JAVA\\untitled";
         Parser parser = new Parser(fileHandler.load(path));
         slog("Loaded dir: " + path);
         parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
@@ -52,15 +52,59 @@ class Main {
         Transformer transformer = new Transformer(parsedClasses, globalEnums);
         double[][][] matrices = transformer.transform();
         slog("Data Transformed");
-/*
-        Gson gson = new Gson();
-        String json = gson.toJson(matrices);
 
-        Pipeline pipeline = new Pipeline();
-        pipeline.sendToServer(json);*/
+        if (trainingMode) {
+            try{
+                writeToCSV(matrices[0]);
+                slog("Data writen to CSV file");
+            }catch (IOException e){
+                System.out.println(e.getLocalizedMessage());
+            }
+
+        }else{
+
+            Gson gson = new Gson();
+            String json = gson.toJson(matrices);
+
+            Pipeline pipeline = new Pipeline();
+            pipeline.sendToServer(json);
+
+        }
+
 
     }
 
+    public static void writeToCSV(double[][] matrix) throws IOException{
+        String toWrite = "";
+        String rootDirectory = getRootDirectory();
+        String fileName = rootDirectory + "\\training_dataset.csv";
+
+        for (int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix[i].length; j++) {
+                toWrite += matrix[i][j];
+                if (j < matrix[i].length - 1){
+                    toWrite += ",";
+                }
+            }
+            toWrite += "\n";
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+        writer.write(toWrite);
+        writer.close();
+
+
+    }
+
+
+    private static String getRootDirectory(){
+        String rootDirectory = System.getProperty("user.dir");
+        while (!rootDirectory.endsWith("\\")){
+            rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
+        }
+        rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
+        return rootDirectory;
+    }
 
     private static void printAllClasses() {
         for (ExtractedClass extractedClass : parsedClasses) {

@@ -66,11 +66,8 @@ class GP:
         return raw_data
 
     def train(self, raw_data):
-        if self.som.trained is False:
-            data, _ = self.preprocessing(raw_data)
-            self.som.train(data)
-        else:
-            print('Network Already Trained...')
+        data, _ = self.preprocessing(raw_data)
+        self.som.train(data)
 
     def map_network(self):
         labeled_data_set = open(project_root + '\\god_object_labeled_data.csv', 'r')
