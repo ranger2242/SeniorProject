@@ -13,13 +13,12 @@ import java.util.stream.Collectors;
 
 class Parser {
 
-    private static ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
-    private static final ArrayList<Enum> globalEnums = new ArrayList<>();
+    private ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
+    private final ArrayList<Enum> globalEnums = new ArrayList<>();
 
-    public Parser(ArrayList<ExtractedDir> e){
-        for(ExtractedDir d:e){
-            parseDirectory(d);
-        }
+    public Parser(ExtractedDir dir){
+
+        parseDirectory(dir);
     }
     FileHandler fileHandler = new FileHandler();
 
@@ -61,7 +60,7 @@ class Parser {
             return listOfClasses;
         }catch (ParseProblemException e){
             System.out.println("###ERROR: "+dir);
-           // e.printStackTrace();
+            // e.printStackTrace();
             return new ArrayList<>();
         }
     }
@@ -124,7 +123,7 @@ class Parser {
     }
 
     public void setExtractedClasses(ArrayList<ExtractedClass> extractedClasses) {
-        Parser.extractedClasses = extractedClasses;
+        this.extractedClasses = extractedClasses;
     }
 
     public ArrayList<Enum> getGlobalEnums() {

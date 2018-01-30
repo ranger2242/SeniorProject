@@ -1,10 +1,11 @@
 import com.google.gson.Gson;
 import io.socket.client.Socket;
-
+import java.io.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -19,8 +20,8 @@ import java.util.Set;
 class Main {
 
     public final static String div = "-----------------------------------------------";
-    public static Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
-    public static Set<Enum> globalEnums = new LinkedHashSet<>();
+    public static ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
+    public static ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
 
     static String port = "2242";
     static String ip="10.133.228.186";
@@ -38,46 +39,84 @@ class Main {
     public static void main(String[] args) {
 
 
+
         //String path = "ex\\ex5";
-        String path = "C:\\Users\\Ross\\Desktop\\test_dataset";
+        String path = "H:\\JAVA";
         //String path = "C:\\Users\\Chris\\Google Drive\\JAVA\\untitled";
 
         FileHandler fileHandler = new FileHandler();
-        Parser parser = new Parser(fileHandler.load(path));
-        slog("Loaded dir: " + path);
-        parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
-        globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
-        slog("Classes Parsed");
+        ArrayList<ExtractedDir> directories =  fileHandler.load(path);
 
-        Transformer transformer = new Transformer(parsedClasses, globalEnums);
-        double[][][] matrices = transformer.transform();
-        slog("Data Transformed");
+        for(ExtractedDir dir : directories){
+            Parser parser = new Parser(dir);
+            slog("Loaded dir: " + path);
+            parsedClasses.add( new LinkedHashSet<>(parser.getExtractedClasses()));
+            globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
+            slog("Classes Parsed");
 
-        if (trainingMode) {
-            try{
-                writeToCSV(matrices[0]);
-                slog("Data writen to CSV file");
-            }catch (IOException e){
-                System.out.println(e.getLocalizedMessage());
-            }
-
-        }else{
-
-            Gson gson = new Gson();
-            String json = gson.toJson(matrices);
-
-            Pipeline pipeline = new Pipeline();
-            pipeline.sendToServer(json);
 
         }
 
 
-    }
-
-    public static void writeToCSV(double[][] matrix) throws IOException{
-        String toWrite = "";
         String rootDirectory = getRootDirectory();
         String fileName = rootDirectory + "\\training_dataset.csv";
+
+        File file = new File(fileName);
+        file.delete();
+        file = null;
+
+        BufferedWriter writer = null;
+        try{
+            writer = new BufferedWriter(new FileWriter(fileName));
+        } catch (IOException e){
+            System.out.println(e.getLocalizedMessage());
+            return;
+        }
+
+
+        for (Set<ExtractedClass> set : parsedClasses){
+            Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
+            double[][][] matrices = transformer.transform();
+            slog("Data Transformed");
+
+
+            if (trainingMode) {
+                try{
+                    writeToCSV(writer, matrices[0]);
+                    slog("Data writen to CSV file");
+                }catch (IOException e){
+                    System.out.println(e.getLocalizedMessage());
+                }
+
+            }else{
+
+                Gson gson = new Gson();
+                String json = gson.toJson(matrices);
+
+                Pipeline pipeline = new Pipeline();
+                pipeline.sendToServer(json);
+
+            }
+
+        }
+
+        try{
+            writer.close();
+        } catch (IOException e){
+            System.out.println(e.getLocalizedMessage());
+        }
+
+
+
+
+
+    }
+
+
+
+    public static void writeToCSV(BufferedWriter writer, double[][] matrix) throws IOException{
+        String toWrite = "";
+
 
         for (int i = 0; i < matrix.length; i++){
             for(int j = 0; j < matrix[i].length; j++) {
@@ -89,11 +128,7 @@ class Main {
             toWrite += "\n";
         }
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-        writer.write(toWrite);
-        writer.close();
-
-
+        writer.append(toWrite);
     }
 
 
@@ -107,9 +142,11 @@ class Main {
     }
 
     private static void printAllClasses() {
-        for (ExtractedClass extractedClass : parsedClasses) {
-            if (extractedClass.getParent().equals("")) {
-                extractedClass.printClass(0);
+        for (Set<ExtractedClass> set: parsedClasses){
+            for (ExtractedClass extractedClass : set) {
+                if (extractedClass.getParent().equals("")) {
+                    extractedClass.printClass(0);
+                }
             }
         }
     }
