@@ -1,5 +1,7 @@
 from SOMObject import SOM
 import os
+import matplotlib.pyplot as plt
+import numpy as np
 
 project_root = os.path.abspath(os.path.dirname(__file__))
 
@@ -26,7 +28,7 @@ class GP:
         m = 50
         n = 50
         input_size = 8
-        iterations = 50
+        iterations = 500
         model_name = 'GP_model.ckpt'
 
         self.som = SOM(m, n, input_size, iterations, model_name=model_name)
@@ -78,3 +80,24 @@ class GP:
     def make_prediction(self, raw_data):
         data = self.preprocessing(raw_data)
         return self.som.make_prediction(data)
+
+    def plot(self, x):
+        print('Preparing data to be plotted...')
+
+        # Fit train data into SOM lattice
+        mapped = self.som.map_vects(x)
+        mappedarr = np.array(mapped)
+        x1 = mappedarr[:, 0]
+        y1 = mappedarr[:, 1]
+
+        print('Plotting data points...')
+
+        plt.figure(1, figsize=(12, 6))
+        plt.subplot(121)
+
+        for i in range(len(x1)):
+            color = (0, 0, 0)
+            plt.scatter(x1[i], y1[i])
+
+        plt.title('Colors')
+        plt.show()

@@ -27,6 +27,11 @@ class Analyzer:
         data_set = self.gp_network.csv_processing(data_set)
         self.gp_network.train(data_set)
 
+    def plot_CSV_data(self):
+        data_set = open(project_root + '\\training_dataset.csv', 'r')
+        data_set = self.gp_network.csv_processing(data_set)
+        self.gp_network.plot(data_set)
+
     def test_network(self):
         return None
         # god_test_data = [[3.0, 1.0, 0.0, 0.0, 1.0, 4.0, 0.25, 0.0],
@@ -39,3 +44,4 @@ class Analyzer:
 
 a = Analyzer()
 a.train_network_from_csv()
+a.plot_CSV_data()

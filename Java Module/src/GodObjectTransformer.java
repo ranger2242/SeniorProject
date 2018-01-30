@@ -34,10 +34,16 @@ public class GodObjectTransformer {
     }
 
     private static double totalReferencesToClassReferncesRatio(int total, int referncesToClass){
+        if(total == 0){
+            return 0;
+        }
         return (double) referncesToClass / (double) total;
     }
 
     private static double totalReferencesFromClassReferncesRatio(int total, int referncesFromClass){
+        if(total == 0){
+            return 0;
+        }
         return (double) referncesFromClass / (double) total;
     }
 

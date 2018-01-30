@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28beb00e-580a-4319-ad77-7dcd924d537f" name="Default" comment="" />
+    <list default="true" id="28beb00e-580a-4319-ad77-7dcd924d537f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/Main.java" afterPath="$PROJECT_DIR$/../Java Module/src/Main.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Parser.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Parser.class" />
+      <change beforePath="$PROJECT_DIR$/Analyzer.py" afterPath="$PROJECT_DIR$/Analyzer.py" />
+      <change beforePath="$PROJECT_DIR$/GP.py" afterPath="$PROJECT_DIR$/GP.py" />
+      <change beforePath="$PROJECT_DIR$/tmp/GP_model.ckpt.data-00000-of-00001" afterPath="$PROJECT_DIR$/tmp/GP_model.ckpt.data-00000-of-00001" />
+      <change beforePath="$PROJECT_DIR$/tmp/GP_model.ckpt.index" afterPath="$PROJECT_DIR$/tmp/GP_model.ckpt.index" />
+      <change beforePath="$PROJECT_DIR$/tmp/GP_model.ckpt.meta" afterPath="$PROJECT_DIR$/tmp/GP_model.ckpt.meta" />
+      <change beforePath="$PROJECT_DIR$/tmp/checkpoint" afterPath="$PROJECT_DIR$/tmp/checkpoint" />
+      <change beforePath="$PROJECT_DIR$/../training_dataset.csv" afterPath="$PROJECT_DIR$/../training_dataset.csv" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,69 +27,27 @@
     <SUITE FILE_PATH="coverage/Python_Module$Main__2_.coverage" NAME="Main (2) Coverage Results" MODIFIED="1515870795131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Numbers" />
     <SUITE FILE_PATH="coverage/Python_Module$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1510799698251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/Python_Module$Main.coverage" NAME="Main Coverage Results" MODIFIED="1517248949395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Module$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1517250161691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Module$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1517339542326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pipeline.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pipeline.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#256#289#0" expanded="false" />
-                <element signature="e#370#495#0" expanded="false" />
-                <element signature="e#565#707#0" expanded="false" />
-                <element signature="e#620#707#0" expanded="false" />
-                <element signature="e#788#1059#0" expanded="false" />
-                <element signature="e#853#968#0" expanded="false" />
-                <element signature="e#884#944#0" expanded="false" />
-                <element signature="e#1523#1555#0" expanded="false" />
-                <element signature="e#1592#1647#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Analyzer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
                 <element signature="e#58#260#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GP.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-              <folding>
-                <element signature="e#96#446#1" expanded="false" />
-                <element signature="e#492#743#0" expanded="false" />
-                <element signature="e#794#1676#0" expanded="false" />
-                <element signature="e#878#1647#0" expanded="false" />
-                <element signature="e#1341#1447#0" expanded="false" />
-                <element signature="e#1725#1740#0" expanded="false" />
-                <element signature="e#1781#1848#0" expanded="false" />
-                <element signature="e#1885#2146#0" expanded="false" />
-                <element signature="e#2197#2278#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SOMObject.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SOMObject.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SOMObject.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="145" column="32" lean-forward="false" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
               <folding>
                 <element signature="e#291#4057#0" expanded="false" />
                 <element signature="e#873#4028#0" expanded="false" />
@@ -92,13 +62,26 @@
                 <element signature="e#4397#4637#0" expanded="false" />
                 <element signature="e#4781#5172#0" expanded="false" />
                 <element signature="e#5211#5317#0" expanded="false" />
-                <element signature="e#5366#5732#0" expanded="false" />
-                <element signature="e#5508#5706#0" expanded="false" />
                 <element signature="e#5792#6078#0" expanded="false" />
                 <element signature="e#6120#6338#0" expanded="false" />
                 <element signature="e#6398#6472#0" expanded="false" />
                 <element signature="e#6527#6948#0" expanded="false" />
                 <element signature="e#6999#7275#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GP.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-56">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#1777#1792#0" expanded="false" />
+                <element signature="e#1937#2198#0" expanded="false" />
+                <element signature="e#2249#2330#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,10 +110,10 @@
         <option value="$PROJECT_DIR$/ColorNN.py" />
         <option value="$PROJECT_DIR$/SOM.py" />
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/Analyzer.py" />
-        <option value="$PROJECT_DIR$/GP.py" />
         <option value="$PROJECT_DIR$/Pipeline.py" />
         <option value="$PROJECT_DIR$/SOMObject.py" />
+        <option value="$PROJECT_DIR$/GP.py" />
+        <option value="$PROJECT_DIR$/Analyzer.py" />
       </list>
     </option>
   </component>
@@ -141,6 +124,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="218" />
+    <option name="y" value="-23" />
     <option name="width" value="1378" />
     <option name="height" value="780" />
   </component>
@@ -160,7 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,6 +157,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,35 +314,22 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5118859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16617863" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16544656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57101023" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16614583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -369,7 +341,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -391,15 +363,10 @@
         <state relative-caret-position="108">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#96#446#1" expanded="false" />
-            <element signature="e#492#743#0" expanded="false" />
-            <element signature="e#794#1676#0" expanded="false" />
-            <element signature="e#878#1647#0" expanded="false" />
-            <element signature="e#1341#1447#0" expanded="false" />
-            <element signature="e#1725#1740#0" expanded="false" />
-            <element signature="e#1781#1848#0" expanded="false" />
-            <element signature="e#1885#2146#0" expanded="false" />
-            <element signature="e#2197#2278#0" expanded="false" />
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1777#1792#0" expanded="false" />
+            <element signature="e#1937#2198#0" expanded="false" />
+            <element signature="e#2249#2330#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -419,15 +386,10 @@
         <state relative-caret-position="1350">
           <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
-            <element signature="e#96#446#1" expanded="false" />
-            <element signature="e#492#743#0" expanded="false" />
-            <element signature="e#794#1676#0" expanded="false" />
-            <element signature="e#878#1647#0" expanded="false" />
-            <element signature="e#1341#1447#0" expanded="false" />
-            <element signature="e#1725#1740#0" expanded="false" />
-            <element signature="e#1781#1848#0" expanded="false" />
-            <element signature="e#1885#2146#0" expanded="false" />
-            <element signature="e#2197#2278#0" expanded="false" />
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1777#1792#0" expanded="false" />
+            <element signature="e#1937#2198#0" expanded="false" />
+            <element signature="e#2249#2330#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -495,49 +457,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py" />
-    <entry file="file://$PROJECT_DIR$/Analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-            <element signature="e#58#260#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#96#446#1" expanded="false" />
-            <element signature="e#492#743#0" expanded="false" />
-            <element signature="e#794#1676#0" expanded="false" />
-            <element signature="e#878#1647#0" expanded="false" />
-            <element signature="e#1341#1447#0" expanded="false" />
-            <element signature="e#1725#1740#0" expanded="false" />
-            <element signature="e#1781#1848#0" expanded="false" />
-            <element signature="e#1885#2146#0" expanded="false" />
-            <element signature="e#2197#2278#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="233">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
             <element signature="e#256#289#0" expanded="false" />
             <element signature="e#370#495#0" expanded="false" />
             <element signature="e#565#707#0" expanded="false" />
@@ -553,8 +487,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SOMObject.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="145" column="32" lean-forward="false" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
           <folding>
             <element signature="e#291#4057#0" expanded="false" />
             <element signature="e#873#4028#0" expanded="false" />
@@ -569,13 +503,34 @@
             <element signature="e#4397#4637#0" expanded="false" />
             <element signature="e#4781#5172#0" expanded="false" />
             <element signature="e#5211#5317#0" expanded="false" />
-            <element signature="e#5366#5732#0" expanded="false" />
-            <element signature="e#5508#5706#0" expanded="false" />
             <element signature="e#5792#6078#0" expanded="false" />
             <element signature="e#6120#6338#0" expanded="false" />
             <element signature="e#6398#6472#0" expanded="false" />
             <element signature="e#6527#6948#0" expanded="false" />
             <element signature="e#6999#7275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <element signature="e#58#260#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1777#1792#0" expanded="false" />
+            <element signature="e#1937#2198#0" expanded="false" />
+            <element signature="e#2249#2330#0" expanded="false" />
           </folding>
         </state>
       </provider>
