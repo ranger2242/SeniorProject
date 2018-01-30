@@ -40,7 +40,7 @@ class Main {
 
 //        String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
 
-        String path = "C:\\Users\\Ross\\Desktop\\test_data";
+        String path = "C:\\Users\\Ross\\Desktop\\test_data\\101repo\\technologies";
 
         FileHandler fileHandler = new FileHandler();
         ArrayList<ExtractedDir> directories = fileHandler.load(path);

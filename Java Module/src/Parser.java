@@ -39,7 +39,6 @@ class Parser {
         String output;
 
         output = fileHandler.load(new File(dir));
-        output = output.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
         ArrayList<String> scanned = formatCode(output);
         String code = listToLine(scanned);
         code = code.replaceAll("\\(", "\\( ");
