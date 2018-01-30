@@ -16,33 +16,36 @@ class Parser {
     private ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
     private final ArrayList<Enum> globalEnums = new ArrayList<>();
 
-    public Parser(ExtractedDir dir){
+    public Parser(ExtractedDir dir) {
 
         parseDirectory(dir);
     }
+
     FileHandler fileHandler = new FileHandler();
 
     private void parseDirectory(ExtractedDir e) {
 
         for (String s : e.getClassPaths()) {
             ArrayList<ExtractedClass> newClasses = parseCode(s);
-            extractedClasses.addAll(newClasses);
+            if (newClasses != null) {
+                extractedClasses.addAll(newClasses);
+            }
         }
         e.getPackages().forEach(this::parseDirectory);
     }
 
 
-    private ArrayList<ExtractedClass> parseCode(String dir){
+    private ArrayList<ExtractedClass> parseCode(String dir) {
         String output;
 
         output = fileHandler.load(new File(dir));
         output = output.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
         ArrayList<String> scanned = formatCode(output);
-        String code =listToLine(scanned);
-        code= code.replaceAll("\\(","\\( ");
+        String code = listToLine(scanned);
+        code = code.replaceAll("\\(", "\\( ");
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
         try {
-            System.out.println("PROCESSING: "+dir);
+            System.out.println("PROCESSING: " + dir);
             CompilationUnit cu = JavaParser.parse(code);
             NodeList<TypeDeclaration<?>> classes = cu.getTypes();
             NodeList<ImportDeclaration> imports = cu.getImports();
@@ -58,19 +61,23 @@ class Parser {
                 }
             }
             return listOfClasses;
-        }catch (ParseProblemException e){
-            System.out.println("###ERROR: "+dir);
+        } catch (ParseProblemException e) {
+            System.out.println("PARSE ERROR: " + dir);
             // e.printStackTrace();
-            return new ArrayList<>();
+            return null;
+        }catch (StackOverflowError e) {
+            System.out.println("STACK OVERFLOW ERROR: " + dir);
+            // e.printStackTrace();
+            return null;
         }
     }
 
-    private ArrayList<ExtractedClass> createClassList(ExtractedClass extractedClass){
+    private ArrayList<ExtractedClass> createClassList(ExtractedClass extractedClass) {
 
         ArrayList<ExtractedClass> list = new ArrayList<>();
         list.add(extractedClass);
 
-        for(ExtractedClass r : extractedClass.getClasses()){
+        for (ExtractedClass r : extractedClass.getClasses()) {
             list.addAll(createClassList(r));
         }
         return list;
