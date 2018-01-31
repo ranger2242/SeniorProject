@@ -52,7 +52,7 @@ class Parser {
             for (TypeDeclaration<?> cl : classes) {
                 if (cl.isEnumDeclaration()) {
                     globalEnums.add(new Enum(cl.asEnumDeclaration()));
-                } else {
+                } else if (cl.isClassOrInterfaceDeclaration()) {
                     //Assumed a class or interface
                     ExtractedClass newClass = new ExtractedClass(cl);
                     newClass.setImports(imports);
