@@ -12,6 +12,19 @@ import java.util.stream.Collectors;
  */
 class FileHandler {
 
+    // If batch size =< 0 system will not use batching
+    private int batchSize = -1;
+    private int currentBatch = 0;
+    private String path;
+
+
+    public FileHandler(int batchSize, String path){
+        this.batchSize = batchSize;
+        this.path = path;
+    }
+
+    public FileHandler(){
+    }
 
     public String load() {//trying to upload new load function
         JFrame parentFrame = new JFrame();
@@ -24,7 +37,6 @@ class FileHandler {
         }
         return load(f);
     }
-
 
     public String load(File file) {//trying to upload new load function
         FileInputStream fin;
@@ -45,41 +57,87 @@ class FileHandler {
         return "error";
     }
 
-    public ArrayList<ExtractedDir> load(String path) {
+    int c = 0;
+    private ArrayList<String> paths = new ArrayList<>();
+    private ArrayList<String> foundSrc = new ArrayList<>();
+
+    private void initPaths(String path) {
+        File folder = new File(path);
+
+        if (folder.listFiles() != null){
+            int startIndex = 0;
+            int endIndex = folder.listFiles().length;
+            if (batchSize > 0){
+                startIndex = currentBatch * batchSize;
+                endIndex = startIndex + batchSize;
+                if (endIndex > folder.listFiles().length){
+                    endIndex = folder.listFiles().length;
+                }
+            }
+
+            File[] listOfFiles = Arrays.copyOfRange(folder.listFiles(), startIndex, endIndex);
+
+            paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
+            for (String singlePath : paths) {
+                findSrc(singlePath);
+            }
+        }
+
+    }
+
+    public ArrayList<ExtractedDir> nextBatch(){
+        currentBatch += 1;
         initPaths(path);
         ArrayList<ExtractedDir> dirs = new ArrayList<>();
-        for(String s: foundSrc){
-            dirs.add(load(s, new ExtractedDir(s)));
+        for(String sourcePath: foundSrc){
+            dirs.add(load(sourcePath, new ExtractedDir(sourcePath)));
         }
         return dirs;//load(path, new ExtractedDir("root"));
+
     }
 
-    int c = 0;
-    ArrayList<String> paths = new ArrayList<>();
-    ArrayList<String> foundSrc = new ArrayList<>();
-
-    void initPaths(String path) {
+    public int batchesLeft(){
         File folder = new File(path);
-        File[] listOfFiles = folder.listFiles();
-        paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
-        for (String s : paths) {
-            findSrc(s,0);
+        if (folder.listFiles() != null && batchSize > 0){
+            int startIndex = currentBatch * batchSize;
+            int endIndex = folder.listFiles().length;
+
+            int batchesLeft = 0;
+            while ( startIndex < endIndex){
+                batchesLeft += 1;
+                startIndex += batchSize;
+            }
+            return batchesLeft;
         }
+        return 0;
     }
 
-    void findSrc(String path, int d) {
-        //System.out.println("");
+    public boolean hasNext(){
+        File folder = new File(path);
+        if (folder.listFiles() != null){
+            int endIndex = folder.listFiles().length;
+            if (batchSize > 0){
+                int startIndex = currentBatch * batchSize;
+                if(startIndex < endIndex){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private void findSrc(String path) {
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
             if (f.isDirectory() && f.getName().equals("src")) {
                 foundSrc.add(f.getAbsolutePath());
-                System.out.println("SRC FILE: " + f.getAbsolutePath());
+                //System.out.println("SRC FILE: " + f.getAbsolutePath());
             }
         }
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
             if (f.isDirectory()) {
-                findSrc(path + "\\" + f.getName(), d++);
+                findSrc(path + "\\" + f.getName());
             }
         }
     }

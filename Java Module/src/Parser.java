@@ -44,7 +44,7 @@ class Parser {
         code = code.replaceAll("\\(", "\\( ");
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
         try {
-            System.out.println("PROCESSING: " + dir);
+            //System.out.println("PROCESSING: " + dir);
             CompilationUnit cu = JavaParser.parse(code);
             NodeList<TypeDeclaration<?>> classes = cu.getTypes();
             NodeList<ImportDeclaration> imports = cu.getImports();
@@ -61,7 +61,7 @@ class Parser {
             }
             return listOfClasses;
         } catch (ParseProblemException e) {
-            System.out.println("PARSE ERROR: " + dir);
+//            System.out.println("PARSE ERROR: " + dir);
             // e.printStackTrace();
             return null;
         }catch (StackOverflowError e) {

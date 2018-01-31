@@ -37,56 +37,39 @@ class Main {
 
     public static void main(String[] args) {
 
+        slog("Loading Directories...");
 
-//        String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
+        String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
 
-        String path = "C:\\Users\\Ross\\Desktop\\test_data";
+        int batchSize = 25;
+        FileHandler fileHandler = new FileHandler(batchSize, path);
 
-        FileHandler fileHandler = new FileHandler();
-        ArrayList<ExtractedDir> directories = fileHandler.load(path);
-
-        slog("Directories loaded. " + directories.size() + " directories founds.");
-
-        for (ExtractedDir dir : directories) {
-            slog("Loaded dir: " + dir.getName());
-            Parser parser = new Parser(dir);
-            parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
-            globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
-        }
-
-        slog("Classes Parsed");
-
-        String rootDirectory = getRootDirectory();
-        String fileName = rootDirectory + "\\training_dataset.csv";
-
-        File file = new File(fileName);
-        file.delete();
-        file = null;
-
-        BufferedWriter writer = null;
-        try {
-            writer = new BufferedWriter(new FileWriter(fileName));
-        } catch (IOException e) {
-            System.out.println(e.getLocalizedMessage());
-            return;
-        }
-
-
-        for (Set<ExtractedClass> set : parsedClasses) {
-            Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
-            double[][][] matrices = transformer.transform();
-            slog("Data Transformed");
+        int batchNumber = 1;
+        while ( fileHandler.hasNext() ){
+            slog("Batch: " + batchNumber + " - Batches Left: " + fileHandler.batchesLeft());
+            ArrayList<ExtractedDir> directories = fileHandler.nextBatch();
+            slog("Directories loaded. " + directories.size() + " directories founds.");
+            slog("Parsing classes...");
+            parseDirectories(directories);
+            slog("Classes Parsed");
 
 
             if (trainingMode) {
-                try {
-                    writeToCSV(writer, matrices[0]);
+                String rootDirectory = getRootDirectory();
+                String fileName = rootDirectory + "\\training_dataset.csv";
+
+                ArrayList<double[][][]> matrices = transformTrainingData();
+
+                try{
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+                    writeToCSV(writer, matrices);
+                    writer.close();
                     slog("Data writen to CSV file");
-                } catch (IOException e) {
-                    System.out.println(e.getLocalizedMessage());
-                }
+                }catch (IOException e){e.printStackTrace();}
 
             } else {
+
+                double[][][] matrices = transformData();
 
                 Gson gson = new Gson();
                 String json = gson.toJson(matrices);
@@ -95,31 +78,60 @@ class Main {
                 pipeline.sendToServer(json);
 
             }
-
+            slog("Batch Complete");
         }
+    }
 
-        try {
-            writer.close();
-        } catch (IOException e) {
-            System.out.println(e.getLocalizedMessage());
+    public static void parseDirectories(ArrayList<ExtractedDir> directories){
+        for (ExtractedDir dir : directories) {
+            //slog("Loaded dir: " + dir.getName());
+            Parser parser = new Parser(dir);
+            parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
+            globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
         }
-
-
     }
 
 
-    public static void writeToCSV(BufferedWriter writer, double[][] matrix) throws IOException {
+    public static void clearFile(String fileName){
+        File file = new File(fileName);
+        file.delete();
+        file = null;
+    }
+
+
+    public static ArrayList<double[][][]> transformTrainingData(){
+        ArrayList<double[][][]> matrices = new ArrayList<>();
+        for (Set<ExtractedClass> set : parsedClasses) {
+            Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
+            matrices.add(transformer.transform());
+        }
+        slog("Data Transformed");
+        return matrices;
+    }
+
+    public static double[][][] transformData(){
+        Set<ExtractedClass> set = parsedClasses.get(0);
+        Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
+        double[][][] matrices = transformer.transform();
+        slog("Data Transformed");
+        return matrices;
+    }
+
+
+    public static void writeToCSV(BufferedWriter writer, ArrayList<double[][][]>  matrices) throws IOException {
         String toWrite = "";
 
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                toWrite += matrix[i][j];
-                if (j < matrix[i].length - 1) {
-                    toWrite += ",";
+        for(int i = 0; i < matrices.size() - 1; i++){
+            double[][][] matrix = matrices.get(i);
+            for (int j = 0; j < matrix.length; j++) {
+                for (int k = 0; k < matrix[j].length; k++) {
+                    toWrite += matrix[j][k];
+                    if (k < matrix[j].length - 1) {
+                        toWrite += ",";
+                    }
                 }
+                toWrite += "\n";
             }
-            toWrite += "\n";
         }
 
         writer.append(toWrite);
