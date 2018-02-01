@@ -41,7 +41,7 @@ class Main {
 
         String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
 
-        int batchSize = 10;
+        int batchSize = 1;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
@@ -125,7 +125,7 @@ class Main {
         String toWrite = "";
 
         for(int i = 0; i < matrices.size() - 1; i++){
-            double[][][] matrix = matrices.get(i);
+            double[][] matrix = matrices.get(i)[0];
             for (int j = 0; j < matrix.length; j++) {
                 for (int k = 0; k < matrix[j].length; k++) {
                     toWrite += matrix[j][k];
