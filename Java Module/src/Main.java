@@ -46,9 +46,9 @@ class Main {
 
         slog("Settting up filehandler...");
 
-        String path = "C:\\Users\\Ross\\Desktop\\JAVA";
+        String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
 
-        int batchSize = 1;
+        int batchSize = 5;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;

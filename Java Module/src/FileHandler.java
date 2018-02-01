@@ -74,6 +74,7 @@ class FileHandler {
 
             File[] listOfFiles = Arrays.copyOfRange(folder.listFiles(), startIndex, endIndex);
             paths.clear();
+            foundSrc.clear();
             paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
             for (String singlePath : paths) {
                 findSrc(singlePath);
