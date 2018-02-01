@@ -41,7 +41,7 @@ class Main {
 
         String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
 
-        int batchSize = 25;
+        int batchSize = 10;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
@@ -79,10 +79,13 @@ class Main {
 
             }
             slog("Batch Complete");
+            batchNumber++;
         }
     }
 
     public static void parseDirectories(ArrayList<ExtractedDir> directories){
+        parsedClasses.clear();
+        globalEnums.clear();
         for (ExtractedDir dir : directories) {
             //slog("Loaded dir: " + dir.getName());
             Parser parser = new Parser(dir);

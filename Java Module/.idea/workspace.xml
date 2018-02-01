@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70c8b6ab-e565-4839-bbbf-ba47cd31830c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/FileHandler.java" afterPath="$PROJECT_DIR$/src/FileHandler.java" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.java" afterPath="$PROJECT_DIR$/src/Parser.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FileHandler.class" afterPath="$PROJECT_DIR$/target/classes/FileHandler.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
+      <change beforePath="$PROJECT_DIR$/../training_dataset.csv" afterPath="$PROJECT_DIR$/../training_dataset.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/AntiPatternProject/target/" />
@@ -27,18 +24,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+            <state relative-caret-position="1202">
+              <caret line="81" column="26" lean-forward="false" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#358#382#1" expanded="true" />
                 <element signature="method#clearFile#0;class#Main#0" expanded="false" />
                 <element signature="method#writeToCSV#0;class#Main#0" expanded="false" />
                 <element signature="method#getRootDirectory#0;class#Main#0" expanded="false" />
-                <element signature="e#5254#5255#0" expanded="true" />
-                <element signature="e#5291#5292#0" expanded="true" />
-                <element signature="e#5332#5333#0" expanded="true" />
-                <element signature="e#5367#5368#0" expanded="true" />
+                <element signature="e#5341#5342#0" expanded="true" />
+                <element signature="e#5378#5379#0" expanded="true" />
+                <element signature="e#5419#5420#0" expanded="true" />
+                <element signature="e#5454#5455#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -190,9 +187,10 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1927" />
+    <option name="x" value="200" />
+    <option name="y" value="-7" />
     <option name="width" value="974" />
-    <option name="height" value="1087" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -505,10 +503,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179408000" />
+    <option name="totallyTimeSpent" value="183456000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -519,7 +517,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900847" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49166667" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49166667" sideWeight="0.4958932" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -885,18 +883,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+        <state relative-caret-position="1202">
+          <caret line="81" column="26" lean-forward="false" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#358#382#1" expanded="true" />
             <element signature="method#clearFile#0;class#Main#0" expanded="false" />
             <element signature="method#writeToCSV#0;class#Main#0" expanded="false" />
             <element signature="method#getRootDirectory#0;class#Main#0" expanded="false" />
-            <element signature="e#5254#5255#0" expanded="true" />
-            <element signature="e#5291#5292#0" expanded="true" />
-            <element signature="e#5332#5333#0" expanded="true" />
-            <element signature="e#5367#5368#0" expanded="true" />
+            <element signature="e#5341#5342#0" expanded="true" />
+            <element signature="e#5378#5379#0" expanded="true" />
+            <element signature="e#5419#5420#0" expanded="true" />
+            <element signature="e#5454#5455#0" expanded="true" />
           </folding>
         </state>
       </provider>
