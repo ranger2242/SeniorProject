@@ -76,7 +76,7 @@ class FileHandler {
             }
 
             File[] listOfFiles = Arrays.copyOfRange(folder.listFiles(), startIndex, endIndex);
-
+            paths.clear();
             paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
             for (String singlePath : paths) {
                 findSrc(singlePath);
@@ -117,7 +117,7 @@ class FileHandler {
         if (folder.listFiles() != null){
             int endIndex = folder.listFiles().length;
             if (batchSize > 0){
-                int startIndex = currentBatch * batchSize;
+                int startIndex = (currentBatch + 1) * batchSize;
                 if(startIndex < endIndex){
                     return true;
                 }

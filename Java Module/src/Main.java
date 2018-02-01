@@ -39,9 +39,9 @@ class Main {
 
         slog("Loading Directories...");
 
-        String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
+        String path = "C:\\Users\\Ross\\Desktop\\JAVA";
 
-        int batchSize = 1;
+        int batchSize = 5;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
