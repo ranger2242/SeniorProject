@@ -1,8 +1,5 @@
 import javax.swing.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -99,7 +96,7 @@ class FileHandler {
     public int batchesLeft(){
         File folder = new File(path);
         if (folder.listFiles() != null && batchSize > 0){
-            int startIndex = currentBatch * batchSize;
+            int startIndex = (currentBatch + 2) * batchSize;
             int endIndex = folder.listFiles().length;
 
             int batchesLeft = 0;
@@ -124,6 +121,25 @@ class FileHandler {
             }
         }
         return false;
+    }
+
+    public static void writeToCSV(BufferedWriter writer, ArrayList<double[][][]>  matrices) throws IOException {
+        String toWrite = "";
+
+        for(int i = 0; i < matrices.size() - 1; i++){
+            double[][] matrix = matrices.get(i)[0];
+            for (int j = 0; j < matrix.length; j++) {
+                for (int k = 0; k < matrix[j].length; k++) {
+                    toWrite += matrix[j][k];
+                    if (k < matrix[j].length - 1) {
+                        toWrite += ",";
+                    }
+                }
+                toWrite += "\n";
+            }
+        }
+
+        writer.append(toWrite);
     }
 
     private void findSrc(String path) {

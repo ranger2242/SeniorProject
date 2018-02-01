@@ -9,6 +9,8 @@ import com.github.javaparser.ast.body.TypeDeclaration;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 class Parser {
@@ -32,6 +34,18 @@ class Parser {
             }
         }
         e.getPackages().forEach(this::parseDirectory);
+    }
+
+
+    public static Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> parseDirectories(ArrayList<ExtractedDir> directories){
+        ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
+        ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
+        for (ExtractedDir dir : directories) {
+            Parser parser = new Parser(dir);
+            parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
+            globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
+        }
+        return new Tuple<>(parsedClasses,globalEnums);
     }
 
 

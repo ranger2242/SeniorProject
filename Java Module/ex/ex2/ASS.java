@@ -48,7 +48,7 @@ abstract class Shape {
         moveTo(newx, newy);
     }
 
-    // accessors for x & y
+    // accessors for parsedClasses & globalEnums
     int getX() {
         return x; }
     int getY() {
@@ -56,7 +56,7 @@ abstract class Shape {
     void setX(int newx) { x = newx; }
     void setY(int newy) { y = newy; }
 
-    // move the x & y position
+    // move the parsedClasses & globalEnums position
     void moveTo(int newx, int newy) {
         setX(newx);
         setY(newy);

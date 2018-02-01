@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -35,35 +34,44 @@ class Main {
 
     private static boolean trainingMode = true;
 
+
+
     public static void main(String[] args) {
 
-        slog("Loading Directories...");
+        slog("Setting up file writer...");
+
+        String rootDirectory = getRootDirectory();
+        String fileName = rootDirectory + "\\training_dataset.csv";
+        BufferedWriter writer = setupFileWriter(fileName);
+
+        slog("Settting up filehandler...");
 
         String path = "C:\\Users\\Ross\\Desktop\\JAVA";
 
-        int batchSize = 5;
+        int batchSize = 1;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
         while ( fileHandler.hasNext() ){
+
+            System.out.println(div);
             slog("Batch: " + batchNumber + " - Batches Left: " + fileHandler.batchesLeft());
             ArrayList<ExtractedDir> directories = fileHandler.nextBatch();
             slog("Directories loaded. " + directories.size() + " directories founds.");
+
             slog("Parsing classes...");
-            parseDirectories(directories);
+            Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> tuple = Parser.parseDirectories(directories);
+            parsedClasses = tuple.parsedClasses;
+            globalEnums = tuple.globalEnums;
             slog("Classes Parsed");
 
 
             if (trainingMode) {
-                String rootDirectory = getRootDirectory();
-                String fileName = rootDirectory + "\\training_dataset.csv";
 
                 ArrayList<double[][][]> matrices = transformTrainingData();
 
                 try{
-                    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-                    writeToCSV(writer, matrices);
-                    writer.close();
+                    FileHandler.writeToCSV(writer, matrices);
                     slog("Data writen to CSV file");
                 }catch (IOException e){e.printStackTrace();}
 
@@ -81,18 +89,14 @@ class Main {
             slog("Batch Complete");
             batchNumber++;
         }
+        try{
+            writer.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
-    public static void parseDirectories(ArrayList<ExtractedDir> directories){
-        parsedClasses.clear();
-        globalEnums.clear();
-        for (ExtractedDir dir : directories) {
-            //slog("Loaded dir: " + dir.getName());
-            Parser parser = new Parser(dir);
-            parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
-            globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
-        }
-    }
 
 
     public static void clearFile(String fileName){
@@ -100,7 +104,6 @@ class Main {
         file.delete();
         file = null;
     }
-
 
     public static ArrayList<double[][][]> transformTrainingData(){
         ArrayList<double[][][]> matrices = new ArrayList<>();
@@ -120,26 +123,14 @@ class Main {
         return matrices;
     }
 
-
-    public static void writeToCSV(BufferedWriter writer, ArrayList<double[][][]>  matrices) throws IOException {
-        String toWrite = "";
-
-        for(int i = 0; i < matrices.size() - 1; i++){
-            double[][] matrix = matrices.get(i)[0];
-            for (int j = 0; j < matrix.length; j++) {
-                for (int k = 0; k < matrix[j].length; k++) {
-                    toWrite += matrix[j][k];
-                    if (k < matrix[j].length - 1) {
-                        toWrite += ",";
-                    }
-                }
-                toWrite += "\n";
-            }
+    private static BufferedWriter setupFileWriter(String fileName){
+        try{
+            return new BufferedWriter(new FileWriter(fileName));
+        }catch (IOException e){
+            e.printStackTrace();
+            return null;
         }
-
-        writer.append(toWrite);
     }
-
 
     private static String getRootDirectory() {
         String rootDirectory = System.getProperty("user.dir");

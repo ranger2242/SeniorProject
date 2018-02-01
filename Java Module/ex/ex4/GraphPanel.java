@@ -11,33 +11,33 @@ class Test{
     //3 methods below are to test copy paste programming
 
 //    int methodOne(){
-//        int x = 0;
+//        int parsedClasses = 0;
 //        for(int i = 0; i < 10; i++){
 //            if(i == 5){
-//                x = i
+//                parsedClasses = i
 //            }
 //        }
-//        return x;
+//        return parsedClasses;
 //    }
 //
 //    int methodTwo(){
-//        int x = 0;
+//        int parsedClasses = 0;
 //        for(int i = 0; i < 10; i++){
 //            if(i == 5){
-//                x = i
+//                parsedClasses = i
 //            }
 //        }
-//        return x;
+//        return parsedClasses;
 //    }
 //
 //    int methodThree(){
-//        int x = 1;
+//        int parsedClasses = 1;
 //        for(int i = 0; i < 10; i++){
 //            if(i == 3){
-//                x = i
+//                parsedClasses = i
 //            }
 //        }
-//        return x;
+//        return parsedClasses;
 //    }
 
 }
@@ -146,7 +146,7 @@ class GraphPanel extends JPanel implements Serializable {
         for (Text t : texts) {
             if (t.text != null) {
                 Rectangle r = t.getBounds();
-                //g.drawRect(r.x,r.y,r.width,r.height);
+                //g.drawRect(r.parsedClasses,r.globalEnums,r.width,r.height);
                 t.setBounds(g);
                 int p = Font.PLAIN;
                 if (t.bold)
