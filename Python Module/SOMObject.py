@@ -3,6 +3,8 @@ import numpy as np
 from _datetime import datetime
 import math
 import os
+import sys
+import time
 
 class SOM(object):
     # To check if the SOM has been trained
@@ -11,6 +13,7 @@ class SOM(object):
     def __init__(self, m, n, dim, n_iterations=100, alpha=None, sigma=None, model_name='model.ckpt'):
 
         print('Creating Map...')
+
 
         # Assign required variables first
         self.m = m
@@ -115,12 +118,15 @@ class SOM(object):
         for iter_no in range(self.n_iterations):
             self.print_time_remaining(iter_no)
             # Train with each vector one by one
-            for input_vect in input_vects:
-                self.sess.run(self.training_op, feed_dict={self.vect_input: input_vect, self.iter_input: iter_no})
+            for i in range(len(input_vects)):
+                sys.stdout.write("\rCycle: %i - %i out of %i" % (iter_no,  i, len(input_vects)))
+                sys.stdout.flush()
+                self.sess.run(self.training_op, feed_dict={self.vect_input: input_vects[i], self.iter_input: iter_no})
+            self.save_model(self.sess)
 
         self.store_centroid_grid()
-        self.save_model(self.sess)
         self.trained = True
+        print('Training complete. %i Iteration' % self.n_iterations)
 
     def store_centroid_grid(self):
         # Store a centroid grid for easy retrieval later on

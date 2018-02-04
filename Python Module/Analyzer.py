@@ -44,4 +44,5 @@ class Analyzer:
 
 a = Analyzer()
 a.train_network_from_csv()
+print('Training complete')
 a.plot_CSV_data()

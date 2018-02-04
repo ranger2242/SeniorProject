@@ -28,7 +28,7 @@ class GP:
         m = 50
         n = 50
         input_size = 8
-        iterations = 500
+        iterations = 30
         model_name = 'GP_model.ckpt'
 
         self.som = SOM(m, n, input_size, iterations, model_name=model_name)
