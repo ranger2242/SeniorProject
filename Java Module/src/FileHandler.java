@@ -78,6 +78,7 @@ class FileHandler {
             paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
             for (String singlePath : paths) {
                 findSrc(singlePath);
+
             }
         }
 
@@ -119,24 +120,33 @@ class FileHandler {
                 if(startIndex < endIndex){
                     return true;
                 }
+            }else{
+                if (currentBatch < endIndex){
+                    return true;
+                }
             }
         }
         return false;
     }
 
-    public static void writeToCSV(BufferedWriter writer, ArrayList<double[][][]>  matrices) throws IOException {
+    public static void writeToCSV(BufferedWriter writer, ArrayList<Object[][][]>  matrices, ArrayList<ExtractedDir> directories ) throws IOException {
         String toWrite = "";
 
-        for(int i = 0; i < matrices.size() - 1; i++){
-            double[][] matrix = matrices.get(i)[0];
+        for(int i = 0; i < matrices.size(); i++){
+            Object[][] matrix = matrices.get(i)[0];
             for (int j = 0; j < matrix.length; j++) {
                 for (int k = 0; k < matrix[j].length; k++) {
-                    toWrite += matrix[j][k];
+                    if (matrix[j][k] instanceof Double)
+                        toWrite += (double) matrix[j][k];
+                    else if (matrix[j][k] instanceof Integer)
+                        toWrite += (Integer) matrix[j][k];
+                    else if (matrix[j][k] instanceof String)
+                        toWrite += (String) matrix[j][k];
                     if (k < matrix[j].length - 1) {
                         toWrite += ",";
                     }
                 }
-                toWrite += "\n";
+                toWrite += directories.get(i).getName() + "\n";
             }
         }
 

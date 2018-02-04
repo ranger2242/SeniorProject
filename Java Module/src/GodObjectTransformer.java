@@ -8,10 +8,10 @@ import java.util.Set;
 
 public class GodObjectTransformer {
 
-    public static double[][] generateGodObjectMatrix(Set<ExtractedClass> classes){
+    public static Object[][] generateGodObjectMatrix(Set<ExtractedClass> classes){
 
         ExtractedClass[] classesArray =  classes.toArray(new ExtractedClass[classes.size()]);
-        double[][] godMatrix = new double[classesArray.length][8];
+        Object[][] godMatrix = new Object[classesArray.length][10];
 
         int totalReferencesInProject = getTotalNumberOfReferences(classes);
 
@@ -26,7 +26,7 @@ public class GodObjectTransformer {
             godMatrix[i][5] = (double) totalReferencesInProject;
             godMatrix[i][6] = totalReferencesToClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][1]);
             godMatrix[i][7] = totalReferencesFromClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][2]);
-
+            godMatrix[i][8] = singleClass.getName();
         }
         
         return godMatrix;

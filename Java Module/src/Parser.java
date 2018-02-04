@@ -19,7 +19,6 @@ class Parser {
     private final ArrayList<Enum> globalEnums = new ArrayList<>();
 
     public Parser(ExtractedDir dir) {
-
         parseDirectory(dir);
     }
 
@@ -50,12 +49,7 @@ class Parser {
 
 
     private ArrayList<ExtractedClass> parseCode(String dir) {
-        String output;
-
-        output = fileHandler.load(new File(dir));
-        ArrayList<String> scanned = formatCode(output);
-        String code = listToLine(scanned);
-        code = code.replaceAll("\\(", "\\( ");
+        String code = fileHandler.load(new File(dir));
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
         try {
             //System.out.println("PROCESSING: " + dir);
@@ -75,8 +69,8 @@ class Parser {
             }
             return listOfClasses;
         } catch (ParseProblemException e) {
-//            System.out.println("PARSE ERROR: " + dir);
-            // e.printStackTrace();
+            System.out.println("PARSE ERROR: " + dir);
+             e.printStackTrace();
             return null;
         }catch (StackOverflowError e) {
             System.out.println("STACK OVERFLOW ERROR: " + dir);
@@ -100,29 +94,6 @@ class Parser {
         cid.getChildNodes().forEach(x -> Main.out(x.getClass().toString()));
     }
 
-
-    //Formatting Tools
-    private static ArrayList<String> formatCode(String output) {
-        ArrayList<String> scanned = new ArrayList<>(Arrays.asList(output.split("\r\n")));
-        for (int i = 0; i < scanned.size(); i++) {
-            scanned.set(i, scanned.get(i).replaceAll("(?<=if)(.*?)(?=\\()", ""));
-            String[] s = scanned.get(i).split("\\s+");
-            ArrayList<String> list = new ArrayList<>(Arrays.asList(s));
-            list = removeWhiteSpace(list);
-            StringBuilder out = new StringBuilder();
-            for (String l : list) {
-                if (list.indexOf(l) < list.size() - 1) {
-                    out.append(l).append(" ");
-                } else
-                    out.append(l);
-            }
-
-            scanned.set(i, out.toString());
-        }
-        scanned = removeWhiteSpace(scanned);
-        return scanned;
-    }
-
     private static String listToLine(ArrayList<String> code) {
         StringBuilder in = new StringBuilder();
 
@@ -135,7 +106,6 @@ class Parser {
     private static ArrayList<String> removeWhiteSpace(ArrayList<String> strings) {
         return strings.stream().filter(x -> x.length() > 0).collect(Collectors.toCollection(ArrayList::new));
     }
-
 
     //Setters And Getters
     public ArrayList<ExtractedClass> getExtractedClasses() {

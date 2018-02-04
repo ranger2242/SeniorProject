@@ -17,8 +17,8 @@ public class Transformer {
     }
 
     // Method not yet implemented
-    public static double[][][] transform(){
-        double[][][] data = new double[1][][];
+    public static Object[][][] transform(){
+        Object[][][] data = new Object[1][][];
         data[0] = GodObjectTransformer.generateGodObjectMatrix(classes);
         return data;
     }

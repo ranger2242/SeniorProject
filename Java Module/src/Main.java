@@ -46,7 +46,7 @@ class Main {
 
         slog("Settting up filehandler...");
 
-        String path = "C:\\Users\\Ross\\Desktop\\data_set\\java_projects";
+        String path = "C:\\Users\\Ross\\Desktop\\stuf";
 
         int batchSize = 5;
         FileHandler fileHandler = new FileHandler(batchSize, path);
@@ -68,16 +68,16 @@ class Main {
 
             if (trainingMode) {
 
-                ArrayList<double[][][]> matrices = transformTrainingData();
+                ArrayList<Object[][][]> matrices = transformTrainingData();
 
                 try{
-                    FileHandler.writeToCSV(writer, matrices);
+                    FileHandler.writeToCSV(writer, matrices, directories);
                     slog("Data writen to CSV file");
                 }catch (IOException e){e.printStackTrace();}
 
             } else {
 
-                double[][][] matrices = transformData();
+                Object[][][] matrices = transformData();
 
                 Gson gson = new Gson();
                 String json = gson.toJson(matrices);
@@ -105,8 +105,8 @@ class Main {
         file = null;
     }
 
-    public static ArrayList<double[][][]> transformTrainingData(){
-        ArrayList<double[][][]> matrices = new ArrayList<>();
+    public static ArrayList<Object[][][]> transformTrainingData(){
+        ArrayList<Object[][][]> matrices = new ArrayList<>();
         for (Set<ExtractedClass> set : parsedClasses) {
             Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
             matrices.add(transformer.transform());
@@ -115,10 +115,10 @@ class Main {
         return matrices;
     }
 
-    public static double[][][] transformData(){
+    public static Object[][][] transformData(){
         Set<ExtractedClass> set = parsedClasses.get(0);
         Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
-        double[][][] matrices = transformer.transform();
+        Object[][][] matrices = transformer.transform();
         slog("Data Transformed");
         return matrices;
     }
