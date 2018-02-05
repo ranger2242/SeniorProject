@@ -34,17 +34,12 @@ class Analyzer:
     def test_network(self):
         return None
 
-        # test_data = [[[3, 1, 0, 0, 1], [3, 1, 3, 1, 5], [3, 2, 1, 6, 9]]]
-        # run_neural_networks(test_data)
-
 
 a = Analyzer()
+a.gp_network.plot_reference_points()
+
 # a.train_network_from_csv()
 # print('Training complete')
 # a.plot_CSV_data()
-
-# god_test_data = [[20, 1, 0, 2, 5, 32.0, 0.03125, 0.0], [1,0,0,1,0,0.0,0.0,0.0], [325,0,3,28,12,80.0,0.0,0.0375], [163,0,1,12,13,161.0,0.0,0.006211180124223602]]
-# god_test_data = a.gp_network.preprocessing(god_test_data)
-# a.gp_network.plot(god_test_data)
 
 

@@ -46,9 +46,9 @@ class Main {
 
         slog("Settting up filehandler...");
 
-        String path = "C:\\Users\\Ross\\Desktop\\stuf";
+        String path = "...";
 
-        int batchSize = 5;
+        int batchSize = -1;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;

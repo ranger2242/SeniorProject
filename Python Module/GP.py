@@ -17,6 +17,7 @@ data: [
     total referecnes,
     ratio of total referecnes to referecnes to class,
     ratio of total referecnes to referecnes from class
+    Optional: label with 1 or 0 to indicate God Class
 ]
 
 '''
@@ -53,10 +54,7 @@ class GP:
 
             label = None
             if len(elements) > 8:
-                if elements[8] == 'YES':
-                    label = 1
-                else:
-                    label = 0
+                label = int(elements[8])
 
             data_entry = [num_classes, num_ref_in, num_ref_out, num_funcs, num_vars, total_refs, ratio_total_in, ratio_total_out]
             data.append(data_entry)
@@ -72,7 +70,7 @@ class GP:
         self.som.train(data)
 
     def map_network(self):
-        labeled_data_set = open(project_root + '\\god_object_labeled_data.csv', 'r')
+        labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
         labeled_data, labels = self.csv_processing(labeled_data_set)
         labeled_data = self.preprocessing(labeled_data)
         self.som.map_refernces_points(labeled_data, labels)
@@ -81,7 +79,7 @@ class GP:
         data = self.preprocessing(raw_data)
         return self.som.make_prediction(data)
 
-    def plot(self, x):
+    def plot(self, x, labels=None):
         print('Preparing data to be plotted...')
 
         # Fit train data into SOM lattice
@@ -96,8 +94,25 @@ class GP:
         plt.subplot(121)
 
         for i in range(len(x1)):
-            color = (0, 0, 0)
-            plt.scatter(x1[i], y1[i])
+            color = (0, 0, 1)
+            if labels is not None:
+                if len(labels) > i:
+                    if labels[i] == 1:
+                        color = (1, 0, 0)
+                    else:
+                        color = (0, 0, 0)
 
-        plt.title('Colors')
+            plt.scatter(x1[i], y1[i], c=color)
+
+        plt.axis([0.0, 50.0, 0.0, 50.0])
+        plt.title('Data')
         plt.show()
+
+    def plot_reference_points(self):
+        labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
+        labeled_data, labels = self.csv_processing(labeled_data_set)
+        labeled_data = self.preprocessing(labeled_data)
+
+        self.plot(labeled_data, labels)
+
+
