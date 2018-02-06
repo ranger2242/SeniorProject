@@ -1,17 +1,8 @@
 from GP import GP
 import os
-
-
-def get_project_root():
-    project_root = os.path.abspath(os.path.dirname(__file__))
-    while not project_root.endswith('\\'):
-        project_root = project_root[:-1]
-    project_root = project_root[:-1]
-    return project_root
-
+from Helpers import get_project_root
 
 project_root = get_project_root()
-
 
 class Analyzer:
 
@@ -21,11 +12,13 @@ class Analyzer:
     def use_neural_networks(self, data):
         print('Use neural networks || Not yet implemented...')
 
+    # Trains GP Network from CSV file
     def train_network_from_csv(self):
         data_set = open(project_root + '\\training_dataset.csv', 'r')
         data_set = self.gp_network.csv_processing(data_set)
         self.gp_network.train(data_set)
 
+    # Plot CSV file data...
     def plot_CSV_data(self):
         data_set = open(project_root + '\\training_dataset.csv', 'r')
         data_set = self.gp_network.csv_processing(data_set)
@@ -36,7 +29,22 @@ class Analyzer:
 
 
 a = Analyzer()
-a.gp_network.plot_reference_points()
+
+# Generate a test matrix from testing
+def generate_test_matrix(x):
+    mat = []
+    for i in range(500):
+        t = [0] * x
+        t.append(i)
+        while len(t) != 8:
+            t.append(0)
+        mat.append(t)
+    return mat
+
+for j in range(8):
+    test_matrix = generate_test_matrix(j)
+    a.gp_network.test_plot(test_matrix)
+
 
 # a.train_network_from_csv()
 # print('Training complete')
