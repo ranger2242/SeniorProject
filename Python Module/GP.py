@@ -37,6 +37,7 @@ class GP:
         if self.som.trained is True:
             self.map_network()
 
+    # Converts CSV data into raw data ready to be preprocessed
     def csv_processing(self, raw_data):
 
         data = []
@@ -62,23 +63,28 @@ class GP:
 
         return data, labels
 
+    # Does any preprocessing needed.. currently unimplemented
     def preprocessing(self, raw_data):
         return raw_data
 
+    # Trains the network on data provided
     def train(self, raw_data):
         data, _ = self.preprocessing(raw_data)
         self.som.train(data)
 
+    # Maps points from a labeled CSV file as refernces points
     def map_network(self):
         labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
         labeled_data, labels = self.csv_processing(labeled_data_set)
         labeled_data = self.preprocessing(labeled_data)
         self.som.map_refernces_points(labeled_data, labels)
 
+    # Makes a predication on a data element
     def make_prediction(self, raw_data):
         data = self.preprocessing(raw_data)
         return self.som.make_prediction(data)
 
+    # Plots data give. Optional: Pass labels in for color formatting
     def plot(self, x, labels=None):
         print('Preparing data to be plotted...')
 
@@ -108,11 +114,32 @@ class GP:
         plt.title('Data')
         plt.show()
 
+    # Plots map refernces points assigned by the map_network function
     def plot_reference_points(self):
-        labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
-        labeled_data, labels = self.csv_processing(labeled_data_set)
-        labeled_data = self.preprocessing(labeled_data)
-
+        labeled_data = self.som.references_points
+        labels = self.som.labels
         self.plot(labeled_data, labels)
 
+    # Testing plot method used to visualize regions on the map
+    def test_plot(self, x):
+        print('Preparing data to be plotted...')
 
+        # Fit train data into SOM lattice
+        mapped = self.som.map_vects(x)
+        mappedarr = np.array(mapped)
+        x1 = mappedarr[:, 0]
+        y1 = mappedarr[:, 1]
+
+        print('Plotting data points...')
+
+        plt.figure(1, figsize=(12, 6))
+        plt.subplot(121)
+
+        for i in range(len(x1)):
+            normalized_i = float(i / len(x1))
+            color = (normalized_i, normalized_i, normalized_i)
+            plt.scatter(x1[i], y1[i], c=color)
+
+        plt.axis([0.0, 50.0, 0.0, 50.0])
+        plt.title('Data')
+        plt.show()

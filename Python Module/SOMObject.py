@@ -4,7 +4,7 @@ from _datetime import datetime
 import math
 import os
 import sys
-import time
+from Helpers import get_python_project_root
 
 class SOM(object):
     # To check if the SOM has been trained
@@ -164,7 +164,7 @@ class SOM(object):
 
     def save_model(self, sess):
         print("Saving...")
-        project_root = os.path.abspath(os.path.dirname(__file__))
+        project_root = get_python_project_root()
         file_path = project_root + '\\tmp\\' + self.model_name
         self.saver.save(sess, file_path)
         print("Model Saved!")
@@ -173,6 +173,8 @@ class SOM(object):
         self.references_points = self.map_vects(data)
         self.labels = labels
 
+
+    # Refactor later Ross.
     def make_prediction(self, input_vector):
         print('prediction not implemented yet...')
         mapped_vector = self.map_vects([input_vector])[0]
