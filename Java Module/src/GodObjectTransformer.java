@@ -34,7 +34,7 @@ public class GodObjectTransformer {
     }
 
     public ArrayList<Object[][][]> transformTrainingData(
-            Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> arr){
+            ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> arr){
         ArrayList<Object[][][]> matrices = new ArrayList<>();
         for (Set<ExtractedClass> set : arr.parsedClasses) {
             Transformer transformer = new Transformer(set, arr.globalEnums.get(arr.parsedClasses.indexOf(set)));
@@ -44,9 +44,9 @@ public class GodObjectTransformer {
         return matrices;
     }
     public Object[][][] transformData(
-            Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> arr){
-        Set<ExtractedClass> set = arr.parsedClasses.get(0);
-        Transformer transformer = new Transformer(set, arr.globalEnums.get(arr.parsedClasses.indexOf(set)));
+            ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> projectClassData){
+        Set<ExtractedClass> set = projectClassData.parsedClasses.get(0);
+        Transformer transformer = new Transformer(set, projectClassData.globalEnums.get(projectClassData.parsedClasses.indexOf(set)));
         Object[][][] matrices = transformer.transform();
         Logger.slog("Data Transformed");
         return matrices;

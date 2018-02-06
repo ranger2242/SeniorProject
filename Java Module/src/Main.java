@@ -14,23 +14,22 @@ import java.util.Set;
 class Main {
 
     public final static String div = "-----------------------------------------------";
-    public static ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
-    public static ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
     private static boolean trainingMode = true;
 
+    private static String path = "C:\\Users\\Ross\\Desktop\\stuf";
 
 
     public static void main(String[] args) {
         FileHandler fh = new FileHandler();
-        GodObjectTransformer got = new GodObjectTransformer();
+        GodObjectTransformer godObjectTransformer = new GodObjectTransformer();
         Logger.slog("Setting up file writer");
 
         String rootDirectory = fh.getRootDirectory();
         String fileName = rootDirectory + "\\training_dataset.csv";
         BufferedWriter writer = fh.setupFileWriter(fileName);
 
-        String path = "C:\\Users\\Chris\\Desktop\\JAVA";
-        Logger.slog("Loading path: "+path);
+
+        Logger.slog("Loading path: "+ path);
 
         int batchSize = 2;
         FileHandler fileHandler = new FileHandler(batchSize, path);
@@ -44,14 +43,12 @@ class Main {
             Logger.slog("Directories loaded. " + directories.size() + " directories founds.");
 
             Logger.slog("Parsing classes...");
-            Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> tuple = Parser.parseDirectories(directories);
-            parsedClasses = tuple.parsedClasses;
-            globalEnums = tuple.globalEnums;
+            ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> projectClassData = Parser.parseDirectories(directories);
             Logger.slog("Classes Parsed");
 
 
             if (trainingMode) {
-                ArrayList<Object[][][]> matrices = got.transformTrainingData(tuple);
+                ArrayList<Object[][][]> matrices = godObjectTransformer.transformTrainingData(projectClassData);
 
                 try{
                     FileHandler.writeToCSV(writer, matrices, directories);
@@ -60,7 +57,7 @@ class Main {
 
             } else {
 
-                Object[][][] matrices = got.transformData(tuple);
+                Object[][][] matrices = godObjectTransformer.transformData(projectClassData);
 
                 Gson gson = new Gson();
                 String json = gson.toJson(matrices);
@@ -74,9 +71,7 @@ class Main {
         }
         try{
             writer.close();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        }catch (IOException e){e.printStackTrace();}
 
     }
 

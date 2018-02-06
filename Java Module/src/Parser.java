@@ -35,7 +35,7 @@ class Parser {
     }
 
 
-    public static Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> parseDirectories(ArrayList<ExtractedDir> directories){
+    public static ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> parseDirectories(ArrayList<ExtractedDir> directories){
         ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
         ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
         for (ExtractedDir dir : directories) {
@@ -49,7 +49,7 @@ class Parser {
                 Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
         }
-        return new Tuple<>(parsedClasses,globalEnums);
+        return new ProjectData<>(parsedClasses,globalEnums);
     }
 
 

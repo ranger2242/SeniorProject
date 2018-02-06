@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Set;
 
@@ -6,9 +7,11 @@ import java.util.Set;
  * Created by Chris Cavazos on 2/5/2018.
  */
 public class Logger {
+
     static boolean enabled=true;
-    private static void printAllClasses() {
-        for (Set<ExtractedClass> set : Main.parsedClasses) {
+
+    private static void printAllClasses(ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> classData) {
+        for (Set<ExtractedClass> set : classData.parsedClasses) {
             for (ExtractedClass extractedClass : set) {
                 if (extractedClass.getParent().equals("")) {
                     extractedClass.printClass(0);
