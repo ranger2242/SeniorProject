@@ -8,7 +8,6 @@ import com.github.javaparser.ast.body.TypeDeclaration;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -40,9 +39,15 @@ class Parser {
         ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
         ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
         for (ExtractedDir dir : directories) {
-            Parser parser = new Parser(dir);
-            parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
-            globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
+            try {
+                Parser parser = new Parser(dir);
+                parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
+                globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
+
+            }catch (ParseProblemException e)
+            {
+                Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
         }
         return new Tuple<>(parsedClasses,globalEnums);
     }
@@ -91,7 +96,7 @@ class Parser {
     }
 
     private void printAllChildNodes(ClassOrInterfaceDeclaration cid) {
-        cid.getChildNodes().forEach(x -> Main.out(x.getClass().toString()));
+        cid.getChildNodes().forEach(x -> Logger.out(x.getClass().toString()));
     }
 
     private static String listToLine(ArrayList<String> code) {

@@ -9,7 +9,7 @@ class Output {
     public Output(ArrayList<ExtractedClass> classes) {
         checkInheritence(classes);
         checkUses(classes);
-        Main.out("");
+        Logger.out("");
         this.classes=classes;
     }
 
@@ -17,7 +17,7 @@ class Output {
         for (ExtractedClass c1 : classes) {
             for (ExtractedClass c2 : classes) {
                 if (c1.getExtensions().contains(c2.getName())) {
-                    Main.out(c2.getName() + " <|-- " + c1.getName());
+                    Logger.out(c2.getName() + " <|-- " + c1.getName());
                 }
             }
         }
@@ -28,10 +28,10 @@ class Output {
     }
 
     private void printClass(ExtractedClass e){
-        Main.out("class "+e.getName()+"{");
+        Logger.out("class "+e.getName()+"{");
         e.getVariables().forEach(x->x.printAlt());
         e.getMethods().forEach(x->x.printAlt());
-        Main.out("}\n");
+        Logger.out("}\n");
     }
 
     private void checkUses(ArrayList<ExtractedClass> classes) {

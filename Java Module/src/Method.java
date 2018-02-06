@@ -128,24 +128,24 @@ public class Method {
             tag.append(m.asString()).append(" ");
         }
         tag.append(type).append(" ").append(name);
-        Main.out(tag.toString());
+        Logger.out(tag.toString());
         if (params.size() > 0) {
-            Main.out(s1 + "Parameters:");
-            params.forEach(x -> Main.out(s2 + x.toString()));
-            Main.out("");
+            Logger.out(s1 + "Parameters:");
+            params.forEach(x -> Logger.out(s2 + x.toString()));
+            Logger.out("");
         }
         if (instanceVars.size() > 0) {
-            Main.out(s1 + "Instance:");
-            instanceVars.forEach(x -> Main.out(s2 + x.toString()));
-            Main.out("");
+            Logger.out(s1 + "Instance:");
+            instanceVars.forEach(x -> Logger.out(s2 + x.toString()));
+            Logger.out("");
         }
         if (ops.size() > 0) {
-            Main.out(s1 + "Operations:");
-            ops.forEach(x -> Main.out(s2 + x));
-            Main.out("");
+            Logger.out(s1 + "Operations:");
+            ops.forEach(x -> Logger.out(s2 + x));
+            Logger.out("");
 
         }
-        Main.out(s1 + "--" + name + " END--\n");
+        Logger.out(s1 + "--" + name + " END--\n");
 
 
     }
@@ -195,6 +195,6 @@ public class Method {
             }
         }
         s += "):" + type;
-        Main.out(s);
+        Logger.out(s);
     }
 }

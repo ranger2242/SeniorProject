@@ -4,7 +4,6 @@ import io.socket.emitter.Emitter;
 
 import java.net.*;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 
 public class Pipeline {
@@ -41,7 +40,7 @@ public class Pipeline {
     }
 
     public static void slog(String msg) {
-        Main.slog(msg);
+        Logger.slog(msg);
     }
 
     public static void sendToServer(String data){
@@ -113,7 +112,7 @@ public class Pipeline {
 
     public static void viewIP() {
         try {
-            Main.out("Your Host addr: " + InetAddress.getLocalHost().getHostAddress());  // often returns "127.0.0.1"
+            Logger.out("Your Host addr: " + InetAddress.getLocalHost().getHostAddress());  // often returns "127.0.0.1"
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -129,7 +128,7 @@ public class Pipeline {
             Enumeration<InetAddress> a = e.getInetAddresses();
             for (; a.hasMoreElements(); ) {
                 InetAddress addr = a.nextElement();
-                Main.out("  " + addr.getHostAddress());
+                Logger.out("  " + addr.getHostAddress());
             }
         }
     }

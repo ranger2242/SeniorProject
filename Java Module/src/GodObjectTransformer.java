@@ -2,8 +2,8 @@ import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class GodObjectTransformer {
@@ -33,6 +33,24 @@ public class GodObjectTransformer {
 
     }
 
+    public ArrayList<Object[][][]> transformTrainingData(
+            Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> arr){
+        ArrayList<Object[][][]> matrices = new ArrayList<>();
+        for (Set<ExtractedClass> set : arr.parsedClasses) {
+            Transformer transformer = new Transformer(set, arr.globalEnums.get(arr.parsedClasses.indexOf(set)));
+            matrices.add(transformer.transform());
+        }
+        Logger.slog("Data Transformed");
+        return matrices;
+    }
+    public Object[][][] transformData(
+            Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> arr){
+        Set<ExtractedClass> set = arr.parsedClasses.get(0);
+        Transformer transformer = new Transformer(set, arr.globalEnums.get(arr.parsedClasses.indexOf(set)));
+        Object[][][] matrices = transformer.transform();
+        Logger.slog("Data Transformed");
+        return matrices;
+    }
     private static double totalReferencesToClassReferncesRatio(int total, int referncesToClass){
         if(total == 0){
             return 0;

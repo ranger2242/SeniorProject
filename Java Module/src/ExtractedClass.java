@@ -130,7 +130,7 @@ class ExtractedClass {
 
     //Prints
     private void printClasses(String s) {
-        Main.out(s + name);
+        Logger.out(s + name);
     }
 
     public void printClass( int depth) {

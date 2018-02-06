@@ -20,7 +20,7 @@ public class Variable {
         for (Modifier m : modifiers) {
             mod.append(m.asString()).append(" ");
         }
-        Main.out(s2 + mod + toString());
+        Logger.out(s2 + mod + toString());
 
     }
 
@@ -45,7 +45,7 @@ public class Variable {
             s += "+";
         }
         s+=name+":"+type;
-        Main.out(s);
+        Logger.out(s);
     }
 
     public void setName(String name) {

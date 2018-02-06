@@ -1,12 +1,8 @@
 import com.google.gson.Gson;
-import io.socket.client.Socket;
-import java.io.*;
+
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Set;
 
 /**
@@ -20,64 +16,51 @@ class Main {
     public final static String div = "-----------------------------------------------";
     public static ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
     public static ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
-
-    static String port = "2242";
-    static String ip = "10.133.228.186";
-    static String ip3 = "139.94.249.166";
-
-    static String ip2 = "localhost";
-    public static String dir = "http://" + ip2 + ":" + port;
-    static Gson gson = new Gson();
-
-    static Socket socket;
-    private static String clientID;
-
     private static boolean trainingMode = true;
 
 
 
     public static void main(String[] args) {
+        FileHandler fh = new FileHandler();
+        GodObjectTransformer got = new GodObjectTransformer();
+        Logger.slog("Setting up file writer");
 
-        slog("Setting up file writer...");
-
-        String rootDirectory = getRootDirectory();
+        String rootDirectory = fh.getRootDirectory();
         String fileName = rootDirectory + "\\training_dataset.csv";
-        BufferedWriter writer = setupFileWriter(fileName);
+        BufferedWriter writer = fh.setupFileWriter(fileName);
 
-        slog("Settting up filehandler...");
+        String path = "C:\\Users\\Chris\\Desktop\\JAVA";
+        Logger.slog("Loading path: "+path);
 
-        String path = "...";
-
-        int batchSize = -1;
+        int batchSize = 2;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
         while ( fileHandler.hasNext() ){
 
             System.out.println(div);
-            slog("Batch: " + batchNumber + " - Batches Left: " + fileHandler.batchesLeft());
+            Logger.slog("Batch: " + batchNumber + " - Batches Left: " + fileHandler.batchesLeft());
             ArrayList<ExtractedDir> directories = fileHandler.nextBatch();
-            slog("Directories loaded. " + directories.size() + " directories founds.");
+            Logger.slog("Directories loaded. " + directories.size() + " directories founds.");
 
-            slog("Parsing classes...");
+            Logger.slog("Parsing classes...");
             Tuple<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> tuple = Parser.parseDirectories(directories);
             parsedClasses = tuple.parsedClasses;
             globalEnums = tuple.globalEnums;
-            slog("Classes Parsed");
+            Logger.slog("Classes Parsed");
 
 
             if (trainingMode) {
-
-                ArrayList<Object[][][]> matrices = transformTrainingData();
+                ArrayList<Object[][][]> matrices = got.transformTrainingData(tuple);
 
                 try{
                     FileHandler.writeToCSV(writer, matrices, directories);
-                    slog("Data writen to CSV file");
+                    Logger.slog("Data writen to CSV file");
                 }catch (IOException e){e.printStackTrace();}
 
             } else {
 
-                Object[][][] matrices = transformData();
+                Object[][][] matrices = got.transformData(tuple);
 
                 Gson gson = new Gson();
                 String json = gson.toJson(matrices);
@@ -86,7 +69,7 @@ class Main {
                 pipeline.sendToServer(json);
 
             }
-            slog("Batch Complete");
+            Logger.slog("Batch Complete");
             batchNumber++;
         }
         try{
@@ -95,74 +78,6 @@ class Main {
             e.printStackTrace();
         }
 
-    }
-
-
-
-    public static void clearFile(String fileName){
-        File file = new File(fileName);
-        file.delete();
-        file = null;
-    }
-
-    public static ArrayList<Object[][][]> transformTrainingData(){
-        ArrayList<Object[][][]> matrices = new ArrayList<>();
-        for (Set<ExtractedClass> set : parsedClasses) {
-            Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
-            matrices.add(transformer.transform());
-        }
-        slog("Data Transformed");
-        return matrices;
-    }
-
-    public static Object[][][] transformData(){
-        Set<ExtractedClass> set = parsedClasses.get(0);
-        Transformer transformer = new Transformer(set, globalEnums.get(parsedClasses.indexOf(set)));
-        Object[][][] matrices = transformer.transform();
-        slog("Data Transformed");
-        return matrices;
-    }
-
-    private static BufferedWriter setupFileWriter(String fileName){
-        try{
-            return new BufferedWriter(new FileWriter(fileName));
-        }catch (IOException e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private static String getRootDirectory() {
-        String rootDirectory = System.getProperty("user.dir");
-        while (!rootDirectory.endsWith("\\")) {
-            rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
-        }
-        rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
-        return rootDirectory;
-    }
-
-    private static void printAllClasses() {
-        for (Set<ExtractedClass> set : parsedClasses) {
-            for (ExtractedClass extractedClass : set) {
-                if (extractedClass.getParent().equals("")) {
-                    extractedClass.printClass(0);
-                }
-            }
-        }
-    }
-
-    public static void out(String s) {
-        System.out.println(s);
-    }
-
-    public static void outa(String s) {
-        System.out.print(s);
-    }
-
-    public static void slog(String msg) {
-        Date d = new Date();
-        SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy::HH:mm:ss a");
-        System.out.println(s.format(d) + ":\t" + msg);
     }
 
 }

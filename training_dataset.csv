@@ -1,0 +1,373 @@
+3,0,0,3,0,1.0,0.0,0.0,Utils,C:\Users\Chris\Desktop\JAVA\AITESTFX\src
+3,0,1,2,0,1.0,0.0,1.0,ObjRecognition,C:\Users\Chris\Desktop\JAVA\AITESTFX\src
+3,1,0,8,15,1.0,1.0,0.0,ObjRecognitionController,C:\Users\Chris\Desktop\JAVA\AITESTFX\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\BinDecChecker\src
+6,7,0,2,3,24.0,0.2916666666666667,0.0,Card,C:\Users\Chris\Desktop\JAVA\BlackJack\src
+6,1,2,3,1,24.0,0.041666666666666664,0.08333333333333333,Deck,C:\Users\Chris\Desktop\JAVA\BlackJack\src
+6,1,5,6,2,24.0,0.041666666666666664,0.20833333333333334,Hand,C:\Users\Chris\Desktop\JAVA\BlackJack\src
+6,0,14,7,5,24.0,0.0,0.5833333333333334,Main,C:\Users\Chris\Desktop\JAVA\BlackJack\src
+6,2,1,4,4,24.0,0.08333333333333333,0.041666666666666664,Menu,C:\Users\Chris\Desktop\JAVA\BlackJack\src
+6,15,2,12,12,24.0,0.625,0.08333333333333333,Player,C:\Users\Chris\Desktop\JAVA\BlackJack\src
+6,0,0,3,0,1.0,0.0,0.0,Converter,C:\Users\Chris\Desktop\JAVA\Breeding Simulator\src
+6,0,0,7,0,1.0,0.0,0.0,Gaussian,C:\Users\Chris\Desktop\JAVA\Breeding Simulator\src
+6,0,1,1,2,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\Breeding Simulator\src
+6,1,0,10,71,1.0,1.0,0.0,Monster,C:\Users\Chris\Desktop\JAVA\Breeding Simulator\src
+6,0,0,0,0,1.0,0.0,0.0,PID,C:\Users\Chris\Desktop\JAVA\Breeding Simulator\src
+6,0,0,2,9,1.0,0.0,0.0,PRNG,C:\Users\Chris\Desktop\JAVA\Breeding Simulator\src
+4,0,0,1,0,2.0,0.0,0.0,FileHandler,C:\Users\Chris\Desktop\JAVA\ButtonSequencer\src
+4,0,1,2,9,2.0,0.0,0.5,Main,C:\Users\Chris\Desktop\JAVA\ButtonSequencer\src
+4,1,1,1,1,2.0,0.5,0.5,Operator,C:\Users\Chris\Desktop\JAVA\ButtonSequencer\src
+4,1,0,6,2,2.0,0.5,0.0,Ops,C:\Users\Chris\Desktop\JAVA\ButtonSequencer\src
+2,0,1,2,0,1.0,0.0,1.0,CameraCalibration,C:\Users\Chris\Desktop\JAVA\camera-calibration-master\src
+2,1,0,8,25,1.0,1.0,0.0,CC_Controller,C:\Users\Chris\Desktop\JAVA\camera-calibration-master\src
+1,0,0,2,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\Collections\src
+1,0,0,4,18,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\converter\src
+2,0,1,1,0,1.0,0.0,1.0,Button_listener,C:\Users\Chris\Desktop\JAVA\Custom_Notification-master\app\src
+2,1,0,5,12,1.0,1.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\Custom_Notification-master\app\src
+2,0,0,4,14,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\Deploy\src
+2,0,0,2,2,0.0,0.0,0.0,MessageBox,C:\Users\Chris\Desktop\JAVA\Deploy\src
+7,1,1,14,1,4.0,0.25,0.25,EMath,C:\Users\Chris\Desktop\JAVA\EMath\src
+7,0,0,4,2,4.0,0.0,0.0,Force,C:\Users\Chris\Desktop\JAVA\EMath\src
+7,0,3,2,2,4.0,0.0,0.75,Main,C:\Users\Chris\Desktop\JAVA\EMath\src
+7,3,0,9,4,4.0,0.75,0.0,Vector2,C:\Users\Chris\Desktop\JAVA\EMath\src
+7,0,0,19,0,4.0,0.0,0.0,Motion1D,C:\Users\Chris\Desktop\JAVA\EMath\src
+7,0,0,0,1,4.0,0.0,0.0,Physics,C:\Users\Chris\Desktop\JAVA\EMath\src
+7,0,0,14,0,4.0,0.0,0.0,Projectile2D,C:\Users\Chris\Desktop\JAVA\EMath\src
+3,0,0,1,0,0.0,0.0,0.0,ExampleInstrumentedTest,C:\Users\Chris\Desktop\JAVA\ExpressionCalculator\app\src
+3,0,0,5,0,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\ExpressionCalculator\app\src
+3,0,0,1,0,0.0,0.0,0.0,ExampleUnitTest,C:\Users\Chris\Desktop\JAVA\ExpressionCalculator\app\src
+6,0,0,0,0,0.0,0.0,0.0,Database,C:\Users\Chris\Desktop\JAVA\FC\src
+6,0,0,1,2,0.0,0.0,0.0,Event,C:\Users\Chris\Desktop\JAVA\FC\src
+6,0,0,5,4,0.0,0.0,0.0,LayoutDetails,C:\Users\Chris\Desktop\JAVA\FC\src
+6,0,0,1,0,0.0,0.0,0.0,main,C:\Users\Chris\Desktop\JAVA\FC\src
+6,1,0,1,4,0.0,0.0,0.0,mainMenu,C:\Users\Chris\Desktop\JAVA\FC\src
+6,1,0,15,82,0.0,0.0,0.0,Menu,C:\Users\Chris\Desktop\JAVA\FC\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\Flashcards\src
+2,2,0,2,1,1.0,2.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\Flashcards\src
+18,2,0,3,9,21.0,0.09523809523809523,0.0,AxisPanel,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,0,0,1,0,21.0,0.0,0.0,ImagePanel,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,0,3,4,6,21.0,0.0,0.14285714285714285,Main,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,0,5,3,2,21.0,0.0,0.23809523809523808,PanelBuilder,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,2,0,9,4,21.0,0.09523809523809523,0.0,Vector2,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,0,0,29,6,21.0,0.0,0.0,Economics,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,1,0,43,38,21.0,0.047619047619047616,0.0,PostJobAnalysis,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,1,0,1,1,21.0,0.047619047619047616,0.0,Curve,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,2,3,3,14,21.0,0.09523809523809523,0.14285714285714285,GraphPanel,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,1,5,28,8,21.0,0.047619047619047616,0.23809523809523808,ModelOutputs,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,0,0,3,1,21.0,0.0,0.0,ModelOutputsTest,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,2,0,17,13,21.0,0.09523809523809523,0.0,Proppant,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,2,0,15,11,21.0,0.09523809523809523,0.0,Reservoir,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,2,0,13,5,21.0,0.09523809523809523,0.0,Rock,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,3,0,23,7,21.0,0.14285714285714285,0.0,StressState,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,2,0,9,11,21.0,0.09523809523809523,0.0,TreatmentData,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,1,5,2,5,21.0,0.047619047619047616,0.23809523809523808,TreatmentDesign,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+18,0,0,10,8,21.0,0.0,0.0,Well,C:\Users\Chris\Desktop\JAVA\FRACKING PROJECT\src
+2,2,0,1,1,2.0,1.0,0.0,ADT,C:\Users\Chris\Desktop\JAVA\GameFileConverter\src
+2,0,2,3,6,2.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\GameFileConverter\src
+1,0,0,7,6,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\Gen2CodeGenerator\src
+1,0,0,3,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\GenericsTest\src
+1,0,0,1,4,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem1\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem10\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem12\src
+2,0,1,7,2,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem13\src
+2,1,0,0,2,1.0,1.0,0.0,Vector2,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem13\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem2\src
+1,0,0,3,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem3\src
+3,1,1,3,2,6.0,0.16666666666666666,0.16666666666666666,Graph,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem6\src
+3,0,5,1,0,6.0,0.0,0.8333333333333334,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem6\src
+3,5,0,2,2,6.0,0.8333333333333334,0.0,Node,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem6\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem7\src
+1,0,0,3,1,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMProblem8\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\ACMPromlem4\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\Circle Program\src
+1,0,0,1,1,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ICPC\InputGen3862\src
+1,0,0,5,1,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\icpcRegional2017\src
+1,0,0,2,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\IPMonitor\src
+8,0,0,1,0,5.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,0,0,0,4,5.0,0.0,0.0,Arc,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,0,0,3,2,5.0,0.0,0.0,Circle,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,0,0,15,1,5.0,0.0,0.0,EMath,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,5,0,9,2,5.0,1.0,0.0,Line,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,0,0,6,5,5.0,0.0,0.0,Ngon,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,0,1,7,0,5.0,0.0,0.2,ShapeRendererExt,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+8,1,4,15,1,5.0,0.2,0.8,Triangle,C:\Users\Chris\Desktop\JAVA\LIBGDXEXT\src
+36,5,0,1,4,58.0,0.08620689655172414,0.0,Animation,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,5,3,33,58.0,0.0,0.08620689655172414,Assets,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,2,0,4,9,58.0,0.034482758620689655,0.0,Bob,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,4,0,0,2,58.0,0.06896551724137931,0.0,Castle,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,8,0,1,4,58.0,0.13793103448275862,0.0,Coin,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,0,2,58.0,0.0,0.0,DynamicGameObject,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,0,2,58.0,0.0,0.0,GameObject,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,3,19,18,58.0,0.0,0.05172413793103448,GameScreen,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,9,7,58.0,0.0,0.0,HelpScreen,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,9,7,58.0,0.0,0.0,HelpScreen2,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,9,7,58.0,0.0,0.0,HelpScreen3,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,9,7,58.0,0.0,0.0,HelpScreen4,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,9,7,58.0,0.0,0.0,HelpScreen5,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,9,7,58.0,0.0,0.0,HighscoresScreen,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,10,10,58.0,0.0,0.0,MainMenuScreen,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,8,0,2,11,58.0,0.13793103448275862,0.0,Platform,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,3,3,58.0,0.0,0.0,Settings,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,6,0,0,2,58.0,0.10344827586206896,0.0,Spring,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,8,0,1,4,58.0,0.13793103448275862,0.0,Squirrel,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,3,2,58.0,0.0,0.0,SuperJumper,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,0,1,0,58.0,0.0,0.0,SuperJumperDesktop,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,4,14,12,17,58.0,0.06896551724137931,0.2413793103448276,World,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,4,0,4,0,58.0,0.06896551724137931,0.0,WorldListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,2,6,8,6,58.0,0.034482758620689655,0.10344827586206896,WorldRenderer,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,4,25,19,58.0,0.0,0.06896551724137931,MultiplayerGameScreen,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,1,0,14,13,58.0,0.017241379310344827,0.0,StartMultiplayerScreen,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,4,14,12,17,58.0,0.06896551724137931,0.2413793103448276,World,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,4,0,4,0,58.0,0.06896551724137931,0.0,WorldListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,2,6,11,11,58.0,0.034482758620689655,0.10344827586206896,WorldRenderer,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,1,2,1,58.0,0.0,0.017241379310344827,ChatListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,1,3,1,58.0,0.0,0.017241379310344827,ConnectionListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,1,15,1,58.0,0.0,0.017241379310344827,NotificationListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,1,9,1,58.0,0.0,0.017241379310344827,RoomListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,6,1,25,18,58.0,0.10344827586206896,0.017241379310344827,WarpController,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,1,0,5,0,58.0,0.017241379310344827,0.0,WarpListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+36,0,1,7,1,58.0,0.0,0.017241379310344827,ZoneListener,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,0,0,1,0,0.0,0.0,0.0,SuperJumperAndroid,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper-android\src
+1,0,0,2,0,0.0,0.0,0.0,SuperJumperIOS,C:\Users\Chris\Desktop\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper-iosrobovm\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\MP3Reader\src
+2,1,0,6,3,1.0,1.0,0.0,SoundJLayer,C:\Users\Chris\Desktop\JAVA\MP3Reader\src
+21,0,0,5,7,38.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,15,1,38.0,0.0,0.0,MathUtil,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,0,1,38.0,0.0,0.0,NegativeNumberException,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,2,2,5,2,38.0,0.05263157894736842,0.05263157894736842,Segment,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,2,7,1,38.0,0.0,0.05263157894736842,SegmentSet,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,21,0,22,2,38.0,0.5526315789473685,0.0,Vector2DDouble,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,7,0,1,2,38.0,0.18421052631578946,0.0,Vector2DInt,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,2,0,19,3,38.0,0.05263157894736842,0.0,Vector3DDouble,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,0,3,38.0,0.0,0.0,Vector3DInt,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,1,5,38.0,0.0,0.0,Falloff,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,1,6,38.0,0.0,0.0,PerlinFunction2D,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,1,0,1,0,38.0,0.02631578947368421,0.0,RealFunction2D,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,2,0,1,0,38.0,0.05263157894736842,0.0,RealFunction2DDouble,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,1,1,5,38.0,0.0,0.02631578947368421,RealFunction2DWrapper,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,1,1,38.0,0.0,0.0,SmoothNoise2D,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,14,6,16,38.0,0.0,0.3684210526315789,PoissonDiskMultiSampler,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,7,0,1,1,38.0,0.18421052631578946,0.0,Circle,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,11,5,11,38.0,0.0,0.2894736842105263,PoissonDiskSampler,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,1,0,38.0,0.0,0.0,Sampler,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,8,3,9,38.0,0.0,0.21052631578947367,UniformPoissonDiskSampler,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+21,0,0,1,6,38.0,0.0,0.0,UniformRandomSampler,C:\Users\Chris\Desktop\JAVA\MusicSelector\src
+6,0,0,0,0,0.0,0.0,0.0,ApplicationTest,C:\Users\Chris\Desktop\JAVA\NavigationDrawer\NavigationDrawer\app\src
+6,0,0,1,1,0.0,0.0,0.0,FirstFragment,C:\Users\Chris\Desktop\JAVA\NavigationDrawer\NavigationDrawer\app\src
+6,0,0,5,0,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\NavigationDrawer\NavigationDrawer\app\src
+6,0,0,1,1,0.0,0.0,0.0,SecondFragment,C:\Users\Chris\Desktop\JAVA\NavigationDrawer\NavigationDrawer\app\src
+6,0,0,1,1,0.0,0.0,0.0,ThirdFragment,C:\Users\Chris\Desktop\JAVA\NavigationDrawer\NavigationDrawer\app\src
+6,0,0,1,0,0.0,0.0,0.0,ExampleUnitTest,C:\Users\Chris\Desktop\JAVA\NavigationDrawer\NavigationDrawer\app\src
+1,0,0,3,3,0.0,0.0,0.0,MyGdxGame,C:\Users\Chris\Desktop\JAVA\New folder (2)\core\src
+1,0,0,1,0,0.0,0.0,0.0,DesktopLauncher,C:\Users\Chris\Desktop\JAVA\New folder (2)\desktop\src
+3,0,0,3,0,1.0,0.0,0.0,Utils,C:\Users\Chris\Desktop\JAVA\object-detection-master\src
+3,0,1,2,0,1.0,0.0,1.0,ObjRecognition,C:\Users\Chris\Desktop\JAVA\object-detection-master\src
+3,1,0,7,15,1.0,1.0,0.0,ObjRecognitionController,C:\Users\Chris\Desktop\JAVA\object-detection-master\src
+1,0,0,2,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\AI demo\src
+2,0,0,0,0,0.0,0.0,0.0,Item,C:\Users\Chris\Desktop\JAVA\OLD\ALEX1\src
+2,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\ALEX1\src
+1,0,0,3,42,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\AND-calc1.0\src
+2,0,0,5,1,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\AND-project1\src
+2,0,0,1,1,0.0,0.0,0.0,DummySectionFragment,C:\Users\Chris\Desktop\JAVA\OLD\AND-project1\src
+1,0,0,1,1,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\ASCIIEncoder\src
+1,0,0,6,15,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\batlle algorithm checker\src
+6,0,0,7,0,6.0,0.0,0.0,Gaussian,C:\Users\Chris\Desktop\JAVA\OLD\battle system test\src
+6,3,0,8,8,6.0,0.5,0.0,Item,C:\Users\Chris\Desktop\JAVA\OLD\battle system test\src
+6,0,3,4,7,6.0,0.0,0.5,Main,C:\Users\Chris\Desktop\JAVA\OLD\battle system test\src
+6,1,0,16,24,6.0,0.16666666666666666,0.0,Monster,C:\Users\Chris\Desktop\JAVA\OLD\battle system test\src
+6,1,0,20,16,6.0,0.16666666666666666,0.0,Player,C:\Users\Chris\Desktop\JAVA\OLD\battle system test\src
+6,1,3,2,6,6.0,0.16666666666666666,0.5,Shop,C:\Users\Chris\Desktop\JAVA\OLD\battle system test\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\Caclulator1_0\src
+2,0,0,2,5,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\CAS\src
+2,0,0,0,2,0.0,0.0,0.0,Operator,C:\Users\Chris\Desktop\JAVA\OLD\CAS\src
+3,1,12,10,3,13.0,0.07692307692307693,0.9230769230769231,IntSLList,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass2\src
+3,13,0,0,2,13.0,1.0,0.0,IntSLLNode,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass2\src
+3,0,1,1,0,13.0,0.0,0.07692307692307693,Run,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass2\src
+2,0,0,5,4,0.0,0.0,0.0,ArrayQueue,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass3\src
+2,0,0,5,3,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass3\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass4\src
+2,1,0,6,1,1.0,1.0,0.0,Queue,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass4\src
+3,1,3,4,1,4.0,0.25,0.75,BST,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass5\src
+3,5,0,0,3,4.0,1.25,0.0,BSTNode,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass5\src
+3,0,1,1,0,4.0,0.0,0.25,Main,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass5\src
+2,0,0,0,1,0.0,0.0,0.0,DefineConstants,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass6\src
+2,0,0,4,5,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\DSA-ass6\src
+1,0,0,7,5,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\Game of Life\src
+2,0,0,3,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\Histogram\src
+2,0,0,3,0,0.0,0.0,0.0,VectorTest,C:\Users\Chris\Desktop\JAVA\OLD\Histogram\src
+3,1,1,2,1,2.0,0.5,0.5,InverseProcessor,C:\Users\Chris\Desktop\JAVA\OLD\Inverse Function Generator\src
+3,0,1,4,2,2.0,0.0,0.5,Main,C:\Users\Chris\Desktop\JAVA\OLD\Inverse Function Generator\src
+3,1,0,3,3,2.0,0.5,0.0,Operation,C:\Users\Chris\Desktop\JAVA\OLD\Inverse Function Generator\src
+1,0,0,4,18,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\MemoryDump\src
+1,0,0,1,0,0.0,0.0,0.0,Plugin,C:\Users\Chris\Desktop\JAVA\OLD\MinecraftPluginTest1\src
+1,0,0,1,0,0.0,0.0,0.0,Set,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass2\src
+2,3,0,1,0,3.0,1.0,0.0,Machine,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass3\src
+2,0,3,1,0,3.0,0.0,1.0,Run,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass3\src
+2,1,0,7,7,1.0,1.0,0.0,Bank,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass4\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass4\src
+5,2,0,15,17,3.0,0.6666666666666666,0.0,BankAccount,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass5\src
+5,0,0,0,0,3.0,0.0,0.0,Graph,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass5\src
+5,1,1,1,2,3.0,0.3333333333333333,0.3333333333333333,Main,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass5\src
+5,1,2,3,6,3.0,0.3333333333333333,0.6666666666666666,Menus,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass5\src
+5,0,0,0,0,3.0,0.0,0.0,Spreadsheet,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass5\src
+2,1,0,1,1,0.0,0.0,0.0,Frame,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass6\src
+2,0,0,0,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\OOP-ass6\src
+3,0,1,5,2,1.0,0.0,1.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\pk\src
+3,1,0,3,0,1.0,1.0,0.0,SectionsPagerAdapter,C:\Users\Chris\Desktop\JAVA\OLD\pk\src
+3,0,0,1,1,1.0,0.0,0.0,DummySectionFragment,C:\Users\Chris\Desktop\JAVA\OLD\pk\src
+2,0,0,4,23,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\PokemonTCG\src
+2,0,0,1,0,0.0,0.0,0.0,PlaceholderFragment,C:\Users\Chris\Desktop\JAVA\OLD\PokemonTCG\src
+4,0,2,6,21,3.0,0.0,0.6666666666666666,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\PokemonTCGtool\src
+4,2,0,3,1,3.0,0.6666666666666666,0.0,PlaceholderFragment,C:\Users\Chris\Desktop\JAVA\OLD\PokemonTCGtool\src
+4,1,1,14,10,3.0,0.3333333333333333,0.3333333333333333,NavigationDrawerFragment,C:\Users\Chris\Desktop\JAVA\OLD\PokemonTCGtool\src
+4,1,0,1,0,3.0,0.3333333333333333,0.0,NavigationDrawerCallbacks,C:\Users\Chris\Desktop\JAVA\OLD\PokemonTCGtool\src
+1,0,0,1,0,0.0,0.0,0.0,main,C:\Users\Chris\Desktop\JAVA\OLD\Random Name Generator\src
+1,0,0,3,42,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\Random Name Generator\SomeCalculator\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\Random-number\src
+1,0,0,1,0,0.0,0.0,0.0,Test,C:\Users\Chris\Desktop\JAVA\OLD\randomTest\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\SELF-game of life\src
+1,1,0,7,7,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\SELF-visual game\src
+2,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\SeriesJunk\src
+2,0,0,3,2,0.0,0.0,0.0,Rational,C:\Users\Chris\Desktop\JAVA\OLD\SeriesJunk\src
+1,0,0,3,58,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\TCGTOOL\src
+2,1,3,2,1,4.0,0.25,0.75,Main,C:\Users\Chris\Desktop\JAVA\OLD\ThomasCrap\src
+2,3,1,14,39,4.0,0.75,0.25,SodaMachine,C:\Users\Chris\Desktop\JAVA\OLD\ThomasCrap\src
+3,0,0,0,0,0.0,0.0,0.0,GameWindow,C:\Users\Chris\Desktop\JAVA\OLD\Tick\src
+3,0,0,6,13,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\Tick\src
+3,0,0,0,0,0.0,0.0,0.0,userInput,C:\Users\Chris\Desktop\JAVA\OLD\Tick\src
+3,0,0,0,0,1.0,0.0,0.0,Controller,C:\Users\Chris\Desktop\JAVA\OLD\Tick-java_PC_version\src
+3,0,1,3,2,1.0,0.0,1.0,InputHandler,C:\Users\Chris\Desktop\JAVA\OLD\Tick-java_PC_version\src
+3,2,0,10,19,1.0,2.0,0.0,Tick_v1,C:\Users\Chris\Desktop\JAVA\OLD\Tick-java_PC_version\src
+2,0,0,0,0,0.0,0.0,0.0,Frame,C:\Users\Chris\Desktop\JAVA\OLD\Top Level Game\src
+2,0,0,0,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\Top Level Game\src
+2,1,0,3,2,1.0,1.0,0.0,ReadFile,C:\Users\Chris\Desktop\JAVA\OLD\Topic Generator\src
+2,0,1,2,0,1.0,0.0,1.0,main,C:\Users\Chris\Desktop\JAVA\OLD\Topic Generator\src
+8,1,1,9,4,14.0,0.07142857142857142,0.07142857142857142,Bracket2,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,3,0,27,15,14.0,0.21428571428571427,0.0,Game,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,2,2,3,14,14.0,0.14285714285714285,0.14285714285714285,GameDetailsPopup,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,0,3,5,5,14.0,0.0,0.21428571428571427,Main,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,5,4,16,26,14.0,0.35714285714285715,0.2857142857142857,MainWindow,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,0,1,2,6,14.0,0.0,0.07142857142857142,Popups,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,2,1,5,8,14.0,0.14285714285714285,0.07142857142857142,TeamListImportPopup,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+8,1,2,13,11,14.0,0.07142857142857142,0.14285714285714285,WizardPopup,C:\Users\Chris\Desktop\JAVA\OLD\Tourna15\src
+13,2,6,8,15,21.0,0.09523809523809523,0.2857142857142857,Bracket,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,1,2,8,5,21.0,0.047619047619047616,0.09523809523809523,Bracket2,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,0,2,29,2,21.0,0.0,0.09523809523809523,BST,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,0,0,3,1,21.0,0.0,0.0,MyIterator,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,2,0,1,3,21.0,0.09523809523809523,0.0,Node,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,0,0,1,0,21.0,0.0,0.0,MyComp1,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,0,0,0,1,21.0,0.0,0.0,DuplicateItemException,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,7,0,9,5,21.0,0.3333333333333333,0.0,Game,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,0,2,3,2,21.0,0.0,0.09523809523809523,Main,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,2,2,7,9,21.0,0.09523809523809523,0.09523809523809523,MainWindow,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,8,0,0,5,21.0,0.38095238095238093,0.0,SBSTN,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,1,5,24,2,21.0,0.047619047619047616,0.23809523809523808,SBST,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+13,1,2,14,10,21.0,0.047619047619047616,0.09523809523809523,WizardPopup,C:\Users\Chris\Desktop\JAVA\OLD\Tournament Builder\src
+2,1,0,2,2,1.0,1.0,0.0,cake,C:\Users\Chris\Desktop\JAVA\OLD\UNS-1\src
+2,0,1,1,0,1.0,0.0,1.0,functions,C:\Users\Chris\Desktop\JAVA\OLD\UNS-1\src
+2,0,7,8,2,7.0,0.0,1.0,IntSLList,C:\Users\Chris\Desktop\JAVA\OLD\UNS-2\src
+2,8,0,0,2,7.0,1.1428571428571428,0.0,IntSLLNode,C:\Users\Chris\Desktop\JAVA\OLD\UNS-2\src
+1,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\Useless Application\src
+1,1,0,7,7,0.0,0.0,0.0,Imageclass,C:\Users\Chris\Desktop\JAVA\OLD\VisualGame1\src
+2,1,0,1,0,1.0,1.0,0.0,drawingComponent,C:\Users\Chris\Desktop\JAVA\OLD\waiting lines\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\OLD\waiting lines\src
+1,0,0,5,85,0.0,0.0,0.0,MainActivity,C:\Users\Chris\Desktop\JAVA\OLD\ZCalc\src
+1,0,0,4,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\percision\src
+1,0,0,3,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\Permutatuions\src
+1,0,0,8,14,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\ProjectCleandisk\src
+2,0,0,1,0,0.0,0.0,0.0,Ex1,C:\Users\Chris\Desktop\JAVA\SE2\In Class 3\src
+2,0,0,1,0,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\SE2\In Class 3\src
+1,0,0,2,0,0.0,0.0,0.0,GeneratePrimes,C:\Users\Chris\Desktop\JAVA\Sieve\src
+2,1,0,1,0,1.0,1.0,0.0,Connector,C:\Users\Chris\Desktop\JAVA\SSH\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\SSH\src
+2,1,0,1,0,1.0,1.0,0.0,Connector,C:\Users\Chris\Desktop\JAVA\SSH test\src
+2,0,1,1,0,1.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\SSH test\src
+1,0,0,3,6,0.0,0.0,0.0,Main,C:\Users\Chris\Desktop\JAVA\StopTimer\src
+25,4,3,10,10,81.0,0.04938271604938271,0.037037037037037035,Egg,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,13,1,81.0,0.0,0.012345679012345678,EMath,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,14,1,14,13,81.0,0.1728395061728395,0.012345679012345678,Enemy,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,7,8,10,81.0,0.0,0.08641975308641975,Game,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,16,9,5,81.0,0.0,0.19753086419753085,GameState,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,2,0,6,1,81.0,0.024691358024691357,0.0,GameStateManager,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,2,0,4,16,81.0,0.024691358024691357,0.0,HoverText,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,3,0,1,0,81.0,0.037037037037037035,0.0,Lava,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,7,3,13,6,81.0,0.08641975308641975,0.037037037037037035,Level,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,1,17,12,4,81.0,0.012345679012345678,0.20987654320987653,LevelBuilder,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,0,15,0,81.0,0.0,0.0,Logic,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,8,2,6,8,81.0,0.09876543209876543,0.024691358024691357,Platform,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,1,4,26,14,81.0,0.012345679012345678,0.04938271604938271,Player,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,1,0,3,0,81.0,0.012345679012345678,0.0,ShapeRendererExt,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,4,6,81.0,0.0,0.012345679012345678,Spawn,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,4,3,81.0,0.0,0.012345679012345678,State,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,34,0,4,2,81.0,0.41975308641975306,0.0,Vector2,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,1,0,1,0,81.0,0.012345679012345678,0.0,Command,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,1,0,81.0,0.0,0.012345679012345678,FlapComm,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,1,0,81.0,0.0,0.012345679012345678,LeftComm,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,1,0,81.0,0.0,0.012345679012345678,RightComm,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,1,1,2,81.0,0.0,0.012345679012345678,Circle,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,2,13,5,2,81.0,0.024691358024691357,0.16049382716049382,Line,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,1,5,5,2,81.0,0.012345679012345678,0.06172839506172839,Rectangle,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+25,0,3,3,3,81.0,0.0,0.037037037037037035,Triangle,C:\Users\Chris\Desktop\JAVA\SuperJoust\core\src
+1,0,0,1,0,0.0,0.0,0.0,DesktopLauncher,C:\Users\Chris\Desktop\JAVA\SuperJoust\desktop\src
+24,4,3,10,10,82.0,0.04878048780487805,0.036585365853658534,Egg,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,13,1,82.0,0.0,0.012195121951219513,EMath,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,13,1,14,13,82.0,0.15853658536585366,0.012195121951219513,Enemy,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,6,8,8,82.0,0.0,0.07317073170731707,Game,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,17,10,10,82.0,0.0,0.2073170731707317,GameState,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,2,0,6,1,82.0,0.024390243902439025,0.0,GameStateManager,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,2,0,4,16,82.0,0.024390243902439025,0.0,HoverText,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,7,2,13,5,82.0,0.08536585365853659,0.024390243902439025,Level,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,1,19,15,4,82.0,0.012195121951219513,0.23170731707317074,LevelBuilder,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,0,15,0,82.0,0.0,0.0,Logic,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,11,2,9,9,82.0,0.13414634146341464,0.024390243902439025,Platform,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,1,4,30,17,82.0,0.012195121951219513,0.04878048780487805,Player,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,1,0,3,0,82.0,0.012195121951219513,0.0,ShapeRendererExt,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,4,6,82.0,0.0,0.012195121951219513,Spawn,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,4,3,82.0,0.0,0.012195121951219513,State,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,36,0,4,2,82.0,0.43902439024390244,0.0,Vector2,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,1,0,1,0,82.0,0.012195121951219513,0.0,Command,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,1,1,82.0,0.0,0.012195121951219513,FlapComm,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,1,0,82.0,0.0,0.012195121951219513,LeftComm,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,1,0,82.0,0.0,0.012195121951219513,RightComm,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,1,1,2,82.0,0.0,0.012195121951219513,Circle,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,2,13,5,2,82.0,0.024390243902439025,0.15853658536585366,Line,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,1,5,5,2,82.0,0.012195121951219513,0.06097560975609756,Rectangle,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+24,0,3,3,3,82.0,0.0,0.036585365853658534,Triangle,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\core\src
+1,0,0,1,0,0.0,0.0,0.0,DesktopLauncher,C:\Users\Chris\Desktop\JAVA\SuperJoust-master\desktop\src
+1,0,0,3,3,0.0,0.0,0.0,MyGdxGame,C:\Users\Chris\Desktop\JAVA\Test\core\src
+1,0,0,1,0,0.0,0.0,0.0,DesktopLauncher,C:\Users\Chris\Desktop\JAVA\Test\desktop\src
+26,6,1,12,3,53.0,0.11320754716981132,0.018867924528301886,BinaryNode,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,4,4,20,3,53.0,0.07547169811320754,0.07547169811320754,BinaryTree,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,0,1,4,0,53.0,0.0,0.018867924528301886,Bracket,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,1,3,5,53.0,0.018867924528301886,0.018867924528301886,DragListener,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,2,7,7,6,53.0,0.03773584905660377,0.1320754716981132,EditorWindow,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,0,2,2,0,53.0,0.0,0.03773584905660377,FileHandler,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,8,0,30,15,53.0,0.1509433962264151,0.0,Game,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,2,3,14,53.0,0.018867924528301886,0.03773584905660377,GameDetailsPopup,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,2,5,5,53.0,0.018867924528301886,0.03773584905660377,GraphPanel,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,0,4,1,53.0,0.018867924528301886,0.0,ImagePanel,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,0,4,14,53.0,0.018867924528301886,0.0,JFontChooser,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,4,0,2,5,53.0,0.07547169811320754,0.0,Line,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,0,2,7,4,53.0,0.0,0.03773584905660377,Main,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,3,7,14,27,53.0,0.05660377358490566,0.1320754716981132,MainWindow,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,7,0,18,2,53.0,0.1320754716981132,0.0,Match,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,6,0,6,2,53.0,0.11320754716981132,0.0,Resizable,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,2,0,5,3,53.0,0.03773584905660377,0.0,ResizableBorder,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,0,4,7,3,53.0,0.0,0.07547169811320754,ResizeListener,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,2,0,0,53.0,0.018867924528301886,0.03773584905660377,SchedulerWindow,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,2,0,2,2,53.0,0.03773584905660377,0.0,Team,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,1,5,8,53.0,0.018867924528301886,0.018867924528301886,TeamListImportPopup,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,2,0,5,10,53.0,0.03773584905660377,0.0,Text,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,1,3,15,53.0,0.018867924528301886,0.018867924528301886,TextBuilderWindow,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,4,11,10,53.0,0.018867924528301886,0.07547169811320754,WizardPopup,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,1,12,10,14,53.0,0.018867924528301886,0.22641509433962265,XmlFileLoader,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+26,2,0,4,4,53.0,0.03773584905660377,0.0,ColorProfile,C:\Users\Chris\Desktop\JAVA\Tourna16\src
+3,0,1,1,0,2.0,0.0,0.5,Main,C:\Users\Chris\Desktop\JAVA\Tree\src
+3,3,0,7,3,2.0,1.5,0.0,Node,C:\Users\Chris\Desktop\JAVA\Tree\src
+3,1,1,2,1,2.0,0.5,0.5,Tree,C:\Users\Chris\Desktop\JAVA\Tree\src
+3,0,8,4,3,8.0,0.0,1.0,Main,C:\Users\Chris\Desktop\JAVA\TypeCalc\src
+3,0,0,0,2,8.0,0.0,0.0,Pair,C:\Users\Chris\Desktop\JAVA\TypeCalc\src
+3,8,0,7,6,8.0,1.0,0.0,Type,C:\Users\Chris\Desktop\JAVA\TypeCalc\src
+3,0,1,1,0,2.0,0.0,0.5,Main,C:\Users\Chris\Desktop\JAVA\untitled\src
+3,1,0,1,1,2.0,0.5,0.0,A,C:\Users\Chris\Desktop\JAVA\untitled\src
+3,1,1,1,1,2.0,0.5,0.5,B,C:\Users\Chris\Desktop\JAVA\untitled\src

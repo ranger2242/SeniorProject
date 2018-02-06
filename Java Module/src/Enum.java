@@ -22,7 +22,7 @@ class Enum {
         for(Modifier m : dec.getModifiers()){
             mod.append(m.asString()).append(" ");
         }
-        Main.out(s2 +mod+ name+":");
+        Logger.out(s2 +mod+ name+":");
     }
 
 

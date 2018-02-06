@@ -187,6 +187,29 @@ class FileHandler {
         return e;
     }
 
+    public static void deleteFile(String fileName){
+        File file = new File(fileName);
+        file.delete();
+        file = null;
+    }
+
+    public BufferedWriter setupFileWriter(String fileName){
+        try{
+            return new BufferedWriter(new FileWriter(fileName));
+        }catch (IOException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String getRootDirectory() {
+        String rootDirectory = System.getProperty("user.dir");
+        while (!rootDirectory.endsWith("\\")) {
+            rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
+        }
+        rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
+        return rootDirectory;
+    }
 
 }
 
