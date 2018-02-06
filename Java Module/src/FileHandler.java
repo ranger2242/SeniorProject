@@ -15,12 +15,12 @@ class FileHandler {
     private String path;
 
 
-    public FileHandler(int batchSize, String path){
+    public FileHandler(int batchSize, String path) {
         this.batchSize = batchSize;
         this.path = path;
     }
 
-    public FileHandler(){
+    public FileHandler() {
     }
 
     public String load() {//trying to upload new load function
@@ -61,13 +61,13 @@ class FileHandler {
     private void initPaths(String path) {
         File folder = new File(path);
 
-        if (folder.listFiles() != null){
+        if (folder.listFiles() != null) {
             int startIndex = 0;
             int endIndex = folder.listFiles().length;
-            if (batchSize > 0){
+            if (batchSize > 0) {
                 startIndex = currentBatch * batchSize;
                 endIndex = startIndex + batchSize;
-                if (endIndex > folder.listFiles().length){
+                if (endIndex > folder.listFiles().length) {
                     endIndex = folder.listFiles().length;
                 }
             }
@@ -76,33 +76,34 @@ class FileHandler {
             paths.clear();
             foundSrc.clear();
             paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
-            for (String singlePath : paths) {
+            /*for (String singlePath : paths) {
                 findSrc(singlePath);
 
-            }
+            }*/
+            findSrc(path);
         }
 
     }
 
-    public ArrayList<ExtractedDir> nextBatch(){
+    public ArrayList<ExtractedDir> nextBatch() {
         currentBatch += 1;
         initPaths(path);
         ArrayList<ExtractedDir> dirs = new ArrayList<>();
-        for(String sourcePath: foundSrc){
+        for (String sourcePath : foundSrc) {
             dirs.add(load(sourcePath, new ExtractedDir(sourcePath)));
         }
         return dirs;//load(path, new ExtractedDir("root"));
 
     }
 
-    public int batchesLeft(){
+    public int batchesLeft() {
         File folder = new File(path);
-        if (folder.listFiles() != null && batchSize > 0){
+        if (folder.listFiles() != null && batchSize > 0) {
             int startIndex = (currentBatch + 2) * batchSize;
             int endIndex = folder.listFiles().length;
 
             int batchesLeft = 0;
-            while ( startIndex < endIndex){
+            while (startIndex < endIndex) {
                 batchesLeft += 1;
                 startIndex += batchSize;
             }
@@ -111,17 +112,17 @@ class FileHandler {
         return 0;
     }
 
-    public boolean hasNext(){
+    public boolean hasNext() {
         File folder = new File(path);
-        if (folder.listFiles() != null){
+        if (folder.listFiles() != null) {
             int endIndex = folder.listFiles().length;
-            if (batchSize > 0){
+            if (batchSize > 0) {
                 int startIndex = (currentBatch + 1) * batchSize;
-                if(startIndex < endIndex){
+                if (startIndex < endIndex) {
                     return true;
                 }
-            }else{
-                if (currentBatch < endIndex){
+            } else {
+                if (currentBatch < endIndex) {
                     return true;
                 }
             }
@@ -129,10 +130,10 @@ class FileHandler {
         return false;
     }
 
-    public static void writeToCSV(BufferedWriter writer, ArrayList<Object[][][]>  matrices, ArrayList<ExtractedDir> directories ) throws IOException {
+    public static void writeToCSV(BufferedWriter writer, ArrayList<Object[][][]> matrices, ArrayList<ExtractedDir> directories) throws IOException {
         String toWrite = "";
 
-        for(int i = 0; i < matrices.size(); i++){
+        for (int i = 0; i < matrices.size(); i++) {
             Object[][] matrix = matrices.get(i)[0];
             for (int j = 0; j < matrix.length; j++) {
                 for (int k = 0; k < matrix[j].length; k++) {
@@ -159,7 +160,8 @@ class FileHandler {
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
             if (f.isDirectory() && f.getName().equals("src")) {
                 foundSrc.add(f.getAbsolutePath());
-                //System.out.println("SRC FILE: " + f.getAbsolutePath());
+                int i = countSrcFiles(f.getAbsolutePath(), 0);
+                Logger.slog("TOTAL FILES: "+i+" " + f.getAbsolutePath());
             }
         }
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
@@ -167,6 +169,24 @@ class FileHandler {
                 findSrc(path + "\\" + f.getName());
             }
         }
+    }
+
+    private int countSrcFiles(String absolutePath, int c) {
+        File folder = new File(absolutePath);
+        File[] listOfFiles = folder.listFiles();
+        for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
+            if (f.isFile() && f.getAbsolutePath().endsWith(".java")) {
+                c++;
+            }
+        }
+        for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
+            if (f.isDirectory()) {
+                c+= countSrcFiles(absolutePath + "\\" + f.getName(), 0);
+            }
+        }
+
+
+        return c;
     }
 
     private ExtractedDir load(String path, ExtractedDir e) {
@@ -187,16 +207,16 @@ class FileHandler {
         return e;
     }
 
-    public static void deleteFile(String fileName){
+    public static void deleteFile(String fileName) {
         File file = new File(fileName);
         file.delete();
         file = null;
     }
 
-    public BufferedWriter setupFileWriter(String fileName){
-        try{
+    public BufferedWriter setupFileWriter(String fileName) {
+        try {
             return new BufferedWriter(new FileWriter(fileName));
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
