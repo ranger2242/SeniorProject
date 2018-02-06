@@ -29,7 +29,7 @@ class Main {
         String fileName = rootDirectory + "\\training_dataset.csv";
         BufferedWriter writer = fh.setupFileWriter(fileName);
 
-        String path = "C:\\Users\\Chris\\Desktop\\JAVA";
+        String path = "C:\\Users\\Chris\\Desktop\\TypeCalc";
         Logger.slog("Loading path: "+path);
 
         int batchSize = 2;
