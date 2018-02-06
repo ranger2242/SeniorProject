@@ -161,7 +161,7 @@ class FileHandler {
             if (f.isDirectory() && f.getName().equals("src")) {
                 foundSrc.add(f.getAbsolutePath());
                 int i = countSrcFiles(f.getAbsolutePath(), 0);
-                Logger.slog("TOTAL FILES: "+i+" " + f.getAbsolutePath());
+                //Logger.slog("TOTAL FILES: "+i+" " + f.getAbsolutePath());
             }
         }
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
