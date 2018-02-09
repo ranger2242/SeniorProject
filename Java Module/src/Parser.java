@@ -21,8 +21,6 @@ class Parser {
         parseDirectory(dir);
     }
 
-    FileHandler fileHandler = new FileHandler();
-
     private void parseDirectory(ExtractedDir e) {
 
         for (String s : e.getClassPaths()) {
@@ -54,7 +52,7 @@ class Parser {
 
 
     private ArrayList<ExtractedClass> parseCode(String dir) {
-        String code = fileHandler.load(new File(dir));
+        String code = FileHandler.load(new File(dir));
         ArrayList<ExtractedClass> listOfClasses = new ArrayList<>();
         try {
             //System.out.println("PROCESSING: " + dir);
@@ -75,7 +73,7 @@ class Parser {
             return listOfClasses;
         } catch (ParseProblemException e) {
             System.out.println("PARSE ERROR: " + dir);
-             e.printStackTrace();
+            //e.printStackTrace();
             return null;
         }catch (StackOverflowError e) {
             System.out.println("STACK OVERFLOW ERROR: " + dir);

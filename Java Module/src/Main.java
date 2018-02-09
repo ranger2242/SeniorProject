@@ -16,22 +16,22 @@ class Main {
     public final static String div = "-----------------------------------------------";
     private static boolean trainingMode = true;
 
-    private static String path = "C:\\Users\\Ross\\Desktop\\stuf";
+    private static String path = "H:\\JAVA";
 
 
     public static void main(String[] args) {
-        FileHandler fh = new FileHandler();
+
         GodObjectTransformer godObjectTransformer = new GodObjectTransformer();
         Logger.slog("Setting up file writer");
 
-        String rootDirectory = fh.getRootDirectory();
+        String rootDirectory = FileHandler.getRootDirectory();
         String fileName = rootDirectory + "\\training_dataset.csv";
-        BufferedWriter writer = fh.setupFileWriter(fileName);
+        BufferedWriter writer = FileHandler.setupFileWriter(fileName);
 
 
         Logger.slog("Loading path: "+ path);
 
-        int batchSize = 2;
+        int batchSize = 5;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
@@ -40,6 +40,12 @@ class Main {
             System.out.println(div);
             Logger.slog("Batch: " + batchNumber + " - Batches Left: " + fileHandler.batchesLeft());
             ArrayList<ExtractedDir> directories = fileHandler.nextBatch();
+            if(directories.size() == 0){
+                Logger.slog("No directories found... Loading next batch");
+                batchNumber++;
+                continue;
+            }
+
             Logger.slog("Directories loaded. " + directories.size() + " directories founds.");
 
             Logger.slog("Parsing classes...");

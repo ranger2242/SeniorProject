@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28beb00e-580a-4319-ad77-7dcd924d537f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/GodObjectTransformer.java" afterPath="$PROJECT_DIR$/../Java Module/src/GodObjectTransformer.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/Logger.java" afterPath="$PROJECT_DIR$/../Java Module/src/Logger.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/Main.java" afterPath="$PROJECT_DIR$/../Java Module/src/Main.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/Parser.java" afterPath="$PROJECT_DIR$/../Java Module/src/Parser.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/Transformer.java" afterPath="$PROJECT_DIR$/../Java Module/src/Transformer.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/Tuple.java" afterPath="$PROJECT_DIR$/../Java Module/src/ProjectData.java" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/GodObjectTransformer.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/GodObjectTransformer.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Logger.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Logger.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Parser.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Parser.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Transformer.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Transformer.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Tuple.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/tests/MainTest.java" afterPath="$PROJECT_DIR$/../Java Module/tests/MainTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../training_dataset.csv" afterPath="$PROJECT_DIR$/../training_dataset.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -129,7 +144,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="33" />
     <option name="y" value="-20" />
     <option name="width" value="1378" />
@@ -313,7 +328,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

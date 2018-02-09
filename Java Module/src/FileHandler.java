@@ -11,16 +11,36 @@ class FileHandler {
 
     // If batch size =< 0 system will not use batching
     private int batchSize = -1;
-    private int currentBatch = 0;
     private String path;
+    private ArrayList<File> listOfFiles = new ArrayList<>();
+    private int batchStartIndex;
+    private int batchEndIndex;
+    private boolean hasNext = true;
+    int c = 0;
 
 
     public FileHandler(int batchSize, String path) {
         this.batchSize = batchSize;
         this.path = path;
+
+        File folder = new File(path);
+        if (folder.listFiles() != null){
+            listOfFiles.addAll(Arrays.asList(folder.listFiles()));
+            batchStartIndex = 0;
+            if(batchSize < listOfFiles.size()){
+                batchEndIndex = batchSize - 1;
+            }else{
+                batchEndIndex = listOfFiles.size();
+            }
+
+        }else{
+            System.out.println("ERROR: Folder ->" + path + " is empty.");
+        }
+
+
     }
 
-    public FileHandler() {
+    private FileHandler() {
     }
 
     public String load() {//trying to upload new load function
@@ -35,7 +55,7 @@ class FileHandler {
         return load(f);
     }
 
-    public String load(File file) {//trying to upload new load function
+    public static String load(File file) {//trying to upload new load function
         FileInputStream fin;
 
         int ch;
@@ -54,80 +74,71 @@ class FileHandler {
         return "error";
     }
 
-    int c = 0;
-    private ArrayList<String> paths = new ArrayList<>();
-    private ArrayList<String> foundSrc = new ArrayList<>();
 
-    private void initPaths(String path) {
-        File folder = new File(path);
+    private ArrayList<String> getPathsForBatch(String path) {
 
-        if (folder.listFiles() != null) {
-            int startIndex = 0;
-            int endIndex = folder.listFiles().length;
-            if (batchSize > 0) {
-                startIndex = currentBatch * batchSize;
-                endIndex = startIndex + batchSize;
-                if (endIndex > folder.listFiles().length) {
-                    endIndex = folder.listFiles().length;
-                }
-            }
+        ArrayList<String> paths = new ArrayList<>();
+        ArrayList<String> sourceFolderPaths = new ArrayList<>();
+        ArrayList<File> batchList;
 
-            File[] listOfFiles = Arrays.copyOfRange(folder.listFiles(), startIndex, endIndex);
-            paths.clear();
-            foundSrc.clear();
-            paths.addAll(Arrays.stream(listOfFiles).map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
-            /*for (String singlePath : paths) {
-                findSrc(singlePath);
-
-            }*/
-            findSrc(path);
+        if(batchEndIndex + 1 <= listOfFiles.size()){
+            batchList = new ArrayList<>(listOfFiles.subList(batchStartIndex, batchEndIndex + 1));
+        }else{
+            batchList = new ArrayList<>(listOfFiles.subList(batchStartIndex, listOfFiles.size()));
         }
+        paths.addAll(batchList.stream().map(x -> x.getAbsolutePath()).collect(Collectors.toCollection(ArrayList::new)));
 
+        for( String p : paths){
+            sourceFolderPaths.addAll(findSourceFolderPaths(p));
+        }
+        return sourceFolderPaths;
     }
 
     public ArrayList<ExtractedDir> nextBatch() {
-        currentBatch += 1;
-        initPaths(path);
-        ArrayList<ExtractedDir> dirs = new ArrayList<>();
-        for (String sourcePath : foundSrc) {
-            dirs.add(load(sourcePath, new ExtractedDir(sourcePath)));
+        ArrayList<String> sourceFolderPaths = getPathsForBatch(path);
+        ArrayList<ExtractedDir> directories = new ArrayList<>();
+        for (String sourcePath : sourceFolderPaths) {
+            directories.add(load(sourcePath, new ExtractedDir(sourcePath)));
         }
-        return dirs;//load(path, new ExtractedDir("root"));
+        incrementBatchIndices();
+        return directories;
 
     }
+
+    private void incrementBatchIndices(){
+        if(batchStartIndex + batchSize < listOfFiles.size()){
+            batchStartIndex += batchSize;
+            if(batchEndIndex + batchSize < listOfFiles.size()){
+                batchEndIndex += batchSize;
+            }else{
+                batchEndIndex = listOfFiles.size();
+            }
+            hasNext = true;
+        }else{
+            // Over Batched restarting indices and returning false
+            batchStartIndex = 0;
+            if(batchSize < listOfFiles.size()){
+                batchEndIndex = batchSize - 1;
+            }else{
+                batchEndIndex = listOfFiles.size();
+            }
+            hasNext = false;
+        }
+    }
+
 
     public int batchesLeft() {
-        File folder = new File(path);
-        if (folder.listFiles() != null && batchSize > 0) {
-            int startIndex = (currentBatch + 2) * batchSize;
-            int endIndex = folder.listFiles().length;
-
-            int batchesLeft = 0;
-            while (startIndex < endIndex) {
-                batchesLeft += 1;
-                startIndex += batchSize;
-            }
-            return batchesLeft;
+        int batchesLeft = 0;
+        int start = batchStartIndex;
+        while( start < listOfFiles.size()){
+            start += batchSize;
+            batchesLeft += 1;
         }
-        return 0;
+        return batchesLeft - 1;
     }
 
-    public boolean hasNext() {
-        File folder = new File(path);
-        if (folder.listFiles() != null) {
-            int endIndex = folder.listFiles().length;
-            if (batchSize > 0) {
-                int startIndex = (currentBatch + 1) * batchSize;
-                if (startIndex < endIndex) {
-                    return true;
-                }
-            } else {
-                if (currentBatch < endIndex) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    public boolean hasNext(){
+        return hasNext;
     }
 
     public static void writeToCSV(BufferedWriter writer, ArrayList<Object[][][]> matrices, ArrayList<ExtractedDir> directories) throws IOException {
@@ -154,21 +165,23 @@ class FileHandler {
         writer.append(toWrite);
     }
 
-    private void findSrc(String path) {
+    private ArrayList<String> findSourceFolderPaths(String path) {
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
+        ArrayList<String> sourcePaths = new ArrayList<>();
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
             if (f.isDirectory() && f.getName().equals("src")) {
-                foundSrc.add(f.getAbsolutePath());
+                sourcePaths.add(f.getAbsolutePath());
                 int i = countSrcFiles(f.getAbsolutePath(), 0);
                 //Logger.slog("TOTAL FILES: "+i+" " + f.getAbsolutePath());
             }
         }
         for (File f : listOfFiles != null ? listOfFiles : new File[0]) {
             if (f.isDirectory()) {
-                findSrc(path + "\\" + f.getName());
+                sourcePaths.addAll(findSourceFolderPaths(path + "\\" + f.getName()));
             }
         }
+        return sourcePaths;
     }
 
     private int countSrcFiles(String absolutePath, int c) {
@@ -213,7 +226,7 @@ class FileHandler {
         file = null;
     }
 
-    public BufferedWriter setupFileWriter(String fileName) {
+    public static BufferedWriter setupFileWriter(String fileName) {
         try {
             return new BufferedWriter(new FileWriter(fileName));
         } catch (IOException e) {
@@ -222,7 +235,7 @@ class FileHandler {
         }
     }
 
-    public String getRootDirectory() {
+    public static String getRootDirectory() {
         String rootDirectory = System.getProperty("user.dir");
         while (!rootDirectory.endsWith("\\")) {
             rootDirectory = rootDirectory.substring(0, rootDirectory.length() - 1);
