@@ -51,7 +51,8 @@ class GP:
 
             label = None
             if len(elements) > 4:
-                label = int(elements[4])
+                if elements[4] is not '\n':
+                    label = int(elements[4])
 
             data_entry = [ num_ref_out, num_funcs, num_vars, ratio_total_out]
             data.append(data_entry)
@@ -108,13 +109,16 @@ class GP:
         plt.subplot(121)
 
         for i in range(len(x1)):
-            color = (0, 0, 1)
+            color = (0, 1, 0)
             if labels is not None:
                 if len(labels) > i:
                     if labels[i] == 1:
                         color = (1, 0, 0)
-                    else:
+                    elif labels[i] == 0:
                         color = (0, 0, 0)
+                    else:
+                        color = (0, 1, 0)
+
 
             plt.scatter(x1[i], y1[i], c=color)
 
