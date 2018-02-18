@@ -104,7 +104,7 @@ class SOM(object):
             except:
                 init_op = tf.global_variables_initializer()
                 self.sess.run(init_op)
-        print('Map created')
+
 
     def neuron_locations(self, m, n):
         for i in range(m):
@@ -149,11 +149,16 @@ class SOM(object):
             raise ValueError("SOM not trained yet")
 
         to_return = []
+        k = 0
         for vect in input_vects:
+            sys.stdout.write("\rMapping: Vector %i out of %i" % (k, len(input_vects)))
+            sys.stdout.flush()
+            k += 1
             min_index = min([i for i in range(len(self.weightages))],
                             key=lambda x: np.linalg.norm(vect - self.weightages[x]))
             to_return.append(self.locations[min_index])
 
+        print()  # Formatting (make new line)
         return to_return
 
     def print_time_remaining(self, cycle_number):
@@ -169,7 +174,7 @@ class SOM(object):
         self.saver.save(sess, file_path)
         print("Model Saved!")
 
-    def map_refernces_points(self, data, labels):
+    def map_references_points(self, data, labels):
         self.references_points = self.map_vects(data)
         self.labels = labels
 

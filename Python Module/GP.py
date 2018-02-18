@@ -2,6 +2,8 @@ from SOMObject import SOM
 import os
 import matplotlib.pyplot as plt
 import numpy as np
+from Helpers import shuffle_data
+import sys
 
 project_root = os.path.abspath(os.path.dirname(__file__))
 
@@ -9,14 +11,10 @@ project_root = os.path.abspath(os.path.dirname(__file__))
 Data Model from Client
 
 data: [
-    number of classes,
-    number of refernces from other classes,
     number of refernces to other classes,
     number of functions in class, 
     number of varibles in class,
-    total referecnes,
     ratio of total referecnes to referecnes to class,
-    ratio of total referecnes to referecnes from class
     Optional: label with 1 or 0 to indicate God Class
 ]
 
@@ -28,7 +26,7 @@ class GP:
     def __init__(self):
         m = 50
         n = 50
-        input_size = 8
+        input_size = 4
         iterations = 30
         model_name = 'GP_model.ckpt'
 
@@ -36,32 +34,34 @@ class GP:
 
         if self.som.trained is True:
             self.map_network()
+            print('References mapped')
+        print('\t--- Map Created ---\n')
 
     # Converts CSV data into raw data ready to be preprocessed
-    def csv_processing(self, raw_data):
+    def csv_processing(self, raw_data, shuffle=False):
 
         data = []
         labels = []
         for line in raw_data.readlines():
             elements = line.split(',')
-            num_classes = float(elements[0])
-            num_ref_in = float(elements[1])
-            num_ref_out = float(elements[2])
-            num_funcs = float(elements[3])
-            num_vars = float(elements[4])
-            total_refs = float(elements[5])
-            ratio_total_in = float(elements[6])
-            ratio_total_out = float(elements[7])
+            num_ref_out = float(elements[0])
+            num_funcs = float(elements[1])
+            num_vars = float(elements[2])
+            ratio_total_out = float(elements[3])
 
             label = None
-            if len(elements) > 8:
-                label = int(elements[8])
+            if len(elements) > 4:
+                label = int(elements[4])
 
-            data_entry = [num_classes, num_ref_in, num_ref_out, num_funcs, num_vars, total_refs, ratio_total_in, ratio_total_out]
+            data_entry = [ num_ref_out, num_funcs, num_vars, ratio_total_out]
             data.append(data_entry)
             labels.append(label)
 
+        if shuffle is True:
+            data, labels = shuffle_data(data, labels)
+
         return data, labels
+
 
     # Does any preprocessing needed.. currently unimplemented
     def preprocessing(self, raw_data):
@@ -77,25 +77,33 @@ class GP:
         labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
         labeled_data, labels = self.csv_processing(labeled_data_set)
         labeled_data = self.preprocessing(labeled_data)
-        self.som.map_refernces_points(labeled_data, labels)
+        self.som.map_references_points(labeled_data, labels)
 
     # Makes a predication on a data element
     def make_prediction(self, raw_data):
         data = self.preprocessing(raw_data)
         return self.som.make_prediction(data)
 
-    # Plots data give. Optional: Pass labels in for color formatting
-    def plot(self, x, labels=None):
-        print('Preparing data to be plotted...')
 
+    def map_vectors(self, data):
         # Fit train data into SOM lattice
-        mapped = self.som.map_vects(x)
+        mapped = self.som.map_vects(data)
+        print('Mapped ->', end=' ')
         mappedarr = np.array(mapped)
+        print('Tranformed ->', end=' ')
         x1 = mappedarr[:, 0]
+        print('X mapped ->', end=' ')
         y1 = mappedarr[:, 1]
+        print('Y mapped')
+        return x1, y1
+
+    # Plots data give. Optional: Pass labels in for color formatting
+    def plot(self, data, labels=None):
+
+        print('Preparing data to be plotted...')
+        x1, y1 = self.map_vectors(data)
 
         print('Plotting data points...')
-
         plt.figure(1, figsize=(12, 6))
         plt.subplot(121)
 
@@ -121,17 +129,11 @@ class GP:
         self.plot(labeled_data, labels)
 
     # Testing plot method used to visualize regions on the map
-    def test_plot(self, x):
+    def test_plot(self, data):
         print('Preparing data to be plotted...')
-
-        # Fit train data into SOM lattice
-        mapped = self.som.map_vects(x)
-        mappedarr = np.array(mapped)
-        x1 = mappedarr[:, 0]
-        y1 = mappedarr[:, 1]
+        x1 , y1 = self.map_vectors(data)
 
         print('Plotting data points...')
-
         plt.figure(1, figsize=(12, 6))
         plt.subplot(121)
 

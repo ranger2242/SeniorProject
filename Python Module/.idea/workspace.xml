@@ -4,19 +4,20 @@
     <list default="true" id="28beb00e-580a-4319-ad77-7dcd924d537f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../Java Module/src/GodObjectTransformer.java" afterPath="$PROJECT_DIR$/../Java Module/src/GodObjectTransformer.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/Logger.java" afterPath="$PROJECT_DIR$/../Java Module/src/Logger.java" />
       <change beforePath="$PROJECT_DIR$/../Java Module/src/Main.java" afterPath="$PROJECT_DIR$/../Java Module/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/Parser.java" afterPath="$PROJECT_DIR$/../Java Module/src/Parser.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/Transformer.java" afterPath="$PROJECT_DIR$/../Java Module/src/Transformer.java" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/src/Tuple.java" afterPath="$PROJECT_DIR$/../Java Module/src/ProjectData.java" />
       <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/GodObjectTransformer.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/GodObjectTransformer.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Logger.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Logger.class" />
       <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Main.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Parser.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Parser.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Transformer.class" afterPath="$PROJECT_DIR$/../Java Module/target/classes/Transformer.class" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/target/classes/Tuple.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Java Module/tests/MainTest.java" afterPath="$PROJECT_DIR$/../Java Module/tests/MainTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Analyzer.py" afterPath="$PROJECT_DIR$/Analyzer.py" />
+      <change beforePath="$PROJECT_DIR$/GP.py" afterPath="$PROJECT_DIR$/GP.py" />
+      <change beforePath="$PROJECT_DIR$/Helpers.py" afterPath="$PROJECT_DIR$/Helpers.py" />
+      <change beforePath="$PROJECT_DIR$/SOMObject.py" afterPath="$PROJECT_DIR$/SOMObject.py" />
+      <change beforePath="$PROJECT_DIR$/labeled_dataset.csv" afterPath="$PROJECT_DIR$/labeled_dataset.csv" />
+      <change beforePath="$PROJECT_DIR$/test_dataset.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tmp/GP_model.ckpt.data-00000-of-00001" afterPath="$PROJECT_DIR$/tmp/GP_model.ckpt.data-00000-of-00001" />
+      <change beforePath="$PROJECT_DIR$/tmp/GP_model.ckpt.index" afterPath="$PROJECT_DIR$/tmp/GP_model.ckpt.index" />
+      <change beforePath="$PROJECT_DIR$/tmp/GP_model.ckpt.meta" afterPath="$PROJECT_DIR$/tmp/GP_model.ckpt.meta" />
+      <change beforePath="$PROJECT_DIR$/../labeled_dataset.csv" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../training_dataset.csv" afterPath="$PROJECT_DIR$/../training_dataset.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +33,7 @@
     <SUITE FILE_PATH="coverage/Python_Module$Main__2_.coverage" NAME="Main (2) Coverage Results" MODIFIED="1515870795131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Numbers" />
     <SUITE FILE_PATH="coverage/Python_Module$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1510799698251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/Python_Module$Main.coverage" NAME="Main Coverage Results" MODIFIED="1517248949395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Module$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1517936185321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Module$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1518995627345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Python Module" />
@@ -42,66 +43,44 @@
       <file leaf-file-name="Analyzer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#986#1147#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helpers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Helpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GP.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GP.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="65" column="7" lean-forward="false" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="864">
+              <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#597#848#0" expanded="false" />
-                <element signature="e#962#1762#0" expanded="false" />
-                <element signature="e#1873#1888#0" expanded="false" />
-                <element signature="e#1971#2038#0" expanded="false" />
-                <element signature="e#2137#2390#0" expanded="false" />
-                <element signature="e#2485#2566#0" expanded="false" />
-                <element signature="e#2681#3424#0" expanded="false" />
-                <element signature="e#3541#3655#0" expanded="false" />
-                <element signature="e#3756#4357#0" expanded="false" />
+                <element signature="e#957#1607#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SOMObject.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SOMObject.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SOMObject.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="176" column="26" lean-forward="false" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
+            <state relative-caret-position="270">
+              <caret line="79" column="12" lean-forward="false" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#346#4113#0" expanded="false" />
-                <element signature="e#4161#4249#0" expanded="false" />
-                <element signature="e#4293#5004#0" expanded="false" />
-                <element signature="e#4453#4871#0" expanded="false" />
-                <element signature="e#4598#4832#0" expanded="false" />
-                <element signature="e#5049#5440#0" expanded="false" />
-                <element signature="e#5479#5585#0" expanded="false" />
-                <element signature="e#5634#6000#0" expanded="false" />
-                <element signature="e#5776#5974#0" expanded="false" />
-                <element signature="e#6060#6346#0" expanded="false" />
-                <element signature="e#6649#6723#0" expanded="false" />
-                <element signature="e#6806#7227#0" expanded="false" />
-                <element signature="e#7278#7554#0" expanded="false" />
+                <element signature="e#4002#4084#0" expanded="false" />
+                <element signature="e#4133#4221#0" expanded="false" />
+                <element signature="e#4164#4221#0" expanded="false" />
+                <element signature="e#4265#4976#0" expanded="false" />
+                <element signature="e#5021#5412#0" expanded="false" />
+                <element signature="e#5451#5557#0" expanded="false" />
+                <element signature="e#6976#7397#0" expanded="false" />
+                <element signature="e#7289#7358#0" expanded="false" />
+                <element signature="e#7448#7724#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -115,6 +94,13 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sh</find>
+      <find>shu</find>
+      <find>x1 = mappedarr[:, 0]</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -131,10 +117,10 @@
         <option value="$PROJECT_DIR$/SOM.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/Pipeline.py" />
-        <option value="$PROJECT_DIR$/GP.py" />
-        <option value="$PROJECT_DIR$/Analyzer.py" />
         <option value="$PROJECT_DIR$/Helpers.py" />
+        <option value="$PROJECT_DIR$/Analyzer.py" />
         <option value="$PROJECT_DIR$/SOMObject.py" />
+        <option value="$PROJECT_DIR$/GP.py" />
       </list>
     </option>
   </component>
@@ -144,11 +130,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="33" />
-    <option name="y" value="-20" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1664" />
+    <option name="y" value="-8" />
     <option name="width" value="1378" />
-    <option name="height" value="780" />
+    <option name="height" value="779" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -177,8 +163,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,22 +314,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="7" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29908442" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0792393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181553" sideWeight="0.49126637" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15677084" sideWeight="0.49126637" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52781844" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50104165" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3214649" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22181553" sideWeight="0.50873363" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55942947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -369,7 +354,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -390,15 +375,7 @@
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#597#848#0" expanded="false" />
-            <element signature="e#962#1762#0" expanded="false" />
-            <element signature="e#1873#1888#0" expanded="false" />
-            <element signature="e#1971#2038#0" expanded="false" />
-            <element signature="e#2137#2390#0" expanded="false" />
-            <element signature="e#2485#2566#0" expanded="false" />
-            <element signature="e#2681#3424#0" expanded="false" />
-            <element signature="e#3541#3655#0" expanded="false" />
-            <element signature="e#3756#4357#0" expanded="false" />
+            <element signature="e#957#1607#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -419,15 +396,7 @@
           <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#597#848#0" expanded="false" />
-            <element signature="e#962#1762#0" expanded="false" />
-            <element signature="e#1873#1888#0" expanded="false" />
-            <element signature="e#1971#2038#0" expanded="false" />
-            <element signature="e#2137#2390#0" expanded="false" />
-            <element signature="e#2485#2566#0" expanded="false" />
-            <element signature="e#2681#3424#0" expanded="false" />
-            <element signature="e#3541#3655#0" expanded="false" />
-            <element signature="e#3756#4357#0" expanded="false" />
+            <element signature="e#957#1607#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,20 +450,8 @@
     <entry file="file://$PROJECT_DIR$/RBM.py" />
     <entry file="file://$PROJECT_DIR$/SOM.py" />
     <entry file="file://$PROJECT_DIR$/EncapsulationNN.py" />
-    <entry file="file://$PROJECT_DIR$/../../Color-NN/SOM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="197" column="7" lean-forward="true" selection-start-line="197" selection-start-column="7" selection-end-line="197" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Color-NN/SOMObject.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="164" column="41" lean-forward="true" selection-start-line="164" selection-start-column="41" selection-end-line="164" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Color-NN/SOM.py" />
+    <entry file="file://$PROJECT_DIR$/../../Color-NN/SOMObject.py" />
     <entry file="file://$PROJECT_DIR$/Main.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -525,62 +482,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="65" column="7" lean-forward="false" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#597#848#0" expanded="false" />
-            <element signature="e#962#1762#0" expanded="false" />
-            <element signature="e#1873#1888#0" expanded="false" />
-            <element signature="e#1971#2038#0" expanded="false" />
-            <element signature="e#2137#2390#0" expanded="false" />
-            <element signature="e#2485#2566#0" expanded="false" />
-            <element signature="e#2681#3424#0" expanded="false" />
-            <element signature="e#3541#3655#0" expanded="false" />
-            <element signature="e#3756#4357#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SOMObject.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="176" column="26" lean-forward="false" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
+        <state relative-caret-position="270">
+          <caret line="79" column="12" lean-forward="false" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#346#4113#0" expanded="false" />
-            <element signature="e#4161#4249#0" expanded="false" />
-            <element signature="e#4293#5004#0" expanded="false" />
-            <element signature="e#4453#4871#0" expanded="false" />
-            <element signature="e#4598#4832#0" expanded="false" />
-            <element signature="e#5049#5440#0" expanded="false" />
-            <element signature="e#5479#5585#0" expanded="false" />
-            <element signature="e#5634#6000#0" expanded="false" />
-            <element signature="e#5776#5974#0" expanded="false" />
-            <element signature="e#6060#6346#0" expanded="false" />
-            <element signature="e#6649#6723#0" expanded="false" />
-            <element signature="e#6806#7227#0" expanded="false" />
-            <element signature="e#7278#7554#0" expanded="false" />
+            <element signature="e#4002#4084#0" expanded="false" />
+            <element signature="e#4133#4221#0" expanded="false" />
+            <element signature="e#4164#4221#0" expanded="false" />
+            <element signature="e#4265#4976#0" expanded="false" />
+            <element signature="e#5021#5412#0" expanded="false" />
+            <element signature="e#5451#5557#0" expanded="false" />
+            <element signature="e#6976#7397#0" expanded="false" />
+            <element signature="e#7289#7358#0" expanded="false" />
+            <element signature="e#7448#7724#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#986#1147#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#957#1607#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -15,8 +15,7 @@ class Main {
 
     public final static String div = "-----------------------------------------------";
     private static boolean trainingMode = true;
-
-    private static String path = "H:\\JAVA";
+    private static String path = "C:\\Users\\Ross\\Desktop\\GOs";
 
 
     public static void main(String[] args) {

@@ -11,22 +11,22 @@ public class GodObjectTransformer {
     public static Object[][] generateGodObjectMatrix(Set<ExtractedClass> classes){
 
         ExtractedClass[] classesArray =  classes.toArray(new ExtractedClass[classes.size()]);
-        Object[][] godMatrix = new Object[classesArray.length][10];
+        Object[][] godMatrix = new Object[classesArray.length][5];
 
         int totalReferencesInProject = getTotalNumberOfReferences(classes);
 
         for( int i = 0; i < classesArray.length; i++ ){
 
             ExtractedClass singleClass = classesArray[i];
-            godMatrix[i][0] = classesArray.length; //Number of Classes
-            godMatrix[i][1] = getReferncesToClass(classes, singleClass); // gets number of refernces from other classes
-            godMatrix[i][2] = getReferncesFromClass(classes, singleClass); // gets number of refernces from class to others
-            godMatrix[i][3] = singleClass.getMethods().size(); // number of methods
-            godMatrix[i][4] = singleClass.getVariables().size(); // number of varibles
-            godMatrix[i][5] = (double) totalReferencesInProject;
-            godMatrix[i][6] = totalReferencesToClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][1]);
-            godMatrix[i][7] = totalReferencesFromClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][2]);
-            godMatrix[i][8] = singleClass.getName();
+//            godMatrix[i][0] = classesArray.length; //Number of Classes
+//            godMatrix[i][1] = getReferncesToClass(classes, singleClass); // gets number of refernces from other classes
+            godMatrix[i][0] = getReferncesFromClass(classes, singleClass); // gets number of refernces from class to others
+            godMatrix[i][1] = singleClass.getMethods().size(); // number of methods
+            godMatrix[i][2] = singleClass.getVariables().size(); // number of varibles
+//            godMatrix[i][5] = (double) totalReferencesInProject;
+//            godMatrix[i][6] = totalReferencesToClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][1]);
+            godMatrix[i][3] = totalReferencesFromClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][2]);
+            godMatrix[i][4] = singleClass.getName();
         }
         
         return godMatrix;
