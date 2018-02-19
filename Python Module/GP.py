@@ -85,17 +85,20 @@ class GP:
         data = self.preprocessing(raw_data)
         return self.som.make_prediction(data)
 
-
-    def map_vectors(self, data):
+    def map_vectors(self, data, logging=True):
         # Fit train data into SOM lattice
         mapped = self.som.map_vects(data)
-        print('Mapped ->', end=' ')
+        if logging:
+            print('Mapped ->', end=' ')
         mappedarr = np.array(mapped)
-        print('Tranformed ->', end=' ')
+        if logging:
+            print('Tranformed ->', end=' ')
         x1 = mappedarr[:, 0]
-        print('X mapped ->', end=' ')
+        if logging:
+            print('X mapped ->', end=' ')
         y1 = mappedarr[:, 1]
-        print('Y mapped')
+        if logging:
+            print('Y mapped')
         return x1, y1
 
     # Plots data give. Optional: Pass labels in for color formatting

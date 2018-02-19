@@ -143,7 +143,7 @@ class SOM(object):
             raise ValueError("SOM not trained yet")
         return self.centroid_grid
 
-    def map_vects(self, input_vects):
+    def map_vects(self, input_vects, logging=True):
 
         if not self.trained:
             raise ValueError("SOM not trained yet")
@@ -151,14 +151,15 @@ class SOM(object):
         to_return = []
         k = 0
         for vect in input_vects:
-            sys.stdout.write("\rMapping: Vector %i out of %i" % (k, len(input_vects)))
-            sys.stdout.flush()
+            if logging:
+                sys.stdout.write("\rMapping: Vector %i out of %i" % (k, len(input_vects)))
+                sys.stdout.flush()
             k += 1
             min_index = min([i for i in range(len(self.weightages))],
                             key=lambda x: np.linalg.norm(vect - self.weightages[x]))
             to_return.append(self.locations[min_index])
-
-        print()  # Formatting (make new line)
+        if logging:
+            print()  # Formatting (make new line)
         return to_return
 
     def print_time_remaining(self, cycle_number):
@@ -178,11 +179,8 @@ class SOM(object):
         self.references_points = self.map_vects(data)
         self.labels = labels
 
-
-    # Refactor later Ross.
     def make_prediction(self, input_vector):
-        print('prediction not implemented yet...')
-        mapped_vector = self.map_vects([input_vector])[0]
+        mapped_vector = self.map_vects([input_vector], logging=False)[0]
 
         distances = []
         for c in self.references_points:
