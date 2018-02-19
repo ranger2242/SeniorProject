@@ -172,6 +172,10 @@ public class Method {
         return ops;
     }
 
+    public MethodDeclaration getMethodDeclaration() {
+        return md;
+    }
+
     public void printAlt() {
         String s = "";
         EnumSet<Modifier> modifiers = md.getModifiers();
@@ -197,4 +201,6 @@ public class Method {
         s += "):" + type;
         Logger.out(s);
     }
+
+
 }

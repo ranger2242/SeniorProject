@@ -1,24 +1,19 @@
 import sys
 from socketIO_client_nexus import SocketIO, LoggingNamespace
 import json
-import _datetime as datetime
 from Analyzer import Analyzer
+from Helpers import slog
 
 
 class Pipeline:
 
     id = str
     socket = SocketIO
-    analyzer = Analyzer()
 
     def __init__(self):
-        self.slog("Pipeline Initialized")
+        self.analyzer = Analyzer()
+        slog("Pipeline Initialized")
 
-    # Logs server communication with time
-    def slog(self, message):
-        fmt = '%Y-%m-%d::%H:%M:%S: '
-        date_string = datetime.datetime.now().strftime(fmt)
-        print(date_string + message)
 
     # Prints JSON once read
     def print_json(self, json):
@@ -27,20 +22,6 @@ class Pipeline:
             for i in range(len(json[key])):
                 print(json[key][i])
             print()
-
-    # Get project Directory
-    def get_project_root_directory(self):
-
-        # Move Up one directory
-        def upAFolder(path):
-            if path != "":
-                while path[-1] != '\\':
-                    path = path[:-1]
-            return path
-
-        path = sys.path.__getitem__(0)
-        path = upAFolder(path)
-        return path
 
     # Connect to JS Server
     def connect_to_server(self, ip, port):
@@ -51,12 +32,11 @@ class Pipeline:
             print("Received:", data, '\tFrom Client ID:', id)
             self.send_to_client(id, "received", "true")
 
-            # Proabably start a new thread here
-            # Send data to NN here
-            Analyzer.use_neural_networks(data)
+            # Probably start a new thread here
+            self.analyzer.use_neural_networks(data)
 
         def connected(*args):
-            self.slog("Connected To Server")
+            slog("Connected To Server")
 
         def id(*args):
             self.socket.emit("ID", 1)

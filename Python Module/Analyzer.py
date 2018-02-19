@@ -15,8 +15,6 @@ class Analyzer:
         else:
             print('God Object Detected!')
 
-
-
     # Trains GP Network from CSV file
     def train_network_from_csv(self):
         data_set = open(project_root + '\\training_dataset.csv', 'r')
@@ -53,10 +51,10 @@ analyzer = Analyzer()
 # test_data = [[20, 99, 99, 0.658]]
 # analyzer.use_neural_networks(test_data)
 
-analyzer.test_network('Python Module\\labeled_dataset.csv')
+# analyzer.test_network('Python Module\\labeled_dataset.csv')
 
 
-# analyzer.plot_CSV_data('Python Module\\labeled_dataset.csv')
+analyzer.plot_CSV_data('Python Module\\labeled_dataset.csv')
 
 
 

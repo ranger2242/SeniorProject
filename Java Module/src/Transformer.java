@@ -7,8 +7,8 @@ import java.util.*;
 
 public class Transformer {
 
-    private static Set<ExtractedClass> classes = new LinkedHashSet<>();
-    private static Set<Enum> enums = new LinkedHashSet<>();
+    private Set<ExtractedClass> classes = new LinkedHashSet<>();
+    private Set<Enum> enums = new LinkedHashSet<>();
 
 
     public Transformer(Set<ExtractedClass> classes, Set<Enum> enums){
@@ -16,10 +16,10 @@ public class Transformer {
         this.enums = enums;
     }
 
-    // Method not yet implemented
     public Object[][][] transform(){
-        Object[][][] data = new Object[1][][];
+        Object[][][] data = new Object[2][][];
         data[0] = GodObjectTransformer.generateGodObjectMatrix(classes);
+        data[1] = LongMethodTransformer.generateMatrix(classes);
         return data;
     }
 

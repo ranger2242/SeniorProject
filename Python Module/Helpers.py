@@ -1,5 +1,6 @@
 import os
 import random
+import _datetime as datetime
 
 
 # Gets project root of main folder
@@ -22,3 +23,9 @@ def shuffle_data(array1, array2):
         array1[i], array1[j] = array1[j], array1[i]
         array2[i], array2[j] = array2[j], array2[i]
     return array1, array2
+
+
+def slog(message):
+    fmt = '%Y-%m-%d::%H:%M:%S: '
+    date_string = datetime.datetime.now().strftime(fmt)
+    print(date_string + message)

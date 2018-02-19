@@ -15,12 +15,11 @@ class Main {
 
     public final static String div = "-----------------------------------------------";
     private static boolean trainingMode = true;
-    private static String path = "C:\\Users\\Ross\\Desktop\\GOs";
+    private static String path = "C:\\Users\\Ross\\Desktop\\lol";
 
 
     public static void main(String[] args) {
 
-        GodObjectTransformer godObjectTransformer = new GodObjectTransformer();
         Logger.slog("Setting up file writer");
 
         String rootDirectory = FileHandler.getRootDirectory();
@@ -53,16 +52,19 @@ class Main {
 
 
             if (trainingMode) {
-                ArrayList<Object[][][]> matrices = godObjectTransformer.transformTrainingData(projectClassData);
-
+                ArrayList<Object[][][]> matrices = new ArrayList<>();
+                for(int i = 0; i < projectClassData.parsedClasses.size();i++ ){
+                    Transformer transformer = new Transformer(projectClassData.parsedClasses.get(i), projectClassData.globalEnums.get(i));
+                     matrices.add(transformer.transform());
+                }
                 try{
                     FileHandler.writeToCSV(writer, matrices, directories);
                     Logger.slog("Data writen to CSV file");
                 }catch (IOException e){e.printStackTrace();}
 
             } else {
-
-                Object[][][] matrices = godObjectTransformer.transformData(projectClassData);
+                Transformer transformer = new Transformer(projectClassData.parsedClasses.get(0), projectClassData.globalEnums.get(0));
+                Object[][][] matrices = transformer.transform();
 
                 Gson gson = new Gson();
                 String json = gson.toJson(matrices);
