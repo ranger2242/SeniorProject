@@ -1,0 +1,377 @@
+0,15,0,0,BlobDemoH:\JAVA\AITEST\src
+0,1,0,0,FaceRecognizerInVideoH:\JAVA\AITEST\src
+0,3,2,0,FFmpegStreamingTimeoutH:\JAVA\AITEST\src
+0,4,3,0,MainH:\JAVA\AITEST\src
+0,3,0,0,UtilsH:\JAVA\AITESTFX\src
+1,2,0,0,ObjRecognitionH:\JAVA\AITESTFX\src
+0,8,15,15,ObjRecognitionControllerH:\JAVA\AITESTFX\src
+0,1,0,0,MainH:\JAVA\BinDecChecker\src
+0,2,3,0.125,CardH:\JAVA\BlackJack\src
+2,3,1,0.041666667,DeckH:\JAVA\BlackJack\src
+5,6,2,0.083333333,HandH:\JAVA\BlackJack\src
+14,7,5,0.208333333,MainH:\JAVA\BlackJack\src
+1,4,4,0.166666667,MenuH:\JAVA\BlackJack\src
+2,12,12,0.5,PlayerH:\JAVA\BlackJack\src
+0,3,0,0,ConverterH:\JAVA\Breeding Simulator\src
+0,7,0,0,GaussianH:\JAVA\Breeding Simulator\src
+1,1,2,2,MainH:\JAVA\Breeding Simulator\src
+0,10,71,71,MonsterH:\JAVA\Breeding Simulator\src
+0,0,0,0,PIDH:\JAVA\Breeding Simulator\src
+0,2,9,9,PRNGH:\JAVA\Breeding Simulator\src
+0,1,0,0,FileHandlerH:\JAVA\ButtonSequencer\src
+1,2,9,4.5,MainH:\JAVA\ButtonSequencer\src
+1,1,1,0.5,OperatorH:\JAVA\ButtonSequencer\src
+0,6,2,1,OpsH:\JAVA\ButtonSequencer\src
+1,2,0,0,CameraCalibrationH:\JAVA\camera-calibration-master\src
+0,8,25,25,CC_ControllerH:\JAVA\camera-calibration-master\src
+0,2,0,0,MainH:\JAVA\Collections\src
+0,4,18,0,MainH:\JAVA\converter\src
+1,1,0,0,Button_listenerH:\JAVA\Custom_Notification-master\app\src
+0,5,12,12,MainActivityH:\JAVA\Custom_Notification-master\app\src
+0,4,14,0,MainH:\JAVA\Deploy\src
+0,2,2,0,MessageBoxH:\JAVA\Deploy\src
+1,14,1,0.25,EMathH:\JAVA\EMath\src
+0,4,2,0.5,ForceH:\JAVA\EMath\src
+3,2,2,0.5,MainH:\JAVA\EMath\src
+0,9,4,1,Vector2H:\JAVA\EMath\src
+0,19,0,0,Motion1DH:\JAVA\EMath\src
+0,0,1,0.25,PhysicsH:\JAVA\EMath\src
+0,14,0,0,Projectile2DH:\JAVA\EMath\src
+0,1,0,0,ExampleInstrumentedTestH:\JAVA\ExpressionCalculator\app\src
+0,5,0,0,MainActivityH:\JAVA\ExpressionCalculator\app\src
+0,1,0,0,ExampleUnitTestH:\JAVA\ExpressionCalculator\app\src
+0,0,0,0,DatabaseH:\JAVA\FC\src
+0,1,2,0,EventH:\JAVA\FC\src
+0,5,4,0,LayoutDetailsH:\JAVA\FC\src
+0,1,0,0,mainH:\JAVA\FC\src
+0,1,4,0,mainMenuH:\JAVA\FC\src
+0,15,82,0,MenuH:\JAVA\FC\src
+1,1,0,0,MainH:\JAVA\Flashcards\src
+0,2,1,1,MainActivityH:\JAVA\Flashcards\src
+0,3,9,0.428571429,AxisPanelH:\JAVA\FRACKING PROJECT\src
+0,1,0,0,ImagePanelH:\JAVA\FRACKING PROJECT\src
+3,4,6,0.285714286,MainH:\JAVA\FRACKING PROJECT\src
+5,3,2,0.095238095,PanelBuilderH:\JAVA\FRACKING PROJECT\src
+0,9,4,0.19047619,Vector2H:\JAVA\FRACKING PROJECT\src
+0,29,6,0.285714286,EconomicsH:\JAVA\FRACKING PROJECT\src
+0,43,38,1.80952381,PostJobAnalysisH:\JAVA\FRACKING PROJECT\src
+0,1,1,0.047619048,CurveH:\JAVA\FRACKING PROJECT\src
+3,3,14,0.666666667,GraphPanelH:\JAVA\FRACKING PROJECT\src
+5,28,8,0.380952381,ModelOutputsH:\JAVA\FRACKING PROJECT\src
+0,3,1,0.047619048,ModelOutputsTestH:\JAVA\FRACKING PROJECT\src
+0,17,13,0.619047619,ProppantH:\JAVA\FRACKING PROJECT\src
+0,15,11,0.523809524,ReservoirH:\JAVA\FRACKING PROJECT\src
+0,13,5,0.238095238,RockH:\JAVA\FRACKING PROJECT\src
+0,23,7,0.333333333,StressStateH:\JAVA\FRACKING PROJECT\src
+0,9,11,0.523809524,TreatmentDataH:\JAVA\FRACKING PROJECT\src
+5,2,5,0.238095238,TreatmentDesignH:\JAVA\FRACKING PROJECT\src
+0,10,8,0.380952381,WellH:\JAVA\FRACKING PROJECT\src
+0,1,1,0.5,ADTH:\JAVA\GameFileConverter\src
+2,3,6,3,MainH:\JAVA\GameFileConverter\src
+0,7,6,0,MainH:\JAVA\Gen2CodeGenerator\src
+0,3,0,0,MainH:\JAVA\GenericsTest\src
+0,1,4,0,MainH:\JAVA\ICPC\ACMProblem1\src
+0,1,0,0,MainH:\JAVA\ICPC\ACMProblem10\src
+0,1,0,0,MainH:\JAVA\ICPC\ACMProblem12\src
+1,7,2,2,MainH:\JAVA\ICPC\ACMProblem13\src
+0,0,2,2,Vector2H:\JAVA\ICPC\ACMProblem13\src
+0,1,0,0,MainH:\JAVA\ICPC\ACMProblem2\src
+0,3,0,0,MainH:\JAVA\ICPC\ACMProblem3\src
+1,3,2,0.333333333,GraphH:\JAVA\ICPC\ACMProblem6\src
+5,1,0,0,MainH:\JAVA\ICPC\ACMProblem6\src
+0,2,2,0.333333333,NodeH:\JAVA\ICPC\ACMProblem6\src
+0,1,0,0,MainH:\JAVA\ICPC\ACMProblem7\src
+0,3,1,0,MainH:\JAVA\ICPC\ACMProblem8\src
+0,1,0,0,MainH:\JAVA\ICPC\ACMPromlem4\src
+0,1,0,0,MainH:\JAVA\ICPC\Circle Program\src
+0,1,1,0,MainH:\JAVA\ICPC\InputGen3862\src
+0,5,1,0,MainH:\JAVA\icpcRegional2017\src
+0,2,0,0,MainH:\JAVA\IPMonitor\src
+0,1,0,0,MainH:\JAVA\LIBGDXEXT\src
+0,0,4,0.8,ArcH:\JAVA\LIBGDXEXT\src
+0,3,2,0.4,CircleH:\JAVA\LIBGDXEXT\src
+0,15,1,0.2,EMathH:\JAVA\LIBGDXEXT\src
+0,9,2,0.4,LineH:\JAVA\LIBGDXEXT\src
+0,6,5,1,NgonH:\JAVA\LIBGDXEXT\src
+1,7,0,0,ShapeRendererExtH:\JAVA\LIBGDXEXT\src
+4,15,1,0.2,TriangleH:\JAVA\LIBGDXEXT\src
+0,1,4,0.068965517,AnimationH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+5,3,33,0.568965517,AssetsH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,4,9,0.155172414,BobH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,0,2,0.034482759,CastleH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,1,4,0.068965517,CoinH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,0,2,0.034482759,DynamicGameObjectH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,0,2,0.034482759,GameObjectH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+3,19,18,0.310344828,GameScreenH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,9,7,0.120689655,HelpScreenH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,9,7,0.120689655,HelpScreen2H:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,9,7,0.120689655,HelpScreen3H:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,9,7,0.120689655,HelpScreen4H:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,9,7,0.120689655,HelpScreen5H:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,9,7,0.120689655,HighscoresScreenH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,10,10,0.172413793,MainMenuScreenH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,2,11,0.189655172,PlatformH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,3,3,0.051724138,SettingsH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,0,2,0.034482759,SpringH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,1,4,0.068965517,SquirrelH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,3,2,0.034482759,SuperJumperH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,1,0,0,SuperJumperDesktopH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+14,12,17,0.293103448,WorldH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,4,0,0,WorldListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+6,8,6,0.103448276,WorldRendererH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+4,25,19,0.327586207,MultiplayerGameScreenH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,14,13,0.224137931,StartMultiplayerScreenH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+14,12,17,0.293103448,WorldH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,4,0,0,WorldListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+6,11,11,0.189655172,WorldRendererH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,2,1,0.017241379,ChatListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,3,1,0.017241379,ConnectionListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,15,1,0.017241379,NotificationListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,9,1,0.017241379,RoomListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,25,18,0.310344828,WarpControllerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,5,0,0,WarpListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+1,7,1,0.017241379,ZoneListenerH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper\src
+0,1,0,0,SuperJumperAndroidH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper-android\src
+0,2,0,0,SuperJumperIOSH:\JAVA\libgdxMultiplayerSuperJumper-master\libgdxMultiplayerSuperJumper-master\superjumper-iosrobovm\src
+1,1,0,0,MainH:\JAVA\MP3Reader\src
+0,6,3,3,SoundJLayerH:\JAVA\MP3Reader\src
+0,5,7,0.184210526,MainH:\JAVA\MusicSelector\src
+0,15,1,0.026315789,MathUtilH:\JAVA\MusicSelector\src
+0,0,1,0.026315789,NegativeNumberExceptionH:\JAVA\MusicSelector\src
+2,5,2,0.052631579,SegmentH:\JAVA\MusicSelector\src
+2,7,1,0.026315789,SegmentSetH:\JAVA\MusicSelector\src
+0,22,2,0.052631579,Vector2DDoubleH:\JAVA\MusicSelector\src
+0,1,2,0.052631579,Vector2DIntH:\JAVA\MusicSelector\src
+0,19,3,0.078947368,Vector3DDoubleH:\JAVA\MusicSelector\src
+0,0,3,0.078947368,Vector3DIntH:\JAVA\MusicSelector\src
+0,1,5,0.131578947,FalloffH:\JAVA\MusicSelector\src
+0,1,6,0.157894737,PerlinFunction2DH:\JAVA\MusicSelector\src
+0,1,0,0,RealFunction2DH:\JAVA\MusicSelector\src
+0,1,0,0,RealFunction2DDoubleH:\JAVA\MusicSelector\src
+1,1,5,0.131578947,RealFunction2DWrapperH:\JAVA\MusicSelector\src
+0,1,1,0.026315789,SmoothNoise2DH:\JAVA\MusicSelector\src
+14,6,16,0.421052632,PoissonDiskMultiSamplerH:\JAVA\MusicSelector\src
+0,1,1,0.026315789,CircleH:\JAVA\MusicSelector\src
+11,5,11,0.289473684,PoissonDiskSamplerH:\JAVA\MusicSelector\src
+0,1,0,0,SamplerH:\JAVA\MusicSelector\src
+8,3,9,0.236842105,UniformPoissonDiskSamplerH:\JAVA\MusicSelector\src
+0,1,6,0.157894737,UniformRandomSamplerH:\JAVA\MusicSelector\src
+0,0,0,0,ApplicationTestH:\JAVA\NavigationDrawer\NavigationDrawer\app\src
+0,1,1,0,FirstFragmentH:\JAVA\NavigationDrawer\NavigationDrawer\app\src
+0,5,0,0,MainActivityH:\JAVA\NavigationDrawer\NavigationDrawer\app\src
+0,1,1,0,SecondFragmentH:\JAVA\NavigationDrawer\NavigationDrawer\app\src
+0,1,1,0,ThirdFragmentH:\JAVA\NavigationDrawer\NavigationDrawer\app\src
+0,1,0,0,ExampleUnitTestH:\JAVA\NavigationDrawer\NavigationDrawer\app\src
+0,3,3,0,MyGdxGameH:\JAVA\New folder (2)\core\src
+0,1,0,0,DesktopLauncherH:\JAVA\New folder (2)\desktop\src
+0,3,0,0,UtilsH:\JAVA\object-detection-master\src
+1,2,0,0,ObjRecognitionH:\JAVA\object-detection-master\src
+0,7,15,15,ObjRecognitionControllerH:\JAVA\object-detection-master\src
+0,2,0,0,MainH:\JAVA\OLD\AI demo\src
+0,0,0,0,ItemH:\JAVA\OLD\ALEX1\src
+0,1,0,0,MainH:\JAVA\OLD\ALEX1\src
+0,3,42,0,MainActivityH:\JAVA\OLD\AND-calc1.0\src
+0,5,1,0,MainActivityH:\JAVA\OLD\AND-project1\src
+0,1,1,0,DummySectionFragmentH:\JAVA\OLD\AND-project1\src
+0,1,1,0,MainH:\JAVA\OLD\ASCIIEncoder\src
+0,6,15,0,MainH:\JAVA\OLD\batlle algorithm checker\src
+0,7,0,0,GaussianH:\JAVA\OLD\battle system test\src
+0,8,8,1.333333333,ItemH:\JAVA\OLD\battle system test\src
+3,4,7,1.166666667,MainH:\JAVA\OLD\battle system test\src
+0,16,24,4,MonsterH:\JAVA\OLD\battle system test\src
+0,20,16,2.666666667,PlayerH:\JAVA\OLD\battle system test\src
+3,2,6,1,ShopH:\JAVA\OLD\battle system test\src
+0,1,0,0,MainH:\JAVA\OLD\Caclulator1_0\src
+0,2,5,0,MainH:\JAVA\OLD\CAS\src
+0,0,2,0,OperatorH:\JAVA\OLD\CAS\src
+12,10,3,0.230769231,IntSLListH:\JAVA\OLD\DSA-ass2\src
+0,0,2,0.153846154,IntSLLNodeH:\JAVA\OLD\DSA-ass2\src
+1,1,0,0,RunH:\JAVA\OLD\DSA-ass2\src
+0,5,4,0,ArrayQueueH:\JAVA\OLD\DSA-ass3\src
+0,5,3,0,MainH:\JAVA\OLD\DSA-ass3\src
+1,1,0,0,MainH:\JAVA\OLD\DSA-ass4\src
+0,6,1,1,QueueH:\JAVA\OLD\DSA-ass4\src
+3,4,1,0.25,BSTH:\JAVA\OLD\DSA-ass5\src
+0,0,3,0.75,BSTNodeH:\JAVA\OLD\DSA-ass5\src
+1,1,0,0,MainH:\JAVA\OLD\DSA-ass5\src
+0,0,1,0,DefineConstantsH:\JAVA\OLD\DSA-ass6\src
+0,4,5,0,MainH:\JAVA\OLD\DSA-ass6\src
+0,7,5,0,MainH:\JAVA\OLD\Game of Life\src
+0,3,0,0,MainH:\JAVA\OLD\Histogram\src
+0,3,0,0,VectorTestH:\JAVA\OLD\Histogram\src
+1,2,1,0.5,InverseProcessorH:\JAVA\OLD\Inverse Function Generator\src
+1,4,2,1,MainH:\JAVA\OLD\Inverse Function Generator\src
+0,3,3,1.5,OperationH:\JAVA\OLD\Inverse Function Generator\src
+0,4,18,0,MainH:\JAVA\OLD\MemoryDump\src
+0,1,0,0,PluginH:\JAVA\OLD\MinecraftPluginTest1\src
+0,1,0,0,SetH:\JAVA\OLD\OOP-ass2\src
+0,1,0,0,MachineH:\JAVA\OLD\OOP-ass3\src
+3,1,0,0,RunH:\JAVA\OLD\OOP-ass3\src
+0,7,7,7,BankH:\JAVA\OLD\OOP-ass4\src
+1,1,0,0,MainH:\JAVA\OLD\OOP-ass4\src
+0,15,17,5.666666667,BankAccountH:\JAVA\OLD\OOP-ass5\src
+0,0,0,0,GraphH:\JAVA\OLD\OOP-ass5\src
+1,1,2,0.666666667,MainH:\JAVA\OLD\OOP-ass5\src
+2,3,6,2,MenusH:\JAVA\OLD\OOP-ass5\src
+0,0,0,0,SpreadsheetH:\JAVA\OLD\OOP-ass5\src
+0,1,1,0,FrameH:\JAVA\OLD\OOP-ass6\src
+0,0,0,0,MainH:\JAVA\OLD\OOP-ass6\src
+1,5,2,2,MainActivityH:\JAVA\OLD\pk\src
+0,3,0,0,SectionsPagerAdapterH:\JAVA\OLD\pk\src
+0,1,1,1,DummySectionFragmentH:\JAVA\OLD\pk\src
+0,4,23,0,MainActivityH:\JAVA\OLD\PokemonTCG\src
+0,1,0,0,PlaceholderFragmentH:\JAVA\OLD\PokemonTCG\src
+2,6,21,7,MainActivityH:\JAVA\OLD\PokemonTCGtool\src
+0,3,1,0.333333333,PlaceholderFragmentH:\JAVA\OLD\PokemonTCGtool\src
+1,14,10,3.333333333,NavigationDrawerFragmentH:\JAVA\OLD\PokemonTCGtool\src
+0,1,0,0,NavigationDrawerCallbacksH:\JAVA\OLD\PokemonTCGtool\src
+0,1,0,0,mainH:\JAVA\OLD\Random Name Generator\src
+0,3,42,0,MainActivityH:\JAVA\OLD\Random Name Generator\SomeCalculator\src
+0,1,0,0,MainH:\JAVA\OLD\Random-number\src
+0,1,0,0,TestH:\JAVA\OLD\randomTest\src
+0,1,0,0,MainH:\JAVA\OLD\SELF-game of life\src
+0,7,7,0,MainH:\JAVA\OLD\SELF-visual game\src
+0,1,0,0,MainH:\JAVA\OLD\SeriesJunk\src
+0,3,2,0,RationalH:\JAVA\OLD\SeriesJunk\src
+0,3,58,0,MainActivityH:\JAVA\OLD\TCGTOOL\src
+3,2,1,0.25,MainH:\JAVA\OLD\ThomasCrap\src
+1,14,39,9.75,SodaMachineH:\JAVA\OLD\ThomasCrap\src
+0,0,0,0,GameWindowH:\JAVA\OLD\Tick\src
+0,6,13,0,MainActivityH:\JAVA\OLD\Tick\src
+0,0,0,0,userInputH:\JAVA\OLD\Tick\src
+0,0,0,0,ControllerH:\JAVA\OLD\Tick-java_PC_version\src
+1,3,2,2,InputHandlerH:\JAVA\OLD\Tick-java_PC_version\src
+0,10,19,19,Tick_v1H:\JAVA\OLD\Tick-java_PC_version\src
+0,0,0,0,FrameH:\JAVA\OLD\Top Level Game\src
+0,0,0,0,MainH:\JAVA\OLD\Top Level Game\src
+0,3,2,2,ReadFileH:\JAVA\OLD\Topic Generator\src
+1,2,0,0,mainH:\JAVA\OLD\Topic Generator\src
+1,9,4,0.285714286,Bracket2H:\JAVA\OLD\Tourna15\src
+0,27,15,1.071428571,GameH:\JAVA\OLD\Tourna15\src
+2,3,14,1,GameDetailsPopupH:\JAVA\OLD\Tourna15\src
+3,5,5,0.357142857,MainH:\JAVA\OLD\Tourna15\src
+4,16,26,1.857142857,MainWindowH:\JAVA\OLD\Tourna15\src
+1,2,6,0.428571429,PopupsH:\JAVA\OLD\Tourna15\src
+1,5,8,0.571428571,TeamListImportPopupH:\JAVA\OLD\Tourna15\src
+2,13,11,0.785714286,WizardPopupH:\JAVA\OLD\Tourna15\src
+6,8,15,0.714285714,BracketH:\JAVA\OLD\Tournament Builder\src
+2,8,5,0.238095238,Bracket2H:\JAVA\OLD\Tournament Builder\src
+2,29,2,0.095238095,BSTH:\JAVA\OLD\Tournament Builder\src
+0,3,1,0.047619048,MyIteratorH:\JAVA\OLD\Tournament Builder\src
+0,1,3,0.142857143,NodeH:\JAVA\OLD\Tournament Builder\src
+0,1,0,0,MyComp1H:\JAVA\OLD\Tournament Builder\src
+0,0,1,0.047619048,DuplicateItemExceptionH:\JAVA\OLD\Tournament Builder\src
+0,9,5,0.238095238,GameH:\JAVA\OLD\Tournament Builder\src
+2,3,2,0.095238095,MainH:\JAVA\OLD\Tournament Builder\src
+2,7,9,0.428571429,MainWindowH:\JAVA\OLD\Tournament Builder\src
+0,0,5,0.238095238,SBSTNH:\JAVA\OLD\Tournament Builder\src
+5,24,2,0.095238095,SBSTH:\JAVA\OLD\Tournament Builder\src
+2,14,10,0.476190476,WizardPopupH:\JAVA\OLD\Tournament Builder\src
+0,2,2,2,cakeH:\JAVA\OLD\UNS-1\src
+1,1,0,0,functionsH:\JAVA\OLD\UNS-1\src
+7,8,2,0.285714286,IntSLListH:\JAVA\OLD\UNS-2\src
+0,0,2,0.285714286,IntSLLNodeH:\JAVA\OLD\UNS-2\src
+0,1,0,0,MainH:\JAVA\OLD\Useless Application\src
+0,7,7,0,ImageclassH:\JAVA\OLD\VisualGame1\src
+0,1,0,0,drawingComponentH:\JAVA\OLD\waiting lines\src
+1,1,0,0,MainH:\JAVA\OLD\waiting lines\src
+0,5,85,0,MainActivityH:\JAVA\OLD\ZCalc\src
+0,4,0,0,MainH:\JAVA\percision\src
+0,3,0,0,MainH:\JAVA\Permutatuions\src
+0,8,14,0,MainH:\JAVA\ProjectCleandisk\src
+0,1,0,0,Ex1H:\JAVA\SE2\In Class 3\src
+0,1,0,0,MainH:\JAVA\SE2\In Class 3\src
+0,2,0,0,GeneratePrimesH:\JAVA\Sieve\src
+0,1,0,0,ConnectorH:\JAVA\SSH\src
+1,1,0,0,MainH:\JAVA\SSH\src
+0,1,0,0,ConnectorH:\JAVA\SSH test\src
+1,1,0,0,MainH:\JAVA\SSH test\src
+0,3,6,0,MainH:\JAVA\StopTimer\src
+3,10,10,0.12345679,EggH:\JAVA\SuperJoust\core\src
+1,13,1,0.012345679,EMathH:\JAVA\SuperJoust\core\src
+1,14,13,0.160493827,EnemyH:\JAVA\SuperJoust\core\src
+7,8,10,0.12345679,GameH:\JAVA\SuperJoust\core\src
+16,9,5,0.061728395,GameStateH:\JAVA\SuperJoust\core\src
+0,6,1,0.012345679,GameStateManagerH:\JAVA\SuperJoust\core\src
+0,4,16,0.197530864,HoverTextH:\JAVA\SuperJoust\core\src
+0,1,0,0,LavaH:\JAVA\SuperJoust\core\src
+3,13,6,0.074074074,LevelH:\JAVA\SuperJoust\core\src
+17,12,4,0.049382716,LevelBuilderH:\JAVA\SuperJoust\core\src
+0,15,0,0,LogicH:\JAVA\SuperJoust\core\src
+2,6,8,0.098765432,PlatformH:\JAVA\SuperJoust\core\src
+4,26,14,0.172839506,PlayerH:\JAVA\SuperJoust\core\src
+0,3,0,0,ShapeRendererExtH:\JAVA\SuperJoust\core\src
+1,4,6,0.074074074,SpawnH:\JAVA\SuperJoust\core\src
+1,4,3,0.037037037,StateH:\JAVA\SuperJoust\core\src
+0,4,2,0.024691358,Vector2H:\JAVA\SuperJoust\core\src
+0,1,0,0,CommandH:\JAVA\SuperJoust\core\src
+1,1,0,0,FlapCommH:\JAVA\SuperJoust\core\src
+1,1,0,0,LeftCommH:\JAVA\SuperJoust\core\src
+1,1,0,0,RightCommH:\JAVA\SuperJoust\core\src
+1,1,2,0.024691358,CircleH:\JAVA\SuperJoust\core\src
+13,5,2,0.024691358,LineH:\JAVA\SuperJoust\core\src
+5,5,2,0.024691358,RectangleH:\JAVA\SuperJoust\core\src
+3,3,3,0.037037037,TriangleH:\JAVA\SuperJoust\core\src
+0,1,0,0,DesktopLauncherH:\JAVA\SuperJoust\desktop\src
+3,10,10,0.12195122,EggH:\JAVA\SuperJoust-master\core\src
+1,13,1,0.012195122,EMathH:\JAVA\SuperJoust-master\core\src
+1,14,13,0.158536585,EnemyH:\JAVA\SuperJoust-master\core\src
+6,8,8,0.097560976,GameH:\JAVA\SuperJoust-master\core\src
+17,10,10,0.12195122,GameStateH:\JAVA\SuperJoust-master\core\src
+0,6,1,0.012195122,GameStateManagerH:\JAVA\SuperJoust-master\core\src
+0,4,16,0.195121951,HoverTextH:\JAVA\SuperJoust-master\core\src
+2,13,5,0.06097561,LevelH:\JAVA\SuperJoust-master\core\src
+19,15,4,0.048780488,LevelBuilderH:\JAVA\SuperJoust-master\core\src
+0,15,0,0,LogicH:\JAVA\SuperJoust-master\core\src
+2,9,9,0.109756098,PlatformH:\JAVA\SuperJoust-master\core\src
+4,30,17,0.207317073,PlayerH:\JAVA\SuperJoust-master\core\src
+0,3,0,0,ShapeRendererExtH:\JAVA\SuperJoust-master\core\src
+1,4,6,0.073170732,SpawnH:\JAVA\SuperJoust-master\core\src
+1,4,3,0.036585366,StateH:\JAVA\SuperJoust-master\core\src
+0,4,2,0.024390244,Vector2H:\JAVA\SuperJoust-master\core\src
+0,1,0,0,CommandH:\JAVA\SuperJoust-master\core\src
+1,1,1,0.012195122,FlapCommH:\JAVA\SuperJoust-master\core\src
+1,1,0,0,LeftCommH:\JAVA\SuperJoust-master\core\src
+1,1,0,0,RightCommH:\JAVA\SuperJoust-master\core\src
+1,1,2,0.024390244,CircleH:\JAVA\SuperJoust-master\core\src
+13,5,2,0.024390244,LineH:\JAVA\SuperJoust-master\core\src
+5,5,2,0.024390244,RectangleH:\JAVA\SuperJoust-master\core\src
+3,3,3,0.036585366,TriangleH:\JAVA\SuperJoust-master\core\src
+0,1,0,0,DesktopLauncherH:\JAVA\SuperJoust-master\desktop\src
+0,3,3,0,MyGdxGameH:\JAVA\Test\core\src
+0,1,0,0,DesktopLauncherH:\JAVA\Test\desktop\src
+1,12,3,0.056603774,BinaryNodeH:\JAVA\Tourna16\src
+4,20,3,0.056603774,BinaryTreeH:\JAVA\Tourna16\src
+1,4,0,0,BracketH:\JAVA\Tourna16\src
+1,3,5,0.094339623,DragListenerH:\JAVA\Tourna16\src
+7,7,6,0.113207547,EditorWindowH:\JAVA\Tourna16\src
+2,2,0,0,FileHandlerH:\JAVA\Tourna16\src
+0,30,15,0.283018868,GameH:\JAVA\Tourna16\src
+2,3,14,0.264150943,GameDetailsPopupH:\JAVA\Tourna16\src
+2,5,5,0.094339623,GraphPanelH:\JAVA\Tourna16\src
+0,4,1,0.018867925,ImagePanelH:\JAVA\Tourna16\src
+0,4,14,0.264150943,JFontChooserH:\JAVA\Tourna16\src
+0,2,5,0.094339623,LineH:\JAVA\Tourna16\src
+2,7,4,0.075471698,MainH:\JAVA\Tourna16\src
+7,14,27,0.509433962,MainWindowH:\JAVA\Tourna16\src
+0,18,2,0.037735849,MatchH:\JAVA\Tourna16\src
+0,6,2,0.037735849,ResizableH:\JAVA\Tourna16\src
+0,5,3,0.056603774,ResizableBorderH:\JAVA\Tourna16\src
+4,7,3,0.056603774,ResizeListenerH:\JAVA\Tourna16\src
+2,0,0,0,SchedulerWindowH:\JAVA\Tourna16\src
+0,2,2,0.037735849,TeamH:\JAVA\Tourna16\src
+1,5,8,0.150943396,TeamListImportPopupH:\JAVA\Tourna16\src
+0,5,10,0.188679245,TextH:\JAVA\Tourna16\src
+1,3,15,0.283018868,TextBuilderWindowH:\JAVA\Tourna16\src
+4,11,10,0.188679245,WizardPopupH:\JAVA\Tourna16\src
+12,10,14,0.264150943,XmlFileLoaderH:\JAVA\Tourna16\src
+0,4,4,0.075471698,ColorProfileH:\JAVA\Tourna16\src
+1,1,0,0,MainH:\JAVA\Tree\src
+0,7,3,1.5,NodeH:\JAVA\Tree\src
+1,2,1,0.5,TreeH:\JAVA\Tree\src
+8,4,3,0.375,MainH:\JAVA\TypeCalc\src
+0,0,2,0.25,PairH:\JAVA\TypeCalc\src
+0,7,6,0.75,TypeH:\JAVA\TypeCalc\src
+1,1,0,0,MainH:\JAVA\untitled\src
+0,1,1,0.5,AH:\JAVA\untitled\src
+1,1,1,0.5,BH:\JAVA\untitled\src

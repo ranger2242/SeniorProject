@@ -187,11 +187,21 @@ class SOM(object):
             distances.append(self.calculate_distance(mapped_vector, c))
 
         min_index = 0
+        min1 = 0
+        min2 = 0
         for i in range(len(distances)):
             if distances[min_index] > distances[i]:
+                min2 = min1
+                min1 = min_index
                 min_index = i
 
-        return self.labels[min_index]
+        if self.labels[min_index] == self.labels[min1]:
+            return self.labels[min_index]
+        elif self.labels[min_index] == self.labels[min2]:
+            return self.labels[min_index]
+        else:
+            return self.labels[min2]
+
 
     def calculate_distance(self, x, y):
 
