@@ -26,12 +26,12 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Ergo" icon="/icons/button_image.png" anchor="right" factoryClass="com.ANZR.Ergo.ErgoToolWindow"/>
+    <toolWindow id="Ergo" icon="/icons/button_image.png" anchor="right" factoryClass="com.ANZR.Ergo.plugin.ErgoToolWindow"/>
   </extensions>
 
   <actions>
     <!-- Add your actions here -->
-    <action id="GenerateErgoButton" class="com.ANZR.Ergo.ErgoButton" text="Ergo"
+    <action id="GenerateErgoButton" class="com.ANZR.Ergo.plugin.ErgoButton" text="Ergo"
             description="Run Ergo to find any anti-patterns"
             icon="/icons/button_image.png">
       <add-to-group group-id="ToolbarRunGroup" anchor="last"/>

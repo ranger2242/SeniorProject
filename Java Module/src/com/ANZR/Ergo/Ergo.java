@@ -1,5 +1,10 @@
 package com.ANZR.Ergo;
 
+import com.ANZR.Ergo.io.FileHandler;
+import com.ANZR.Ergo.io.Logger;
+import com.ANZR.Ergo.io.Pipeline;
+import com.ANZR.Ergo.parser.*;
+import com.ANZR.Ergo.transformer.Transformer;
 import com.google.gson.Gson;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -12,7 +17,7 @@ import java.util.Set;
 
 
 @SuppressWarnings("ALL")
-class Ergo {
+public class Ergo {
 
     public final static String div = "-----------------------------------------------";
     private static boolean trainingMode = false;
@@ -59,7 +64,7 @@ class Ergo {
             Logger.slog("Directories loaded. " + directories.size() + " directories founds.");
 
             Logger.slog("Parsing classes...");
-            ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> projectClassData = Parser.parseDirectories(directories);
+            ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<com.ANZR.Ergo.parser.Enum>>> projectClassData = Parser.parseDirectories(directories);
             Logger.slog("Classes Parsed");
 
 
@@ -89,7 +94,7 @@ class Ergo {
         ExtractedDir[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
 
         Logger.slog("Parsing classes...");
-        ProjectData<Set<ExtractedClass>, Set<Enum>> projectClassData = Parser.parseProject(directories);
+        ProjectData<Set<ExtractedClass>, Set<com.ANZR.Ergo.parser.Enum>> projectClassData = Parser.parseProject(directories);
         Logger.slog("Classes Parsed");
 
         Transformer transformer = new Transformer(projectClassData.parsedClasses, projectClassData.globalEnums);
