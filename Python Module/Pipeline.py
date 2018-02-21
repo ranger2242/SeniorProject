@@ -3,6 +3,7 @@ from socketIO_client_nexus import SocketIO, LoggingNamespace
 import json
 from Analyzer import Analyzer
 from Helpers import slog
+import ast
 
 
 class Pipeline:
@@ -28,12 +29,13 @@ class Pipeline:
 
         def receive_data(*args):
             id = args[0]['id']
-            data = args[0]['data']
+            data = ast.literal_eval(args[0]['data'])
             print("Received:", data, '\tFrom Client ID:', id)
             self.send_to_client(id, "received", "true")
 
             # Probably start a new thread here
-            self.analyzer.use_neural_networks(data)
+            results = self.analyzer.analyze(data)
+            self.send_to_client(id, "RESULTS", results)
 
         def connected(*args):
             slog("Connected To Server")

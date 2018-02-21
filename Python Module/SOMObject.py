@@ -6,6 +6,7 @@ import os
 import sys
 from Helpers import get_python_project_root
 
+
 class SOM(object):
     # To check if the SOM has been trained
     trained = False

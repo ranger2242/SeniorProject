@@ -2,18 +2,20 @@ from GP import GP
 from Helpers import get_project_root
 project_root = get_project_root()
 
+
 class Analyzer:
 
     def __init__(self):
         self.gp_network = GP()
 
-    def use_neural_networks(self, data):
-        prediction = self.gp_network.som.make_prediction(data)
+    def analyze(self, data):
 
-        if prediction == 0:
-            print('Not a God Object!')
-        else:
-            print('God Object Detected!')
+        prediction = [[]]
+
+        for d in data[0]:
+            prediction[0].append(self.gp_network.som.make_prediction(d))
+
+        return prediction
 
     # Trains GP Network from CSV file
     def train_network_from_csv(self):
@@ -45,16 +47,16 @@ class Analyzer:
 
 
 
-analyzer = Analyzer()
+#analyzer = Analyzer()
 # analyzer.train_network_from_csv()
 
 # test_data = [[20, 99, 99, 0.658]]
-# analyzer.use_neural_networks(test_data)
+# analyzer.analyze(test_data)
 
-# analyzer.test_network('Python Module\\labeled_dataset.csv')
+# analyzer.test_network('training_dataset.csv')
 
 
-analyzer.plot_CSV_data('Python Module\\labeled_dataset.csv')
+# analyzer.plot_CSV_data('Python Module\\labeled_dataset.csv')
 
 
 

@@ -14,7 +14,7 @@ import java.util.Set;
 class Main {
 
     public final static String div = "-----------------------------------------------";
-    private static boolean trainingMode = true;
+    private static boolean trainingMode = false;
     private static String path = "C:\\Users\\Ross\\Desktop\\GOs";
 
 

@@ -11,7 +11,7 @@ public class GodObjectTransformer {
     public static Object[][] generateGodObjectMatrix(Set<ExtractedClass> classes){
 
         ExtractedClass[] classesArray =  classes.toArray(new ExtractedClass[classes.size()]);
-        Object[][] godMatrix = new Object[classesArray.length][5];
+        Object[][] godMatrix = new Object[classesArray.length][4];
         int totalReferencesInProject = getTotalNumberOfReferences(classes);
 
         for( int i = 0; i < classesArray.length; i++ ){
@@ -20,7 +20,7 @@ public class GodObjectTransformer {
             godMatrix[i][1] = singleClass.getMethods().size(); // number of methods
             godMatrix[i][2] = singleClass.getVariables().size(); // number of varibles
             godMatrix[i][3] = totalReferencesFromClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][2]);
-            godMatrix[i][4] = singleClass.getName();
+//            godMatrix[i][4] = singleClass.getName();
         }
         return godMatrix;
 
