@@ -9,7 +9,9 @@ import com.intellij.openapi.wm.ToolWindowManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collector;
 
 public class ErgoButton extends AnAction {
 
@@ -19,15 +21,8 @@ public class ErgoButton extends AnAction {
         ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
         Folder rootFolder = getRootFolder(project.getName(), files);
-
-        String[] sourceRoots = new String[files.length];
-        for (int i = 0; i < files.length; i++) {
-            sourceRoots[i] = files[i].getPath();
-        }
-
-
+        String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(),files.length,String[].class);
         Ergo.run(sourceRoots);
-
 
 //        Printer.printProjectFiles(rootFolder);
         ErgoToolWindow tool = new ErgoToolWindow();
