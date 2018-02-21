@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AntiPatternFinder.iml" filepath="$PROJECT_DIR$/AntiPatternFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SeniorProject.iml" filepath="$PROJECT_DIR$/SeniorProject.iml" />
     </modules>
   </component>
 </project>
