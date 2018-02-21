@@ -4,6 +4,8 @@ import com.ANZR.Ergo.Ergo;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -14,7 +16,16 @@ public class ErgoButton extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
+
         Project project = e.getData(LangDataKeys.PROJECT);
+
+        //Loading bar wont popup unless server is runnning. idk...
+        //It also doesnt show up until after parsing. idk...
+
+        LoadingBarWindow loadingBarWindow = new LoadingBarWindow(project);
+        loadingBarWindow.setText("This is a test");
+        loadingBarWindow.setProgress(50);
+
         ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
         Folder rootFolder = getRootFolder(project.getName(), files);
