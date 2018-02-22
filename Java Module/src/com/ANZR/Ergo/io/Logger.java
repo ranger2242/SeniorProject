@@ -3,7 +3,6 @@ package com.ANZR.Ergo.io;
 import com.ANZR.Ergo.parser.ExtractedClass;
 import com.ANZR.Ergo.parser.ProjectData;
 import com.ANZR.Ergo.plugin.Folder;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

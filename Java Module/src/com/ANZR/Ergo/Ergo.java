@@ -4,6 +4,8 @@ import com.ANZR.Ergo.io.FileHandler;
 import com.ANZR.Ergo.io.Logger;
 import com.ANZR.Ergo.io.Pipeline;
 import com.ANZR.Ergo.parser.*;
+import com.ANZR.Ergo.plugin.ErgoButton;
+import com.ANZR.Ergo.plugin.LoadingBarWindow;
 import com.ANZR.Ergo.transformer.Transformer;
 import com.google.gson.Gson;
 import java.io.BufferedWriter;
@@ -21,17 +23,17 @@ public class Ergo {
 
     public final static String div = "-----------------------------------------------";
     private static boolean trainingMode = false;
+    private static LoadingBarWindow progressBar;
 
+    public static void run(String[] sourceFolderPaths, LoadingBarWindow loadingBarWindow){
 
-
-    public static void run(String[] sourceFolderPaths){
         if(trainingMode){
             runErgoTrainingMode();
         }else{
+            progressBar = loadingBarWindow;
             runErgoClient(sourceFolderPaths);
         }
     }
-
 
     private static void runErgoTrainingMode(){
 
@@ -93,19 +95,23 @@ public class Ergo {
         FileHandler fileHandler = new FileHandler(sourceFolderPaths);
         ExtractedDir[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
 
+        progressBar.updateLoadingBar("Parsing classes...", 20);
         Logger.slog("Parsing classes...");
         ProjectData<Set<ExtractedClass>, Set<com.ANZR.Ergo.parser.Enum>> projectClassData = Parser.parseProject(directories);
         Logger.slog("Classes Parsed");
 
+        progressBar.updateLoadingBar("Processing Data...", 50);
         Transformer transformer = new Transformer(projectClassData.parsedClasses, projectClassData.globalEnums);
         Object[][][] matrices = transformer.transform();
 
         Gson gson = new Gson();
         String json = gson.toJson(matrices);
 
+        progressBar.updateLoadingBar("Anaylzing...", 60);
         Pipeline pipeline = new Pipeline();
         pipeline.sendToServer(json);
 
+        progressBar.updateLoadingBar("Generating results...", 90);
 
     }
 

@@ -38,7 +38,7 @@ public class ErgoToolWindow implements ToolWindowFactory {
         contentWindow.add(new JScrollPane(table));
         contentWindow.add(table.getTableHeader(), BorderLayout.EAST);
 
-        Content content = contentFactory.createContent(contentWindow, rootFolder.getName(), false);
+        Content content = contentFactory.createContent(contentWindow, "- " + rootFolder.getName(), false);
         toolWindow.getContentManager().removeAllContents(true);
         toolWindow.getContentManager().addContent(content);
         toolWindow.show(null);
@@ -63,6 +63,8 @@ public class ErgoToolWindow implements ToolWindowFactory {
         sideBar.setIfButtonIsEnabled();
     }
 
+
+    //Getters and Setters
     public Table getTable() {
         return table;
     }
@@ -74,7 +76,6 @@ public class ErgoToolWindow implements ToolWindowFactory {
     public Stack<Folder> getPreviousFolder() {
         return previousFolder;
     }
-    //Getters and Setters
 
     public Folder getRootFolder() {
         return rootFolder;

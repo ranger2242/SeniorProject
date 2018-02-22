@@ -9,8 +9,9 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
-
+import javax.swing.*;
 import java.util.Arrays;
+import static com.ANZR.Ergo.io.Logger.slog;
 
 public class ErgoButton extends AnAction {
 
@@ -22,20 +23,33 @@ public class ErgoButton extends AnAction {
         //Loading bar wont popup unless server is runnning. idk...
         //It also doesnt show up until after parsing. idk...
 
-        LoadingBarWindow loadingBarWindow = new LoadingBarWindow(project);
-        loadingBarWindow.setText("This is a test");
-        loadingBarWindow.setProgress(50);
+//        LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
+//        loadingBarWindow.updateLoadingBar("Loading Project", 0);
 
         ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
         Folder rootFolder = getRootFolder(project.getName(), files);
-        String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(),files.length,String[].class);
-        Ergo.run(sourceRoots);
 
-//        Logger.printProjectFiles(rootFolder);
-        ErgoToolWindow tool = new ErgoToolWindow();
-        tool.populateToolWindow(toolWindow, rootFolder, project);
+
+        Thread thread = new Thread(() -> {
+            String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(),files.length,String[].class);
+//            Ergo.run(sourceRoots, loadingBarWindow);
+
+        });
+        thread.start();
+
+
+        // These must be on the current thread.... but wait until thread above is done.
+        // We aren't smart help
+
+//        ErgoToolWindow tool = new ErgoToolWindow();
+//        tool.populateToolWindow(toolWindow, rootFolder, project);
+//        loadingBarWindow.updateLoadingBar("Complete...", 100);
+//        sleep();
+//        loadingBarWindow.closeFrame();
+
     }
+
 
     @Override
     public void update(AnActionEvent e) {

@@ -1,10 +1,10 @@
 TO DO LIST
 ------------
+Tool window title is "Ergo Testing Project"
 fix lag while comm with server
 create progress bar
 create other antipattern algorthims
 link python data to Ergo table
 seperate server from java module
-organize project into packages
 
 optional: create python threads for each client
