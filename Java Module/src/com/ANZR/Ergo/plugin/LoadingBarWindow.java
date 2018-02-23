@@ -55,9 +55,12 @@ public class LoadingBarWindow {
         frame.setSize(dimension);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
+        frame.setVisible(false);
+    }
+
+
+    public void show(){
         frame.setVisible(true);
-
-
     }
 
     public void setText(String text){
@@ -69,8 +72,11 @@ public class LoadingBarWindow {
     }
 
     public void updateLoadingBar(String text, int progress){
-        setText(text);
-        setProgress(progress);
+        Thread thread = new Thread(() -> {
+            setText(text);
+            setProgress(progress);
+        });
+        thread.start();
     }
 
 

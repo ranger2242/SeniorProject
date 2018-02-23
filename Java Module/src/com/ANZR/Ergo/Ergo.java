@@ -95,6 +95,7 @@ public class Ergo {
         FileHandler fileHandler = new FileHandler(sourceFolderPaths);
         ExtractedDir[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
 
+
         progressBar.updateLoadingBar("Parsing classes...", 20);
         Logger.slog("Parsing classes...");
         ProjectData<Set<ExtractedClass>, Set<com.ANZR.Ergo.parser.Enum>> projectClassData = Parser.parseProject(directories);

@@ -4,51 +4,61 @@ import com.ANZR.Ergo.Ergo;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.openapi.ui.popup.JBPopup;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
+
 import javax.swing.*;
 import java.util.Arrays;
-import static com.ANZR.Ergo.io.Logger.slog;
 
 public class ErgoButton extends AnAction {
+
+
+    private LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
+    private Timer timer;
 
     @Override
     public void actionPerformed(AnActionEvent e) {
 
+        loadingBarWindow.updateLoadingBar("Loading Project", 0);
+        loadingBarWindow.show();
+
         Project project = e.getData(LangDataKeys.PROJECT);
-
-        //Loading bar wont popup unless server is runnning. idk...
-        //It also doesnt show up until after parsing. idk...
-
-//        LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
-//        loadingBarWindow.updateLoadingBar("Loading Project", 0);
-
         ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
         Folder rootFolder = getRootFolder(project.getName(), files);
 
-
         Thread thread = new Thread(() -> {
-            String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(),files.length,String[].class);
-//            Ergo.run(sourceRoots, loadingBarWindow);
+            String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(), files.length, String[].class);
+            Ergo.run(sourceRoots, loadingBarWindow);
 
         });
         thread.start();
 
+        timer = new Timer(100, e1 -> {
+            if(!thread.isAlive())
+                createToolWindowAndHideLoadingBar(toolWindow, rootFolder, project);
+        });
+        timer.setRepeats(true);
+        timer.start();
 
-        // These must be on the current thread.... but wait until thread above is done.
-        // We aren't smart help
-
-//        ErgoToolWindow tool = new ErgoToolWindow();
-//        tool.populateToolWindow(toolWindow, rootFolder, project);
-//        loadingBarWindow.updateLoadingBar("Complete...", 100);
-//        sleep();
-//        loadingBarWindow.closeFrame();
 
     }
+
+    private void createToolWindowAndHideLoadingBar(ToolWindow toolWindow, Folder rootFolder, Project project){
+
+        ErgoToolWindow tool = new ErgoToolWindow();
+        tool.populateToolWindow(toolWindow, rootFolder, project);
+        loadingBarWindow.updateLoadingBar("Complete...", 100);
+
+        Timer t = new Timer(100, e1 -> {
+            loadingBarWindow.closeFrame();
+        });
+        t.setRepeats(false);
+        t.start();
+        timer.stop();
+    }
+
 
 
     @Override

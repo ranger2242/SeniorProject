@@ -4,6 +4,7 @@
     <list default="true" id="28beb00e-580a-4319-ad77-7dcd924d537f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Java Module/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../Java Module/out/production/SeniorProject/com/ANZR/Ergo/plugin/ErgoButton.class" afterPath="$PROJECT_DIR$/../Java Module/out/production/SeniorProject/com/ANZR/Ergo/plugin/ErgoButton.class" />
+      <change beforePath="$PROJECT_DIR$/../Java Module/src/com/ANZR/Ergo/plugin/ErgoButton.java" afterPath="$PROJECT_DIR$/../Java Module/src/com/ANZR/Ergo/plugin/ErgoButton.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +21,7 @@
     <SUITE FILE_PATH="coverage/Python_Module$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1510799698251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/Python_Module$Main.coverage" NAME="Main Coverage Results" MODIFIED="1517248949395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Module$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1519159776959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Module$Pipeline.coverage" NAME="Pipeline Coverage Results" MODIFIED="1519324049919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Module$Pipeline.coverage" NAME="Pipeline Coverage Results" MODIFIED="1519398913595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Python Module" />
