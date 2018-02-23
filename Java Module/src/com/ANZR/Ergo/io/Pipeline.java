@@ -1,9 +1,13 @@
 package com.ANZR.Ergo.io;
 
+import com.ANZR.Ergo.Ergo;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
-
+import static com.ANZR.Ergo.io.Logger.slog;
 import java.net.*;
 import java.util.*;
 
@@ -16,9 +20,45 @@ public class Pipeline {
     private static String dir = "http://" + ip + ":" + port;
     private static String clientID;
     private static boolean serverIsReady = false;
+    private Ergo ergo;
 
 
-    public Pipeline(){
+    enum Codes{
+        CONNECTED("CONNECTED"),
+        SENDCLIENT("SEND-CLIENT"),
+        ID("ID"),
+        SENDPYTHON("SEND-PYTHON"),
+        MSG("msg");
+        private final String text;
+
+        Codes(final String text) {
+            this.text = text;
+        }
+
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
+
+    enum RecievedCodes{
+        RESULTS("RESULTS"),
+        RECEIVED("RECEIVED");
+        private final String text;
+
+        RecievedCodes(final String text) {
+            this.text = text;
+        }
+
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
+
+
+    public Pipeline(Ergo ergo){
+        this.ergo = ergo;
 
         try {
             slog("Connecting to " + dir);
@@ -29,7 +69,6 @@ public class Pipeline {
         }
     }
 
-
     public static void setShutdownOperations(){
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
@@ -38,10 +77,6 @@ public class Pipeline {
                 socket.disconnect();
             }
         });
-    }
-
-    public static void slog(String msg) {
-        Logger.slog(msg);
     }
 
     public static void sendToServer(String data){
@@ -62,7 +97,7 @@ public class Pipeline {
         slog("Message to server timed out...");
     }
 
-    public static void connectSocket() throws URISyntaxException {
+    public void connectSocket() throws URISyntaxException {
         socket = IO.socket(dir);
 
         socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
@@ -88,14 +123,34 @@ public class Pipeline {
             }
         });
 
-        socket.on("SEND-CLIENT", new Emitter.Listener() {
+
+
+        socket.on(Codes.SENDCLIENT.toString(), new Emitter.Listener() {
             @Override
             public void call(Object... args) {
 
-                System.out.println("Data Recieved: ");
-                for( Object object : args ) {
-                    String data = (String) object;
-                    System.out.println(data);
+
+
+                slog("Data Recieved: ");
+
+                Gson gson = new Gson();
+                JsonElement element = gson.fromJson ((String) args[0], JsonElement.class);
+                JsonObject jsonObj = element.getAsJsonObject();
+
+
+                String type = jsonObj.keySet().iterator().next();
+                JsonElement data = jsonObj.get(type);
+
+                if( RecievedCodes.RECEIVED.toString().equals(type)){
+                    if(data.getAsString().toLowerCase().equals("true")){
+                        slog("Server Received data...");
+                    }else{
+                        slog("Error: Server failed to received data...");
+                    }
+                }else if( RecievedCodes.RESULTS.toString().equals(type)){
+                    ergo.interpretData(data);
+                }else{
+                    slog("UNKNOWN RECEIVE CODE FOUND...");
                 }
             }
         });

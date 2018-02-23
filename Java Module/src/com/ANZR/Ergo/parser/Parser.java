@@ -58,6 +58,7 @@ public class Parser {
     private void parseDirectory(ExtractedDir e) {
 
         for (String s : e.getClassPaths()) {
+            System.out.println(s);
             ArrayList<ExtractedClass> newClasses = parseCode(s);
             if (newClasses != null) {
                 extractedClasses.addAll(newClasses);
@@ -98,7 +99,7 @@ public class Parser {
                     globalEnums.add(new Enum(cl.asEnumDeclaration()));
                 } else if (cl.isClassOrInterfaceDeclaration()) {
                     //Assumed a class or interface
-                    ExtractedClass newClass = new ExtractedClass(cl);
+                    ExtractedClass newClass = new ExtractedClass(cl, dir);
                     newClass.setImports(imports);
                     listOfClasses.addAll(createClassList(newClass));
                 }

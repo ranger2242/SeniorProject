@@ -25,13 +25,20 @@ public class ExtractedClass {
     private final ArrayList<ImportDeclaration> imports = new ArrayList<>();
     private boolean isInterface = false;
 
+
+
+    private String classPath = "";
+
+
     //Constructors
     public ExtractedClass() {
 
     }
 
-    public ExtractedClass(TypeDeclaration<?> typeD) {
 
+    public ExtractedClass(TypeDeclaration<?> typeD, String directoryString) {
+
+        this.classPath = directoryString;
         this.name = typeD.getNameAsString();
         this.parent = findParent(typeD);
         this.variables = findVariables(typeD);
@@ -44,6 +51,7 @@ public class ExtractedClass {
         this.extensions = findInheritance(typeD.asClassOrInterfaceDeclaration());
         this.implementations = findInterface(typeD.asClassOrInterfaceDeclaration());
         this.isInterface =  ((ClassOrInterfaceDeclaration) typeD).isInterface();
+
 
     }
 
@@ -100,7 +108,7 @@ public class ExtractedClass {
         ArrayList<ExtractedClass> classes = new ArrayList<>();
         for (ClassOrInterfaceDeclaration nestedClass : nestedClasses) {
             if(nestedClass.getParentNode().get().equals(classAsDeclaration)){
-                classes.add(new ExtractedClass(nestedClass));
+                classes.add(new ExtractedClass(nestedClass, classPath));
             }
         }
         return classes;
@@ -176,6 +184,10 @@ public class ExtractedClass {
 
 
     //Setters And Getters
+    public String getClassPath() {
+        return classPath;
+    }
+
     public void setExtensions(ArrayList<String> extensions) {
         this.extensions = extensions;
     }

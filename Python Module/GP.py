@@ -66,7 +66,8 @@ class GP:
 
     # Does any preprocessing needed.. currently unimplemented
     def preprocessing(self, raw_data):
-        return raw_data
+        data = raw_data[:4]
+        return data
 
     # Trains the network on data provided
     def train(self, raw_data):

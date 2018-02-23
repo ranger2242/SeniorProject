@@ -1,5 +1,6 @@
 package com.ANZR.Ergo;
 
+import com.ANZR.Ergo.io.DataInterpreter;
 import com.ANZR.Ergo.io.FileHandler;
 import com.ANZR.Ergo.io.Logger;
 import com.ANZR.Ergo.io.Pipeline;
@@ -8,6 +9,8 @@ import com.ANZR.Ergo.plugin.ErgoButton;
 import com.ANZR.Ergo.plugin.LoadingBarWindow;
 import com.ANZR.Ergo.transformer.Transformer;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,10 +25,16 @@ import java.util.Set;
 public class Ergo {
 
     public final static String div = "-----------------------------------------------";
-    private static boolean trainingMode = false;
-    private static LoadingBarWindow progressBar;
+    private boolean trainingMode = false;
+    private LoadingBarWindow progressBar;
+    private ErgoButton buttonClass;
 
-    public static void run(String[] sourceFolderPaths, LoadingBarWindow loadingBarWindow){
+
+    public Ergo(ErgoButton button){
+        this.buttonClass = button;
+    }
+
+    public void run(String[] sourceFolderPaths, LoadingBarWindow loadingBarWindow){
 
         if(trainingMode){
             runErgoTrainingMode();
@@ -35,7 +44,7 @@ public class Ergo {
         }
     }
 
-    private static void runErgoTrainingMode(){
+    private void runErgoTrainingMode(){
 
         String path = "";
 
@@ -90,11 +99,10 @@ public class Ergo {
 
     }
 
-    private static void runErgoClient(String[] sourceFolderPaths){
+    private void runErgoClient(String[] sourceFolderPaths){
 
         FileHandler fileHandler = new FileHandler(sourceFolderPaths);
         ExtractedDir[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
-
 
         progressBar.updateLoadingBar("Parsing classes...", 20);
         Logger.slog("Parsing classes...");
@@ -109,10 +117,23 @@ public class Ergo {
         String json = gson.toJson(matrices);
 
         progressBar.updateLoadingBar("Anaylzing...", 60);
-        Pipeline pipeline = new Pipeline();
+        Pipeline pipeline = new Pipeline(this);
         pipeline.sendToServer(json);
 
+    }
+
+    public void interpretData(JsonElement data){
+
+        System.out.println(data.toString());
+
         progressBar.updateLoadingBar("Generating results...", 90);
+
+//        Results Something = DataInterpreter.interpret(data);
+//
+//        buttonClass.setResults(some);
+
+
+
 
     }
 

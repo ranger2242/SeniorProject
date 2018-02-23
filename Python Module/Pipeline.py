@@ -31,10 +31,13 @@ class Pipeline:
             id = args[0]['id']
             data = ast.literal_eval(args[0]['data'])
             print("Received:", data, '\tFrom Client ID:', id)
-            self.send_to_client(id, "received", "true")
+            self.send_to_client(id, "RECEIVED", "true")
 
             # Probably start a new thread here
             results = self.analyzer.analyze(data)
+
+            print(results)
+
             self.send_to_client(id, "RESULTS", results)
 
         def connected(*args):

@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
 
+import static com.ANZR.Ergo.io.Logger.slog;
+
 class GodObjectTransformer {
 
     public static Object[][] generateGodObjectMatrix(Set<ExtractedClass> classes){
 
         ExtractedClass[] classesArray =  classes.toArray(new ExtractedClass[classes.size()]);
-        Object[][] godMatrix = new Object[classesArray.length][4];
+        Object[][] godMatrix = new Object[classesArray.length][6];
         int totalReferencesInProject = getTotalNumberOfReferences(classes);
 
         for( int i = 0; i < classesArray.length; i++ ){
@@ -25,7 +27,8 @@ class GodObjectTransformer {
             godMatrix[i][1] = singleClass.getMethods().size(); // number of methods
             godMatrix[i][2] = singleClass.getVariables().size(); // number of varibles
             godMatrix[i][3] = totalReferencesFromClassReferncesRatio( totalReferencesInProject, (int) godMatrix[i][2]);
-//            godMatrix[i][4] = singleClass.getName();
+            godMatrix[i][4] = singleClass.getName();
+            godMatrix[i][5] = singleClass.getClassPath();
         }
         return godMatrix;
 
@@ -38,7 +41,7 @@ class GodObjectTransformer {
             Transformer transformer = new Transformer(set, arr.globalEnums.get(arr.parsedClasses.indexOf(set)));
             matrices.add(transformer.transform());
         }
-        Logger.slog("Data Transformed");
+        slog("Data Transformed");
         return matrices;
     }
 
@@ -47,7 +50,7 @@ class GodObjectTransformer {
         Set<ExtractedClass> set = projectClassData.parsedClasses.get(0);
         Transformer transformer = new Transformer(set, projectClassData.globalEnums.get(projectClassData.parsedClasses.indexOf(set)));
         Object[][][] matrices = transformer.transform();
-        Logger.slog("Data Transformed");
+        slog("Data Transformed");
         return matrices;
     }
 

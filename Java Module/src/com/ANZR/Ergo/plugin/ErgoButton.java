@@ -17,6 +17,13 @@ public class ErgoButton extends AnAction {
     private LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
     private Timer timer;
 
+    public void setResults(Object results) {
+        this.results = results;
+    }
+
+    private Object results;
+
+
     @Override
     public void actionPerformed(AnActionEvent e) {
 
@@ -26,18 +33,20 @@ public class ErgoButton extends AnAction {
         Project project = e.getData(LangDataKeys.PROJECT);
         ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
-        Folder rootFolder = getRootFolder(project.getName(), files);
+
 
         Thread thread = new Thread(() -> {
             String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(), files.length, String[].class);
-            Ergo.run(sourceRoots, loadingBarWindow);
+            Ergo ergo = new Ergo(this);
+            ergo.run(sourceRoots, loadingBarWindow);
+
 
         });
         thread.start();
 
         timer = new Timer(100, e1 -> {
             if(!thread.isAlive())
-                createToolWindowAndHideLoadingBar(toolWindow, rootFolder, project);
+                createToolWindowAndHideLoadingBar(toolWindow, files, project);
         });
         timer.setRepeats(true);
         timer.start();
@@ -45,7 +54,9 @@ public class ErgoButton extends AnAction {
 
     }
 
-    private void createToolWindowAndHideLoadingBar(ToolWindow toolWindow, Folder rootFolder, Project project){
+    private void createToolWindowAndHideLoadingBar(ToolWindow toolWindow, VirtualFile[] files, Project project){
+
+        Folder rootFolder = getRootFolder(project.getName(), files);
 
         ErgoToolWindow tool = new ErgoToolWindow();
         tool.populateToolWindow(toolWindow, rootFolder, project);

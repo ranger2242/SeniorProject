@@ -13,7 +13,8 @@ class Analyzer:
         prediction = [[]]
 
         for d in data[0]:
-            prediction[0].append(self.gp_network.som.make_prediction(d))
+            element = self.gp_network.preprocessing(d)
+            prediction[0].append([self.gp_network.som.make_prediction(element), d[4], d[5]])
 
         return prediction
 
