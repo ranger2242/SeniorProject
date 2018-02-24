@@ -19,7 +19,6 @@ public class ErgoButton extends AnAction {
     private Folder rootFolder = new Folder();
     private Project project;
     private VirtualFile[] files;
-
     private ToolWindow toolWindow;
 
     @Override

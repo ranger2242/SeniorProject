@@ -1,4 +1,5 @@
 from GP import GP
+from LongMethod import LongMethod
 from Helpers import get_project_root
 project_root = get_project_root()
 
@@ -11,10 +12,14 @@ class Analyzer:
     def analyze(self, data):
 
         prediction = [[]]
-
         for d in data[0]:
             element = self.gp_network.preprocessing(d, from_client=True)
             prediction[0].append([self.gp_network.som.make_prediction(element), d[4], d[5]])
+
+        prediction.append([])
+        for d in data[1]:
+            prediction[1].append([LongMethod.check(d), d[len(d) - 2], d[len(d) - 1]])
+
 
         return prediction
 
