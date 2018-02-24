@@ -24,17 +24,14 @@ public class ExtractedClass {
     private ArrayList<Enum> enums = new ArrayList<>();
     private final ArrayList<ImportDeclaration> imports = new ArrayList<>();
     private boolean isInterface = false;
-
-
-
     private String classPath = "";
 
 
-    //Constructors
+    /** Constructors */
+
     public ExtractedClass() {
 
     }
-
 
     public ExtractedClass(TypeDeclaration<?> typeD, String directoryString) {
 
@@ -50,13 +47,12 @@ public class ExtractedClass {
         this.enums = findEnum(typeD.asClassOrInterfaceDeclaration());
         this.extensions = findInheritance(typeD.asClassOrInterfaceDeclaration());
         this.implementations = findInterface(typeD.asClassOrInterfaceDeclaration());
-        this.isInterface =  ((ClassOrInterfaceDeclaration) typeD).isInterface();
+        this.isInterface = ((ClassOrInterfaceDeclaration) typeD).isInterface();
 
 
     }
 
 
-    //Methods
     private ArrayList<String> findInterface(ClassOrInterfaceDeclaration cid) {
         ArrayList<String> impl = new ArrayList<>();
         for (ClassOrInterfaceType ext : cid.getImplementedTypes()) {
@@ -82,7 +78,7 @@ public class ExtractedClass {
         return output;
     }
 
-    private static ArrayList<Constructor> findConstructors(TypeDeclaration<?> inputClass){
+    private static ArrayList<Constructor> findConstructors(TypeDeclaration<?> inputClass) {
         ArrayList<Constructor> constructors = new ArrayList<>();
 
         for (ConstructorDeclaration constructorDeclaration : inputClass.getChildNodesByType(ConstructorDeclaration.class)) {
@@ -107,7 +103,7 @@ public class ExtractedClass {
         List<ClassOrInterfaceDeclaration> nestedClasses = classAsDeclaration.getChildNodesByType(ClassOrInterfaceDeclaration.class);
         ArrayList<ExtractedClass> classes = new ArrayList<>();
         for (ClassOrInterfaceDeclaration nestedClass : nestedClasses) {
-            if(nestedClass.getParentNode().get().equals(classAsDeclaration)){
+            if (nestedClass.getParentNode().get().equals(classAsDeclaration)) {
                 classes.add(new ExtractedClass(nestedClass, classPath));
             }
         }
@@ -139,12 +135,13 @@ public class ExtractedClass {
         return this.name.equals(e.name) && this.parent.equals(e.parent);
     }
 
-    //Prints
+    /** Prints */
+
     private void printClasses(String s) {
         Logger.out(s + name);
     }
 
-    public void printClass( int depth) {
+    public void printClass(int depth) {
         StringBuilder indent = new StringBuilder();
         for (int i = 0; i < depth; i++) {
             indent.append("    ");
@@ -152,9 +149,9 @@ public class ExtractedClass {
         String indent2 = indent + "    ";
         String indent3 = indent2 + "    ";
 
-        if(isInterface()){
+        if (isInterface()) {
             System.out.println(indent + "Interface: " + getName());
-        }else {
+        } else {
             System.out.println(indent + "Class: " + getName());
         }
 
@@ -167,7 +164,7 @@ public class ExtractedClass {
         variables.forEach(x -> System.out.println(indent3 + x.toString()));
 
         System.out.println(indent2 + "Methods: ");
-        methods.forEach(x->x.print(depth + 1));
+        methods.forEach(x -> x.print(depth + 1));
 
         System.out.println(indent2 + "Constructors: ");
         constructors.forEach(x -> System.out.println(indent3 + x.getDescription()));
@@ -176,14 +173,15 @@ public class ExtractedClass {
             System.out.println(indent2 + "Nested Classes: ");
             for (ExtractedClass e : getClasses()) {
                 System.out.println(indent2 + "-----------");
-                e.printClass( depth + 1);
+                e.printClass(depth + 1);
                 System.out.println(indent2 + "-----------");
             }
         }
     }
 
 
-    //Setters And Getters
+    /** Setters And Getters */
+
     public String getClassPath() {
         return classPath;
     }

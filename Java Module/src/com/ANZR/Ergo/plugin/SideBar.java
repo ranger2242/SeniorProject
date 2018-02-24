@@ -50,17 +50,17 @@ public class SideBar extends JPanel {
     }
 
     public void setIfButtonIsEnabled(){
-        if (parent.getPreviousFolder().isEmpty())
+        if (parent.getPreviousDirectoryElement().isEmpty())
             previousButton.setEnabled(false);
         else
             previousButton.setEnabled(true);
 
-        if(parent.getCurrentFolder().isClass())
+        if(parent.getCurrentDirectoryElement().isClass())
             nextButton.setEnabled(false);
         else
             nextButton.setEnabled(true);
 
-        for (Folder f :parent.getCurrentFolder().getFolders()){
+        for (DirectoryElement f :parent.getCurrentDirectoryElement().getChildElements()){
             sourceButton.setEnabled(false);
             if(f.isClass()){
                 sourceButton.setEnabled(true);
@@ -71,16 +71,16 @@ public class SideBar extends JPanel {
     }
 
     private void setButtons() {
-        rootButton = createButton("Go To Root Folder",
+        rootButton = createButton("Go To Root DirectoryElement",
                 IconLoader.getIcon("/icons/root.png"),
                 e -> returnToRootFolder());
 
-        previousButton = createButton("Previous Folder",
+        previousButton = createButton("Previous DirectoryElement",
                 IconLoader.getIcon("/icons/back.png"),
                 e -> previousFolder());
         previousButton.setEnabled(false);
 
-        nextButton = createButton("Enter Selected Folder",
+        nextButton = createButton("Enter Selected DirectoryElement",
                 IconLoader.getIcon("/icons/into.png"),
                 e -> nextFolder());
 
@@ -100,22 +100,22 @@ public class SideBar extends JPanel {
     }
 
     private void returnToRootFolder(){
-        parent.getTable().setTableModel(parent.getRootFolder());
-        parent.setCurrentFolder(parent.getRootFolder());
-        parent.getPreviousFolder().clear();
+        parent.getTable().setTableModel(parent.getRootDirectoryElement());
+        parent.setCurrentDirectoryElement(parent.getRootDirectoryElement());
+        parent.getPreviousDirectoryElement().clear();
         setIfButtonIsEnabled();
     }
 
     private void previousFolder(){
-        if (!parent.getPreviousFolder().empty()){
-            parent.setCurrentFolder(parent.getPreviousFolder().pop());
-            parent.getTable().setTableModel(parent.getCurrentFolder());
+        if (!parent.getPreviousDirectoryElement().empty()){
+            parent.setCurrentDirectoryElement(parent.getPreviousDirectoryElement().pop());
+            parent.getTable().setTableModel(parent.getCurrentDirectoryElement());
         }
         setIfButtonIsEnabled();
     }
 
     private void nextFolder(){
-        if (!parent.getCurrentFolder().isClass())
+        if (!parent.getCurrentDirectoryElement().isClass())
             parent.createModel(parent.getTable().getRow());
         setIfButtonIsEnabled();
     }
@@ -126,14 +126,14 @@ public class SideBar extends JPanel {
 
         if (currentHeader.equals(headerID)){
             // We are inside the class.
-            if (parent.getCurrentFolder().isClass()){
-                VirtualFile virtualFile  = parent.getCurrentFolder().getVirtualFile();
+            if (parent.getCurrentDirectoryElement().isClass()){
+                VirtualFile virtualFile  = parent.getCurrentDirectoryElement().getVirtualFile();
                 new OpenFileDescriptor(parent.getProject(), virtualFile).navigate(true);
             }
         }else{
             int index = parent.getTable().getRow();
             String className = (String) parent.getTable().getModel().getValueAt(index, 0);
-            Folder file =  parent.getCurrentFolder().getFolders().stream().filter(x->x.getName().equals(className)).collect(Collectors.toList()).get(0);
+            DirectoryElement file =  parent.getCurrentDirectoryElement().getChildElements().stream().filter(x->x.getName().equals(className)).collect(Collectors.toList()).get(0);
 
             if (file.isClass()){
                 VirtualFile virtualFile  = file.getVirtualFile();

@@ -13,9 +13,9 @@ public class ErgoToolWindow implements ToolWindowFactory {
     private SideBar sideBar = new SideBar(this);
     private Table table;
     private JLabel errorLabel = new JLabel();
-    private Folder rootFolder;
-    private Folder currentFolder;
-    private Stack<Folder> previousFolder = new Stack<>();
+    private DirectoryElement rootDirectoryElement;
+    private DirectoryElement currentDirectoryElement;
+    private Stack<DirectoryElement> previousDirectoryElement = new Stack<>();
     private Project project;
 
 
@@ -25,20 +25,20 @@ public class ErgoToolWindow implements ToolWindowFactory {
 
 
 
-    public void populateToolWindow(ToolWindow toolWindow, Folder rootFolder, Project project) {
-        this.rootFolder = rootFolder;
-        this.currentFolder = rootFolder;
+    public void populateToolWindow(ToolWindow toolWindow, DirectoryElement rootDirectoryElement, Project project) {
+        this.rootDirectoryElement = rootDirectoryElement;
+        this.currentDirectoryElement = rootDirectoryElement;
         this.project = project;
 
         //Setup Side Bar
         contentWindow.add(sideBar, BorderLayout.LINE_START);
         //Setup Table
         table = new Table(this);
-        table.setTableModel(currentFolder);
+        table.setTableModel(currentDirectoryElement);
         contentWindow.add(new JScrollPane(table));
         contentWindow.add(table.getTableHeader(), BorderLayout.EAST);
 
-        Content content = contentFactory.createContent(contentWindow, "- " + rootFolder.getName(), false);
+        Content content = contentFactory.createContent(contentWindow, "- " + rootDirectoryElement.getName(), false);
         toolWindow.getContentManager().removeAllContents(true);
         toolWindow.getContentManager().addContent(content);
         toolWindow.show(null);
@@ -55,10 +55,10 @@ public class ErgoToolWindow implements ToolWindowFactory {
     }
 
     public void createModel(int rows) {
-        if (previousFolder.isEmpty() || !currentFolder.isClass()){
-            previousFolder.push(currentFolder);
-            currentFolder = currentFolder.getFolders().get(rows);
-            table.setTableModel(currentFolder);
+        if (previousDirectoryElement.isEmpty() || !currentDirectoryElement.isClass()){
+            previousDirectoryElement.push(currentDirectoryElement);
+            currentDirectoryElement = currentDirectoryElement.getChildElements().get(rows);
+            table.setTableModel(currentDirectoryElement);
         }
         sideBar.setIfButtonIsEnabled();
     }
@@ -69,20 +69,20 @@ public class ErgoToolWindow implements ToolWindowFactory {
         return table;
     }
 
-    public Folder getCurrentFolder() {
-        return currentFolder;
+    public DirectoryElement getCurrentDirectoryElement() {
+        return currentDirectoryElement;
     }
 
-    public Stack<Folder> getPreviousFolder() {
-        return previousFolder;
+    public Stack<DirectoryElement> getPreviousDirectoryElement() {
+        return previousDirectoryElement;
     }
 
-    public Folder getRootFolder() {
-        return rootFolder;
+    public DirectoryElement getRootDirectoryElement() {
+        return rootDirectoryElement;
     }
 
-    public void setCurrentFolder(Folder currentFolder) {
-        this.currentFolder = currentFolder;
+    public void setCurrentDirectoryElement(DirectoryElement currentDirectoryElement) {
+        this.currentDirectoryElement = currentDirectoryElement;
     }
 
 }

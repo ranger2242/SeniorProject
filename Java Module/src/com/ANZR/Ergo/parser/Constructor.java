@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 class Constructor {
 
-    private ArrayList<Variable> params = new ArrayList<>();
+    private ArrayList<Variable> parameters = new ArrayList<>();
     private ConstructorDeclaration constructorDeclaration;
 
 
@@ -18,19 +18,34 @@ class Constructor {
 
         for (Parameter p : constructorDeclaration.getParameters()) {
             VariableDeclarator v = new VariableDeclarator(p.getType(), p.getName());
-            params.add(new Variable(v, p.getModifiers()));
+            parameters.add(new Variable(v, p.getModifiers()));
         }
 
     }
 
+    public String getDescription() {
+        StringBuilder a = new StringBuilder(constructorDeclaration.getName().asString() + "(");
 
-    //Setters And Getters
-    public ArrayList<Variable> getParams() {
-        return params;
+
+        if (parameters.size() > 0) {
+            a.append(parameters.get(0).type).append(" ").append(parameters.get(0).name);
+            for (int i = 1; i < parameters.size(); i++) {
+                a.append(", ").append(parameters.get(i).type).append(" ").append(parameters.get(i).name);
+            }
+        }
+
+        a.append(")");
+        return a.toString();
     }
 
-    public void setParams(ArrayList<Variable> params) {
-        this.params = params;
+    /** Setters And Getters */
+
+    public ArrayList<Variable> getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(ArrayList<Variable> parameters) {
+        this.parameters = parameters;
     }
 
     public ConstructorDeclaration getConstructorDeclaration() {
@@ -41,20 +56,5 @@ class Constructor {
         this.constructorDeclaration = constructorDeclaration;
     }
 
-    public String getDescription() {
-        StringBuilder a = new StringBuilder(constructorDeclaration.getName().asString() + "(");
-
-
-        if ( params.size() > 0 ){
-            a.append(params.get(0).type).append(" ").append(params.get(0).name);
-            for (int i = 1; i < params.size(); i++) {
-                a.append(", ").append(params.get(i).type).append(" ").append(params.get(i).name);
-            }
-        }
-
-
-        a.append(")");
-        return a.toString();
-    }
 
 }

@@ -12,25 +12,25 @@ import java.util.List;
  */
 public class Enum {
 
-    private String name = "";
-    private EnumDeclaration dec = new EnumDeclaration();
+    private String name;
+    private EnumDeclaration dec;
 
-    public Enum( EnumDeclaration dec) {
+    Enum(EnumDeclaration dec) {
         this.name = dec.getNameAsString();
         this.dec = dec;
     }
 
-    public void print(String s2) {
-        StringBuilder mod= new StringBuilder();
-        for(Modifier m : dec.getModifiers()){
+    public void print(String tab) {
+        StringBuilder mod = new StringBuilder();
+        for (Modifier m : dec.getModifiers()) {
             mod.append(m.asString()).append(" ");
         }
-        Logger.out(s2 +mod+ name+":");
+        Logger.out(tab + mod + name + ":");
     }
 
 
-    //Setters And Getters
-    public List<String> getTypes(){
+    /** Setters And Getters */
+    public List<String> getTypes() {
         List<String> e = new ArrayList<>();
         dec.getEntries().forEach(x -> e.add(x.getName().asString()));
         return e;

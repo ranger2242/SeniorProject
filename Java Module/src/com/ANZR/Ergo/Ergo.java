@@ -5,21 +5,17 @@ import com.ANZR.Ergo.io.FileHandler;
 import com.ANZR.Ergo.io.Logger;
 import com.ANZR.Ergo.io.Pipeline;
 import com.ANZR.Ergo.parser.*;
-import com.ANZR.Ergo.plugin.ErgoButton;
-import com.ANZR.Ergo.plugin.Folder;
+import com.ANZR.Ergo.plugin.DirectoryElement;
 import com.ANZR.Ergo.plugin.LoadingBarWindow;
 import com.ANZR.Ergo.transformer.Transformer;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.intellij.openapi.project.Project;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
-
-/**
- * Created by Chris Cavazos on 10/1/2017.
- */
 
 
 @SuppressWarnings("ALL")
@@ -28,24 +24,35 @@ public class Ergo {
     public final static String div = "-----------------------------------------------";
     private boolean trainingMode = false;
     private LoadingBarWindow progressBar;
-    private ErgoButton ergoButton;
+    private Project project;
+    DirectoryElement tableData = null;
 
-
-    public Ergo(ErgoButton button){
-        this.ergoButton = button;
+    /**
+     * Create an instance of Ergo
+     *
+     * @param project This refernce is used to create the data stucture for the table
+     */
+    public Ergo(Project project) {
+        this.project = project;
     }
 
-    public void run(String[] sourceFolderPaths, LoadingBarWindow loadingBarWindow){
+    /**
+     * Begin Ergo execution
+     *
+     * @param sourceFolderPaths The folder paths that contain the java files that Ergo will anaylze
+     * @param loadingBarWindow  A loading bar to give the user a visual on the process of execution
+     */
+    public void run(String[] sourceFolderPaths, LoadingBarWindow loadingBarWindow) {
 
-        if(trainingMode){
+        if (trainingMode) {
             runErgoTrainingMode();
-        }else{
+        } else {
             progressBar = loadingBarWindow;
             runErgoClient(sourceFolderPaths);
         }
     }
 
-    private void runErgoTrainingMode(){
+    private void runErgoTrainingMode() {
 
         String path = "";
 
@@ -56,18 +63,18 @@ public class Ergo {
         BufferedWriter writer = FileHandler.setupFileWriter(fileName);
 
 
-        Logger.slog("Loading path: "+ path);
+        Logger.slog("Loading path: " + path);
 
         int batchSize = 5;
         FileHandler fileHandler = new FileHandler(batchSize, path);
 
         int batchNumber = 1;
-        while ( fileHandler.hasNext() ){
+        while (fileHandler.hasNext()) {
 
             System.out.println(div);
             Logger.slog("Batch: " + batchNumber + " - Batches Left: " + fileHandler.batchesLeft());
-            ArrayList<ExtractedDir> directories = fileHandler.nextBatch();
-            if(directories.size() == 0){
+            ArrayList<ExtractedDirectory> directories = fileHandler.nextBatch();
+            if (directories.size() == 0) {
                 Logger.slog("No directories found... Loading next batch");
                 batchNumber++;
                 continue;
@@ -81,29 +88,33 @@ public class Ergo {
 
 
             ArrayList<Object[][][]> matrices = new ArrayList<>();
-            for(int i = 0; i < projectClassData.parsedClasses.size();i++ ){
+            for (int i = 0; i < projectClassData.parsedClasses.size(); i++) {
                 Transformer transformer = new Transformer(projectClassData.parsedClasses.get(i), projectClassData.globalEnums.get(i));
                 matrices.add(transformer.transform());
             }
-            try{
+            try {
                 FileHandler.writeToCSV(writer, matrices, directories);
                 Logger.slog("Data writen to CSV file");
-            }catch (IOException e){e.printStackTrace();}
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             Logger.slog("Batch Complete");
             batchNumber++;
         }
 
-        try{
+        try {
             writer.close();
-        }catch (IOException e){e.printStackTrace();}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private void runErgoClient(String[] sourceFolderPaths){
+    private void runErgoClient(String[] sourceFolderPaths) {
 
         FileHandler fileHandler = new FileHandler(sourceFolderPaths);
-        ExtractedDir[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
+        ExtractedDirectory[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
 
         progressBar.updateLoadingBar("Parsing classes...", 20);
         Logger.slog("Parsing classes...");
@@ -122,17 +133,15 @@ public class Ergo {
         pipeline.sendToServer(json);
 
 
-
     }
 
-    Folder tableData = null;
+    public void interpretData(JsonElement data) {
+        progressBar.updateLoadingBar("Generating results...", 90);
+        tableData = DataLoader.getAssociatedPatterns(project, data);
+    }
 
-    public Folder getTableData(){
+    public DirectoryElement getTableData() {
         return tableData;
     }
 
-    public void interpretData(JsonElement data){
-        progressBar.updateLoadingBar("Generating results...", 90);
-        tableData = DataLoader.getAssociatedPatterns(ergoButton.getRootFolder(),data);
-    }
 }

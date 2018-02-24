@@ -6,24 +6,23 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import io.socket.client.IO;
 import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
+
 import static com.ANZR.Ergo.io.Logger.slog;
+
 import java.net.*;
-import java.util.*;
 
 
 public class Pipeline {
 
     private static Socket socket;
-    private static String ip= "localhost";
+    private static String ip = "localhost";
     private static String port = "2242";
-    private static String dir = "http://" + ip + ":" + port;
-    private static String clientID;
+    private static String serverAddress = "http://" + ip + ":" + port;
     private static boolean serverIsReady = false;
     private Ergo ergo;
 
 
-    enum Codes{
+    enum Codes {
         CONNECTED("CONNECTED"),
         SENDCLIENT("SEND-CLIENT"),
         ID("ID"),
@@ -41,12 +40,12 @@ public class Pipeline {
         }
     }
 
-    enum RecievedCodes{
+    enum ReceivedCodes {
         RESULTS("RESULTS"),
         RECEIVED("RECEIVED");
         private final String text;
 
-        RecievedCodes(final String text) {
+        ReceivedCodes(final String text) {
             this.text = text;
         }
 
@@ -57,11 +56,16 @@ public class Pipeline {
     }
 
 
-    public Pipeline(Ergo ergo){
+    /**
+     * Create a new pipeline and attempt to connect to the Ergo Server
+     *
+     * @param ergo A reference to Ergo to return the data when the server sends the results back
+     */
+    public Pipeline(Ergo ergo) {
         this.ergo = ergo;
 
         try {
-            slog("Connecting to " + dir);
+            slog("Connecting to " + serverAddress);
             connectSocket();
         } catch (URISyntaxException e) {
             slog("Failed to connect");
@@ -69,7 +73,75 @@ public class Pipeline {
         }
     }
 
-    public static void setShutdownOperations(){
+
+    /**
+     * Attempt to send message to server, will timeout after 15 seconds
+     *
+     * @param data The data to send to the server in JSON format
+     */
+    public static void sendToServer(String data) {
+
+        for (int i = 0; i < 15; i++) {
+            if (serverIsReady) {
+                socket.emit("SEND-PYTHON", data);
+                slog("Data Sent To Server");
+                return;
+            } else {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    slog("Error happened while waiting for server to connect...");
+                }
+            }
+        }
+        slog("Message to server timed out...");
+    }
+
+    private void connectSocket() throws URISyntaxException {
+        socket = IO.socket(serverAddress);
+
+        //on connect
+        socket.on(io.socket.client.Socket.EVENT_CONNECT, args -> {
+        });
+
+        socket.on("CONNECTED", args -> {
+            slog("Connected to server");
+            serverIsReady = true;
+        });
+
+        socket.on("ID", args -> socket.emit("ID", 0));
+
+        socket.on(Codes.SENDCLIENT.toString(), args -> {
+            slog("Data Recieved: ");
+            Gson gson = new Gson();
+            JsonElement element = gson.fromJson((String) args[0], JsonElement.class);
+            JsonObject jsonObj = element.getAsJsonObject();
+
+            String key = jsonObj.keySet().iterator().next();
+            JsonElement data = jsonObj.get(key);
+
+            if (ReceivedCodes.RECEIVED.toString().equals(key)) {
+                if (data.getAsString().toLowerCase().equals("true")) {
+                    slog("Server Received data...");
+                } else {
+                    slog("Error: Server failed to received data...");
+                }
+            } else if (ReceivedCodes.RESULTS.toString().equals(key)) {
+                ergo.interpretData(data);
+            } else {
+                slog("UNKNOWN RECEIVE CODE FOUND...");
+            }
+        });
+
+        socket.on(io.socket.client.Socket.EVENT_DISCONNECT, args -> {
+            slog("Disconnected from server");
+            serverIsReady = false;
+        });
+
+        socket.connect();
+    }
+
+    public static void setShutdownOperations() {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
@@ -78,148 +150,4 @@ public class Pipeline {
             }
         });
     }
-
-    public static void sendToServer(String data){
-        //Attempt to send message to server, will timeout after 15 seconds
-        for(int i = 0; i < 15; i++){
-            if(serverIsReady){
-                socket.emit("SEND-PYTHON", data);
-                slog("Data Sent To Server");
-                return;
-            } else {
-                try {
-                    Thread.sleep(1000);
-                } catch(InterruptedException ex) {
-                    slog("Error happened while waiting for server to connect...");
-                }
-            }
-        }
-        slog("Message to server timed out...");
-    }
-
-    public void connectSocket() throws URISyntaxException {
-        socket = IO.socket(dir);
-
-        socket.on(io.socket.client.Socket.EVENT_CONNECT, new Emitter.Listener() {//on connect
-            @Override
-            public void call(Object... args) {
-            }
-
-        });
-
-        socket.on("CONNECTED", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                slog("Connected to server");
-                clientID = (String) args[0];
-                serverIsReady = true;
-            }
-        });
-
-        socket.on("ID", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                socket.emit("ID", 0);
-            }
-        });
-
-
-
-        socket.on(Codes.SENDCLIENT.toString(), new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-
-
-
-                slog("Data Recieved: ");
-
-                Gson gson = new Gson();
-                JsonElement element = gson.fromJson ((String) args[0], JsonElement.class);
-                JsonObject jsonObj = element.getAsJsonObject();
-
-
-                String type = jsonObj.keySet().iterator().next();
-                JsonElement data = jsonObj.get(type);
-
-                if( RecievedCodes.RECEIVED.toString().equals(type)){
-                    if(data.getAsString().toLowerCase().equals("true")){
-                        slog("Server Received data...");
-                    }else{
-                        slog("Error: Server failed to received data...");
-                    }
-                }else if( RecievedCodes.RESULTS.toString().equals(type)){
-                    ergo.interpretData(data);
-                }else{
-                    slog("UNKNOWN RECEIVE CODE FOUND...");
-                }
-            }
-        });
-
-        socket.on(io.socket.client.Socket.EVENT_DISCONNECT, new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                slog("Disconnected from server");
-                serverIsReady = false;
-            }
-        });
-
-        socket.connect();
-    }
-
-    public static void viewIP() {
-        try {
-            Logger.out("Your Host addr: " + InetAddress.getLocalHost().getHostAddress());  // often returns "127.0.0.1"
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        Enumeration<NetworkInterface> n = null;
-        try {
-            n = NetworkInterface.getNetworkInterfaces();
-        } catch (SocketException e) {
-            e.printStackTrace();
-        }
-        for (; n.hasMoreElements(); ) {
-            NetworkInterface e = n.nextElement();
-
-            Enumeration<InetAddress> a = e.getInetAddresses();
-            for (; a.hasMoreElements(); ) {
-                InetAddress addr = a.nextElement();
-                Logger.out("  " + addr.getHostAddress());
-            }
-        }
-    }
-
-    public static boolean validIP(String ip) {
-        try {
-            if (ip == null || ip.isEmpty()) {
-                return false;
-            }
-
-            String[] parts = ip.split("\\.");
-            if (parts.length != 4) {
-                return false;
-            }
-
-            for (String s : parts) {
-                int i = Integer.parseInt(s);
-                if ((i < 0) || (i > 255)) {
-                    return false;
-                }
-            }
-            if (ip.endsWith(".")) {
-                return false;
-            }
-
-            return true;
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-    }
-
-
-
-
-
-
-
 }

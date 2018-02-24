@@ -16,12 +16,11 @@ public class Table extends JBTable {
     private ErgoToolWindow parent;
     private boolean wasDoubleClick;
     private int row;
-
     private static final String[] classTableHeader = {"Anti-Pattern", "Found"};
     private static final String[] folderTableHeader = {"Element", "Anti-Patterns Found"};
 
 
-    Table(ErgoToolWindow parent){
+    Table(ErgoToolWindow parent) {
         super();
         this.parent = parent;
         setFillsViewportHeight(true);
@@ -31,18 +30,22 @@ public class Table extends JBTable {
             public void mouseClicked(MouseEvent e) {
                 click(e);
             }
+
             @Override
             public void mousePressed(MouseEvent e) {
 
             }
+
             @Override
             public void mouseReleased(MouseEvent e) {
 
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
 
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
 
@@ -52,30 +55,30 @@ public class Table extends JBTable {
 
     }
 
-    public void setTableModel(Folder folder) {
-        if(folder.isClass())
-            setClassModel(folder);
+    public void setTableModel(DirectoryElement directoryElement) {
+        if (directoryElement.isClass())
+            setClassModel(directoryElement);
         else
-            setFolderModel(folder);
+            setFolderModel(directoryElement);
     }
 
-    private void setFolderModel(Folder folder){
-        ArrayList<Folder> folders = folder.getFolders();
-        Object[][] temp = new Object[folders.size()][folderTableHeader.length];
-        for (int i = 0; i < folders.size(); i++) {
-            if(folders.get(i).getName() != null)
-                temp[i][0] = folders.get(i).getName();
+    private void setFolderModel(DirectoryElement directoryElement) {
+        ArrayList<DirectoryElement> directoryElements = directoryElement.getChildElements();
+        Object[][] temp = new Object[directoryElements.size()][folderTableHeader.length];
+        for (int i = 0; i < directoryElements.size(); i++) {
+            if (directoryElements.get(i).getName() != null)
+                temp[i][0] = directoryElements.get(i).getName();
             else temp[i][0] = "null";
-            temp[i][1] = folders.get(i).getAntiPatterns().size() + Folder.getAntiPatternCount(folders.get(i).getFolders());
+            temp[i][1] = directoryElements.get(i).getAntiPatterns().size() + DirectoryElement.getAntiPatternCount(directoryElements.get(i).getChildElements());
         }
         setModel(new DefaultTableModel(temp, folderTableHeader));
     }
 
-    private void setClassModel(Folder folder){
-        ArrayList<AntiPattern > antiPatterns = folder.getAntiPatterns();
+    private void setClassModel(DirectoryElement directoryElement) {
+        ArrayList<AntiPattern> antiPatterns = directoryElement.getAntiPatterns();
         Object[][] temp = new Object[antiPatterns.size()][classTableHeader.length];
         for (int i = 0; i < antiPatterns.size(); i++) {
-            if(antiPatterns.get(i).getName() != null)
+            if (antiPatterns.get(i).getName() != null)
                 temp[i][0] = antiPatterns.get(i).getName();
             else temp[i][0] = "null";
             temp[i][1] = antiPatterns.get(i).getNumberFound();
@@ -89,7 +92,7 @@ public class Table extends JBTable {
         return false;
     }
 
-    private void click(MouseEvent e){
+    private void click(MouseEvent e) {
         if (e.getClickCount() == 2) {
             wasDoubleClick = true;
         } else {
@@ -109,7 +112,7 @@ public class Table extends JBTable {
 
     public Component prepareRenderer(TableCellRenderer cellRenderer, int rows, int columns) {
         Component component = super.prepareRenderer(cellRenderer, rows, columns);
-        if(UIUtil.isUnderDarcula()) {
+        if (UIUtil.isUnderDarcula()) {
             if (!getValueAt(rows, 1).equals(0)) {
                 component.setBackground(new Color(140, 64, 64));
                 component.setForeground(Color.BLACK);
@@ -117,7 +120,7 @@ public class Table extends JBTable {
                 component.setBackground(Color.DARK_GRAY);
                 component.setForeground(Color.LIGHT_GRAY);
             }
-        }else {
+        } else {
             if (!getValueAt(rows, 1).equals(0)) {
                 component.setBackground(new Color(255, 220, 220));
                 component.setForeground(Color.BLACK);

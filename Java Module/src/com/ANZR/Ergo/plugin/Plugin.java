@@ -1,7 +1,6 @@
 package com.ANZR.Ergo.plugin;
 
 import com.ANZR.Ergo.Ergo;
-import com.ANZR.Ergo.io.DataLoader;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectRootManager;
@@ -12,66 +11,55 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import javax.swing.*;
 import java.util.Arrays;
 
-public class ErgoButton extends AnAction {
+public class Plugin extends AnAction {
 
     private LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
     private Timer timer;
-    private Folder rootFolder = new Folder();
-    private Project project;
-    private VirtualFile[] files;
-    private ToolWindow toolWindow;
 
+    /**
+     * The Ergo Button was pressed. The plugin will begin to execute
+     *
+     * @param e This will provide the project data need to begin processing
+     */
     @Override
     public void actionPerformed(AnActionEvent e) {
 
         loadingBarWindow.updateLoadingBar("Loading Project", 0);
         loadingBarWindow.show();
 
-        project = e.getData(LangDataKeys.PROJECT);
-        toolWindow= ToolWindowManager.getInstance(project).getToolWindow("Ergo");
-        files = ProjectRootManager.getInstance(project).getContentSourceRoots();
-        rootFolder = DataLoader.loadProjectFolder(project.getName(), files);
-        Ergo ergo = new Ergo(this);
+        Project project = e.getData(LangDataKeys.PROJECT);
+        Ergo ergo = new Ergo(project);
 
         new Thread(() -> {
+            VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
             String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(), files.length, String[].class);
             ergo.run(sourceRoots, loadingBarWindow);
         }).start();
 
         timer = new Timer(100, e1 -> {
-            if(ergo.getTableData() != null)
-                createToolWindowAndHideLoadingBar(toolWindow, project);
+            DirectoryElement tableData = ergo.getTableData();
+            if (tableData != null)
+                createToolWindowAndHideLoadingBar(project, tableData);
         });
         timer.setRepeats(true);
         timer.start();
 
-
     }
 
-    private void createToolWindowAndHideLoadingBar(ToolWindow toolWindow, Project project){
+    /**
+     * Once processing is done, this will create the Ergo side window to display anti-patterns
+     *
+     * @param project The intellij project data structure
+     */
+    private void createToolWindowAndHideLoadingBar(Project project, DirectoryElement rootDirectoryElement) {
+        ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         ErgoToolWindow tool = new ErgoToolWindow();
-        tool.populateToolWindow(toolWindow, rootFolder, project);
+        tool.populateToolWindow(toolWindow, rootDirectoryElement, project);
         loadingBarWindow.updateLoadingBar("Complete...", 100);
         Timer t = new Timer(100, e2 -> loadingBarWindow.closeFrame());
         t.setRepeats(false);
         t.start();
         timer.stop();
-    }
-
-    public Folder getRootFolder() {
-        return rootFolder;
-    }
-
-    public Project getProject() {
-        return project;
-    }
-
-    public VirtualFile[] getFiles() {
-        return files;
-    }
-
-    public void setRootFolder(Folder folder) {
-        rootFolder = folder;
     }
 
     @Override

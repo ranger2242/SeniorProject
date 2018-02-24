@@ -1,9 +1,11 @@
 package com.ANZR.Ergo.io;
 
 import com.ANZR.Ergo.plugin.AntiPattern;
-import com.ANZR.Ergo.plugin.Folder;
+import com.ANZR.Ergo.plugin.DirectoryElement;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 
 import java.io.IOException;
@@ -12,32 +14,49 @@ import java.nio.file.Paths;
 
 public class DataLoader {
 
+
     private static final String[] antiPatternNames = {"God Object", "Long Method"};
 
-    public static Folder loadProjectFolder(String folderName, VirtualFile[] sourceFolders) {
-        Folder buildFolder = new Folder(folderName);
+    /**
+     * Loads a Project data structure to be used to file the Ergo table
+     *
+     * @param project An intellij SDK data structure used to load the project
+     * @return Project data structure to be used to file the Ergo table
+     */
+    public static DirectoryElement loadProjectFolder(Project project) {
+        VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
+        return loadProjectFolder(project.getName(), files);
+    }
+
+    public static DirectoryElement loadProjectFolder(String folderName, VirtualFile[] sourceFolders) {
+        DirectoryElement buildDirectoryElement = new DirectoryElement(folderName);
 
         for (VirtualFile file : sourceFolders) {
 
             if (file.getFileType().getName().equals("JAVA")) {
-                buildFolder.addFolder(new Folder(file.getName(), file));
+                buildDirectoryElement.addFolder(new DirectoryElement(file.getName(), file));
             } else if (file.isDirectory()) {
-                Folder childFolder = loadProjectFolder(file.getName(), file.getChildren());
-                buildFolder.addFolder(childFolder);
+                DirectoryElement childDirectoryElement = loadProjectFolder(file.getName(), file.getChildren());
+                buildDirectoryElement.addFolder(childDirectoryElement);
             } else {
                 ///File was not a directory or Java file.
             }
         }
 
-        return buildFolder;
+        return buildDirectoryElement;
     }
 
-    public static Folder getAssociatedPatterns(Folder folders, JsonElement data) {
-        //Cycle through classes
-        for (Folder folder : folders.getFolders()) {
+    public static DirectoryElement getAssociatedPatterns(Project project, JsonElement data) {
+        DirectoryElement folders = loadProjectFolder(project);
+        return getAssociatedPatterns(folders, data);
+    }
 
-            if (folder.isDirectory()) {
-                getAssociatedPatterns(folder, data);
+    public static DirectoryElement getAssociatedPatterns(DirectoryElement folders, JsonElement data) {
+        //Cycle through classes
+        for (DirectoryElement directoryElement : folders.getChildElements()) {
+
+            if (directoryElement.isDirectory()) {
+                getAssociatedPatterns(directoryElement, data);
                 continue;
             }
 
@@ -50,8 +69,8 @@ public class DataLoader {
                 for (JsonElement jsonElement : patterns) {
                     JsonArray array = jsonElement.getAsJsonArray();
                     int result = array.get(0).getAsInt();
-                    if(classesAreSame(array, folder) && result != 0)
-                        folder.addAntiPattern(new AntiPattern(antiPatternNames[i], result));
+                    if (classesAreSame(array, directoryElement) && result != 0)
+                        directoryElement.addAntiPattern(new AntiPattern(antiPatternNames[i], result));
                 }
             }
         }
@@ -60,12 +79,18 @@ public class DataLoader {
     }
 
 
-    /** Checks if class of a folder and json array point to same class */
-    private static boolean classesAreSame(JsonArray array, Folder folder){
+    /**
+     * Checks if class of a directoryElement and json array point to same class
+     *
+     * @param array            A Json array retrived from the Ergo Server
+     * @param directoryElement A Java file
+     * @return A boolean that indicated if the array and Java file are a match
+     */
+    private static boolean classesAreSame(JsonArray array, DirectoryElement directoryElement) {
         String jsonClassName = array.get(1).getAsString() + ".java";
         String jsonClassPath = array.get(2).getAsString();
-        String className = folder.getVirtualFile().getName();
-        String classPath = folder.getVirtualFile().getPath();
+        String className = directoryElement.getVirtualFile().getName();
+        String classPath = directoryElement.getVirtualFile().getPath();
 
         try {
             boolean isSamePath = Files.isSameFile(Paths.get(jsonClassPath), Paths.get(classPath));

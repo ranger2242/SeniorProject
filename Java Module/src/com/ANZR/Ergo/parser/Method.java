@@ -11,6 +11,7 @@ import com.github.javaparser.ast.expr.FieldAccessExpr;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -20,20 +21,19 @@ public class Method {
 
     private String name;
     private String type;
-    private ArrayList<Variable> params = new ArrayList<>();
-    private ArrayList<Variable> instanceVars = new ArrayList<>();
-    private ArrayList<Expression> ops= new ArrayList<>();
-    private MethodDeclaration md = null;
+    private ArrayList<Variable> parameters;
+    private ArrayList<Variable> instanceVariables;
+    private ArrayList<Expression> operations;
+    private MethodDeclaration methodDeclaration;
 
-    public Method(MethodDeclaration method) {
+    Method(MethodDeclaration method) {
         this.name = method.getNameAsString();
         this.type = method.getType().asString();
-        this.params = extractParams(method);
-        this.instanceVars = extractInstance(method);
-        this.md = method;
-        parseOperations();
+        this.parameters = extractParams(method);
+        this.instanceVariables = extractInstance(method);
+        this.methodDeclaration = method;
+        this.operations = parseOperations();
     }
-
 
     private static ArrayList<Variable> extractInstance(MethodDeclaration m) {
 
@@ -69,38 +69,18 @@ public class Method {
 
     }
 
-    private void parseOperations() {
-        if (!md.getBody().isPresent()) {
-            return;
+    private ArrayList<Expression> parseOperations() {
+        if (!methodDeclaration.getBody().isPresent()) {
+            return new ArrayList<>();
         }
 
         ArrayList<Expression> calls = new ArrayList<>();
-        BlockStmt code = md.getBody().get();
+        BlockStmt code = methodDeclaration.getBody().get();
         for (Node s : code.getStatements()) {
             calls.addAll(lookThroughChildren(s));
         }
-        ops= calls;
+        return calls;
 
-        //Print stuff
-        /*Ergo.out(name);
-        for (Expression expression : calls) {
-
-            if (expression instanceof MethodCallExpr) {
-                MethodCallExpr methodCallExpr = expression.asMethodCallExpr();
-                String methodName = methodCallExpr.getNameAsString();
-                if (methodCallExpr.getScope().isPresent()) {
-                    String objectName = methodCallExpr.getScope().get().toString();
-                    Ergo.out("---" + objectName + "." + methodName + methodCallExpr.getArguments().toString());
-                } else {
-                    Ergo.out("---" + methodName + methodCallExpr.getArguments().toString());
-                }
-            }else if (expression instanceof FieldAccessExpr) {
-                FieldAccessExpr fieldAccessExpr = expression.asFieldAccessExpr();
-                Ergo.out("---"  + fieldAccessExpr.toString());
-            }
-
-        }
-*/
     }
 
     private ArrayList<Expression> lookThroughChildren(Node node) {
@@ -114,7 +94,7 @@ public class Method {
             }
         } else if (methodCallExpr != null) {
             expressions.add(methodCallExpr);
-        }else if (fieldAccessExpr != null)  {
+        } else if (fieldAccessExpr != null) {
             expressions.add(fieldAccessExpr);
         }
 
@@ -126,24 +106,24 @@ public class Method {
         String s2 = s1 + "\t";
 
         StringBuilder tag = new StringBuilder(String.join("", Collections.nCopies(depth, "\t")));
-        for (Modifier m : md.getModifiers()) {
+        for (Modifier m : methodDeclaration.getModifiers()) {
             tag.append(m.asString()).append(" ");
         }
         tag.append(type).append(" ").append(name);
         Logger.out(tag.toString());
-        if (params.size() > 0) {
+        if (parameters.size() > 0) {
             Logger.out(s1 + "Parameters:");
-            params.forEach(x -> Logger.out(s2 + x.toString()));
+            parameters.forEach(x -> Logger.out(s2 + x.toString()));
             Logger.out("");
         }
-        if (instanceVars.size() > 0) {
+        if (instanceVariables.size() > 0) {
             Logger.out(s1 + "Instance:");
-            instanceVars.forEach(x -> Logger.out(s2 + x.toString()));
+            instanceVariables.forEach(x -> Logger.out(s2 + x.toString()));
             Logger.out("");
         }
-        if (ops.size() > 0) {
+        if (operations.size() > 0) {
             Logger.out(s1 + "Operations:");
-            ops.forEach(x -> Logger.out(s2 + x));
+            operations.forEach(x -> Logger.out(s2 + x));
             Logger.out("");
 
         }
@@ -171,32 +151,32 @@ public class Method {
     }
 
     public ArrayList<Expression> getOperations() {
-        return ops;
+        return operations;
     }
 
     public MethodDeclaration getMethodDeclaration() {
-        return md;
+        return methodDeclaration;
     }
 
     public void printAlt() {
         String s = "";
-        EnumSet<Modifier> modifiers = md.getModifiers();
-        if (modifiers.contains(Modifier.PRIVATE) ) {
+        EnumSet<Modifier> modifiers = methodDeclaration.getModifiers();
+        if (modifiers.contains(Modifier.PRIVATE)) {
             s += "-";
         }
-        if( modifiers.contains(Modifier.PROTECTED)){
+        if (modifiers.contains(Modifier.PROTECTED)) {
             s += "#";
         }
-        if( modifiers.contains(Modifier.PUBLIC)){
+        if (modifiers.contains(Modifier.PUBLIC)) {
             s += "+";
         }
 
 
         s += name + "(";
-        for (int i = 0; i < params.size(); i++) {
-            Variable v = params.get(i);
+        for (int i = 0; i < parameters.size(); i++) {
+            Variable v = parameters.get(i);
             s += v.getType();
-            if (i < params.size() - 1) {
+            if (i < parameters.size() - 1) {
                 s += ", ";
             }
         }

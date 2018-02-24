@@ -10,45 +10,38 @@ public class Variable {
 
     String name;
     String type;
-    private EnumSet<Modifier> modifiers = null;
+    private EnumSet<Modifier> modifiers;
 
-    public Variable(VariableDeclarator variableDeclarator, EnumSet<Modifier> modifiers) {
+    Variable(VariableDeclarator variableDeclarator, EnumSet<Modifier> modifiers) {
         this.name = variableDeclarator.getNameAsString();
         this.type = variableDeclarator.getType().asString();
         this.modifiers = modifiers;
-    }
-
-    public void print(String s2) {
-        StringBuilder mod = new StringBuilder();
-        for (Modifier m : modifiers) {
-            mod.append(m.asString()).append(" ");
-        }
-        Logger.out(s2 + mod + toString());
-
     }
 
     public String toString() {
         return type + " " + name;
     }
 
-    //Setters And Getters
-    public String getName() {
-        return name;
-    }
-
-    public void printAlt(){
-        String s="";
-        if (modifiers.contains(Modifier.PRIVATE) ) {
+    public void print() {
+        String s = "";
+        if (modifiers.contains(Modifier.PRIVATE)) {
             s += "-";
         }
-        if( modifiers.contains(Modifier.PROTECTED)){
+        if (modifiers.contains(Modifier.PROTECTED)) {
             s += "#";
         }
-        if( modifiers.contains(Modifier.PUBLIC)){
+        if (modifiers.contains(Modifier.PUBLIC)) {
             s += "+";
         }
-        s+=name+":"+type;
+        s += name + ":" + type;
         Logger.out(s);
+    }
+
+
+    /** Setters And Getters */
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {

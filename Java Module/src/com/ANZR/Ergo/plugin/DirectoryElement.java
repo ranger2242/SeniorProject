@@ -1,31 +1,30 @@
 package com.ANZR.Ergo.plugin;
 
 import com.intellij.openapi.vfs.VirtualFile;
+
 import java.util.ArrayList;
 
-public class Folder {
+public class DirectoryElement {
     private String name;
-    private ArrayList<Folder> folders = new ArrayList<>();
+    private ArrayList<DirectoryElement> childElements = new ArrayList<>();
     private ArrayList<AntiPattern> antiPatterns = new ArrayList<>();
     private VirtualFile virtualFile = null;
 
-    public Folder() {}
-
-    public Folder(String name) {
+    public DirectoryElement(String name) {
         this.name = name;
     }
 
-    public Folder(String name,VirtualFile file) {
+    public DirectoryElement(String name, VirtualFile file) {
         this.name = name;
         this.virtualFile = file;
 //        addAntiPattern(new AntiPattern("god", .5));
     }
 
-    public void addFolder(Folder folder){
-        this.folders.add(folder);
+    public void addFolder(DirectoryElement directoryElement) {
+        this.childElements.add(directoryElement);
     }
 
-    public void addAntiPattern(AntiPattern pattern){
+    public void addAntiPattern(AntiPattern pattern) {
         this.antiPatterns.add(pattern);
     }
 
@@ -33,22 +32,18 @@ public class Folder {
         return name;
     }
 
-    public ArrayList<Folder> getFolders() {
-        return folders;
+    public ArrayList<DirectoryElement> getChildElements() {
+        return childElements;
     }
 
     public ArrayList<AntiPattern> getAntiPatterns() {
         return antiPatterns;
     }
 
-    public boolean isClass() {
-        return virtualFile != null;
-    }
-
-    public static int getAntiPatternCount(ArrayList<Folder> folder){
+    public static int getAntiPatternCount(ArrayList<DirectoryElement> directoryElement) {
         int temp = 0;
-        for (Folder f : folder) {
-            temp += (f.getAntiPatterns().size() + getAntiPatternCount(f.getFolders()));
+        for (DirectoryElement f : directoryElement) {
+            temp += (f.getAntiPatterns().size() + getAntiPatternCount(f.getChildElements()));
         }
         return temp;
     }
@@ -57,12 +52,12 @@ public class Folder {
         return virtualFile;
     }
 
-    public void setVirtualFile(VirtualFile virtualFile) {
-        this.virtualFile = virtualFile;
-    }
-
     public boolean isDirectory() {
         return virtualFile == null;
+    }
+
+    public boolean isClass() {
+        return virtualFile != null;
     }
 
 }

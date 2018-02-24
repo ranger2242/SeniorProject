@@ -2,7 +2,8 @@ package com.ANZR.Ergo.io;
 
 import com.ANZR.Ergo.parser.ExtractedClass;
 import com.ANZR.Ergo.parser.ProjectData;
-import com.ANZR.Ergo.plugin.Folder;
+import com.ANZR.Ergo.plugin.DirectoryElement;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,17 +16,17 @@ public class Logger {
 
     static boolean enabled=true;
 
-    public static void printProjectFiles(Folder root) {
+    public static void printProjectFiles(DirectoryElement root) {
         printFile(root, 0);
     }
 
-    private static void printFile(Folder folder, int numTab){
-        ArrayList<Folder> folders = folder.getFolders();
+    private static void printFile(DirectoryElement directoryElement, int numTab){
+        ArrayList<DirectoryElement> directoryElements = directoryElement.getChildElements();
 
-        if(folder.isClass())
-            System.out.println(getTabString(numTab) + "Class: " + folder.getName());
-        else System.out.println(getTabString(numTab) + folder.getName());
-        for (Folder f : folders) {
+        if(directoryElement.isClass())
+            System.out.println(getTabString(numTab) + "Class: " + directoryElement.getName());
+        else System.out.println(getTabString(numTab) + directoryElement.getName());
+        for (DirectoryElement f : directoryElements) {
             printFile(f, numTab + 1);
         }
     }
@@ -70,7 +71,7 @@ public class Logger {
 
     private void printClass(ExtractedClass e){
         Logger.out("class "+e.getName()+"{");
-        e.getVariables().forEach(x->x.printAlt());
+        e.getVariables().forEach(x->x.print());
         e.getMethods().forEach(x->x.printAlt());
         Logger.out("}\n");
     }

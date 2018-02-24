@@ -31,7 +31,7 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="GenerateErgoButton" class="com.ANZR.Ergo.plugin.ErgoButton" text="Ergo"
+    <action id="GenerateErgoButton" class="com.ANZR.Ergo.plugin.Plugin" text="Ergo"
             description="Run Ergo to find any anti-patterns"
             icon="/icons/button_image.png">
       <add-to-group group-id="ToolbarRunGroup" anchor="last"/>

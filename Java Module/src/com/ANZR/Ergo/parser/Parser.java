@@ -15,23 +15,32 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Parser {
 
     private ArrayList<ExtractedClass> extractedClasses = new ArrayList<>();
     private final ArrayList<Enum> globalEnums = new ArrayList<>();
 
-    private Parser(ExtractedDir dir) {
-        parseDirectory(dir);
+    /**
+     * Creates a new parser instance. If using the Ergo Client use Parser.ParseProject instead.
+     * This is used recursively to parse each directory
+     * @param directory The directory to parse
+     */
+    private Parser(ExtractedDirectory directory) {
+        parseDirectory(directory);
     }
 
-    public static ProjectData<Set<ExtractedClass>, Set<Enum>> parseProject(ExtractedDir[] directories){
+    /**
+     * Parses a project
+     * @param directories An array of source directories for the project
+     * @return A project data structure containing class and enum information
+     */
+    public static ProjectData<Set<ExtractedClass>, Set<Enum>> parseProject(ExtractedDirectory[] directories) {
         Set<ExtractedClass> classes = new LinkedHashSet<>();
         Set<Enum> globalEnums = new LinkedHashSet<>();
         ProjectData<Set<ExtractedClass>, Set<Enum>> projectData = new ProjectData<>(classes, globalEnums);
 
-        for (ExtractedDir directory : directories){
+        for (ExtractedDirectory directory : directories) {
             ProjectData<Set<ExtractedClass>, Set<Enum>> directoryData = parseClientDirectory(directory);
             projectData.parsedClasses.addAll(directoryData.parsedClasses);
             projectData.globalEnums.addAll(directoryData.globalEnums);
@@ -39,23 +48,23 @@ public class Parser {
         return projectData;
     }
 
-    public static ProjectData<Set<ExtractedClass>, Set<Enum>> parseClientDirectory(ExtractedDir directory){
-        Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
-        Set<Enum> globalEnums = new LinkedHashSet<>();
+    public static ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> parseDirectories(ArrayList<ExtractedDirectory> directories) {
+        ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
+        ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
+        for (ExtractedDirectory dir : directories) {
+            try {
+                Parser parser = new Parser(dir);
+                parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
+                globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
 
-        try {
-            Parser parser = new Parser(directory);
-            parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
-            globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
-
-        }catch (ParseProblemException e) {
-            Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
+            } catch (ParseProblemException e) {
+                Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
         }
-
-        return new ProjectData<>(parsedClasses,globalEnums);
+        return new ProjectData<>(parsedClasses, globalEnums);
     }
 
-    private void parseDirectory(ExtractedDir e) {
+    private void parseDirectory(ExtractedDirectory e) {
 
         for (String s : e.getClassPaths()) {
             System.out.println(s);
@@ -67,23 +76,21 @@ public class Parser {
         e.getPackages().forEach(this::parseDirectory);
     }
 
+    private static ProjectData<Set<ExtractedClass>, Set<Enum>> parseClientDirectory(ExtractedDirectory directory) {
+        Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
+        Set<Enum> globalEnums = new LinkedHashSet<>();
 
-    public static ProjectData<ArrayList<Set<ExtractedClass>>, ArrayList<Set<Enum>>> parseDirectories(ArrayList<ExtractedDir> directories){
-        ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
-        ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
-        for (ExtractedDir dir : directories) {
-            try {
-                Parser parser = new Parser(dir);
-                parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
-                globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
+        try {
+            Parser parser = new Parser(directory);
+            parsedClasses = new LinkedHashSet<>(parser.getExtractedClasses());
+            globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
 
-            }catch (ParseProblemException e) {
-                Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
-            }
+        } catch (ParseProblemException e) {
+            Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
-        return new ProjectData<>(parsedClasses,globalEnums);
-    }
 
+        return new ProjectData<>(parsedClasses, globalEnums);
+    }
 
     private ArrayList<ExtractedClass> parseCode(String dir) {
         String code = FileHandler.load(new File(dir));
@@ -109,7 +116,7 @@ public class Parser {
             System.out.println("PARSE ERROR: " + dir);
             //e.printStackTrace();
             return null;
-        }catch (StackOverflowError e) {
+        } catch (StackOverflowError e) {
             System.out.println("STACK OVERFLOW ERROR: " + dir);
             // e.printStackTrace();
             return null;
@@ -131,29 +138,12 @@ public class Parser {
         cid.getChildNodes().forEach(x -> Logger.out(x.getClass().toString()));
     }
 
-    private static String listToLine(ArrayList<String> code) {
-        StringBuilder in = new StringBuilder();
-
-        for (String line : code) {
-            in.append(line).append("\r\n");
-        }
-        return in.toString();
-    }
-
-    private static ArrayList<String> removeWhiteSpace(ArrayList<String> strings) {
-        return strings.stream().filter(x -> x.length() > 0).collect(Collectors.toCollection(ArrayList::new));
-    }
-
     //Setters And Getters
-    public ArrayList<ExtractedClass> getExtractedClasses() {
+    private ArrayList<ExtractedClass> getExtractedClasses() {
         return extractedClasses;
     }
 
-    public void setExtractedClasses(ArrayList<ExtractedClass> extractedClasses) {
-        this.extractedClasses = extractedClasses;
-    }
-
-    public ArrayList<Enum> getGlobalEnums() {
+    private ArrayList<Enum> getGlobalEnums() {
         return globalEnums;
     }
 
