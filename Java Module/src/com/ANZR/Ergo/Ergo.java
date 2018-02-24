@@ -1,6 +1,6 @@
 package com.ANZR.Ergo;
 
-import com.ANZR.Ergo.io.DataInterpreter;
+import com.ANZR.Ergo.io.DataLoader;
 import com.ANZR.Ergo.io.FileHandler;
 import com.ANZR.Ergo.io.Logger;
 import com.ANZR.Ergo.io.Pipeline;
@@ -27,11 +27,11 @@ public class Ergo {
     public final static String div = "-----------------------------------------------";
     private boolean trainingMode = false;
     private LoadingBarWindow progressBar;
-    private ErgoButton buttonClass;
+    private ErgoButton ergoButton;
 
 
     public Ergo(ErgoButton button){
-        this.buttonClass = button;
+        this.ergoButton = button;
     }
 
     public void run(String[] sourceFolderPaths, LoadingBarWindow loadingBarWindow){
@@ -125,17 +125,8 @@ public class Ergo {
     public void interpretData(JsonElement data){
 
         System.out.println(data.toString());
-
         progressBar.updateLoadingBar("Generating results...", 90);
 
-//        Results Something = DataInterpreter.interpret(data);
-//
-//        buttonClass.setResults(some);
-
-
-
-
+        ergoButton.setRootFolder(DataLoader.getAssociatedPatterns(ergoButton.getRootFolder(),data));
     }
-
-
 }
