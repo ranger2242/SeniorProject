@@ -57,4 +57,12 @@ public class Folder {
         return virtualFile;
     }
 
+    public void setVirtualFile(VirtualFile virtualFile) {
+        this.virtualFile = virtualFile;
+    }
+
+    public boolean isDirectory() {
+        return virtualFile == null;
+    }
+
 }

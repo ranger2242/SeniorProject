@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/socketIO-client-0.7.2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/socketIO-client-2.0.3-master" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.5.2 (C:\Users\Bryan\AppData\Local\Programs\Python\Python35\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2 (C:\Users\Ross\AppData\Local\Programs\Python\Python35\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

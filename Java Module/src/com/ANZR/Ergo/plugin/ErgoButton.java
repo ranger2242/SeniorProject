@@ -20,6 +20,8 @@ public class ErgoButton extends AnAction {
     private Project project;
     private VirtualFile[] files;
 
+    private ToolWindow toolWindow;
+
     @Override
     public void actionPerformed(AnActionEvent e) {
 
@@ -27,38 +29,31 @@ public class ErgoButton extends AnAction {
         loadingBarWindow.show();
 
         project = e.getData(LangDataKeys.PROJECT);
-        ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
+        toolWindow= ToolWindowManager.getInstance(project).getToolWindow("Ergo");
         files = ProjectRootManager.getInstance(project).getContentSourceRoots();
+        rootFolder = DataLoader.loadProjectFolder(project.getName(), files);
+        Ergo ergo = new Ergo(this);
 
-
-        Thread thread = new Thread(() -> {
+        new Thread(() -> {
             String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(), files.length, String[].class);
-            Ergo ergo = new Ergo(this);
             ergo.run(sourceRoots, loadingBarWindow);
-        });
-        thread.start();
+        }).start();
 
         timer = new Timer(100, e1 -> {
-            if(!thread.isAlive())
-                createToolWindowAndHideLoadingBar(toolWindow, files, project);
+            if(ergo.getTableData() != null)
+                createToolWindowAndHideLoadingBar(toolWindow, project);
         });
-        timer.setRepeats(true);//repeating endlessly?
+        timer.setRepeats(true);
         timer.start();
 
 
     }
 
-    private void createToolWindowAndHideLoadingBar(ToolWindow toolWindow, VirtualFile[] files, Project project){
-
-        rootFolder = DataLoader.loadProjectFolder(project.getName(), files);
-
+    private void createToolWindowAndHideLoadingBar(ToolWindow toolWindow, Project project){
         ErgoToolWindow tool = new ErgoToolWindow();
         tool.populateToolWindow(toolWindow, rootFolder, project);
         loadingBarWindow.updateLoadingBar("Complete...", 100);
-
-        Timer t = new Timer(100, e1 -> {
-            loadingBarWindow.closeFrame();
-        });
+        Timer t = new Timer(100, e2 -> loadingBarWindow.closeFrame());
         t.setRepeats(false);
         t.start();
         timer.stop();

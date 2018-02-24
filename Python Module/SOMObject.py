@@ -15,7 +15,6 @@ class SOM(object):
 
         print('Creating Map...')
 
-
         # Assign required variables first
         self.m = m
         self.n = n
@@ -96,7 +95,6 @@ class SOM(object):
             self.sess = tf.Session()
             self.saver = tf.train.Saver()
 
-
             try:
                 self.saver.restore(self.sess, 'tmp\\' + self.model_name)
                 self.store_centroid_grid()
@@ -105,7 +103,6 @@ class SOM(object):
             except:
                 init_op = tf.global_variables_initializer()
                 self.sess.run(init_op)
-
 
     def neuron_locations(self, m, n):
         for i in range(m):
@@ -120,7 +117,7 @@ class SOM(object):
             self.print_time_remaining(iter_no)
             # Train with each vector one by one
             for i in range(len(input_vects)):
-                sys.stdout.write("\rCycle: %i - %i out of %i" % (iter_no,  i, len(input_vects)))
+                sys.stdout.write("\rCycle: %i - %i out of %i" % (iter_no, i, len(input_vects)))
                 sys.stdout.flush()
                 self.sess.run(self.training_op, feed_dict={self.vect_input: input_vects[i], self.iter_input: iter_no})
             self.save_model(self.sess)
@@ -202,7 +199,6 @@ class SOM(object):
             return self.labels[min_index]
         else:
             return self.labels[min2]
-
 
     def calculate_distance(self, x, y):
 

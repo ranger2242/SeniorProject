@@ -65,9 +65,10 @@ class GP:
 
 
     # Does any preprocessing needed.. currently unimplemented
-    def preprocessing(self, raw_data):
-        data = raw_data[:4]
-        return data
+    def preprocessing(self, raw_data, from_client=False):
+        if from_client:
+            return raw_data[:4]
+        return raw_data
 
     # Trains the network on data provided
     def train(self, raw_data):
@@ -76,6 +77,7 @@ class GP:
 
     # Maps points from a labeled CSV file as refernces points
     def map_network(self):
+        print(project_root)
         labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
         labeled_data, labels = self.csv_processing(labeled_data_set)
         labeled_data = self.preprocessing(labeled_data)

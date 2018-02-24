@@ -6,6 +6,7 @@ import com.ANZR.Ergo.io.Logger;
 import com.ANZR.Ergo.io.Pipeline;
 import com.ANZR.Ergo.parser.*;
 import com.ANZR.Ergo.plugin.ErgoButton;
+import com.ANZR.Ergo.plugin.Folder;
 import com.ANZR.Ergo.plugin.LoadingBarWindow;
 import com.ANZR.Ergo.transformer.Transformer;
 import com.google.gson.Gson;
@@ -120,13 +121,18 @@ public class Ergo {
         Pipeline pipeline = new Pipeline(this);
         pipeline.sendToServer(json);
 
+
+
+    }
+
+    Folder tableData = null;
+
+    public Folder getTableData(){
+        return tableData;
     }
 
     public void interpretData(JsonElement data){
-
-        System.out.println(data.toString());
         progressBar.updateLoadingBar("Generating results...", 90);
-
-        ergoButton.setRootFolder(DataLoader.getAssociatedPatterns(ergoButton.getRootFolder(),data));
+        tableData = DataLoader.getAssociatedPatterns(ergoButton.getRootFolder(),data);
     }
 }
