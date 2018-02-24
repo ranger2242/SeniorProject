@@ -45,43 +45,18 @@ public class DataLoader {
 
             //Cycle through anti-patterns
             for (int i = 0; i < dataArray.size(); i++) {
-                switch (i){
-                    case 0:
-                        mapGodObjects(dataArray, folder);
-                        break;
-                    case 1:
-                        mapLongMethods(dataArray, folder);
-                        break;
-
+                JsonArray patterns = dataArray.get(i).getAsJsonArray();
+                //Cycle through and match each class to each result
+                for (JsonElement jsonElement : patterns) {
+                    JsonArray array = jsonElement.getAsJsonArray();
+                    int result = array.get(0).getAsInt();
+                    if(classesAreSame(array, folder) && result != 0)
+                        folder.addAntiPattern(new AntiPattern(antiPatternNames[i], result));
                 }
             }
         }
 
         return folders;
-    }
-
-    private static void mapGodObjects(JsonArray dataArray, Folder folder){
-        JsonArray patterns = dataArray.get(0).getAsJsonArray();
-        //Cycle through and match each class to each result
-        for (JsonElement jsonElement : patterns) {
-            JsonArray array = jsonElement.getAsJsonArray();
-            int result = array.get(0).getAsInt();
-            if(classesAreSame(array, folder) && result != 0)
-                folder.addAntiPattern(new AntiPattern(antiPatternNames[0]));
-        }
-
-    }
-
-    private static void mapLongMethods(JsonArray dataArray, Folder folder){
-        JsonArray patterns = dataArray.get(1).getAsJsonArray();
-        //Cycle through and match each class to each result
-        for (JsonElement jsonElement : patterns) {
-            JsonArray array = jsonElement.getAsJsonArray();
-            int result = array.get(0).getAsInt();
-            if(classesAreSame(array, folder) && result != 0)
-                folder.addAntiPattern(new AntiPattern(antiPatternNames[1]));
-        }
-
     }
 
 

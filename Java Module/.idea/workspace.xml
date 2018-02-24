@@ -44,13 +44,10 @@
       <file leaf-file-name="DataLoader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="74" column="74" lean-forward="false" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
+            <state relative-caret-position="785">
+              <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding>
                 <element signature="method#loadProjectFolder#0;class#DataLoader#0" expanded="false" />
-                <element signature="method#getAssociatedPatterns#0;class#DataLoader#0" expanded="false" />
-                <element signature="method#mapGodObjects#0;class#DataLoader#0" expanded="false" />
-                <element signature="method#mapLongMethods#0;class#DataLoader#0" expanded="false" />
                 <element signature="docComment;method#classesAreSame#0;class#DataLoader#0" expanded="false" />
                 <element signature="method#classesAreSame#0;class#DataLoader#0" expanded="false" />
               </folding>
@@ -81,11 +78,13 @@
       <file leaf-file-name="AntiPattern.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
               <folding>
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +93,8 @@
       <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+            <state relative-caret-position="461">
+              <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -213,13 +212,13 @@
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/GodObjectTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataInterpreter.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Folder.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoButton.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/LongMethodTransformer.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java" />
       </list>
     </option>
   </component>
@@ -517,12 +516,12 @@
       <workItem from="1519225257858" duration="1536000" />
       <workItem from="1519324517804" duration="19449000" />
       <workItem from="1519418154359" duration="21920000" />
-      <workItem from="1519448960236" duration="10754000" />
+      <workItem from="1519448960236" duration="11122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169807000" />
+    <option name="totallyTimeSpent" value="170175000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +545,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32329637" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3397762" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3397762" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -958,25 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -1008,22 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Folder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#1449#1450#0" expanded="true" />
-            <element signature="e#1495#1496#0" expanded="true" />
-            <element signature="e#1531#1532#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/GodObjectTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -1040,6 +1004,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Folder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1573#1574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1053,15 +1033,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="74" column="74" lean-forward="false" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
+        <state relative-caret-position="785">
+          <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="method#loadProjectFolder#0;class#DataLoader#0" expanded="false" />
-            <element signature="method#getAssociatedPatterns#0;class#DataLoader#0" expanded="false" />
-            <element signature="method#mapGodObjects#0;class#DataLoader#0" expanded="false" />
-            <element signature="method#mapLongMethods#0;class#DataLoader#0" expanded="false" />
             <element signature="docComment;method#classesAreSame#0;class#DataLoader#0" expanded="false" />
             <element signature="method#classesAreSame#0;class#DataLoader#0" expanded="false" />
           </folding>
