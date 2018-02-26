@@ -2,9 +2,10 @@ import tensorflow as tf
 import numpy as np
 from _datetime import datetime
 import math
-import os
 import sys
 from Helpers import get_python_project_root
+from Helpers import slog
+from Helpers import slog_replace
 
 
 class SOM(object):
@@ -13,7 +14,7 @@ class SOM(object):
 
     def __init__(self, m, n, dim, n_iterations=100, alpha=None, sigma=None, model_name='model.ckpt'):
 
-        print('Creating Map...')
+        slog('Creating Map...')
 
         # Assign required variables first
         self.m = m
@@ -99,7 +100,7 @@ class SOM(object):
                 self.saver.restore(self.sess, 'tmp\\' + self.model_name)
                 self.store_centroid_grid()
                 self.trained = True
-                print('Model loaded from checkpoint')
+                slog('Model loaded from checkpoint')
             except:
                 init_op = tf.global_variables_initializer()
                 self.sess.run(init_op)
@@ -110,7 +111,7 @@ class SOM(object):
                 yield np.array([i, j])
 
     def train(self, input_vects):
-        print('Training Beginning')
+        slog('Training Beginning')
         self.time_stamp = datetime.now()
         # Training iterations
         for iter_no in range(self.n_iterations):
@@ -124,7 +125,7 @@ class SOM(object):
 
         self.store_centroid_grid()
         self.trained = True
-        print('Training complete. %i Iteration' % self.n_iterations)
+        slog('Training complete. %i Iteration' % self.n_iterations)
 
     def store_centroid_grid(self):
         # Store a centroid grid for easy retrieval later on
@@ -150,8 +151,7 @@ class SOM(object):
         k = 0
         for vect in input_vects:
             if logging:
-                sys.stdout.write("\rMapping: Vector %i out of %i" % (k, len(input_vects)))
-                sys.stdout.flush()
+                slog_replace("Mapping: Vector %i out of %i" % (k, len(input_vects)))
             k += 1
             min_index = min([i for i in range(len(self.weightages))],
                             key=lambda x: np.linalg.norm(vect - self.weightages[x]))
@@ -163,15 +163,15 @@ class SOM(object):
     def print_time_remaining(self, cycle_number):
         time_of_last_cycle = datetime.now() - self.time_stamp
         time_left = time_of_last_cycle * (self.n_iterations - cycle_number)
-        print('Cycle:', cycle_number, '- Time Remaining:', time_left, ' - Time of Last Cycle:', time_of_last_cycle)
+        slog('Cycle:', cycle_number, '- Time Remaining:', time_left, ' - Time of Last Cycle:', time_of_last_cycle)
         self.time_stamp = datetime.now()
 
     def save_model(self, sess):
-        print("Saving...")
+        slog("Saving...")
         project_root = get_python_project_root()
         file_path = project_root + '\\tmp\\' + self.model_name
         self.saver.save(sess, file_path)
-        print("Model Saved!")
+        slog("Model Saved!")
 
     def map_references_points(self, data, labels):
         self.references_points = self.map_vects(data)

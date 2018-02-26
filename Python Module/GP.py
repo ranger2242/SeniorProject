@@ -3,7 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 from Helpers import shuffle_data
-import sys
+from Helpers import slog
 
 project_root = os.path.abspath(os.path.dirname(__file__))
 
@@ -34,8 +34,8 @@ class GP:
 
         if self.som.trained is True:
             self.map_network()
-            print('References mapped')
-        print('\t--- Map Created ---\n')
+            slog('References mapped')
+        slog('\t--- Map Created ---\n')
 
     # Converts CSV data into raw data ready to be preprocessed
     def csv_processing(self, raw_data, shuffle=False):

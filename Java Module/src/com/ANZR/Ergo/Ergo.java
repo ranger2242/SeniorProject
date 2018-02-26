@@ -21,6 +21,7 @@ import java.util.Set;
 @SuppressWarnings("ALL")
 public class Ergo {
 
+    public int test = 0;
     public final static String div = "-----------------------------------------------";
     private boolean trainingMode = false;
     private LoadingBarWindow progressBar;

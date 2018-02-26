@@ -83,7 +83,7 @@ public class Pipeline {
 
         for (int i = 0; i < 15; i++) {
             if (serverIsReady) {
-                socket.emit("SEND-PYTHON", data);
+                socket.emit(Codes.SENDPYTHON.toString(), data);
                 slog("Data Sent To Server");
                 return;
             } else {
@@ -91,6 +91,7 @@ public class Pipeline {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
                     slog("Error happened while waiting for server to connect...");
+                    ex.printStackTrace();
                 }
             }
         }
@@ -104,15 +105,14 @@ public class Pipeline {
         socket.on(io.socket.client.Socket.EVENT_CONNECT, args -> {
         });
 
-        socket.on("CONNECTED", args -> {
+        socket.on(Codes.CONNECTED.toString(), args -> {
             slog("Connected to server");
             serverIsReady = true;
         });
 
-        socket.on("ID", args -> socket.emit("ID", 0));
+        socket.on(Codes.ID.toString(), args -> socket.emit("ID", 0));
 
         socket.on(Codes.SENDCLIENT.toString(), args -> {
-            slog("Data Recieved: ");
             Gson gson = new Gson();
             JsonElement element = gson.fromJson((String) args[0], JsonElement.class);
             JsonObject jsonObj = element.getAsJsonObject();
@@ -128,6 +128,7 @@ public class Pipeline {
                 }
             } else if (ReceivedCodes.RESULTS.toString().equals(key)) {
                 ergo.interpretData(data);
+                socket.disconnect();
             } else {
                 slog("UNKNOWN RECEIVE CODE FOUND...");
             }

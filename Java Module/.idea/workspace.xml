@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Ergo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ergo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="173">
+              <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <element signature="method#run#0;class#Ergo#0" expanded="false" />
                 <element signature="method#runErgoTrainingMode#0;class#Ergo#0" expanded="false" />
@@ -27,17 +27,45 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Pipeline.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#ReceivedCodes#0;class#Pipeline#0" expanded="false" />
+                <element signature="docComment;method#Pipeline#0;class#Pipeline#0" expanded="false" />
+                <element signature="method#Pipeline#0;class#Pipeline#0" expanded="false" />
+                <element signature="docComment;method#sendToServer#0;class#Pipeline#0" expanded="false" />
+                <element signature="e#2668#2687#0" expanded="false" />
+                <element signature="e#2737#2831#0" expanded="false" />
+                <element signature="e#2953#3808#0" expanded="false" />
+                <element signature="e#3872#3972#0" expanded="false" />
+                <element signature="method#setShutdownOperations#0;class#Pipeline#0" expanded="false" />
+                <element signature="e#4103#4282#0" expanded="true" />
+                <element signature="e#4281#4282#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Method.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="418">
+              <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
               <folding>
-                <element signature="method#extractInstance#0;class#Method#0" expanded="false" />
-                <element signature="method#extractParams#0;class#Method#0" expanded="false" />
-                <element signature="method#parseOperations#0;class#Method#0" expanded="false" />
-                <element signature="method#lookThroughChildren#0;class#Method#0" expanded="false" />
-                <element signature="method#print#0;class#Method#0" expanded="false" />
                 <element signature="method#printAlt#0;class#Method#0" expanded="false" />
               </folding>
             </state>
@@ -47,22 +75,21 @@
       <file leaf-file-name="Variable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Variable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="110">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Variable#0;class#Variable#0" expanded="false" />
-                <element signature="method#print#0;class#Variable#0" expanded="false" />
+                <marker date="1519660485705" expanded="true" signature="1056:1063" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectData.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ProjectData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="176">
+              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -71,12 +98,9 @@
       <file leaf-file-name="Constructor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Constructor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <element signature="method#getDescription#0;class#Constructor#0" expanded="false" />
-                <element signature="method#setConstructorDeclaration#0;class#Constructor#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,12 +108,10 @@
       <file leaf-file-name="Enum.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Enum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="132">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Enum#0" expanded="false" />
-                <element signature="method#Enum#0;class#Enum#0" expanded="false" />
-                <element signature="method#print#0;class#Enum#0" expanded="false" />
                 <element signature="method#getTypes#0;class#Enum#0" expanded="false" />
               </folding>
             </state>
@@ -99,22 +121,10 @@
       <file leaf-file-name="ExtractedClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="44">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#ExtractedClass#1;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findMethods#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findNests#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
-                <element signature="method#printClass#0;class#ExtractedClass#0" expanded="false" />
                 <element signature="method#setImports#0;class#ExtractedClass#0" expanded="false" />
               </folding>
             </state>
@@ -124,32 +134,8 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="37" column="75" lean-forward="true" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
-              <folding>
-                <element signature="e#997#998#0" expanded="true" />
-                <element signature="e#1038#1039#0" expanded="true" />
-                <element signature="method#parseProject#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseDirectories#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseDirectory#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseClientDirectory#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
-                <element signature="method#createClassList#0;class#Parser#0" expanded="false" />
-                <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
-                <element signature="e#5682#5683#0" expanded="true" />
-                <element signature="e#5721#5722#0" expanded="true" />
-                <element signature="e#5769#5770#0" expanded="true" />
-                <element signature="e#5803#5804#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExtractedDirectory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDirectory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="396">
+              <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -214,12 +200,10 @@
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/LongMethodTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoButton.java" />
         <option value="$PROJECT_DIR$/.idea/dictionaries/Ross.xml" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/GodObjectTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Folder.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/FileHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java" />
@@ -228,12 +212,14 @@
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDir.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDirectory.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Method.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Variable.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Constructor.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Enum.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedClass.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java" />
       </list>
     </option>
   </component>
@@ -254,10 +240,10 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1354" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -274,10 +260,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,7 +298,7 @@
               <item name="Java Module" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ergo" type="462c0819:PsiDirectoryNode" />
-              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -514,11 +500,12 @@
       <workItem from="1519324517804" duration="19449000" />
       <workItem from="1519418154359" duration="21920000" />
       <workItem from="1519448960236" duration="16506000" />
+      <workItem from="1519661775735" duration="1932000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175559000" />
+    <option name="totallyTimeSpent" value="177491000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,25 +517,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3234995" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32329637" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32329637" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3397762" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59270996" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16510417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19838946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -561,6 +547,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -602,7 +590,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="88" />
+      <option name="time" value="89" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -656,10 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="115" column="11" lean-forward="false" selection-start-line="115" selection-start-column="11" selection-end-line="115" selection-end-column="11" />
-          <folding>
-            <element signature="e#3040#3041#0" expanded="false" />
-            <element signature="e#3066#3067#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,28 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="92" column="33" lean-forward="true" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-          <folding>
-            <element signature="method#deepCopy#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#add#1;class#JsonArray#0" expanded="false" />
-            <element signature="method#add#2;class#JsonArray#0" expanded="false" />
-            <element signature="method#add#3;class#JsonArray#0" expanded="false" />
-            <element signature="method#add#4;class#JsonArray#0" expanded="false" />
-            <element signature="e#2475#2476#0" expanded="true" />
-            <element signature="e#2531#2532#0" expanded="true" />
-            <element signature="method#getAsNumber#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsString#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsDouble#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsBigDecimal#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsBigInteger#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsFloat#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsLong#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsInt#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsByte#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsCharacter#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsShort#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#getAsBoolean#0;class#JsonArray#0" expanded="false" />
-            <element signature="method#equals#0;class#JsonArray#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,19 +797,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Ross.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Ross.xml" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/actionSystem/AnAction.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
           <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-382">
           <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1890">
           <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,13 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-          <folding>
-            <element signature="method#generateGodObjectMatrix#0;class#GodObjectTransformer#0" expanded="false" />
-            <element signature="method#totalReferencesFromClassReferncesRatio#0;class#GodObjectTransformer#0" expanded="false" />
-            <element signature="method#getTotalNumberOfReferences#0;class#GodObjectTransformer#0" expanded="false" />
-            <element signature="method#getReferncesFromClass#0;class#GodObjectTransformer#0" expanded="false" />
-            <element signature="method#searchForReferences#0;class#GodObjectTransformer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,54 +862,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="76" column="4" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Codes#0;class#Pipeline#0" expanded="false" />
-            <element signature="class#ReceivedCodes#0;class#Pipeline#0" expanded="false" />
-            <element signature="docComment;method#Pipeline#0;class#Pipeline#0" expanded="false" />
-            <element signature="method#Pipeline#0;class#Pipeline#0" expanded="false" />
-            <element signature="docComment;method#sendToServer#0;class#Pipeline#0" expanded="false" />
-            <element signature="method#sendToServer#0;class#Pipeline#0" expanded="false" />
-            <element signature="method#connectSocket#0;class#Pipeline#0" expanded="false" />
-            <element signature="e#2612#2631#0" expanded="false" />
-            <element signature="e#2666#2760#0" expanded="false" />
-            <element signature="e#2867#3722#0" expanded="false" />
-            <element signature="e#3786#3886#0" expanded="false" />
-            <element signature="method#setShutdownOperations#0;class#Pipeline#0" expanded="false" />
-            <element signature="e#4017#4196#0" expanded="true" />
-            <element signature="e#4195#4196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding>
-            <element signature="method#getAntiPatternCount#0;class#DirectoryElement#0" expanded="false" />
-            <marker date="1519495935305" expanded="false" signature="487:607" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+            <element signature="e#331#332#0" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -976,9 +884,9 @@
         <state relative-caret-position="600">
           <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1502#1503#0" expanded="false" />
+            <element signature="e#1540#1541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -991,26 +899,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="method#loadProjectFolder#0;class#DataLoader#0" expanded="false" />
-            <element signature="method#loadProjectFolder#1;class#DataLoader#0" expanded="false" />
-            <element signature="method#getAssociatedPatterns#0;class#DataLoader#0" expanded="false" />
-            <element signature="method#getAssociatedPatterns#1;class#DataLoader#0" expanded="false" />
-            <element signature="method#classesAreSame#0;class#DataLoader#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="64" column="67" lean-forward="false" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#Table#0;class#Table#0" expanded="false" />
             <element signature="class#824:1330" expanded="false" />
             <element signature="method#mousePressed#0;class#824:1330" expanded="false" />
@@ -1028,73 +923,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="method#actionPerformed#0;class#Plugin#0" expanded="false" />
-            <element signature="e#977#1284#0" expanded="false" />
-            <element signature="e#1327#1512#0" expanded="false" />
-            <element signature="method#createToolWindowAndHideLoadingBar#0;class#Plugin#0" expanded="false" />
-            <element signature="method#update#0;class#Plugin#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="37" column="75" lean-forward="true" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
-          <folding>
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="method#parseProject#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseDirectories#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseDirectory#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseClientDirectory#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseCode#0;class#Parser#0" expanded="false" />
-            <element signature="method#createClassList#0;class#Parser#0" expanded="false" />
-            <element signature="method#printAllChildNodes#0;class#Parser#0" expanded="false" />
-            <element signature="e#5682#5683#0" expanded="true" />
-            <element signature="e#5721#5722#0" expanded="true" />
-            <element signature="e#5769#5770#0" expanded="true" />
-            <element signature="e#5803#5804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDirectory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="396">
+          <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="method#run#0;class#Ergo#0" expanded="false" />
-            <element signature="method#runErgoTrainingMode#0;class#Ergo#0" expanded="false" />
-            <element signature="method#runErgoClient#0;class#Ergo#0" expanded="false" />
-            <element signature="method#interpretData#0;class#Ergo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDirectory.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="418">
+          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding>
-            <element signature="method#extractInstance#0;class#Method#0" expanded="false" />
-            <element signature="method#extractParams#0;class#Method#0" expanded="false" />
-            <element signature="method#parseOperations#0;class#Method#0" expanded="false" />
-            <element signature="method#lookThroughChildren#0;class#Method#0" expanded="false" />
-            <element signature="method#print#0;class#Method#0" expanded="false" />
             <element signature="method#printAlt#0;class#Method#0" expanded="false" />
           </folding>
         </state>
@@ -1102,35 +944,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="110">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Variable#0;class#Variable#0" expanded="false" />
-            <element signature="method#print#0;class#Variable#0" expanded="false" />
+            <marker date="1519660485705" expanded="true" signature="1056:1063" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Constructor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="method#getDescription#0;class#Constructor#0" expanded="false" />
-            <element signature="method#setConstructorDeclaration#0;class#Constructor#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Enum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Enum#0" expanded="false" />
-            <element signature="method#Enum#0;class#Enum#0" expanded="false" />
-            <element signature="method#print#0;class#Enum#0" expanded="false" />
             <element signature="method#getTypes#0;class#Enum#0" expanded="false" />
           </folding>
         </state>
@@ -1138,32 +974,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="44">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ExtractedClass#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#ExtractedClass#1;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findInterface#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findInheritance#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findMethods#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findConstructors#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findVariables#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findNests#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findEnum#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#findParent#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#lineToList#0;class#ExtractedClass#0" expanded="false" />
-            <element signature="method#printClass#0;class#ExtractedClass#0" expanded="false" />
             <element signature="method#setImports#0;class#ExtractedClass#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ProjectData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,7 +987,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ProjectData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#ReceivedCodes#0;class#Pipeline#0" expanded="false" />
+            <element signature="docComment;method#Pipeline#0;class#Pipeline#0" expanded="false" />
+            <element signature="method#Pipeline#0;class#Pipeline#0" expanded="false" />
+            <element signature="docComment;method#sendToServer#0;class#Pipeline#0" expanded="false" />
+            <element signature="e#2668#2687#0" expanded="false" />
+            <element signature="e#2737#2831#0" expanded="false" />
+            <element signature="e#2953#3808#0" expanded="false" />
+            <element signature="e#3872#3972#0" expanded="false" />
+            <element signature="method#setShutdownOperations#0;class#Pipeline#0" expanded="false" />
+            <element signature="e#4103#4282#0" expanded="true" />
+            <element signature="e#4281#4282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="method#run#0;class#Ergo#0" expanded="false" />
+            <element signature="method#runErgoTrainingMode#0;class#Ergo#0" expanded="false" />
+            <element signature="method#runErgoClient#0;class#Ergo#0" expanded="false" />
+            <element signature="method#interpretData#0;class#Ergo#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

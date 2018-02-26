@@ -1,7 +1,7 @@
 import os
 import random
 import _datetime as datetime
-
+import sys
 
 # Gets project root of main folder
 def get_project_root():
@@ -29,3 +29,9 @@ def slog(message):
     fmt = '%Y-%m-%d::%H:%M:%S: '
     date_string = datetime.datetime.now().strftime(fmt)
     print(date_string + message)
+
+def slog_replace(message):
+    fmt = '%Y-%m-%d::%H:%M:%S: '
+    date_string = datetime.datetime.now().strftime(fmt)
+    sys.stdout.write('\r' + date_string + message)
+    sys.stdout.flush()
