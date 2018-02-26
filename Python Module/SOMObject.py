@@ -151,7 +151,7 @@ class SOM(object):
         k = 0
         for vect in input_vects:
             if logging:
-                slog_replace("Mapping: Vector %i out of %i" % (k, len(input_vects)))
+                slog_replace("Mapping: Vector %i out of %i" % (k+1, len(input_vects)))
             k += 1
             min_index = min([i for i in range(len(self.weightages))],
                             key=lambda x: np.linalg.norm(vect - self.weightages[x]))

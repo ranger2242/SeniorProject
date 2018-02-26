@@ -77,7 +77,6 @@ class GP:
 
     # Maps points from a labeled CSV file as refernces points
     def map_network(self):
-        print(project_root)
         labeled_data_set = open(project_root + '\\labeled_dataset.csv', 'r')
         labeled_data, labels = self.csv_processing(labeled_data_set)
         labeled_data = self.preprocessing(labeled_data)

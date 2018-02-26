@@ -1,9 +1,9 @@
-import sys
-from socketIO_client_nexus import SocketIO, LoggingNamespace
+import ast
 import json
+
 from Analyzer import Analyzer
 from Helpers import slog
-import ast
+from socketIO.socketIO_client_nexus import SocketIO, LoggingNamespace
 
 
 class Pipeline:

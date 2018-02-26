@@ -55,7 +55,7 @@ public class Ergo {
 
     private void runErgoTrainingMode() {
 
-        String path = "";
+        String path = "C:\\Users\\Chris\\Desktop\\JAVA";
 
         Logger.slog("Setting up file writer");
 
