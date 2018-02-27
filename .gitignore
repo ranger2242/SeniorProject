@@ -1,3 +1,6 @@
 "Java Module"\.idea\*
 "Python Module"\.idea\*
 "Python Module"\__pycache__\*
+Java Module\.idea\*
+Python Module\.idea\*
+Python Module\__pycache__\*
