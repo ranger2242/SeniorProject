@@ -25,13 +25,11 @@ def shuffle_data(array1, array2):
     return array1, array2
 
 
-def slog(message):
+def slog(message, replace=False):
     fmt = '%Y-%m-%d::%H:%M:%S: '
     date_string = datetime.datetime.now().strftime(fmt)
-    print(date_string + message)
-
-def slog_replace(message):
-    fmt = '%Y-%m-%d::%H:%M:%S: '
-    date_string = datetime.datetime.now().strftime(fmt)
-    sys.stdout.write('\r' + date_string + message)
-    sys.stdout.flush()
+    if replace:
+        sys.stdout.write('\r' + date_string + message)
+        sys.stdout.flush()
+    else:
+        print(date_string + message)
