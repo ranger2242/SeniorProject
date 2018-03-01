@@ -10,6 +10,7 @@ class Pipeline:
 
     id = str
     socket = SocketIO
+    PASSWORD = "C8K0AS64KL00Z8455"
 
     def __init__(self):
         self.analyzer = Analyzer()
@@ -44,10 +45,8 @@ class Pipeline:
             slog("Connected To Server")
 
         def id(*args):
-            self.socket.emit("ID", 1)
+            self.socket.emit("ID", [1, self.PASSWORD])
             self.id = args[0]
-
-
 
         self.socket = SocketIO(ip, port, LoggingNamespace)
         self.socket.on("SEND-PYTHON", receive_data)
