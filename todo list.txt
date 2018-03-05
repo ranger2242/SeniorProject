@@ -1,8 +1,17 @@
 TO DO LIST
 ------------
-?fix lag while comm with server
-create other antipattern algorthims
-link python data to Ergo table
-seperate server from java module
+Yellow table colors
+Cancel opeation when loading bar is 'X'ed out
+Handle no network connnection
+Handle other errors like a 'parsing error'
+Redo forward button
+Jump to code button breaks when file is deleted...
 
-optional: create python threads for each client
+
+UNIT TESTING
+
+
+IN PROGESS: create other antipattern algorthims
+IN PROGESS: link python data to Ergo table
+
+OPTIONAL: create python threads for each client
