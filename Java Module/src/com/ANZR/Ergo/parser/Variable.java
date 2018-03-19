@@ -56,4 +56,7 @@ public class Variable {
         this.type = type;
     }
 
+    public EnumSet<Modifier> getModifiers() {
+        return modifiers;
+    }
 }

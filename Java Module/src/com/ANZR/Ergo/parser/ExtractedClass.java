@@ -279,7 +279,7 @@ public class ExtractedClass {
         this.constructors = constructors;
     }
 
-    private boolean isInterface() {
+    public boolean isInterface() {
         return isInterface;
     }
 

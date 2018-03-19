@@ -1,5 +1,6 @@
 from GP import GP
 from LongMethod import LongMethod
+from ConstantInterface import ConstantInterface
 from Helpers import get_project_root
 project_root = get_project_root()
 
@@ -20,6 +21,9 @@ class Analyzer:
         for d in data[1]:
             prediction[1].append([LongMethod.check(d), d[len(d) - 2], d[len(d) - 1]])
 
+        prediction.append([])
+        for d in data[2]:
+            prediction[2].append([ConstantInterface.check(d), d[len(d) - 2], d[len(d) - 1]])
 
         return prediction
 

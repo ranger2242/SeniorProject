@@ -12,19 +12,21 @@ public class Transformer {
     private Set<com.ANZR.Ergo.parser.Enum> enums;
 
 
-    public Transformer(Set<ExtractedClass> classes, Set<com.ANZR.Ergo.parser.Enum> enums){
+    public Transformer(Set<ExtractedClass> classes, Set<com.ANZR.Ergo.parser.Enum> enums) {
         this.classes = classes;
         this.enums = enums;
     }
 
     /**
      * Creates a data structure to be sent to the Ergo Server
+     *
      * @return An Object matrix, First layer is anti-pattern type, Other 2 layers are pattern specific
      */
-    public Object[][][] transform(){
-        Object[][][] data = new Object[2][][];
+    public Object[][][] transform() {
+        Object[][][] data = new Object[3][][];
         data[0] = GodObjectTransformer.generateGodObjectMatrix(classes);
         data[1] = LongMethodTransformer.generateMatrix(classes);
+        data[2] = ConstantInterfaceTransformer.generateConstantInterfaceMatrix(classes);
         return data;
     }
 

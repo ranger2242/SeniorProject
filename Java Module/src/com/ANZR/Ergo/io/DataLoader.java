@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 public class DataLoader {
 
 
-    private static final String[] antiPatternNames = {"God Object", "Long Method"};
+    private static final String[] antiPatternNames = {"God Object", "Long Method", "Constant Interface"};
 
     /**
      * Loads a Project data structure to be used to file the Ergo table
