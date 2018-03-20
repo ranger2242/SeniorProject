@@ -4,11 +4,6 @@
 	get methods (not constructors)
 	check if each method contains super.methodName()
 	
-	
--error hiding-
-	find all try catches
-	check if catch is empty
-	
 -interface bloat-
 	get all interfaces
 	?? find a way to check the complexity of the interface
