@@ -2,19 +2,24 @@ package com.ANZR.Ergo.plugin;
 
 public class AntiPattern {
     private String name;
-    private int numberFound;
+    private String message;
 
     public AntiPattern(String name, int numberFound) {
         this.name = name;
-        this.numberFound = numberFound;
+        this.message = Integer.toString(numberFound);
+    }
+
+    public AntiPattern(String name, String message) {
+        this.name = name;
+        this.message = message;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getNumberFound() {
-        return numberFound;
+    public String getMessage() {
+        return message;
     }
 
 }

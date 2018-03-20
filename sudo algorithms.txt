@@ -1,11 +1,4 @@
--constant interface-
-	get all interfaces
-	check each check all elements
-	if all elements are constants
-		true
-	else
-		false
-		
+
 -call super-
 	get classes that extend
 	get methods (not constructors)

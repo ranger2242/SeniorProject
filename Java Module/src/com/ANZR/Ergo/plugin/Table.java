@@ -81,7 +81,7 @@ public class Table extends JBTable {
             if (antiPatterns.get(i).getName() != null)
                 temp[i][0] = antiPatterns.get(i).getName();
             else temp[i][0] = "null";
-            temp[i][1] = antiPatterns.get(i).getNumberFound();
+            temp[i][1] = antiPatterns.get(i).getMessage();
         }
         setModel(new DefaultTableModel(temp, classTableHeader));
     }

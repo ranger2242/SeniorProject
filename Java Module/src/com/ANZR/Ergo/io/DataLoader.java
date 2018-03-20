@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 public class DataLoader {
 
 
-    private static final String[] antiPatternNames = {"God Object", "Long Method", "Constant Interface"};
+    private static final String[] antiPatternNames = {"God Object", "Long Method", "Constant Interface", "Empty Catch Block"};
 
     /**
      * Loads a Project data structure to be used to file the Ergo table
@@ -65,18 +65,46 @@ public class DataLoader {
             //Cycle through anti-patterns
             for (int i = 0; i < dataArray.size(); i++) {
                 JsonArray patterns = dataArray.get(i).getAsJsonArray();
-                //Cycle through and match each class to each result
-                for (JsonElement jsonElement : patterns) {
-                    JsonArray array = jsonElement.getAsJsonArray();
-                    int result = array.get(0).getAsInt();
-                    if (classesAreSame(array, directoryElement) && result != 0)
-                        directoryElement.addAntiPattern(new AntiPattern(antiPatternNames[i], result));
+
+                switch (i){
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        addAntiPatternWithNumberFound(patterns, directoryElement, i);
+                        break;
                 }
+
             }
         }
 
         return folders;
     }
+
+    private static void addAntiPatternWithNumberFound(JsonArray patterns, DirectoryElement directoryElement, int i){
+        //Cycle through and match each class to each result
+        for (JsonElement jsonElement : patterns) {
+            JsonArray array = jsonElement.getAsJsonArray();
+            int result = array.get(0).getAsInt();
+            if (classesAreSame(array, directoryElement) && result != 0)
+                directoryElement.addAntiPattern(new AntiPattern(antiPatternNames[i], result));
+        }
+
+    }
+
+    private static void addAntiPatternWithMessage(JsonArray patterns, DirectoryElement directoryElement, int i){
+        //Cycle through and match each class to each result
+        for (JsonElement jsonElement : patterns) {
+            JsonArray array = jsonElement.getAsJsonArray();
+            int result = array.get(0).getAsInt();
+            if (classesAreSame(array, directoryElement) && result != 0){
+                String message = array.get(1).getAsString();
+                directoryElement.addAntiPattern(new AntiPattern(antiPatternNames[i], message));
+            }
+        }
+
+    }
+
 
 
     /**

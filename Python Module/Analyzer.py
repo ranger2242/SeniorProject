@@ -1,6 +1,7 @@
 from GP import GP
 from LongMethod import LongMethod
 from ConstantInterface import ConstantInterface
+from ErrorHiding import ErrorHiding
 from Helpers import get_project_root
 project_root = get_project_root()
 
@@ -24,6 +25,12 @@ class Analyzer:
         prediction.append([])
         for d in data[2]:
             prediction[2].append([ConstantInterface.check(d), d[len(d) - 2], d[len(d) - 1]])
+
+        prediction.append([])
+        for d in data[3]:
+            print(d)
+            prediction[3].append([ErrorHiding.check(d), d[len(d) - 2], d[len(d) - 1]])
+
 
         return prediction
 

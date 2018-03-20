@@ -110,7 +110,7 @@ class SOM(object):
             weightage_delta = tf.multiply(
                 learning_rate_multiplier,
                 tf.subtract(tf.stack([self.vect_input for _ in range(m * n)]), self.weightage_vects))
-            slog('[***********   ]', replace=True)
+            slog('\t[***********   ]', replace=True)
             # W(t+1) = W(t) + W_delta
             new_weightages_op = tf.add(self.weightage_vects, weightage_delta)
             slog('[************  ]', replace=True)
@@ -118,18 +118,18 @@ class SOM(object):
             self.training_op = tf.assign(self.weightage_vects, new_weightages_op)
             self.sess = tf.Session()
             self.saver = tf.train.Saver()
-            slog('[************* ]', replace=True)
+            slog('\t[************* ]', replace=True)
             try:
                 self.saver.restore(self.sess, 'tmp\\' + self.model_name)
                 self.store_centroid_grid()
                 self.trained = True
-                slog('[**************]', replace=True)
+                slog('\t[**************]', replace=True)
                 print()
                 slog('Model loaded from checkpoint')
             except:
                 init_op = tf.global_variables_initializer()
                 self.sess.run(init_op)
-                slog('[**************]', replace=True)
+                slog('\t[**************]', replace=True)
                 print()
 
     def neuron_locations(self, m, n):

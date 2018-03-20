@@ -23,10 +23,11 @@ public class Transformer {
      * @return An Object matrix, First layer is anti-pattern type, Other 2 layers are pattern specific
      */
     public Object[][][] transform() {
-        Object[][][] data = new Object[3][][];
+        Object[][][] data = new Object[4][][];
         data[0] = GodObjectTransformer.generateGodObjectMatrix(classes);
         data[1] = LongMethodTransformer.generateMatrix(classes);
         data[2] = ConstantInterfaceTransformer.generateConstantInterfaceMatrix(classes);
+        data[3] = ErrorHidingTransformer.generateErrorHidingMatrix(classes);
         return data;
     }
 
