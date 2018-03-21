@@ -1,8 +1,14 @@
 package com.ANZR.Ergo.plugin;
 
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
+import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.ui.popup.Balloon;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.StatusBar;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ui.awt.RelativePoint;
 
 import javax.swing.*;
 import java.awt.*;
@@ -128,7 +134,16 @@ public class SideBar extends JPanel {
             // We are inside the class.
             if (parent.getCurrentDirectoryElement().isClass()){
                 VirtualFile virtualFile  = parent.getCurrentDirectoryElement().getVirtualFile();
-                new OpenFileDescriptor(parent.getProject(), virtualFile).navigate(true);
+                if (virtualFile.exists())
+                    new OpenFileDescriptor(parent.getProject(), virtualFile).navigate(true);
+                else {
+                    StatusBar statusBar = WindowManager.getInstance().getStatusBar(parent.getProject());
+                    JBPopupFactory.getInstance()
+                            .createHtmlTextBalloonBuilder("Error Finding File: File may have been deleted.", MessageType.ERROR, null)
+                            .setFadeoutTime(3500)
+                            .createBalloon()
+                            .show(RelativePoint.getSouthEastOf(statusBar.getComponent()), Balloon.Position.above);
+                }
             }
         }else{
             int index = parent.getTable().getRow();
@@ -137,7 +152,16 @@ public class SideBar extends JPanel {
 
             if (file.isClass()){
                 VirtualFile virtualFile  = file.getVirtualFile();
-                new OpenFileDescriptor(parent.getProject(), virtualFile).navigate(true);
+                if (virtualFile.exists())
+                    new OpenFileDescriptor(parent.getProject(), virtualFile).navigate(true);
+                else {
+                    StatusBar statusBar = WindowManager.getInstance().getStatusBar(parent.getProject());
+                    JBPopupFactory.getInstance()
+                            .createHtmlTextBalloonBuilder("Error Finding File: File may have been deleted.", MessageType.ERROR, null)
+                            .setFadeoutTime(3500)
+                            .createBalloon()
+                            .show(RelativePoint.getSouthEastOf(statusBar.getComponent()), Balloon.Position.above);
+                }
             }
         }
         setIfButtonIsEnabled();
