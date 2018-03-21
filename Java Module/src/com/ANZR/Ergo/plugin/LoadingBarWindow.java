@@ -2,6 +2,8 @@ package com.ANZR.Ergo.plugin;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 
 public class LoadingBarWindow {
@@ -9,6 +11,8 @@ public class LoadingBarWindow {
     private JLabel label = new JLabel();
     private JProgressBar loadingBar = new JProgressBar();
     private JFrame frame;
+
+    private boolean closed = false;
 
 
     LoadingBarWindow() {
@@ -26,6 +30,42 @@ public class LoadingBarWindow {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(false);
+        frame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+//                System.out.println("test");
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                closed = true;
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
+            }
+        });
 
         label.setText("");
         loadingBar.setMaximum(100);
@@ -50,10 +90,14 @@ public class LoadingBarWindow {
     public void show() {
         frame.setVisible(true);
     }
+    public boolean getClosed(){
+        return closed;
+    }
 
-    public void updateLoadingBar(String text, int progress) {
+    public boolean updateLoadingBar(String text, int progress) {
         label.setText(text);
         loadingBar.setValue(progress);
+        return closed;
     }
 
     public void closeFrame() {

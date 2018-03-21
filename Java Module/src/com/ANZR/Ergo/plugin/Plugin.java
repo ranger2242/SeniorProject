@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 public class Plugin extends AnAction {
 
-    private LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
+    private LoadingBarWindow loadingBarWindow;
     private Timer timer;
 
     /**
@@ -23,26 +23,34 @@ public class Plugin extends AnAction {
      */
     @Override
     public void actionPerformed(AnActionEvent e) {
+        loadingBarWindow = new LoadingBarWindow();
 
-        loadingBarWindow.updateLoadingBar("Loading Project", 0);
-        loadingBarWindow.show();
+        if (!loadingBarWindow.updateLoadingBar("Loading Project", 0)){
 
-        Project project = e.getData(LangDataKeys.PROJECT);
-        Ergo ergo = new Ergo(project);
+            loadingBarWindow.show();
 
-        new Thread(() -> {
-            VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
-            String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(), files.length, String[].class);
-            ergo.run(sourceRoots, loadingBarWindow);
-        }).start();
+            Project project = e.getData(LangDataKeys.PROJECT);
+            Ergo ergo = new Ergo(project);
 
-        timer = new Timer(100, e1 -> {
-            DirectoryElement tableData = ergo.getTableData();
-            if (tableData != null)
-                createToolWindowAndHideLoadingBar(project, tableData);
-        });
-        timer.setRepeats(true);
-        timer.start();
+            new Thread(() -> {
+                VirtualFile[] files = ProjectRootManager.getInstance(project).getContentSourceRoots();
+                String[] sourceRoots = Arrays.copyOf(Arrays.stream(files).map(VirtualFile::getPath).toArray(), files.length, String[].class);
+                ergo.run(sourceRoots, loadingBarWindow);
+            }).start();
+
+            timer = new Timer(100, e1 -> {
+
+                DirectoryElement tableData = ergo.getTableData();
+                if (tableData != null)
+                    createToolWindowAndHideLoadingBar(project, tableData);
+                if(loadingBarWindow.getClosed()) {
+                    loadingBarWindow.closeFrame();
+                    createToolWindowAndHideLoadingBar(project, null);
+                }
+            });
+            timer.setRepeats(true);
+            timer.start();
+        }
 
     }
 
@@ -52,11 +60,16 @@ public class Plugin extends AnAction {
      * @param project The intellij project data structure
      */
     private void createToolWindowAndHideLoadingBar(Project project, DirectoryElement rootDirectoryElement) {
-        ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
-        ErgoToolWindow tool = new ErgoToolWindow();
-        tool.populateToolWindow(toolWindow, rootDirectoryElement, project);
-        loadingBarWindow.updateLoadingBar("Complete...", 100);
+        if (rootDirectoryElement != null) {
+            ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Ergo");
+            ErgoToolWindow tool = new ErgoToolWindow();
+            tool.populateToolWindow(toolWindow, rootDirectoryElement, project);
+            loadingBarWindow.updateLoadingBar("Complete...", 100);
+
+
+        }
         Timer t = new Timer(100, e2 -> loadingBarWindow.closeFrame());
+
         t.setRepeats(false);
         t.start();
         timer.stop();

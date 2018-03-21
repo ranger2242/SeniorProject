@@ -117,28 +117,30 @@ public class Ergo {
         FileHandler fileHandler = new FileHandler(sourceFolderPaths);
         ExtractedDirectory[] directories = fileHandler.getProjectDirectory(sourceFolderPaths);
 
-        progressBar.updateLoadingBar("Parsing classes...", 20);
-        Logger.slog("Parsing classes...");
-        ProjectData<Set<ExtractedClass>, Set<com.ANZR.Ergo.parser.Enum>> projectClassData = Parser.parseProject(directories);
-        Logger.slog("Classes Parsed");
+        if (!progressBar.updateLoadingBar("Parsing classes...", 20)) {
+            Logger.slog("Parsing classes...");
+            ProjectData<Set<ExtractedClass>, Set<com.ANZR.Ergo.parser.Enum>> projectClassData = Parser.parseProject(directories);
+            Logger.slog("Classes Parsed");
 
-        progressBar.updateLoadingBar("Processing Data...", 50);
-        Transformer transformer = new Transformer(projectClassData.parsedClasses, projectClassData.globalEnums);
-        Object[][][] matrices = transformer.transform();
+            if (!progressBar.updateLoadingBar("Processing Data...", 50)) {
+                Transformer transformer = new Transformer(projectClassData.parsedClasses, projectClassData.globalEnums);
+                Object[][][] matrices = transformer.transform();
 
-        Gson gson = new Gson();
-        String json = gson.toJson(matrices);
+                Gson gson = new Gson();
+                String json = gson.toJson(matrices);
 
-        progressBar.updateLoadingBar("Anaylzing...", 60);
-        Pipeline pipeline = new Pipeline(this);
-        pipeline.sendToServer(json);
-
-
+                if (!progressBar.updateLoadingBar("Anaylzing...", 60)) {
+                    Pipeline pipeline = new Pipeline(this);
+                    pipeline.sendToServer(json);
+                }
+            }
+        }
     }
 
     public void interpretData(JsonElement data) {
-        progressBar.updateLoadingBar("Generating results...", 90);
-        tableData = DataLoader.getAssociatedPatterns(project, data);
+        if (!progressBar.updateLoadingBar("Generating results...", 80)) {
+            tableData = DataLoader.getAssociatedPatterns(project, data);
+        }
     }
 
     public DirectoryElement getTableData() {
