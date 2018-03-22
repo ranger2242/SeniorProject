@@ -3,6 +3,7 @@ from LongMethod import LongMethod
 from ConstantInterface import ConstantInterface
 from ErrorHiding import ErrorHiding
 from CallSuper import CallSuper
+from BoatAnchor import BoatAnchor
 from Helpers import get_project_root
 project_root = get_project_root()
 
@@ -36,6 +37,11 @@ class Analyzer:
         for d in data[4]:
             print(d)
             prediction[4].append([CallSuper.check(d), d[len(d) - 2], d[len(d) - 1]])
+
+        prediction.append([])
+        for d in data[5]:
+            print(d)
+            prediction[5].append([BoatAnchor.check(d), d[len(d) - 2], d[len(d) - 1]])
 
         return prediction
 

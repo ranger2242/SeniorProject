@@ -1,15 +1,5 @@
-
--call super-
-	get classes that extend
-	get methods (not constructors)
-	check if each method contains super.methodName()
 	
 -interface bloat-
 	get all interfaces
 	?? find a way to check the complexity of the interface
 
--Boat anchor-
-	get all classes and interfaces
-	find all elements that are not used
-	
-	

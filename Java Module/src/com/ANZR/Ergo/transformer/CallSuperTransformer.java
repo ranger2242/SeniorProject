@@ -5,21 +5,19 @@ import com.ANZR.Ergo.parser.Method;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.MethodCallExpr;
-import com.github.javaparser.ast.stmt.CatchClause;
 import com.github.javaparser.ast.stmt.ExpressionStmt;
 import com.github.javaparser.ast.stmt.Statement;
-import com.github.javaparser.ast.stmt.TryStmt;
 
 import java.util.Set;
 
 public class CallSuperTransformer {
 
-    public static Object[][] generateCallSuperMatrix(Set<ExtractedClass> classes){
+    public static Object[][] generateCallSuperMatrix(Set<ExtractedClass> classes) {
 
         ExtractedClass[] classesArray = classes.toArray(new ExtractedClass[classes.size()]);
         Object[][] callSuperMatrix = new Object[classesArray.length][3];
 
-        for(int i = 0; i < classesArray.length; i++){
+        for (int i = 0; i < classesArray.length; i++) {
             callSuperMatrix[i][0] = checkClass(classesArray[i]);
             callSuperMatrix[i][1] = classesArray[i].getName();
             callSuperMatrix[i][2] = classesArray[i].getClassPath();
@@ -29,10 +27,10 @@ public class CallSuperTransformer {
         return callSuperMatrix;
     }
 
-    private static int checkClass(ExtractedClass singleClass){
+    private static int checkClass(ExtractedClass singleClass) {
         int numberFound = 0;
-        for(Method method : singleClass.getMethods()){
-            if (checkMethod(method)){
+        for (Method method : singleClass.getMethods()) {
+            if (checkMethod(method)) {
                 numberFound++;
             }
         }
@@ -41,25 +39,25 @@ public class CallSuperTransformer {
     }
 
 
-    private static boolean checkMethod(Method method){
+    private static boolean checkMethod(Method method) {
 
-        if(!method.getMethodDeclaration().getBody().isPresent()){
+        if (!method.getMethodDeclaration().getBody().isPresent()) {
             //No method body...?
             return false;
         }
 
         NodeList<Statement> statements = method.getMethodDeclaration().getBody().get().getStatements();
 
-        for(Statement statement : statements){
-            if(statement.isExpressionStmt()){
+        for (Statement statement : statements) {
+            if (statement.isExpressionStmt()) {
                 ExpressionStmt expressionStmt = statement.asExpressionStmt();
-                Expression expression =  expressionStmt.getExpression();
+                Expression expression = expressionStmt.getExpression();
 
-                if(expression.isMethodCallExpr()){
+                if (expression.isMethodCallExpr()) {
                     MethodCallExpr methodCallExpr = expression.asMethodCallExpr();
-                    if(methodCallExpr.getScope().isPresent()){
-                        if(methodCallExpr.getScope().get().isSuperExpr()){
-                            if (methodCallExpr.getName().toString().equals(method.getName())){
+                    if (methodCallExpr.getScope().isPresent()) {
+                        if (methodCallExpr.getScope().get().isSuperExpr()) {
+                            if (methodCallExpr.getName().toString().equals(method.getName())) {
                                 return true;
                             }
                         }
