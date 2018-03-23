@@ -1,5 +1,6 @@
 package com.ANZR.Ergo.plugin;
 
+import com.intellij.ui.JBColor;
 import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.UIUtil;
 
@@ -9,6 +10,7 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Table extends JBTable {
@@ -18,7 +20,7 @@ public class Table extends JBTable {
     private int row;
     private static final String[] classTableHeader = {"Anti-Pattern", "Found"};
     private static final String[] folderTableHeader = {"Element", "Anti-Patterns Found"};
-
+    DirectoryElement directoryElement;
 
     Table(ErgoToolWindow parent) {
         super();
@@ -56,6 +58,7 @@ public class Table extends JBTable {
     }
 
     public void setTableModel(DirectoryElement directoryElement) {
+        this.directoryElement = directoryElement;
         if (directoryElement.isClass())
             setClassModel(directoryElement);
         else
@@ -73,6 +76,8 @@ public class Table extends JBTable {
         }
         setModel(new DefaultTableModel(temp, folderTableHeader));
     }
+
+
 
     private void setClassModel(DirectoryElement directoryElement) {
         ArrayList<AntiPattern> antiPatterns = directoryElement.getAntiPatterns();
@@ -112,25 +117,92 @@ public class Table extends JBTable {
 
     public Component prepareRenderer(TableCellRenderer cellRenderer, int rows, int columns) {
         Component component = super.prepareRenderer(cellRenderer, rows, columns);
-        if (UIUtil.isUnderDarcula()) {
-            if (!getValueAt(rows, 1).equals(0)) {
-                component.setBackground(new Color(140, 64, 64));
-                component.setForeground(Color.BLACK);
-            } else {
-                component.setBackground(Color.DARK_GRAY);
-                component.setForeground(Color.LIGHT_GRAY);
-            }
-        } else {
-            if (!getValueAt(rows, 1).equals(0)) {
-                component.setBackground(new Color(255, 220, 220));
-                component.setForeground(Color.BLACK);
-            } else {
-                component.setBackground(Color.WHITE);
-                component.setForeground(Color.BLACK);
-            }
+
+        if (directoryElement == null)
+            return component;
+
+        if (directoryElement.isDirectory()) {
+            setColorsForFolder(component, rows);
+        } else if (directoryElement.isClass()) {
+            setColorsForClass(component, rows);
         }
+
         return component;
     }
+
+    private void setColorsForClass(Component component, int rows) {
+
+
+        if (!getValueAt(rows, 1).equals(0)) {
+
+            ArrayList<AntiPattern> antiPatterns = directoryElement.getAntiPatterns();
+            for (int i = 0; i < antiPatterns.size(); i++) {
+                if (antiPatterns.get(i).getName().equals(getValueAt(rows, 0))) {
+                    if (antiPatterns.get(i).getPriority() == AntiPattern.Priority.HIGH) {
+                        component.setBackground(new JBColor(JBColor.RED, JBColor.RED));
+                        component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
+                        return;
+                    } else {
+                        component.setBackground(new JBColor(JBColor.YELLOW, JBColor.YELLOW));
+                        component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
+                        return;
+                    }
+                }
+
+            }
+
+        } else {
+            component.setBackground(new JBColor(JBColor.DARK_GRAY, JBColor.WHITE));
+            component.setForeground(new JBColor(JBColor.LIGHT_GRAY, JBColor.BLACK));
+        }
+    }
+
+    private void setColorsForFolder(Component component, int rows) {
+
+        if (!getValueAt(rows, 1).equals(0)) {
+
+            if(checkFolderForPriority(directoryElement.getChildElements().get(rows))){
+                component.setBackground(new JBColor(JBColor.RED, JBColor.RED));
+                component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
+            } else {
+                component.setBackground(new JBColor(JBColor.YELLOW, JBColor.YELLOW));
+                component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
+            }
+
+        } else {
+            component.setBackground(new JBColor(JBColor.DARK_GRAY, JBColor.WHITE));
+            component.setForeground(new JBColor(JBColor.LIGHT_GRAY, JBColor.BLACK));
+        }
+
+    }
+
+
+    private boolean checkFolderForPriority(DirectoryElement directoryElement) {
+
+        if(directoryElement.isClass()){
+            for (AntiPattern a : directoryElement.getAntiPatterns()) {
+                if (a.getPriority() == AntiPattern.Priority.HIGH) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        for (DirectoryElement child : directoryElement.getChildElements()) {
+
+            for (AntiPattern a : child.getAntiPatterns()) {
+                if (a.getPriority() == AntiPattern.Priority.HIGH) {
+                    return true;
+                }
+            }
+
+            if (checkFolderForPriority(child))
+                return true;
+        }
+
+        return false;
+    }
+
 
     public int getRow() {
         return row;
