@@ -77,8 +77,6 @@ public class Table extends JBTable {
         setModel(new DefaultTableModel(temp, folderTableHeader));
     }
 
-
-
     private void setClassModel(DirectoryElement directoryElement) {
         ArrayList<AntiPattern> antiPatterns = directoryElement.getAntiPatterns();
         Object[][] temp = new Object[antiPatterns.size()][classTableHeader.length];
@@ -118,67 +116,48 @@ public class Table extends JBTable {
     public Component prepareRenderer(TableCellRenderer cellRenderer, int rows, int columns) {
         Component component = super.prepareRenderer(cellRenderer, rows, columns);
 
-        if (directoryElement == null)
-            return component;
+        if (!getValueAt(rows, 1).equals(0)) {
+            if (directoryElement == null)
+                return component;
 
-        if (directoryElement.isDirectory()) {
-            setColorsForFolder(component, rows);
-        } else if (directoryElement.isClass()) {
-            setColorsForClass(component, rows);
+            if (directoryElement.isDirectory()) {
+                setPriorityColors(checkFolderForPriority(directoryElement.getChildElements().get(rows)), component);
+            } else if (directoryElement.isClass()) {
+                //sets row colors when inside class
+                ArrayList<AntiPattern> antiPatterns = directoryElement.getAntiPatterns();
+                for (AntiPattern pattern : antiPatterns) {
+                    if (pattern.getName().equals(getValueAt(rows, 0))) {
+                        setPriorityColors(pattern.getPriority() == AntiPattern.Priority.HIGH, component);
+                        break;
+                    }
+                }
+            }
+        } else {
+            setDefaultColors(component);
         }
-
         return component;
     }
 
-    private void setColorsForClass(Component component, int rows) {
-
-
-        if (!getValueAt(rows, 1).equals(0)) {
-
-            ArrayList<AntiPattern> antiPatterns = directoryElement.getAntiPatterns();
-            for (int i = 0; i < antiPatterns.size(); i++) {
-                if (antiPatterns.get(i).getName().equals(getValueAt(rows, 0))) {
-                    if (antiPatterns.get(i).getPriority() == AntiPattern.Priority.HIGH) {
-                        component.setBackground(new JBColor(JBColor.RED, JBColor.RED));
-                        component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
-                        return;
-                    } else {
-                        component.setBackground(new JBColor(JBColor.YELLOW, JBColor.YELLOW));
-                        component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
-                        return;
-                    }
-                }
-
-            }
-
+    private void setPriorityColors(Boolean exp, Component component){
+        if(exp){
+            component.setBackground(JBColor.RED);
         } else {
-            component.setBackground(new JBColor(JBColor.DARK_GRAY, JBColor.WHITE));
-            component.setForeground(new JBColor(JBColor.LIGHT_GRAY, JBColor.BLACK));
+            component.setBackground(JBColor.YELLOW);
         }
+        component.setForeground(Color.BLACK);
     }
 
-    private void setColorsForFolder(Component component, int rows) {
-
-        if (!getValueAt(rows, 1).equals(0)) {
-
-            if(checkFolderForPriority(directoryElement.getChildElements().get(rows))){
-                component.setBackground(new JBColor(JBColor.RED, JBColor.RED));
-                component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
-            } else {
-                component.setBackground(new JBColor(JBColor.YELLOW, JBColor.YELLOW));
-                component.setForeground(new JBColor(JBColor.BLACK, JBColor.BLACK));
-            }
-
-        } else {
-            component.setBackground(new JBColor(JBColor.DARK_GRAY, JBColor.WHITE));
-            component.setForeground(new JBColor(JBColor.LIGHT_GRAY, JBColor.BLACK));
+    private void setDefaultColors(Component component){
+        if (UIUtil.isUnderDarcula()){
+            component.setBackground(Color.DARK_GRAY);
+            component.setForeground(Color.LIGHT_GRAY);
+        }else {
+            component.setBackground(Color.WHITE);
+            component.setForeground(Color.BLACK);
         }
-
     }
-
 
     private boolean checkFolderForPriority(DirectoryElement directoryElement) {
-
         if(directoryElement.isClass()){
             for (AntiPattern a : directoryElement.getAntiPatterns()) {
                 if (a.getPriority() == AntiPattern.Priority.HIGH) {
@@ -187,22 +166,17 @@ public class Table extends JBTable {
             }
             return false;
         }
-
         for (DirectoryElement child : directoryElement.getChildElements()) {
-
             for (AntiPattern a : child.getAntiPatterns()) {
                 if (a.getPriority() == AntiPattern.Priority.HIGH) {
                     return true;
                 }
             }
-
             if (checkFolderForPriority(child))
                 return true;
         }
-
         return false;
     }
-
 
     public int getRow() {
         return row;

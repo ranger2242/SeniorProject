@@ -41,11 +41,11 @@ public class DirectoryElement {
     }
 
     public static int getAntiPatternCount(ArrayList<DirectoryElement> directoryElement) {
-        int temp = 0;
+        int count = 0;
         for (DirectoryElement f : directoryElement) {
-            temp += (f.getAntiPatterns().size() + getAntiPatternCount(f.getChildElements()));
+            count += (f.getAntiPatterns().size() + getAntiPatternCount(f.getChildElements()));
         }
-        return temp;
+        return count;
     }
 
     public VirtualFile getVirtualFile() {

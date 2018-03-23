@@ -48,7 +48,7 @@ public class ErgoToolWindow implements ToolWindowFactory {
     }
 
     public void showErrorLabel(String error) {
-        //change color make more noticable
+        //change color make more noticeable
         errorLabel.setText(error);
         errorLabel.setVisible(true);
         contentWindow.add(errorLabel, BorderLayout.CENTER);
