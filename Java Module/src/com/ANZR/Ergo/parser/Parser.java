@@ -3,6 +3,7 @@ package com.ANZR.Ergo.parser;
 
 import com.ANZR.Ergo.io.FileHandler;
 import com.ANZR.Ergo.io.Logger;
+import com.ANZR.Ergo.plugin.Plugin;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseProblemException;
 import com.github.javaparser.ast.CompilationUnit;
@@ -10,6 +11,7 @@ import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
+import com.intellij.notification.NotificationType;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -58,7 +60,7 @@ public class Parser {
                 globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
 
             } catch (ParseProblemException e) {
-                Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Logger.slog(" E001: !!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
         }
         return new ProjectData<>(parsedClasses, globalEnums);
@@ -77,6 +79,20 @@ public class Parser {
     }
 
     private static ProjectData<Set<ExtractedClass>, Set<Enum>> parseClientDirectory(ExtractedDirectory directory) {
+        /*
+        *  ArrayList<Set<ExtractedClass>> parsedClasses = new ArrayList<>();
+        ArrayList<Set<Enum>> globalEnums = new ArrayList<>();
+        for (ExtractedDirectory dir : directories) {
+            try {
+                Parser parser = new Parser(dir);
+                parsedClasses.add(new LinkedHashSet<>(parser.getExtractedClasses()));
+                globalEnums.add(new LinkedHashSet<>(parser.getGlobalEnums()));
+
+            } catch (ParseProblemException e) {
+                Logger.slog(" E001: !!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+        }
+        return new ProjectData<>(parsedClasses, globalEnums);*/
         Set<ExtractedClass> parsedClasses = new LinkedHashSet<>();
         Set<Enum> globalEnums = new LinkedHashSet<>();
 
@@ -86,7 +102,7 @@ public class Parser {
             globalEnums = new LinkedHashSet<>(parser.getGlobalEnums());
 
         } catch (ParseProblemException e) {
-            Logger.slog("!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
+            Logger.slog(" E002:!!!!!!!!!!!!!!!!!!!!!!!\nPARSEERROR\n!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
 
         return new ProjectData<>(parsedClasses, globalEnums);
@@ -102,6 +118,7 @@ public class Parser {
             NodeList<ImportDeclaration> imports = cu.getImports();
 
             for (TypeDeclaration<?> cl : classes) {
+
                 if (cl.isEnumDeclaration()) {
                     globalEnums.add(new Enum(cl.asEnumDeclaration()));
                 } else if (cl.isClassOrInterfaceDeclaration()) {
@@ -113,11 +130,13 @@ public class Parser {
             }
             return listOfClasses;
         } catch (ParseProblemException e) {
-            System.out.println("PARSE ERROR: " + dir);
+            Plugin.displayNotification("Error parsing file: "+dir, NotificationType.ERROR);
+            Plugin.halt();
+            System.out.println(" E003:PARSE ERROR: " + dir);
             //e.printStackTrace();
             return null;
         } catch (StackOverflowError e) {
-            System.out.println("STACK OVERFLOW ERROR: " + dir);
+            System.out.println(" E004:STACK OVERFLOW ERROR: " + dir);
             // e.printStackTrace();
             return null;
         }

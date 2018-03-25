@@ -1,8 +1,12 @@
 package com.ANZR.Ergo.plugin;
+
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.*;
-import com.intellij.ui.content.*;
+import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowFactory;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentFactory;
 import com.intellij.util.containers.Stack;
+
 import javax.swing.*;
 import java.awt.*;
 

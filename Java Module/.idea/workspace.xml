@@ -12,66 +12,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Table.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
-              <folding>
-                <element signature="method#Table#0;class#Table#0" expanded="false" />
-                <element signature="method#setTableModel#0;class#Table#0" expanded="false" />
-                <element signature="method#setFolderModel#0;class#Table#0" expanded="false" />
-                <element signature="method#setClassModel#0;class#Table#0" expanded="false" />
-                <element signature="method#isCellEditable#0;class#Table#0" expanded="false" />
-                <element signature="method#click#0;class#Table#0" expanded="false" />
-                <element signature="method#setPriorityColors#0;class#Table#0" expanded="false" />
-                <element signature="method#setDefaultColors#0;class#Table#0" expanded="false" />
-                <element signature="method#checkFolderForPriority#0;class#Table#0" expanded="false" />
-                <element signature="e#6193#6194#0" expanded="true" />
-                <element signature="e#6219#6220#0" expanded="true" />
-                <element signature="e#6271#6272#0" expanded="true" />
-                <element signature="e#6310#6311#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErgoToolWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoToolWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadingBarWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/LoadingBarWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="92" column="21" lean-forward="false" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-              <folding>
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#1148#1149#0" expanded="true" />
-                <element signature="method#windowClosed#0;class#872:1635" expanded="false" />
-                <element signature="method#windowIconified#0;class#872:1635" expanded="false" />
-                <element signature="method#windowDeiconified#0;class#872:1635" expanded="false" />
-                <element signature="method#windowActivated#0;class#872:1635" expanded="false" />
-                <element signature="method#windowDeactivated#0;class#872:1635" expanded="false" />
-                <element signature="e#2484#2485#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Ergo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1364">
-              <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="21">
+              <caret line="86" column="128" lean-forward="false" selection-start-line="86" selection-start-column="128" selection-end-line="86" selection-end-column="128" />
+              <folding>
+                <element signature="docComment;method#Ergo#0;class#Ergo#0" expanded="false" />
+                <element signature="docComment;method#run#0;class#Ergo#0" expanded="false" />
+                <element signature="method#run#0;class#Ergo#0" expanded="false" />
+                <element signature="method#interpretData#0;class#Ergo#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,47 +30,60 @@
       <file leaf-file-name="Plugin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="48" column="17" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="48" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SideBar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/SideBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="124" column="24" lean-forward="true" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DirectoryElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="56" column="65" lean-forward="true" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
               <folding>
-                <element signature="method#getAntiPatternCount#0;class#DirectoryElement#0" expanded="false" />
-                <element signature="e#1416#1417#0" expanded="true" />
-                <element signature="e#1450#1451#0" expanded="true" />
-                <element signature="e#1486#1487#0" expanded="true" />
-                <element signature="e#1528#1529#0" expanded="true" />
-                <element signature="e#1560#1561#0" expanded="true" />
-                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java">
+      <file leaf-file-name="SideBar.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/SideBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+            <state relative-caret-position="315">
+              <caret line="137" column="122" lean-forward="false" selection-start-line="137" selection-start-column="122" selection-end-line="137" selection-end-column="122" />
+              <folding>
+                <marker date="1522004439248" expanded="true" signature="5820:5882" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Robot.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/Robot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="531" column="29" lean-forward="false" selection-start-line="531" selection-start-column="29" selection-end-line="531" selection-end-column="29" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Function.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/function/Function.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+              <folding>
+                <element signature="e#1084#1085#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#6588#6589#0" expanded="true" />
+                <element signature="e#6627#6628#0" expanded="true" />
+                <element signature="e#6675#6676#0" expanded="true" />
+                <element signature="e#6709#6710#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/GodObjectTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Folder.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/FileHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDir.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDirectory.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Method.java" />
@@ -195,16 +158,17 @@
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/ErrorHidingTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/LoadingBarWindow.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/SideBar.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/CallSuperTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/BoatAnchorTransformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/Transformer.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java" />
-        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoToolWindow.java" />
         <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoToolWindow.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java" />
+        <option value="$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/SideBar.java" />
       </list>
     </option>
   </component>
@@ -222,14 +186,14 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="138" />
-    <option name="y" value="21" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="433" />
+    <option name="y" value="51" />
+    <option name="width" value="943" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -243,9 +207,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,7 +238,65 @@
               <item name="Java Module" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ergo" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ergo" type="462c0819:PsiDirectoryNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Module" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Module" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ergo" type="462c0819:PsiDirectoryNode" />
+              <item name="transformer" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Java Module" type="cbb8eebc:String" user="Java Module" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Java Module" type="cbb8eebc:String" user="Java Module" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Java Module" type="cbb8eebc:String" user="Java Module" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="com/ANZR/Ergo" type="cbb8eebc:String" user="com/ANZR/Ergo" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Java Module" type="cbb8eebc:String" user="Java Module" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="com/ANZR/Ergo" type="cbb8eebc:String" user="com/ANZR/Ergo" />
+              <item name="parser" type="cbb8eebc:String" user="parser" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Java Module" type="cbb8eebc:String" user="Java Module" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="com/ANZR/Ergo" type="cbb8eebc:String" user="com/ANZR/Ergo" />
+              <item name="plugin" type="cbb8eebc:String" user="plugin" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Java Module" type="cbb8eebc:String" user="Java Module" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="com/ANZR/Ergo" type="cbb8eebc:String" user="com/ANZR/Ergo" />
+              <item name="transformer" type="cbb8eebc:String" user="transformer" />
             </path>
           </expand>
           <select />
@@ -289,8 +309,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15667465" />
     <property name="project.structure.side.proportion" value="0.27471265" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -339,9 +359,9 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.ANZR.Ergo.Ergo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -510,11 +530,18 @@
       <workItem from="1521597670355" duration="3111000" />
       <workItem from="1521813634241" duration="2315000" />
       <workItem from="1521822195433" duration="13480000" />
+      <workItem from="1521955071004" duration="193000" />
+      <workItem from="1521955544055" duration="866000" />
+      <workItem from="1521956429209" duration="830000" />
+      <workItem from="1521957508563" duration="2005000" />
+      <workItem from="1521959533234" duration="991000" />
+      <workItem from="1521960544209" duration="5065000" />
+      <workItem from="1521997028785" duration="6855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239163000" />
+    <option name="totallyTimeSpent" value="255968000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -526,38 +553,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31825274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32071504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32329637" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3322933" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29375" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.116398245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21885337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39144215" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.390625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -574,21 +601,21 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3961965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.390625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488114" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32071504" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40095088" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29375" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24597365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21885337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +631,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="106" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java</url>
+          <line>70</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="108" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
@@ -629,9 +664,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Thread.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/Timer.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.5.2/javaparser-core-3.5.2.jar!/com/github/javaparser/ast/body/TypeDeclaration.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/reflect/Type.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Class.java" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/gson-2.8.2.jar!/com/google/gson/Gson.class">
@@ -692,7 +724,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/ConnectionHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Logger.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Constructor.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Enum.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedDirectory.java" />
@@ -702,7 +733,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/FileHandler.java" />
     <entry file="file://$PROJECT_DIR$/server/server.bat" />
     <entry file="file://$PROJECT_DIR$/src/Launcher.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Pipeline.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/ExtractedClass.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -735,20 +765,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/ConstantInterfaceTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="11" column="88" lean-forward="true" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/GodObjectTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="77" column="5" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/ConstantInterfaceTransformer.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/Transformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -756,82 +773,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/BoatAnchorTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/CallSuperTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/ErrorHidingTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/ErrorHidingTransformer.java" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/com/intellij/ui/JBColor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="54" column="43" lean-forward="false" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-          <folding>
-            <marker date="1521579068786" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1521579068786" expanded="false" signature="139:503" ph="..." />
-            <marker date="1521579068786" expanded="false" signature="1751:1762" ph=" { " />
-            <marker date="1521579068786" expanded="false" signature="1803:1809" ph=" }" />
-            <marker date="1521579068786" expanded="true" signature="1857:2021" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="2075:2161" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="2207:2218" ph=" { " />
-            <marker date="1521579068786" expanded="false" signature="2230:2236" ph=" }" />
-            <marker date="1521579068786" expanded="false" signature="2274:2285" ph=" { " />
-            <marker date="1521579068786" expanded="false" signature="2298:2304" ph=" }" />
-            <marker date="1521579068786" expanded="false" signature="2332:2343" ph=" { " />
-            <marker date="1521579068786" expanded="false" signature="2365:2371" ph=" }" />
-            <marker date="1521579068786" expanded="true" signature="2394:2573" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="2599:2697" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="2725:2827" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="2854:2954" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="2982:3084" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="3110:3208" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="3238:3689" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="3287:3375" ph="produce() → {" />
-            <marker date="1521579068786" expanded="false" signature="3600:3615" ph="}" />
-            <marker date="1521579068786" expanded="true" signature="3717:4162" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="3766:3854" ph="produce() → {" />
-            <marker date="1521579068786" expanded="false" signature="4077:4092" ph="}" />
-            <marker date="1521579068786" expanded="true" signature="4190:4292" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="4332:4436" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="4467:4569" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="4626:4762" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="4824:4965" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="5019:5149" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="5208:5348" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="5421:5567" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="5645:5801" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="5841:5953" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="6096:6256" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="6291:6407" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="6446:6791" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="6475:6563" ph="produce() → {" />
-            <marker date="1521579068786" expanded="false" signature="6768:6783" ph="}" />
-            <marker date="1521579068786" expanded="true" signature="6830:7174" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="6859:6947" ph="produce() → {" />
-            <marker date="1521579068786" expanded="false" signature="7151:7166" ph="}" />
-            <marker date="1521579068786" expanded="true" signature="7209:7550" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="7238:7326" ph="produce() → {" />
-            <marker date="1521579068786" expanded="false" signature="7527:7542" ph="}" />
-            <marker date="1521579068786" expanded="true" signature="7563:8785" ph="{...}" />
-            <marker date="1521579068786" expanded="true" signature="7791:7904" ph="{...}" />
-            <marker date="1521579068786" expanded="false" signature="7827:7846" ph=" { " />
-            <marker date="1521579068786" expanded="false" signature="7880:7894" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,104 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3036">
           <caret line="139" column="83" lean-forward="false" selection-start-line="139" selection-start-column="83" selection-end-line="139" selection-end-column="83" />
-          <folding>
-            <marker date="1521579073036" expanded="false" signature="3:117" ph="/.../" />
-            <marker date="1521579073036" expanded="true" signature="2140:2163" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2193:2216" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2239:2262" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2357:2380" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2403:2426" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2470:2493" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2538:2561" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2584:2607" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2630:2653" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2758:2781" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2882:2905" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="2911:2941" ph="/**...*/" />
-            <marker date="1521579073036" expanded="true" signature="3042:3065" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="3211:3234" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="3339:3362" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="3537:3560" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="3694:3717" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="3856:3879" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4093:4116" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4253:4276" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4563:4586" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4619:4642" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4681:4704" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4757:4780" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4813:4836" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4880:4903" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="4998:5021" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5044:5067" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5161:5184" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5307:5330" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5505:5528" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5615:5638" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5781:5804" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="5947:5970" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6106:6129" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6236:6259" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6346:6369" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6563:6586" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6695:6718" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6828:6851" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6935:6958" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="6984:7007" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7101:7124" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7227:7250" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7334:7357" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7448:7471" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7518:7541" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7635:7658" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7689:7712" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7884:7907" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="7939:7962" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8065:8088" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8219:8242" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8349:8372" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8566:8589" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8626:8649" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8694:8717" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8743:8766" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8797:8820" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8914:8937" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="8974:8997" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9041:9064" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9181:9204" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9295:9318" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9407:9430" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9524:9547" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9590:9613" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9639:9662" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9875:9898" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="9977:10000" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="10074:10097" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="10208:10314" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="10349:10436" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="10407:10430" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="10538:10847" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="10575:10598" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="10695:10718" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="10818:10841" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="10953:11298" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="11056:11079" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11176:11199" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11269:11292" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11378:11502" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="11422:11445" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11473:11496" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11576:11954" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="11749:11772" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11800:11823" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11857:11880" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="11925:11948" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="12035:12131" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="12170:12288" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="12259:12282" ph="{}" />
-            <marker date="1521579073036" expanded="true" signature="12335:12468" ph="{...}" />
-            <marker date="1521579073036" expanded="true" signature="12439:12462" ph="{}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -955,106 +803,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/SideBar.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="124" column="24" lean-forward="true" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+        <state relative-caret-position="84">
+          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/LoadingBarWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="92" column="21" lean-forward="false" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-          <folding>
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="method#windowClosed#0;class#872:1635" expanded="false" />
-            <element signature="method#windowIconified#0;class#872:1635" expanded="false" />
-            <element signature="method#windowDeiconified#0;class#872:1635" expanded="false" />
-            <element signature="method#windowActivated#0;class#872:1635" expanded="false" />
-            <element signature="method#windowDeactivated#0;class#872:1635" expanded="false" />
-            <element signature="e#2484#2485#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoToolWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="105">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java">
+    <entry file="file://$PROJECT_DIR$/src/starts.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/GodObjectTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/CallSuperTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/DirectoryElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="294">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
             <element signature="method#getAntiPatternCount#0;class#DirectoryElement#0" expanded="false" />
-            <element signature="e#1416#1417#0" expanded="true" />
-            <element signature="e#1450#1451#0" expanded="true" />
-            <element signature="e#1486#1487#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="48" column="17" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="48" selection-end-column="17" />
+        <state relative-caret-position="-630">
+          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/transformer/BoatAnchorTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1364">
-          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+        <state relative-caret-position="84">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/ErgoToolWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/AntiPattern.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/io/DataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+        <state relative-caret-position="84">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Table.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+        <state relative-caret-position="756">
+          <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
           <folding>
-            <element signature="method#Table#0;class#Table#0" expanded="false" />
-            <element signature="method#setTableModel#0;class#Table#0" expanded="false" />
-            <element signature="method#setFolderModel#0;class#Table#0" expanded="false" />
-            <element signature="method#setClassModel#0;class#Table#0" expanded="false" />
-            <element signature="method#isCellEditable#0;class#Table#0" expanded="false" />
-            <element signature="method#click#0;class#Table#0" expanded="false" />
-            <element signature="method#setPriorityColors#0;class#Table#0" expanded="false" />
-            <element signature="method#setDefaultColors#0;class#Table#0" expanded="false" />
-            <element signature="method#checkFolderForPriority#0;class#Table#0" expanded="false" />
-            <element signature="e#6193#6194#0" expanded="true" />
-            <element signature="e#6219#6220#0" expanded="true" />
-            <element signature="e#6271#6272#0" expanded="true" />
-            <element signature="e#6310#6311#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#6588#6589#0" expanded="true" />
+            <element signature="e#6627#6628#0" expanded="true" />
+            <element signature="e#6675#6676#0" expanded="true" />
+            <element signature="e#6709#6710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/Robot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="531" column="29" lean-forward="false" selection-start-line="531" selection-start-column="29" selection-end-line="531" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/Ergo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="86" column="128" lean-forward="false" selection-start-line="86" selection-start-column="128" selection-end-line="86" selection-end-column="128" />
+          <folding>
+            <element signature="docComment;method#Ergo#0;class#Ergo#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#Ergo#0" expanded="false" />
+            <element signature="method#run#0;class#Ergo#0" expanded="false" />
+            <element signature="method#interpretData#0;class#Ergo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/Plugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="56" column="65" lean-forward="true" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ANZR/Ergo/plugin/SideBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="137" column="122" lean-forward="false" selection-start-line="137" selection-start-column="122" selection-end-line="137" selection-end-column="122" />
+          <folding>
+            <marker date="1522004439248" expanded="true" signature="5820:5882" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1068,7 +970,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.27471265" />
               </list>
             </option>
           </splitter-proportions>
@@ -1080,7 +982,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.27471265" />
               </list>
             </option>
           </splitter-proportions>
@@ -1099,7 +1001,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>IntelliJ IDEA IU-173.3727.127</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

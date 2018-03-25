@@ -1,5 +1,6 @@
 package com.ANZR.Ergo.plugin;
 
+
 import com.intellij.ui.JBColor;
 import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.UIUtil;
@@ -12,6 +13,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 
 public class Table extends JBTable {
 
