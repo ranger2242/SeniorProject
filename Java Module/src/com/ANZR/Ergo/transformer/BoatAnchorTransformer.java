@@ -3,6 +3,8 @@ package com.ANZR.Ergo.transformer;
 import com.ANZR.Ergo.parser.ExtractedClass;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
 import java.util.Arrays;
@@ -32,8 +34,9 @@ public class BoatAnchorTransformer {
         }
         int inClass = searchForReferences(singleClass.getTypeObject(), singleClass, classNames);
         int outClass = getReferncesToClass(singleClass, classesArray);
+        int staticFound = checkForStatics(singleClass, classesArray);
 
-        if (inClass > 0 || outClass > 0) {
+        if (inClass > 0 || outClass > 0 || staticFound > 0) {
             return 1;
         } else {
             return 0;
@@ -103,5 +106,38 @@ public class BoatAnchorTransformer {
             return 0;
         }
     }
+
+
+    private static int checkForStatics(ExtractedClass singleClass, ExtractedClass[] classesArray){
+        for( ExtractedClass loopClass : classesArray ){
+            if (findStatics(loopClass.getTypeObject(), singleClass) > 0)
+                return 1;
+        }
+        return 0;
+    }
+
+    private static int findStatics(Node node, ExtractedClass targetClass){
+
+        int found = 0;
+
+        if( node instanceof MethodCallExpr ){
+
+            MethodCallExpr methodCallExpr = (MethodCallExpr) node;
+            if (methodCallExpr.getScope().isPresent()) {
+                Expression scope = methodCallExpr.getScope().get();
+                if (targetClass.getName().equals(scope.toString()))
+                    return 1;
+            }
+
+        }else{
+            for(Node n : node.getChildNodes())
+                found += findStatics(n, targetClass);
+
+        }
+
+        return found;
+
+    }
+
 
 }

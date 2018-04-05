@@ -14,8 +14,8 @@ import java.nio.file.Paths;
 
 public class DataLoader {
 
-    private static final String[] antiPatternNames = {"God Object", "Long Method", "Constant Interface", "Empty Catch Block", "Call Super", "Unused Class"};
-    private static final String[] highPrioityAntiPatternNames = {"God Object"};
+    private static final String[] ANTI_PATTERN_NAMES = {"God Object", "Long Method", "Constant Interface", "Empty Catch Block", "Call Super"}; //, "Unused Class"
+    private static final String[] HIGH_PRIORITY_ANTI_PATTERN_NAMES = {"God Object"};
 
     /**
      * Loads a Project data structure to be used to file the Ergo table
@@ -89,7 +89,7 @@ public class DataLoader {
             JsonArray array = jsonElement.getAsJsonArray();
             int result = array.get(0).getAsInt();
             if (classesAreSame(array, directoryElement) && result != 0)
-                directoryElement.addAntiPattern(new AntiPattern(antiPatternNames[i], result));
+                directoryElement.addAntiPattern(new AntiPattern(ANTI_PATTERN_NAMES[i], result));
         }
 
     }
@@ -101,7 +101,7 @@ public class DataLoader {
             int result = array.get(0).getAsInt();
             if (classesAreSame(array, directoryElement) && result != 0){
                 String message = array.get(1).getAsString();
-                directoryElement.addAntiPattern(new AntiPattern(antiPatternNames[i], message));
+                directoryElement.addAntiPattern(new AntiPattern(ANTI_PATTERN_NAMES[i], message));
             }
         }
 
@@ -131,10 +131,10 @@ public class DataLoader {
     }
 
     public static String[] getAntiPatternNames() {
-        return antiPatternNames;
+        return ANTI_PATTERN_NAMES;
     }
 
-    public static String[] getHighPrioityAntiPatternNames() {
-        return highPrioityAntiPatternNames;
+    public static String[] getHighPriorityAntiPatternNames() {
+        return HIGH_PRIORITY_ANTI_PATTERN_NAMES;
     }
 }

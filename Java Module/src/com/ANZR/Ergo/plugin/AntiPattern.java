@@ -29,7 +29,7 @@ public class AntiPattern {
 
     private void setPriority(String name) {
 
-        String[] highPriorityPatterns = DataLoader.getHighPrioityAntiPatternNames();
+        String[] highPriorityPatterns = DataLoader.getHighPriorityAntiPatternNames();
 
         for (String s : highPriorityPatterns) {
             if (name.equals(s)) {
